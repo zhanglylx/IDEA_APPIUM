@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact name="IDEA:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IDEA_jar</output-path>
+    <root id="root">
+      <element id="archive" name="IDEA.jar">
+        <element id="module-output" name="IDEA" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="file-copy" path="$PROJECT_DIR$/lib/commons-lang-2.5.jar" />
+        <element id="file-copy" path="$PROJECT_DIR$/lib/java-client-3.1.0.jar" />
+        <element id="file-copy" path="$PROJECT_DIR$/lib/selenium-server-standalone-2.49.0.jar" />
+      </element>
+    </root>
+  </artifact>
+</component>
