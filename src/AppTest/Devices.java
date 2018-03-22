@@ -28,6 +28,8 @@ public class Devices {
     private static Devices di;
     private String caseName;
     private DesiredCapabilities cap;
+    private int width;
+    private int height;
 
     private Devices(String caseName) {
         this.caseName = caseName;
@@ -60,11 +62,13 @@ public class Devices {
     /**
      * 启动APP
      */
-    private static void start_App(DesiredCapabilities cap) {
+    private void start_App(DesiredCapabilities cap) {
         try {
             driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
             // 隐式等待,元素未找到时等待的时间
             driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);//
+            this.width = driver.manage().window().getSize().width;
+            this.height = driver.manage().window().getSize().height;
         } catch (MalformedURLException e) {
             System.out.println("启动Devices发生未知错误");
             e.printStackTrace();
@@ -90,7 +94,7 @@ public class Devices {
     public void startApp() {
         driver.quit();
         try {
-         Thread.sleep(500);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -98,8 +102,8 @@ public class Devices {
             Process exec = Runtime.getRuntime().exec("adb shell am start -n " + Config.APP_PACKAGE + "/" + Config.APP_ACTIVITY);
             BufferedReader bf = new BufferedReader(new InputStreamReader(exec.getInputStream()));
             String msg = null;
-            while((msg=bf.readLine())!=null){
-                if(!"".equals(msg))RunTest.addList(msg);
+            while ((msg = bf.readLine()) != null) {
+                if (!"".equals(msg)) RunTest.addList(msg);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -130,6 +134,7 @@ public class Devices {
      * @param by
      */
     public boolean clickfindElement(By by) {
+        boolean bl = false;
         if (isElementExsitAndroid(by)) {
             driver.findElement(by).click();
             try {
@@ -137,10 +142,25 @@ public class Devices {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            return true;
-        } else {
-            return false;
+            bl = true;
         }
+        Logs.saveLog(caseName, "clickfindElement:" + by.toString() + "=" + bl);
+        return bl;
+    }
+
+    public boolean clickfindElement(String using) {
+        boolean bl = false;
+        if (isElementExsitAndroid(using)) {
+            driver.findElementByAndroidUIAutomator(using).click();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            bl = true;
+        }
+        Logs.saveLog(caseName, "clickfindElement:" + using + "=" + bl);
+        return bl;
     }
 
     /**
@@ -149,24 +169,44 @@ public class Devices {
      * @param
      */
     public boolean inputCharacter(By by, String content) {
+        boolean bl = false;
         if (isElementExsitAndroid(by)) {
             driver.findElement(by).sendKeys(content);
-            return true;
-        } else {
-            return false;
+            bl = true;
         }
+        Logs.saveLog(caseName, "inputCharacter:" + by.toString() + "=" + bl + "," + content);
+        return bl;
+    }
+
+    public boolean inputCharacter(String using, String content) {
+        boolean bl = false;
+        if (isElementExsitAndroid(using)) {
+            driver.findElementByAndroidUIAutomator(using).sendKeys(content);
+            bl = true;
+        }
+        Logs.saveLog(caseName, "inputCharacter:" + using + "=" + bl + "," + content);
+        return bl;
     }
 
     /**
      * 获取元素
      */
     public String getText(By by) {
+        String text = null;
         if (isElementExsitAndroid(by)) {
-            String text = driver.findElement(by).getText();
-            return text;
-        } else {
-            return null;
+            text = driver.findElement(by).getText();
         }
+        Logs.saveLog(caseName, "getText:" + by.toString() + "=" + text);
+        return text;
+    }
+
+    public String getText(String using) {
+        String text = null;
+        if (isElementExsitAndroid(using)) {
+            text = driver.findElementByAndroidUIAutomator(using).getText();
+        }
+        Logs.saveLog(caseName, "getText:" + using + "=" + text);
+        return text;
     }
 
     /**
@@ -176,7 +216,7 @@ public class Devices {
      * @param y
      * @param duration
      */
-    public void clickScreen(int x, int y, int duration) {
+    public void clickScreen(int x, int y) {
 //        JavascriptExecutor js = (JavascriptExecutor) driver;
 //        HashMap<String, Integer> tapObject = new HashMap<String, Integer>();
 //        tapObject.put("x", x);
@@ -185,6 +225,7 @@ public class Devices {
 //        js.executeScript("mobile: tap", tapObject);
         TouchAction action = new TouchAction(driver);
         action.tap(x, y).perform();
+        Logs.saveLog(caseName, "clickScreen:x=" + x + ",y=" + y);
     }
 
     /**
@@ -219,19 +260,23 @@ public class Devices {
             flag = false;
         }
         RunTest.addList(elemnt.toString() + ":" + flag, 1);
+//        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
         return flag;
     }
+
     public boolean isElementExsitAndroid(String elemnt) {
         boolean flag = false;
         try {
-           WebElement element = driver.findElementByAndroidUIAutomator(elemnt);
+            WebElement element = driver.findElementByAndroidUIAutomator(elemnt);
             flag = null != element;
         } catch (org.openqa.selenium.NoSuchElementException e) {
             flag = false;
         }
         RunTest.addList(elemnt.toString() + ":" + flag, 1);
+//        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
         return flag;
     }
+
     /**
      * 点击退格键
      *
@@ -245,7 +290,7 @@ public class Devices {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        ;
+        Logs.saveLog(caseName, "backspace");
     }
 
     /**
@@ -258,48 +303,49 @@ public class Devices {
 //        RunTest.addList("height:" + height);
         driver.swipe(width * 3 / 4, height / 2, width / 4, height / 2,
                 time);
+        Logs.saveLog(caseName, "swipeToLeft2:" + time + " time");
     }
 
     /**
      * 向上滑动
      */
     public void swipeToUp(int time) {
-        int width = driver.manage().window().getSize().width;
-//        RunTest.addList("width：" + width);
-        int height = driver.manage().window().getSize().height;
-//        RunTest.addList("height:" + height);
         driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, time);
+        Logs.saveLog(caseName, "swipeToUp:" + time + " time");
     }
 
     /**
      * Swipe to right on the screen
      */
     public void swipeToRight(int time) {
-        int width = driver.manage().window().getSize().width;
-        int height = driver.manage().window().getSize().height;
         driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, time);
+        Logs.saveLog(caseName, "swipeToRight:" + time + " time");
     }
 
     /**
      * 向下滑动
      */
     public void swipeToDown(int time) {
-        int width = driver.manage().window().getSize().width;
-        int height = driver.manage().window().getSize().height;
+
         driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, time);
+        Logs.saveLog(caseName, "swipeToDown:" + time + " time");
     }
-    public void findUiautomatorClick(String using){
 
-        System.out.println( driver.findElementByAndroidUIAutomator(using));
-
-
+    /**
+     * 自定义滑动
+     * @param time
+     */
+    public void customSlip(int startX,int startY,int endX,int endY,int time) {
+        driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, time);
+        Logs.saveLog(caseName, "customSlip:" + time + " time");
     }
-    public void sleep(long ms){
+    public void sleep(long ms) {
         try {
             Thread.sleep(ms);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        Logs.saveLog(caseName, "sleep:" + ms + " ms");
     }
 
     /**
@@ -318,4 +364,8 @@ public class Devices {
     public AndroidDriver getDriver() {
         return driver;
     }
+
+    public int getWidth() { return width; }
+
+    public int getHeight() { return height; }
 }

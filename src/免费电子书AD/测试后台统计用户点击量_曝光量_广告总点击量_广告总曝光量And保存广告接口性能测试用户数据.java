@@ -146,8 +146,6 @@ public class 测试后台统计用户点击量_曝光量_广告总点击量_广�
 			bw.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
 		}
 	}
 }

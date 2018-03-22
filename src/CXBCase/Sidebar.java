@@ -1,22 +1,27 @@
 package CXBCase;
 
 import AppTest.Devices;
+import AppTest.Logs;
 import org.openqa.selenium.By;
 
 /**
- * 测试
+ * 测试侧边栏
+ * 1.检测侧边栏打开后框架和日夜间切换按钮,个人头像和名称框架框架是否存在，存在代表检测通过
+ * 2.检查侧边栏中的赚积分、积分商城、积分记录、获赠记录、今日推荐和关于我们按钮是否存在和点击后的页面title是否展示
  */
 public class Sidebar {
     Devices devices;
     PrintErr print;
+    String caseName;
 
     public Sidebar(String caseName) {
+        this.caseName = caseName;
         devices = Devices.getDevices(caseName);
         print = new PrintErr(caseName);
-        runSidebar();
+        Logs.recordLogs(caseName,runSidebar());
     }
 
-    private void runSidebar() {
+    private boolean runSidebar() {
         //点击书架左上角侧边栏按钮
         devices.clickfindElement(By.xpath("//android.widget.ImageButton[contains(@index,0)]"));
         devices.snapshot("点击书架左上角侧边栏按钮");
@@ -26,24 +31,28 @@ public class Sidebar {
         if (!examineMenu()) {
             print.print("验证侧边栏是否展示");
             devices.snapshot("验证侧边栏是否展示");
-            return;
+            return false;
         }
         /**
          * 验证赚积分页
          */
-        if (!verificationEarnPoints("赚积分",1)) return;
-        if (!verificationEarnPoints("积分商城",2)) return;
-        if (!verificationEarnPoints("积分记录",3)) return;
-        if (!verificationEarnPoints("我的包月",4)) return;
-        if (!verificationEarnPoints("获赠记录",5)) return;
-        if (!verificationEarnPoints("今日推荐",6)) return;
+        if (!verificationEarnPoints("赚积分", 1)) return false;
+        if (!verificationEarnPoints("积分商城", 2)) return false;
+        if (!verificationEarnPoints("积分记录", 3)) return false;
+        if (!verificationEarnPoints("我的包月", 4)) return false;
+        if (!verificationEarnPoints("获赠记录", 5)) return false;
+        if (!verificationEarnPoints("今日推荐", 6)) return false;
 //        if (!verificationEarnPoints("美女直播",8)) return;
-        if (!verificationEarnPoints("关于我们",9)) return;
+        if (!verificationEarnPoints("关于我们", 9)) return false;
         /**
          * 检查日夜间模式
          */
-        if(!dayTimeNight())return;
-
+        if (!dayTimeNight()) return false;
+        /**
+         * 检查个人资料
+         */
+        if(!userData("个人资料"))return false;
+        return true;
     }
 
     private boolean examineMenu() {
@@ -53,31 +62,36 @@ public class Sidebar {
         //验证白夜间框架
         if (!devices.isElementExsitAndroid(
                 By.id("com.mianfeia.book:id/night_mode_btn"))) return false;
+        if (!devices.isElementExsitAndroid(By.id("" +
+                "com.mianfeia.book:id/head_layout"))) return false;
+        if (!devices.isElementExsitAndroid(By.id(
+                "com.mianfeia.book:id/integral_layout"))) return false;
         return true;
     }
 
     /**
-     * 验证赚积分页
-     * 判断赚积分页title是否正确
+     * 验证侧边栏页
+     * 判断侧边栏中的tab页中的title是否正确
+     *
      * @return
      */
-    private boolean verificationEarnPoints(String name,int index) {
-        devices.findUiautomatorClick("new UiSelector().text(\""+name+"\")");
-        //点击赚积分
-        if(!devices.clickfindElement(By.xpath("//android.widget.ListView/android.widget.RelativeLayout/android.widget.TextView[contains(@test,\""+name+"\")]"))){
-            devices.snapshot("侧边栏"+name+"按钮不存在"+name);
-            print.print("侧边栏"+name+"按钮不存在");
+    private boolean verificationEarnPoints(String name, int index) {
+        //点击name
+        if (!devices.clickfindElement("new UiSelector().text(\"" + name + "\")")) {
+            devices.snapshot("侧边栏" + name + "按钮不存在" + name);
+            print.print("侧边栏" + name + "按钮不存在");
             return false;
         }
         devices.sleep(2000);
-        devices.snapshot("点击"+name);
+        devices.snapshot("点击" + name);
         /**
-         * 验证赚积分页面是否展示
+         * 验证页面是否展示
          */
         if (!devices.isElementExsitAndroid(
-                By.xpath("//android.widget.TextView[normalize-space(@text)='"+name+"']"))) {
-            print.print(name+"页面是否展示");
-            devices.snapshot(name+"页面是否展示");
+                By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
+                || devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
+            print.print(name + "页面是否展示");
+            devices.snapshot(name + "页面展示失败");
             return false;
         }
         //点击返回按钮
@@ -87,23 +101,45 @@ public class Sidebar {
 
     }
 
-    private boolean dayTimeNight(){
-        if(!"夜间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))){
+    private boolean dayTimeNight() {
+        if (!"夜间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))) {
             print.print("检查夜间模式按钮是否存在");
-            devices.snapshot("检查夜间模式按钮是否存在");;
+            devices.snapshot("检查夜间模式按钮是否存在");
+            ;
             return false;
         }
         //点击白夜间按钮
         devices.clickfindElement(By.id("com.mianfeia.book:id/txt_eye_mode"));
-        devices.snapshot("点击夜间模式");;
-        if(!"日间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))){
+        devices.snapshot("点击夜间模式");
+        ;
+        if (!"日间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))) {
             print.print("检查日间模式按钮是否存在");
-            devices.snapshot("检查日间模式按钮是否存在");;
+            devices.snapshot("检查日间模式按钮是否存在");
+            ;
             return false;
         }
-        devices.snapshot("检查日间模式按钮是否存在");;
+        devices.snapshot("检查日间模式按钮是否存在");
+        ;
         //置回默认值
         devices.clickfindElement(By.id("com.mianfeia.book:id/txt_eye_mode"));
+        return true;
+    }
+
+    /**
+     * 个人资料
+     * @param name
+     * @return
+     */
+    private boolean userData(String name){
+        devices.clickfindElement(By.id("com.mianfeia.book:id/head_layout"));
+        if (!devices.isElementExsitAndroid(
+                By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
+                || devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
+            print.print(name + "页面是否展示");
+            devices.snapshot(name + "页面展示失败");
+            return false;
+        }
+        devices.snapshot("检查个人资料页显示正确");
         return true;
     }
 }
