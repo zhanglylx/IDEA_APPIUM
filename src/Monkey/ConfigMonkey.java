@@ -14,10 +14,10 @@ import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import AppTest.Devices;
 import AppiumMethod.DevicesInfo;
 import AppiumMethod.InstallAppiumApk;
 import AppiumMethod.Tooltip;
-import AppiumMethod.installAPPPackage;
 
 public class ConfigMonkey {
     private static ConfigMonkey cf;
@@ -272,9 +272,9 @@ public class ConfigMonkey {
                     System.out.println("获取到的" + fileName + "文件路径:" + msg);
                     this.apkPath = msg;
                     // 卸载包
-                    installAPPPackage.uninstallPackge(this.packageName);
+                    Devices.installAPPPackage.uninstallPackge(this.packageName);
                     // 安装包
-                    installAPPPackage.installPackage(this.apkPath, this.packageName);
+                    Devices.installAPPPackage.installPackage(this.apkPath, this.packageName);
                     return;
                 }
             }

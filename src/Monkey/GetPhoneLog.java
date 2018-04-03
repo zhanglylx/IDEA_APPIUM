@@ -1,8 +1,8 @@
 package Monkey;
 
+import AppTest.Devices;
 import AppiumMethod.Config;
 import AppiumMethod.Tooltip;
-import AppiumMethod.installAPPPackage;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.BufferedReader;
@@ -25,7 +25,7 @@ public class GetPhoneLog {
             if (ConfigMonkey.devicesName == null) {
                 Tooltip.errHint("GetPhoneLog_getLog获取devicesName为空");
             }
-            installAPPPackage.isPuth(Config.ADB_PUTH);
+            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
             Process pro = Runtime.getRuntime().exec(Config.ADB_PUTH + " -s " + ConfigMonkey.devicesName + " logcat");
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
             String msg = null;

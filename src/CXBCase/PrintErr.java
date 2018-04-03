@@ -9,7 +9,7 @@ public class PrintErr {
     public  PrintErr(String caseName){
 
         this.caseName = caseName;
-        devices = Devices.getDevices("错误");
+        devices = Devices.getDevices(caseName);
     }
     public void print(String err){
         System.out.println(caseName+"["+err+"]：失败");

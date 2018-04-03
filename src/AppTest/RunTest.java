@@ -196,7 +196,7 @@ public class RunTest {
             addList("参数不合法：" + e);
         }
         addList("x:" + x + " ; y:" + y);
-        devices.clickScreen(x, y, 100);
+        devices.clickScreen(x, y);
     }
 
     /**

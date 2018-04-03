@@ -1,6 +1,8 @@
 package AppiumMethod;
 
 
+import AppTest.Devices;
+
 import java.io.*;
 import java.util.ArrayList;
 import javax.swing.filechooser.FileSystemView;
@@ -125,10 +127,10 @@ public class Config {
         }
 
 
-        if (installAPPPackage.isChinese(APP_FILE_NAME) || !APP_FILE_NAME.matches("[0-9A-Za-z-()_]+(\\.apk)")) {
+        if (Devices.installAPPPackage.isChinese(APP_FILE_NAME) || !APP_FILE_NAME.matches("[0-9A-Za-z-()_]+(\\.apk)")) {
             print(APP_FILE_NAME);
         }
-        if (installAPPPackage.isChinese(IMAGES_B)) {
+        if (Devices.installAPPPackage.isChinese(IMAGES_B)) {
             print(IMAGES_B);
         }
     }

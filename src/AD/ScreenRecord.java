@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+import AppTest.Devices;
 import AppiumMethod.*;
-import Monkey.ConfigMonkey;
-import Monkey.RunMonkey;
+
 import javax.swing.*;
 
 /**
@@ -31,7 +31,7 @@ public class ScreenRecord extends Thread {
     public static String[] adb(String code) {
         String[] str = new String[0];
         try {
-            installAPPPackage.isPuth(Config.ADB_PUTH);
+            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
             System.out.println(Config.ADB_PUTH + " " + code);
             Process pro = Runtime.getRuntime().exec(Config.ADB_PUTH + " " + code);
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getErrorStream()));

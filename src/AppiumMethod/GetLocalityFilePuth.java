@@ -1,5 +1,7 @@
 package AppiumMethod;
 
+import AppTest.Devices;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -30,7 +32,7 @@ public class GetLocalityFilePuth {
                     if(matcher.find()){
                         System.out.println("获取到的"+fileName+"文件路径:"+msg);
                         //检查文件路径是否合法
-                        installAPPPackage.isPuth(msg);
+                        Devices.installAPPPackage.isPuth(msg);
                         return msg;
                     }
 

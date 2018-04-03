@@ -1,5 +1,7 @@
 package AppiumMethod;
 
+import AppTest.Devices;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +17,7 @@ public class  DevicesInfo {
     private String devicesName;
     private String devicesVersion;
     private static DevicesInfo devicesInfo;
-
+    private String devicesBrand;
     private DevicesInfo() {
         System.out.println("开始执行DevicesInfo");
         // 检查设备是否链接
@@ -38,7 +40,6 @@ public class  DevicesInfo {
         System.out.println("开始获取设备名称....");
         int j = 0;
         String[] adb = adb("devices");
-
         err(adb, "devices");
         for (String s : adb) {
 
@@ -61,9 +62,17 @@ public class  DevicesInfo {
         }
         // 获取设备版本
         getDvicesVersion();
-
+        //获取厂家名称
+        getIphoneBrand();
     }
-
+    private void  getIphoneBrand(){
+        String[] adb = adb(" devices -l");
+        for(String s : adb){
+            if(s.contains("model")){
+                devicesBrand = s;
+            }
+        }
+    }
     public static  void err(String[] adb, String errName) {
         if(errName ==null){
             errName = "errName没有传入任何参数";
@@ -95,7 +104,7 @@ public class  DevicesInfo {
     public static String[] adb(String code) {
         String[] str = new String[0];
         try {
-            installAPPPackage.isPuth(Config.ADB_PUTH);
+            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
             System.out.println(Config.ADB_PUTH + " " + code);
             Process pro = Runtime.getRuntime().exec(Config.ADB_PUTH + " " + code);
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
@@ -125,9 +134,9 @@ public class  DevicesInfo {
         }
         if (Config.PHONE_REPLACE_PACKAGE) {
             // 卸载包
-            installAPPPackage.uninstallPackge(Config.APP_PACKAGE);
+            Devices.installAPPPackage.uninstallPackge(Config.APP_PACKAGE);
             // 安装包
-            installAPPPackage.installPackage(installAPPPackage.findPackge(), Config.APP_PACKAGE);
+            Devices.installAPPPackage.installPackage(Devices.installAPPPackage.findPackge(), Config.APP_PACKAGE);
         } else {
             if (!b) {
                 Tooltip.errHint("手机中没有安装包：" + Config.APP_PACKAGE );
@@ -138,7 +147,9 @@ public class  DevicesInfo {
     public String getDevicesName() {
         return devicesName;
     }
-
+    public String getDevicesBrand(){
+        return devicesBrand;
+    }
     public String getDevicesVersion() {
         return devicesVersion;
     }

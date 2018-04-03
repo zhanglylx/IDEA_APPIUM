@@ -47,6 +47,15 @@ public class ScreenshotsOperation {
             if(!CheckFileExists()) this.fileName = System.currentTimeMillis()+fileName;
         }
         try {
+            fileName = fileName.replace(":","-");
+            fileName = fileName.replace("<","《");
+            fileName = fileName.replace(">","》");
+            fileName = fileName.replace("*","x");
+            fileName = fileName.replace("?","问号替换");
+            fileName = fileName.replace("|","-");
+            fileName = fileName.replace("\"","‘");
+            fileName = fileName.replace("\\","l");
+            fileName = fileName.replace("/","l");
             FileUtils.copyFile(Image, new File(file + File.separator + fileName));
             if (!CheckFileExists()) {
                 RunTest.addList("截图失败:" + fileName,1);

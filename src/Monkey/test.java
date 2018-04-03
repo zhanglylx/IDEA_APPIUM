@@ -1,7 +1,7 @@
 package Monkey;
 
+import AppTest.Devices;
 import AppiumMethod.Config;
-import AppiumMethod.installAPPPackage;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class test {
     public static void main(String[] args) {
         try {
-            installAPPPackage.isPuth(Config.ADB_PUTH);
+            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
             Process pro = Runtime.getRuntime().exec(Config.ADB_PUTH + " logcat  >/sdcard/moyLog.txt" );
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
             String msg = null;

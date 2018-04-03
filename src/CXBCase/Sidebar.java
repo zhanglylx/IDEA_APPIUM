@@ -10,27 +10,28 @@ import org.openqa.selenium.By;
  * 2.检查侧边栏中的赚积分、积分商城、积分记录、获赠记录、今日推荐和关于我们按钮是否存在和点击后的页面title是否展示
  */
 public class Sidebar {
+    int startX, startY, endX, endY, time, slideNumber;
     Devices devices;
     PrintErr print;
     String caseName;
-
     public Sidebar(String caseName) {
         this.caseName = caseName;
         devices = Devices.getDevices(caseName);
         print = new PrintErr(caseName);
+
+    }
+    public void startCase(){
         Logs.recordLogs(caseName,runSidebar());
     }
 
     private boolean runSidebar() {
         //点击书架左上角侧边栏按钮
         devices.clickfindElement(By.xpath("//android.widget.ImageButton[contains(@index,0)]"));
-        devices.snapshot("点击书架左上角侧边栏按钮");
         /**
          *   验证侧边栏是否展示
          */
         if (!examineMenu()) {
             print.print("验证侧边栏是否展示");
-            devices.snapshot("验证侧边栏是否展示");
             return false;
         }
         /**
@@ -78,12 +79,10 @@ public class Sidebar {
     private boolean verificationEarnPoints(String name, int index) {
         //点击name
         if (!devices.clickfindElement("new UiSelector().text(\"" + name + "\")")) {
-            devices.snapshot("侧边栏" + name + "按钮不存在" + name);
             print.print("侧边栏" + name + "按钮不存在");
             return false;
         }
         devices.sleep(2000);
-        devices.snapshot("点击" + name);
         /**
          * 验证页面是否展示
          */
@@ -91,7 +90,6 @@ public class Sidebar {
                 By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
                 || devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
             print.print(name + "页面是否展示");
-            devices.snapshot(name + "页面展示失败");
             return false;
         }
         //点击返回按钮
@@ -103,23 +101,15 @@ public class Sidebar {
 
     private boolean dayTimeNight() {
         if (!"夜间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))) {
-            print.print("检查夜间模式按钮是否存在");
-            devices.snapshot("检查夜间模式按钮是否存在");
-            ;
+            print.print("检查夜间模式按钮是否存在");;
             return false;
         }
         //点击白夜间按钮
         devices.clickfindElement(By.id("com.mianfeia.book:id/txt_eye_mode"));
-        devices.snapshot("点击夜间模式");
-        ;
         if (!"日间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))) {
-            print.print("检查日间模式按钮是否存在");
-            devices.snapshot("检查日间模式按钮是否存在");
-            ;
+            print.print("检查日间模式按钮是否存在");;
             return false;
         }
-        devices.snapshot("检查日间模式按钮是否存在");
-        ;
         //置回默认值
         devices.clickfindElement(By.id("com.mianfeia.book:id/txt_eye_mode"));
         return true;
@@ -136,10 +126,8 @@ public class Sidebar {
                 By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
                 || devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
             print.print(name + "页面是否展示");
-            devices.snapshot(name + "页面展示失败");
             return false;
         }
-        devices.snapshot("检查个人资料页显示正确");
         return true;
     }
 }

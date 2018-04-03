@@ -6,10 +6,10 @@ import java.util.Arrays;
 import java.util.Date;
 import javax.swing.*;
 
+import AppTest.Devices;
 import AppiumMethod.Config;
 import AppiumMethod.DevicesInfo;
 import AppiumMethod.Tooltip;
-import AppiumMethod.installAPPPackage;
 
 /**
  * 作者:张连宇
@@ -231,7 +231,7 @@ public class RunMonkey {
     public static void adbs(String code) {
         String[] str = new String[0];
         try {
-            installAPPPackage.isPuth(Config.ADB_PUTH);
+            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
             Process pro = Runtime.getRuntime().exec(Config.ADB_PUTH + " " + code);
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
             String msg;
@@ -265,7 +265,7 @@ public class RunMonkey {
     public static String[] adb(String code) {
         String[] str = new String[0];
         try {
-            installAPPPackage.isPuth(Config.ADB_PUTH);
+            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
             Process pro = Runtime.getRuntime().exec(Config.ADB_PUTH + " " + code);
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
             String msg;
