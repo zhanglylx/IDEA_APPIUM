@@ -1,34 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="增加阅读页用例">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/Devices.class" afterPath="$PROJECT_DIR$/out/production/appium/AppTest/Devices.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/RunTest.class" afterPath="$PROJECT_DIR$/out/production/appium/AppTest/RunTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/DevicesInfo.class" afterPath="$PROJECT_DIR$/out/production/appium/AppiumMethod/DevicesInfo.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/ScreenshotsOperation.class" afterPath="$PROJECT_DIR$/out/production/appium/AppiumMethod/ScreenshotsOperation.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/PrintErr.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/PrintErr.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/RunCase.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/RunCase.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/Sidebar.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/Sidebar.class" />
-      <change beforePath="$PROJECT_DIR$/src/AD/ScreenRecord.java" afterPath="$PROJECT_DIR$/src/AD/ScreenRecord.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppTest/Devices.java" afterPath="$PROJECT_DIR$/src/AppTest/Devices.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppTest/Logs.java" afterPath="$PROJECT_DIR$/src/AppTest/Logs.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppTest/RunTest.java" afterPath="$PROJECT_DIR$/src/AppTest/RunTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppiumMethod/Config.java" afterPath="$PROJECT_DIR$/src/AppiumMethod/Config.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppiumMethod/DevicesInfo.java" afterPath="$PROJECT_DIR$/src/AppiumMethod/DevicesInfo.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppiumMethod/GetLocalityFilePuth.java" afterPath="$PROJECT_DIR$/src/AppiumMethod/GetLocalityFilePuth.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppiumMethod/ScreenshotsOperation.java" afterPath="$PROJECT_DIR$/src/AppiumMethod/ScreenshotsOperation.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppiumMethod/installAPPPackage.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/CXBCase/CXBConfig.java" afterPath="$PROJECT_DIR$/src/CXBCase/CXBConfig.java" />
-      <change beforePath="$PROJECT_DIR$/src/CXBCase/PrintErr.java" afterPath="$PROJECT_DIR$/src/CXBCase/PrintErr.java" />
-      <change beforePath="$PROJECT_DIR$/src/CXBCase/Read.java" afterPath="$PROJECT_DIR$/src/CXBCase/Read.java" />
-      <change beforePath="$PROJECT_DIR$/src/CXBCase/RunCase.java" afterPath="$PROJECT_DIR$/src/CXBCase/RunCase.java" />
-      <change beforePath="$PROJECT_DIR$/src/CXBCase/Sidebar.java" afterPath="$PROJECT_DIR$/src/CXBCase/Sidebar.java" />
-      <change beforePath="$PROJECT_DIR$/src/Monkey/ConfigMonkey.java" afterPath="$PROJECT_DIR$/src/Monkey/ConfigMonkey.java" />
-      <change beforePath="$PROJECT_DIR$/src/Monkey/GetPhoneLog.java" afterPath="$PROJECT_DIR$/src/Monkey/GetPhoneLog.java" />
-      <change beforePath="$PROJECT_DIR$/src/Monkey/RunMonkey.java" afterPath="$PROJECT_DIR$/src/Monkey/RunMonkey.java" />
-      <change beforePath="$PROJECT_DIR$/src/Monkey/test.java" afterPath="$PROJECT_DIR$/src/Monkey/test.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,8 +78,8 @@
       <file leaf-file-name="Read.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CXBCase/Read.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="133" column="39" lean-forward="true" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
+            <state relative-caret-position="-69">
+              <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1178#1179#0" expanded="true" />
@@ -217,7 +191,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="35" />
     <option name="y" value="60" />
     <option name="width" value="1346" />
@@ -481,15 +455,15 @@
       <workItem from="1522635142406" duration="403000" />
       <workItem from="1522635743745" duration="315000" />
       <workItem from="1522657284655" duration="787000" />
-      <workItem from="1522722528694" duration="144000" />
+      <workItem from="1522722528694" duration="806000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117587000" />
+    <option name="totallyTimeSpent" value="118249000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -500,7 +474,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15672913" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36626917" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -561,7 +535,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="增加阅读页用例" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加阅读页用例" />
+    <MESSAGE value="修改设置方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改设置方法" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1002,8 +977,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CXBCase/Read.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="133" column="39" lean-forward="true" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
+        <state relative-caret-position="-69">
+          <caret line="84" column="18" lean-forward="true" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1178#1179#0" expanded="true" />
