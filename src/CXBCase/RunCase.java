@@ -11,11 +11,12 @@ public class RunCase {
         Thread.sleep(5000);
         devices.clickfindElement(By.id("com.mianfeia.book:id/guide3"));
         devices.clickfindElement(By.id("com.mianfeia.book:id/tab_shelf_view"));
+//        initialize(devices);
+//        new Sidebar("测试侧边栏").startCase();
+//        initialize(devices);
+//        new Read("阅读页").startCase();;
         initialize(devices);
-        new Sidebar("测试侧边栏").startCase();
-        initialize(devices);
-        new Read("阅读页").startCase();;
-
+        new Search("搜索").startCase();
 
 
 

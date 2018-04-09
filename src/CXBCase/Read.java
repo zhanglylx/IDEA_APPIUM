@@ -89,7 +89,7 @@ public class Read extends Sidebar {
          * 滑动到最暗，截图，通过人工检查最暗是否生效
          * 点击跟随系统亮度，截图，通过人工检查跟随系统亮度是否生效
          */
-//        if (!luminance()) return false;
+        if (!luminance()) return false;
         /**
          * 检查进度
          * 点击上一章，根据配置中设置的页数进行翻章，然后打开目录，检查配置中的上一章是否存在
@@ -97,7 +97,7 @@ public class Read extends Sidebar {
          * 向上滑动进度，然后关闭设置页，点击页面左侧，然后打开目录，检查配置中的上一章是否存在
          * 向下滑动进度，根据上一章翻页数+1，然后打开目录，检查配置中的下一章是否存在
          */
-//        if (!progress()) return false;
+        if (!progress()) return false;
         /**
          * 翻页+设置+末页章节推送
          * 向左向右随机翻页，设置中的随机选择，循环到章节末尾，检查末页章节是否存在
@@ -169,6 +169,7 @@ public class Read extends Sidebar {
      * @return
      */
     private boolean clickChapter() {
+        devices.sleep(1500);
         System.out.println("点击书架中的书籍:"+CXBConfig.BOOK_NAME);
         if (!devices.clickfindElement("new UiSelector().text(\"" + CXBConfig.BOOK_NAME + "\")")) {
             print.print("检查书架中的" + CXBConfig.BOOK_NAME);
@@ -199,10 +200,10 @@ public class Read extends Sidebar {
                 list.clear();
                 listClear = true;
             }
-            if (styleStr == null) styleStr = style[0];
+            if (styleStr == null) styleStr = style[random.nextInt(style.length)];
             if (characterStr == null) characterStr = character[random.nextInt(character.length)];
-            if (pageModeStr == null) pageModeStr = pageMode[0];
-            if (volumeStr == null) volumeStr = volume[0];
+            if (pageModeStr == null) pageModeStr = pageMode[random.nextInt(pageMode.length)];
+            if (volumeStr == null) volumeStr = volume[random.nextInt(volume.length)];
             ckickStyle(styleStr);
             clickPageMode(pageModeStr);
             clickCharacterA(characterStr);
@@ -269,17 +270,23 @@ public class Read extends Sidebar {
                     print.print("VIP页检查");
                     return false;
                 }
-                for (int i = 0; i < random.nextInt(10)+30; i++) {
+                for (int i = 0; i < (random.nextInt(10)+1)*10; i++) {
                     if( chapterNotPush()!=2) break;
                     //点击右滑动
-                    devices.clickScreen((int) (devices.getWidth() * 0.9),
-                            randHight);
+                    if(random.nextInt(2)==0) {
+                        devices.clickScreen((int) (devices.getWidth() * 0.9),
+                                randHight);
+                        System.out.println("点击右滑动");
+                    }else{
+                        devices.swipeToLeft((random.nextInt(10) + 1) * 100);
+                        System.out.println("swipeToRight");
+                    }
                     slideRight++;
                     if (clickReadmore() == 0) {
                         print.print("VIP页检查");
                         return false;
                     }
-                    System.out.println("点击右滑动");
+
                 }
             }
             if (clickReadmore() == 0) {
@@ -298,6 +305,7 @@ public class Read extends Sidebar {
                 devices.backspace();
                 //点击书架
                 if (!clickChapter()) return false;
+                devices.sleep(1000);
                 //滑动<---
                 devices.swipeToLeft((random.nextInt(10) + 1) * 100);
                 devices.sleep(1000);
@@ -311,6 +319,7 @@ public class Read extends Sidebar {
                 devices.clickfindElement(By.id(Unsealed_push_title_right_view_id));
                 //点击书架中的书籍
                 if (!clickChapter()) return false;
+                devices.sleep(1000);
                 //滑动<---
                 devices.swipeToLeft((random.nextInt(10) + 1) * 100);
                 devices.sleep(1000);
@@ -320,9 +329,6 @@ public class Read extends Sidebar {
                     print.print("检查末章推送");
                     return false;
                 }
-                //点击右滑动
-                devices.clickScreen((int) (devices.getWidth() * 0.9),
-                        randHight);
                 devices.clickfindElement(Unsealed_push_title_right_view_back);
                 if (!clickChapter()) return false;
                 break;
@@ -766,10 +772,9 @@ public class Read extends Sidebar {
         }
         devices.sleep(4000);
         //点击最后一章节
-        String xy = devices.getXY(
+        int[] xy = devices.getXY(
                 By.xpath("//android.widget.TextView[contains(@text,\"" + CXBConfig.BOOK_CHAPTER_END + "\")]"));
-        devices.clickScreen(Integer.parseInt(xy.substring(0, xy.indexOf(","))),
-                Integer.parseInt(xy.substring(xy.indexOf(",") + 1, xy.length())));
+        devices.clickScreen(xy[0], xy[1]);
         devices.sleep(1000);
         devices.snapshot("请确认点击" + catalog + "的最后一章：" + CXBConfig.BOOK_CHAPTER_END);
         /**
@@ -842,7 +847,6 @@ public class Read extends Sidebar {
      */
     private int clickReadmore(String name) {
         if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog))) {
-
             if (!CXBConfig.BOOK_CHAPTER_END.equals(devices.getText(By.id("com.mianfeia.book:id/chapter_name"))) &&
                     devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1))) {
                 return 0;

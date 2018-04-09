@@ -14,14 +14,16 @@ public class Sidebar {
     Devices devices;
     PrintErr print;
     String caseName;
+
     public Sidebar(String caseName) {
         this.caseName = caseName;
         devices = Devices.getDevices(caseName);
         print = new PrintErr(caseName);
 
     }
-    public void startCase(){
-        Logs.recordLogs(caseName,runSidebar());
+
+    public void startCase() {
+        Logs.recordLogs(caseName, runSidebar());
     }
 
     private boolean runSidebar() {
@@ -43,7 +45,6 @@ public class Sidebar {
         if (!verificationEarnPoints("我的包月", 4)) return false;
         if (!verificationEarnPoints("获赠记录", 5)) return false;
         if (!verificationEarnPoints("今日推荐", 6)) return false;
-//        if (!verificationEarnPoints("美女直播",8)) return;
         if (!verificationEarnPoints("关于我们", 9)) return false;
         /**
          * 检查日夜间模式
@@ -52,7 +53,9 @@ public class Sidebar {
         /**
          * 检查个人资料
          */
-        if(!userData("个人资料"))return false;
+        if (!userData("个人资料")) return false;
+        //检查积分规则
+        if (!integrationRule("积分规则")) return false;
         return true;
     }
 
@@ -83,15 +86,63 @@ public class Sidebar {
             return false;
         }
         devices.sleep(2000);
-        /**
-         * 验证页面是否展示
-         */
-        if (!devices.isElementExsitAndroid(
-                By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
-                || devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
-            print.print(name + "页面是否展示");
-            return false;
+        if ("积分记录".equals(name)) {
+            int i = 0;
+            if (!devices.clickfindElement(By.xpath("//android.widget.TextView[contains(@text,\"兑换记录\")]"))) i++;
+            devices.sleep(1500);
+            if (!chickShow(name)) return false;
+            if (!devices.clickfindElement(By.xpath("//android.widget.TextView[contains(@text,\"图书记录\")]"))) i++;
+            devices.sleep(1500);
+            if (!chickShow(name)) return false;
+            if (!devices.clickfindElement(By.xpath("//android.widget.TextView[contains(@text,\"获得记录\")]"))) i++;
+            devices.sleep(1500);
+            if (!chickShow(name)) return false;
+            if (i != 0) {
+                print.print("点击积分记录中的tab按钮");
+                return false;
+            }
+        } else if ("获赠记录".equals(name)) {
+            int i = 0;
+            if (!devices.isElementExsitAndroid(By.className("android.webkit.WebView"))) i++;
+            if (i != 0) {
+                print.print("点击获赠记录中的tab按钮");
+                return false;
+            }
+        } else if ("今日推荐".equals(name)) {
+            if (!devices.isElementExsitAndroid(By.className("android.webkit.WebView"))) {
+                print.print("检查" + name + "中的WebView");
+                return false;
+            }
+            if (!chickShow(name)) return false;
+        } else if ("我的包月".equals(name)) {
+            if ("您还未开通包月哦".equals(devices.getText(By.id("com.mianfeia.book:id/monthly_header_title_view")))) {
+                if (!"立即开通，享受免广告阅读".equals(devices.getText(By.id("com.mianfeia.book:id/monthly_header_pay_view")))) {
+                    print.print("检查" + name + "中的包月记录:立即开通，享受免广告阅读按钮");
+                    return false;
+                }
+            } else {
+                print.print("检查" + name + "中的包月记录:立即开通，享受免广告阅读按钮");
+                return false;
+            }
+            if (!devices.isElementExsitAndroid(By.xpath("//android.widget.TextView[contains(@text,\"包月记录\")]"))) {
+                print.print("检查" + name + "中的包月记录");
+                return false;
+            }
+            if (!chickShow(name)) return false;
         }
+
+
+        if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
+            if ("积分记录".equals(name) && (!"赚取积分".equals(devices.getText(By.id("com.mianfeia.book:id/empty_view_btn")))
+                    || !"还没有获得任何积分，快去赚取吧".equals(devices.getText(By.id("com.mianfeia.book:id/empty_view_tip")))
+                    || !"0\n今日已获得积分".equals(devices.getText(By.id("com.mianfeia.book:id/integral_count_view"))))) {
+                print.print(name + "中的赚取积分提示信息不正确");
+                return false;
+            }
+        }
+
+        if (!chickShow(name)) return false;
+
         //点击返回按钮
         devices.backspace();
         devices.sleep(1000);
@@ -99,15 +150,36 @@ public class Sidebar {
 
     }
 
+    private boolean chickShow(String name) {
+        /**
+         * 验证页面是否展示
+         */
+        if (!devices.isElementExsitAndroid(
+                By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
+                || !devices.isElementExsitAndroid(By.className("android.widget.ImageButton"))) {
+            print.print(name + "页面是否展示");
+            return false;
+        }
+        if(!"积分记录".equals(name)){
+            if((devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn")))){
+                print.print(name + "页面是否展示");
+                return false;
+            }
+        }
+        return true;
+    }
+
     private boolean dayTimeNight() {
         if (!"夜间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))) {
-            print.print("检查夜间模式按钮是否存在");;
+            print.print("检查夜间模式按钮是否存在");
+            ;
             return false;
         }
         //点击白夜间按钮
         devices.clickfindElement(By.id("com.mianfeia.book:id/txt_eye_mode"));
         if (!"日间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))) {
-            print.print("检查日间模式按钮是否存在");;
+            print.print("检查日间模式按钮是否存在");
+            ;
             return false;
         }
         //置回默认值
@@ -117,10 +189,15 @@ public class Sidebar {
 
     /**
      * 个人资料
+     *
      * @param name
      * @return
      */
-    private boolean userData(String name){
+    private boolean userData(String name) {
+        if ("登录".equals(devices.getText(By.id("com.mianfeia.book:id/navi_name_view")))) {
+            print.print(name + "中的侧边栏按钮为:登录");
+            return false;
+        }
         devices.clickfindElement(By.id("com.mianfeia.book:id/head_layout"));
         if (!devices.isElementExsitAndroid(
                 By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
@@ -128,6 +205,22 @@ public class Sidebar {
             print.print(name + "页面是否展示");
             return false;
         }
+        devices.backspace();
+        return true;
+    }
+
+    /**
+     * 积分规则
+     */
+    private boolean integrationRule(String name) {
+        //com.mianfeia.book:id/navi_integral_view连续登录id
+        if (!devices.getText(By.id("com.mianfeia.book:id/navi_integral_view")).contains("连续登录")) {
+            print.print("检查" + name + "中的连续登录失败");
+        }
+        //点击连续登录
+        devices.clickfindElement(By.id("com.mianfeia.book:id/navi_integral_view"));
+        devices.sleep(1500);
+        if (!chickShow(name)) return false;
         return true;
     }
 }

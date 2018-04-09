@@ -6,7 +6,7 @@ public class CXBConfig {
      */
     public static final String BOOK_NAME = "闪婚老公太凶猛";
     //请配置目录页最后一页中的章节
-    public static final String BOOK_CHAPTER_END = "老公太凶猛1418";
+    public static final String BOOK_CHAPTER_END = "老公太凶猛1418";//18
     //点击上一章次数,与BOOKCHAPTERENDLAST关联,因上一章和下一章按钮存在重页问题，顾将参数配置余量
     public static  int LAST_CHAPTER_NUM = 4+3;
     //BOOKCHAPTEREND的上一章，与LASTCHAPTERNUM关联
