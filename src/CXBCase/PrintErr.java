@@ -12,7 +12,16 @@ public class PrintErr {
         devices = Devices.getDevices(caseName);
     }
     public void print(String err){
+        try{
+            p(err);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
+    private void p(String err) throws Exception {
         System.out.println(caseName+"["+err+"]：失败");
         devices.snapshot(caseName+"["+err+"]：失败");
+        throw new Exception(err+" : 错误日志");
     }
 }
