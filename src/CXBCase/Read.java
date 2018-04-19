@@ -3,20 +3,22 @@ package CXBCase;
 import AppTest.Logs;
 import org.openqa.selenium.By;
 
+import java.lang.ref.PhantomReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Read extends Sidebar {
-    private String schedule = "进度";
-    private String catalog = "目录";
-    private String luminance = "亮度";
-    private String bookmark = "书签";
-    private String setting = "设置";
-    private String[] style = {"米色", "护眼", "纸质", "宣纸", "木纹", "羊皮", "蓝灰", "粉色"};
-    private String[] character = {"A-", "A+"};
-    private String[] pageMode = {"仿真", "滑动", "移动"};
-    private String[] volume = {"开启", "关闭"};
+public class Read extends StartCase {
+    public static final String schedule = "进度";
+    public static final String catalog = "目录";
+    public static final String luminance = "亮度";
+    public static final String bookmark = "书签";
+    public static final String setting = "设置";
+    public static final String download = "下载";
+    private final String[] style = {"米色", "护眼", "纸质", "宣纸", "木纹", "羊皮", "蓝灰", "粉色"};
+    private final String[] character = {"A-", "A+"};
+    private final String[] pageMode = {"仿真", "滑动", "移动"};
+    private final String[] volume = {"开启", "关闭"};
     //使用过的数组中的元素
     private List<String> list;
 
@@ -57,24 +59,17 @@ public class Read extends Sidebar {
         super(caseName);
     }
 
-    @Override
-    public void startCase() {
-        Logs.recordLogs(caseName, runRead());
-    }
-
-    private boolean runRead() {
-        if (!clickChapter()) return false;
+    public boolean caseMap() {
+        System.out.println(devices.getPageXml());
+        if ("阅读页".equals(this.caseName)) if (!clickChapter()) return false;
         devices.sleep(2000);
-        /**
-         * 关闭视听弹出框
-         */
+        //关闭视听框
         if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/btn_left"))) {
             devices.clickfindElement(By.id("com.mianfeia.book:id/btn_left"));
             devices.sleep(1000);
             devices.clickScreen(devices.getWidth() / 2, devices.getHeight() / 2);
         }
         devices.sleep(1000);
-
         /**
          * 检查目录
          * 吊起设置页，检查目录按钮是否存在
@@ -83,6 +78,7 @@ public class Read extends Sidebar {
          * 翻页到目录最底页，检查配置中的最后一页章节是否存在
          */
         if (!checkCatalogue()) return false;
+        if (!"阅读页".equals(this.caseName)) return true;
         /**
          * 检查亮度
          * 滑动到最亮，截图，通过人工检查最亮是否生效
@@ -104,8 +100,6 @@ public class Read extends Sidebar {
          * 存在章节推送后检查章节推送页和章节推送页返回到书架的三种方式
          */
         if (!pageTurning()) return false;
-
-
         return true;
 
     }
@@ -146,31 +140,32 @@ public class Read extends Sidebar {
      */
     private int chapterNotPush() {
         System.out.print("执行检查末章推送：");
-        int i=1;
+        int i = 1;
         if (devices.isElementExsitAndroid(By.id(Unsealed_push_frame))) {
             devices.sleep(3000);
-            if (!Unsealed_push_title.equals(devices.getText(By.className(Unsealed_push_title_class)))) i= 0;
-            if (!devices.isElementExsitAndroid(By.id(Unsealed_push_title_right_view_id))) i= 0;
-            if (!devices.isElementExsitAndroid(Unsealed_push_title_right_view_back)) i= 0;
-            if(i==0){
-                System.out.println("未章推送检测不成功:"+i);
+            if (!Unsealed_push_title.equals(devices.getText(By.className(Unsealed_push_title_class)))) i = 0;
+            if (!devices.isElementExsitAndroid(By.id(Unsealed_push_title_right_view_id))) i = 0;
+            if (!devices.isElementExsitAndroid(Unsealed_push_title_right_view_back)) i = 0;
+            if (i == 0) {
+                System.out.println("未章推送检测不成功:" + i);
                 return i;
             }
-            System.out.println("末章推送检查成功:"+i);
+            System.out.println("末章推送检查成功:" + i);
             return i;
         }
-        i=2;
-        System.out.println("没有出现末章推送"+i);
+        i = 2;
+        System.out.println("没有出现末章推送" + i);
         return i;
     }
 
     /**
      * 点击书架中的书籍
+     *
      * @return
      */
     private boolean clickChapter() {
         devices.sleep(1500);
-        System.out.println("点击书架中的书籍:"+CXBConfig.BOOK_NAME);
+        System.out.println("点击书架中的书籍:" + CXBConfig.BOOK_NAME);
         if (!devices.clickfindElement("new UiSelector().text(\"" + CXBConfig.BOOK_NAME + "\")")) {
             print.print("检查书架中的" + CXBConfig.BOOK_NAME);
             return false;
@@ -231,7 +226,7 @@ public class Read extends Sidebar {
                     //点击音量+
                     devices.clickVolume("+");
                     System.out.println("clickVolume:+");
-                    if(!volumeBoolean){
+                    if (!volumeBoolean) {
                         //滑动--->
                         devices.swipeToRight((random.nextInt(10) + 1) * 100);
                         slideLeft++;
@@ -242,7 +237,7 @@ public class Read extends Sidebar {
                     //点击音量-
                     devices.clickVolume("-");
                     System.out.println("clickVolume:-");
-                    if(!volumeBoolean){
+                    if (!volumeBoolean) {
                         //滑动<---
                         devices.swipeToLeft((random.nextInt(10) + 1) * 100);
                         slideRight++;
@@ -265,19 +260,19 @@ public class Read extends Sidebar {
             }
 
             //用于提高速度
-            if(listClear) {
+            if (listClear) {
                 if (clickReadmore() == 0) {
                     print.print("VIP页检查");
                     return false;
                 }
-                for (int i = 0; i < (random.nextInt(10)+1)*10; i++) {
-                    if( chapterNotPush()!=2) break;
+                for (int i = 0; i < (random.nextInt(10) + 1) * 10; i++) {
+                    if (chapterNotPush() != 2) break;
                     //点击右滑动
-                    if(random.nextInt(2)==0) {
+                    if (random.nextInt(2) == 0) {
                         devices.clickScreen((int) (devices.getWidth() * 0.9),
                                 randHight);
                         System.out.println("点击右滑动");
-                    }else{
+                    } else {
                         devices.swipeToLeft((random.nextInt(10) + 1) * 100);
                         System.out.println("swipeToRight");
                     }
@@ -362,9 +357,9 @@ public class Read extends Sidebar {
         int n = random.nextInt(50) + 1;
         if ("A+".equals(Character)) {
             if (random.nextInt(10) > 2) {
-                System.out.println("点击字号A+:"+n);
+                System.out.println("点击字号A+:" + n);
                 for (int i = 0; i < n; i++) {
-                            devices.clickScreen((int) (devices.getWidth() * 0.9)
+                    devices.clickScreen((int) (devices.getWidth() * 0.9)
                             , (int) (devices.getHeight() * 0.7));
                 }
             } else {
@@ -376,8 +371,8 @@ public class Read extends Sidebar {
 
         } else {
             if (random.nextInt(10) > 2) {
-                System.out.println("点击字号A-:"+n);
-                for (int i = 0; i <n; i++) {
+                System.out.println("点击字号A-:" + n);
+                for (int i = 0; i < n; i++) {
                     devices.clickScreen((int) (devices.getWidth() * 0.25)
                             , (int) (devices.getHeight() * 0.7));
                 }
@@ -555,7 +550,7 @@ public class Read extends Sidebar {
         //滑动进度条由右到左
         style(schedule);
         time = 10000;
-        for (int i = 0; i < CXBConfig.LAST_CHAPTER_NUM+1; i++) {
+        for (int i = 0; i < CXBConfig.LAST_CHAPTER_NUM + 1; i++) {
             startX = (int) (devices.getWidth() * 0.7);
             startY = (int) (devices.getHeight() * 0.836);
             endX = (int) (devices.getWidth() * 0.25);
@@ -630,9 +625,9 @@ public class Read extends Sidebar {
                 print.print("向下一页翻页检查VIP页");
                 return false;
             }
-            style(schedule);
+            if(!style(schedule))return false;
         }
-        style(catalog);
+        if(!style(catalog))return false;
         //检查目录中的章节是否存在BOOK_CHAPTER_END_NEXT
         if (!devices.isElementExsitAndroid(
                 "new UiSelector().text(\"" + CXBConfig.BOOK_CHAPTER_END_NEXT + "\")")) {
@@ -677,7 +672,7 @@ public class Read extends Sidebar {
     /**
      * 打开设置
      */
-    private void setting() {
+    private boolean setting() {
         int i = 0;
         if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/RelativeLayout_Item"))) {
             devices.clickScreen((int) (devices.getWidth() / 2), (int) (devices.getHeight() / 2));
@@ -689,9 +684,22 @@ public class Read extends Sidebar {
             } else {
                 break;
             }
-            if (i > 10) return;
+            if (i > 10) {
+                print.print("找不到设置");
+                return false;
+            }
             i++;
         }
+        return true;
+    }
+
+
+    public boolean checkChapterFirst() {
+        if (!CXBConfig.BOOK_CHAPTER_FIRST.equals(devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle")))) {
+            print.print("检查目录第一章节");
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -711,6 +719,10 @@ public class Read extends Sidebar {
         }
         //点击目录
         devices.clickfindElement(By.id(sidebar_catalog_id));
+        devices.sleep(2000);
+        //检查第一个章节是否正确
+        if (!checkChapterFirst()) return false;
+        if (!"阅读页".equals(this.caseName)) return true;
         /**
          * 滑动目录由上而下到底部
          */
@@ -740,13 +752,13 @@ public class Read extends Sidebar {
                 count += CXBConfig.BOOK_CATALOGUE_SLIDE_COUNT_index;
                 //检查当前目录是否存在
                 chaptertitle = devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
-                //检查循环超过2000次或者目录是否存在
+                //检查循环超过slideNumber次或者目录是否存在
                 if (slideNumber > CXBConfig.BOOK_CATALOGUE_RESTRICT_SLIDE_SUM || !chaptertitle) {
                     print.print("检查" + catalog + "最后一章章节错误");
                     return false;
                 }
             }
-            //检查slideNumber是否在rd中
+            //检查slideNumber是否在rd中，存在随机向上滑动
             for (int k = 0; k < rd.length; k++) {
                 if (rd[k] == slideNumber) {
                     int i = random.nextInt(10) * 2 + 1;
@@ -800,8 +812,8 @@ public class Read extends Sidebar {
      * @param name
      * @return
      */
-    private boolean style(String name) {
-        setting();
+    public boolean style(String name) {
+        if (!setting()) return false;
         if (catalog.equals(name)) {
             if (!name.equals(devices.getText(
                     By.xpath("//android.widget.RelativeLayout/android.widget.TextView")))) {
@@ -809,10 +821,30 @@ public class Read extends Sidebar {
                 return false;
             }
         } else {
-            if (!devices.isElementExsitAndroid(
-                    "new UiSelector().text(\"" + name + "\")")) {
-                print.print("检查设置中的" + name + "字样");
-                return false;
+            if (Read.bookmark.equals(name) || Read.download.equals(name)) {
+                //点击+按钮
+                if(!devices.clickfindElement(By.id("com.mianfeia.book:id/btn_more"))){
+                    print.print("检查设置中的+按钮字样");
+                    return false;
+                }
+                devices.sleep(300);
+                if(Read.bookmark.equals(name)){
+                    if(!devices.clickfindElement("new UiSelector().text(\"添加书签\")")){
+                        print.print("检查设置中的" + name + "字样");
+                        return false;
+                    }
+                }else{
+                    if(!devices.clickfindElement("new UiSelector().text(\"下载\")")){
+                        print.print("检查设置中的" + name + "字样");
+                        return false;
+                    }
+                }
+            } else {
+                if (!devices.isElementExsitAndroid(
+                        "new UiSelector().text(\"" + name + "\")")) {
+                    print.print("检查设置中的" + name + "字样");
+                    return false;
+                }
             }
         }
         devices.sleep(1000);
@@ -825,13 +857,15 @@ public class Read extends Sidebar {
      *
      * @return 0为页面存在后检查失败，1为存在,2为不存在
      */
-    private int clickReadmore() {
+    public int clickReadmore() {
         if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog))) {
             if (devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1))) {
                 devices.clickfindElement(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1));
+                if (new Loging(this.caseName).checkWeChatLoginPage())devices.backspace();
                 return 1;
             } else if (devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_2))) {
                 devices.clickfindElement(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_2));
+                if (new Loging(this.caseName).checkWeChatLoginPage())devices.backspace();
                 return 1;
             } else {
                 return 0;
@@ -840,6 +874,7 @@ public class Read extends Sidebar {
         }
         return 2;
     }
+
     /**
      * 点击继续阅读按钮
      *

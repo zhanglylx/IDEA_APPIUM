@@ -9,26 +9,21 @@ import org.openqa.selenium.By;
  * 1.检测侧边栏打开后框架和日夜间切换按钮,个人头像和名称框架框架是否存在，存在代表检测通过
  * 2.检查侧边栏中的赚积分、积分商城、积分记录、获赠记录、今日推荐和关于我们按钮是否存在和点击后的页面title是否展示
  */
-public class Sidebar {
-    int startX, startY, endX, endY, time, slideNumber;
-    Devices devices;
-    PrintErr print;
-    String caseName;
+public class Sidebar extends StartCase {
+    //书架左上角侧边栏按钮
+    public static final By BOOK_SHELF_SIDEBAR = By.xpath("//android.widget.ImageButton[contains(@index,0)]");
+    //侧边栏中的用户名
+    private final By SIDEBAR_USER_NAME = By.id("com.mianfeia.book:id/navi_name_view");
+    //页面中的提示按钮
+    private final By empty_view_btn = By.id("com.mianfeia.book:id/empty_view_btn");
 
     public Sidebar(String caseName) {
-        this.caseName = caseName;
-        devices = Devices.getDevices(caseName);
-        print = new PrintErr(caseName);
-
+        super(caseName);
     }
 
-    public void startCase() {
-        Logs.recordLogs(caseName, runSidebar());
-    }
-
-    private boolean runSidebar() {
+    public boolean caseMap() {
         //点击书架左上角侧边栏按钮
-        devices.clickfindElement(By.xpath("//android.widget.ImageButton[contains(@index,0)]"));
+        devices.clickfindElement(Sidebar.BOOK_SHELF_SIDEBAR);
         /**
          *   验证侧边栏是否展示
          */
@@ -132,12 +127,14 @@ public class Sidebar {
         }
 
 
-        if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
-            if ("积分记录".equals(name) && (!"赚取积分".equals(devices.getText(By.id("com.mianfeia.book:id/empty_view_btn")))
-                    || !"还没有获得任何积分，快去赚取吧".equals(devices.getText(By.id("com.mianfeia.book:id/empty_view_tip")))
-                    || !"0\n今日已获得积分".equals(devices.getText(By.id("com.mianfeia.book:id/integral_count_view"))))) {
-                print.print(name + "中的赚取积分提示信息不正确");
-                return false;
+        if (devices.isElementExsitAndroid(empty_view_btn)) {
+            if ("积分记录".equals(name)) {
+                if ((!"赚取积分".equals(devices.getText(empty_view_btn))
+                        || !"还没有获得任何积分，快去赚取吧".equals(devices.getText(By.id("com.mianfeia.book:id/empty_view_tip")))
+                        || !"0\n今日已获得积分".equals(devices.getText(By.id("com.mianfeia.book:id/integral_count_view"))))) {
+                    print.print(name + "中的赚取积分提示信息不正确");
+                    return false;
+                }
             }
         }
 
@@ -160,8 +157,8 @@ public class Sidebar {
             print.print(name + "页面是否展示");
             return false;
         }
-        if(!"积分记录".equals(name)){
-            if((devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn")))){
+        if (!"积分记录".equals(name)) {
+            if ((devices.isElementExsitAndroid(empty_view_btn))) {
                 print.print(name + "页面是否展示");
                 return false;
             }
@@ -201,11 +198,27 @@ public class Sidebar {
         devices.clickfindElement(By.id("com.mianfeia.book:id/head_layout"));
         if (!devices.isElementExsitAndroid(
                 By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
-                || devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/empty_view_btn"))) {
+                || devices.isElementExsitAndroid(empty_view_btn)) {
             print.print(name + "页面是否展示");
             return false;
         }
-        devices.backspace();
+//        //点击切换账号
+//        devices.clickScreen(CXBConfig.chickXY(Loging.switch_account));
+//        //登录
+//        devices.clickScreen(CXBConfig.chickXY(Loging.H5LogingUserName));
+//        devices.adbInput(CXBConfig.USER_NAME);
+//        devices.clickScreen(CXBConfig.chickXY(Loging.H5LogingPassword));
+//        devices.adbInput(CXBConfig.PASSWORD);
+//        devices.clickScreen(CXBConfig.chickXY(Loging.H5Loging));
+//        /**
+//         * 需要在补充
+//         */
+//        devices.backspace();
+//        devices.sleep(500);
+//        if(!CXBConfig.USER.equals(devices.getText(SIDEBAR_USER_NAME))){
+//            print.print("检查登录后用户名");
+//            return false;
+//        }
         return true;
     }
 
@@ -213,9 +226,11 @@ public class Sidebar {
      * 积分规则
      */
     private boolean integrationRule(String name) {
+        String navi_integral_view = devices.getText(By.id("com.mianfeia.book:id/navi_integral_view"));
         //com.mianfeia.book:id/navi_integral_view连续登录id
-        if (!devices.getText(By.id("com.mianfeia.book:id/navi_integral_view")).contains("连续登录")) {
+        if (navi_integral_view == null || !navi_integral_view.contains("连续登录")) {
             print.print("检查" + name + "中的连续登录失败");
+            return false;
         }
         //点击连续登录
         devices.clickfindElement(By.id("com.mianfeia.book:id/navi_integral_view"));
