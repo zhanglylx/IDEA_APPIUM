@@ -10,7 +10,6 @@ import java.util.*;
 public class AppXmlUtil {
     private static int checkListBooleanListA;
     private static int checkListBooleanListB;
-
     /**
      * 获取xml当中指定的值
      * 如:AppXmlUtil.getXMLElement
@@ -23,6 +22,13 @@ public class AppXmlUtil {
      * @return
      */
     public static String getXMLElement(String xpath, String xml, String attribute) {
+        String str = getXMLElementA(xpath,xml,attribute);
+        System.out.println("AppXmlUtil获取到的元素:"+str);
+        return str;
+
+    }
+
+    private static String getXMLElementA(String xpath, String xml, String attribute) {
         if (xpath == null) return "xpath=null";
         if (xml == null) return "xml=null";
         if (attribute == null) return "attribute=null";
@@ -38,7 +44,9 @@ public class AppXmlUtil {
         s = s.substring(0, s.indexOf("="));
         if (!attribute.equals(s)) return attribute + "=null";
         str = str.substring(0, str.indexOf("\"", str.indexOf("\"") + 1));
-        return str.substring(str.indexOf("=") + 1, str.length()).replace("\"", "");
+        str = str.substring(str.indexOf("=") + 1, str.length()).replace("\"", "");
+
+        return str;
 
     }
 
@@ -47,6 +55,7 @@ public class AppXmlUtil {
         checkListBooleanListB = 0;
         xpath = xpath.trim();
         List<String> listXpath = new ArrayList<>();
+        if(xpath.startsWith("//"))xpath=xpath.substring(2,xpath.length());
         //提取出xpath
         while (true) {
             int n = xpath.indexOf("//");
@@ -56,7 +65,6 @@ public class AppXmlUtil {
 
             } else {
                 listXpath.add(xpath);
-
                 break;
             }
         }

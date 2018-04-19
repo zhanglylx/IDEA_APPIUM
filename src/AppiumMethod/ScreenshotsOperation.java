@@ -43,8 +43,8 @@ public class ScreenshotsOperation {
      * 截图
      */
     public void screenshot(File Image) {
-        if(Config.SCREEN_SHOTS_REPLACE){
-            if(!CheckFileExists()) this.fileName = System.currentTimeMillis()+fileName;
+        if(Config.SCREEN_SHOTS_REPLACE==false){
+            if(CheckFileExists()) this.fileName = System.currentTimeMillis()+fileName;
         }
         try {
             fileName = fileName.replace(":","-");

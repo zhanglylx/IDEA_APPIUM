@@ -13,7 +13,7 @@ public class Logs {
 
     static {
         Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-hh-mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
         dateName = sdf.format(date);
     }
 

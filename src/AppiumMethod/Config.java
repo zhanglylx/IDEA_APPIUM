@@ -19,10 +19,12 @@ public class Config {
             }
             if (null == Config.ADB_PUTH || !(new File(Config.ADB_PUTH).exists())) {
                 Config.ADB_PUTH = GetLocalityFilePuth.getPuth("adb.exe");
+                ous = new ObjectOutputStream(new FileOutputStream("adb_puth.dat"));
+                ous.writeObject(Config.ADB_PUTH);
+                ous.flush();
             }
-            ous = new ObjectOutputStream(new FileOutputStream("adb_puth.dat"));
-            ous.writeObject(Config.ADB_PUTH);
-            ous.flush();
+
+            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -54,7 +56,7 @@ public class Config {
     // app启动Activity
     public static String APP_ACTIVITY;
     // 截图是否替换
-    public static boolean SCREEN_SHOTS_REPLACE = false;
+    public static boolean SCREEN_SHOTS_REPLACE = true;
     // app在本地的名称，用于安装app，请将文件放置在桌面或子文件夹中
     public static final String APP_FILE_NAME = "1063.apk";
     // 是否覆盖手机中的包

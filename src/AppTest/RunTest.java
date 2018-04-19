@@ -217,7 +217,7 @@ public class RunTest {
             devices.swipeToUp(n);
         } else if (s.trim().startsWith("slideLift")) {
             addList("执行slideLift：" + n);
-            devices.swipeToLeft2(n);
+            devices.swipeToLeft(n);
         } else if (s.trim().startsWith("slideRight")) {
             addList("执行slideRight：" + n);
             devices.swipeToRight(n);

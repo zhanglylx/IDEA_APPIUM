@@ -6,6 +6,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,6 +46,7 @@ public class Devices {
     public static String caseNameStatic;
 
     private Devices(String caseName) {
+        GetRunApp.RunApp();
         this.caseName = caseName;
         newScreenShots();
         // 获取设备信息
@@ -212,6 +218,7 @@ public class Devices {
             text = driver.findElement(by).getText();
         }
         Logs.saveLog(caseName, "getText:" + by.toString() + "=" + text);
+        System.out.println("getText:" + by.toString() + "=" + text);
         return text;
     }
 
@@ -221,6 +228,7 @@ public class Devices {
             text = driver.findElementByAndroidUIAutomator(using).getText();
         }
         Logs.saveLog(caseName, "getText:" + using + "=" + text);
+        System.out.println("getText:" + using + "=" + text);
         return text;
     }
 
@@ -240,6 +248,15 @@ public class Devices {
         TouchAction action = new TouchAction(driver);
         action.tap(x, y).perform();
         Logs.saveLog(caseName, "clickScreen:x=" + x + ",y=" + y);
+        sleep(500);
+    }
+
+    public void clickScreen(int[] xy) {
+        if (xy.length != 2) return;
+        TouchAction action = new TouchAction(driver);
+        action.tap(xy[0], xy[1]).perform();
+        Logs.saveLog(caseName, "clickScreen:x=" + xy[0] + ",y=" + xy[1]);
+        sleep(500);
     }
 
     /**
@@ -274,7 +291,7 @@ public class Devices {
             flag = false;
         }
         RunTest.addList(elemnt.toString() + ":" + flag, 1);
-//        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
+        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
         return flag;
     }
 
@@ -287,36 +304,75 @@ public class Devices {
             flag = false;
         } catch (org.openqa.selenium.UnsupportedCommandException e) {
             flag = false;
+        } catch (org.openqa.selenium.WebDriverException e) {
+            flag = false;
         }
         RunTest.addList(elemnt.toString() + ":" + flag, 1);
-//        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
+        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
         return flag;
     }
 
+    /**
+     * 通过adb输入文字
+     * @return
+     */
+    public boolean adbInput(String text){
+        boolean b = true;
+        if(AdbUtil.adb("shell input text\""+text+"\"").length>0){
+            b = false;
+        }
+        RunTest.addList("adbInput:"+b, 1);
+        Logs.saveLog(caseName, "adbInput"+ ":" + b);
+        return b;
+    }
+
     //获取坐标
-    public String getXY(By by) {
+    public int[] getXY(By by) {
+        int[] xy = {0, 0};
         String str = null;
         if (isElementExsitAndroid(by)) {
             str = driver.findElement(by).getLocation().toString();
-            str = str.replace("(","");
-            str = str.replace(")","");
-            str = str.replace(" ","");
+            if (str != null) {
+                str = str.replace("(", "");
+                str = str.replace(")", "");
+                str = str.replace(" ", "");
+                xy[0] = Integer.parseInt(str.substring(0, str.indexOf(",")));
+                xy[1] = Integer.parseInt(str.substring(str.indexOf(",") + 1, str.length()));
+            }
         }
-        RunTest.addList("getXY:" + by.toString() + "=" + str );
+        RunTest.addList("getXY:" + by.toString() + "=" + str);
         Logs.saveLog(caseName, "getXY:" + by.toString() + "=" + str);
-        return str;
+        return xy;
     }
 
-    public String getXY(String using) {
+    public int[] getXY(String using) {
+        int[] xy = {0, 0};
         String str = null;
         if (isElementExsitAndroid(using)) {
             str = driver.findElementByAndroidUIAutomator(using).getLocation().toString();
-            str = str.replace("(","");
-            str = str.replace(")","");
+            if (str != null) {
+                str = str.replace("(", "");
+                str = str.replace(")", "");
+                str = str.replace(" ", "");
+                xy[0] = Integer.parseInt(str.substring(0, str.indexOf(",")));
+                xy[1] = Integer.parseInt(str.substring(str.indexOf(",") + 1, str.length()));
+            }
         }
-        RunTest.addList("getXY:" + using + "=" + str );
+        RunTest.addList("getXY:" + using + "=" + str);
         Logs.saveLog(caseName, "getXY:" + using + "=" + str);
-        return str;
+        return xy;
+    }
+
+    /**
+     * 获取当前页的xml
+     *
+     * @return String xml
+     */
+    public String getPageXml() {
+        String s = driver.getPageSource();
+        RunTest.addList("getPageXml:" + s );
+        Logs.saveLog(caseName, "getPageXml:" + s );
+        return s;
     }
 
     /**
@@ -336,16 +392,36 @@ public class Devices {
     }
 
     /**
+     * 点击音量
+     *
+     * @volume +,-
+     */
+    public void clickVolume(String volume) {
+        if ("+".equals(volume)) {
+            driver.sendKeyEvent(24);
+        } else {
+            driver.sendKeyEvent(25);
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        Logs.saveLog(caseName, "clickVolume:" + volume);
+    }
+
+    /**
      * 向左滑动
      */
-    public void swipeToLeft2(int time) {
+    public void swipeToLeft(int time) {
         int width = driver.manage().window().getSize().width;
 //        RunTest.addList("width：" + width);
         int height = driver.manage().window().getSize().height;
 //        RunTest.addList("height:" + height);
         driver.swipe(width * 3 / 4, height / 2, width / 4, height / 2,
                 time);
-        Logs.saveLog(caseName, "swipeToLeft2:" + time + " time");
+        Logs.saveLog(caseName, "swipeToLeft:" + time + " time");
     }
 
     /**
@@ -357,7 +433,7 @@ public class Devices {
     }
 
     /**
-     * Swipe to right on the screen
+     * 滑动--->
      */
     public void swipeToRight(int time) {
         driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, time);
@@ -382,6 +458,17 @@ public class Devices {
         driver.swipe(startX, startY, endX, endY, time);
         Logs.saveLog(caseName, "customSlip:startX:" + startX + " ;startY:" + startY
                 + " ;endX:" + endX + " ;endY:" + endY + " ;time:" + time
+        );
+    }
+
+    public void customSlip(int[] xy) {
+        if (xy.length != 5) return;
+        System.out.println("customSlip:startX:" + xy[0] + " ;startY:" + xy[1]
+                + " ;endX:" + xy[2] + " ;endY:" + xy[3] + " ;time:" + xy[4]
+        );
+        driver.swipe(xy[0], xy[1], xy[2], xy[3], xy[4]);
+        Logs.saveLog(caseName, "customSlip:startX:" + xy[0] + " ;startY:" + xy[1]
+                + " ;endX:" + xy[2] + " ;endY:" + xy[3] + " ;time:" + xy[4]
         );
     }
 
@@ -428,94 +515,100 @@ public class Devices {
         /**
          * 卸载包
          */
-        public static void uninstallPackge(String appPackage){
-            System.out.println("开始卸载包:"+appPackage);
-            String[] ad = DevicesInfo.adb("uninstall "+appPackage);
-            for(String s : ad){
-                System.out.println("卸载包手机返回log:"+s);
-                if(s.toLowerCase().contains("Success".toLowerCase())){
-                    System.out.println(appPackage+" 卸载成功");
+        public static void uninstallPackge(String appPackage) {
+            System.out.println("开始卸载包:" + appPackage);
+            String[] ad = DevicesInfo.adb("uninstall " + appPackage);
+            for (String s : ad) {
+                System.out.println("卸载包手机返回log:" + s);
+                if (s.toLowerCase().contains("Success".toLowerCase())) {
+                    System.out.println(appPackage + " 卸载成功");
                     return;
                 }
-                if(s.toLowerCase().contains("not installed".toLowerCase())||
-                        s.toLowerCase().contains("DELETE_FAILED_INTERNAL_ERROR".toLowerCase())){
-                    System.out.println("没有检测到卸载是否成功，有可能是客户端没有安装包:"+appPackage);
+                if (s.toLowerCase().contains("not installed".toLowerCase()) ||
+                        s.toLowerCase().contains("DELETE_FAILED_INTERNAL_ERROR".toLowerCase())) {
+                    System.out.println("没有检测到卸载是否成功，有可能是客户端没有安装包:" + appPackage);
                     return;
                 }
 
             }
-            Tooltip.errHint(Config.APP_PACKAGE+"卸载失败！",ad);
+            Tooltip.errHint(Config.APP_PACKAGE + "卸载失败！", ad);
         }
+
         /**
          * 安装包
          */
-        public static void installPackage(String packagePuth,String packageName){
-            System.out.println("开始安装app包:"+packagePuth);
+        public static void installPackage(String packagePuth, String packageName) {
+            System.out.println("开始安装app包:" + packagePuth);
             isPuth(packagePuth);
-            String[] ad = DevicesInfo.adb("install -r  "+packagePuth);
+            String[] ad = DevicesInfo.adb("install -r  " + packagePuth);
 
-            for(String s : ad){
-                System.out.println("安装包手机返回log:"+s);
-                if(s.toLowerCase().contains("Success".toLowerCase())){
-                    System.out.println(Config.APP_PACKAGE+"安装成功");
+            for (String s : ad) {
+                System.out.println("安装包手机返回log:" + s);
+                if (s.toLowerCase().contains("Success".toLowerCase())) {
+                    System.out.println(Config.APP_PACKAGE + "安装成功");
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
-                    };
+                    }
+                    ;
                     return;
                 }
             }
-            for(String s : DevicesInfo.adb(" shell pm  list package ")){
-                if(s.toLowerCase().contains(packageName.toLowerCase())){
-                    System.out.println(Config.APP_PACKAGE+"安装成功");
-                    return ;
+            for (String s : DevicesInfo.adb(" shell pm  list package ")) {
+                if (s.toLowerCase().contains(packageName.toLowerCase())) {
+                    System.out.println(Config.APP_PACKAGE + "安装成功");
+                    return;
                 }
             }
-            Tooltip.errHint(Config.APP_PACKAGE+"安装失败！",ad);
+            Tooltip.errHint(Config.APP_PACKAGE + "安装失败！", ad);
         }
+
         /**
          * 查找电脑本地桌面的apk包
          */
-        public static  String findPackge(){
+        public static String findPackge() {
             String msg = null;
             String s = FileSystemView
                     .getFileSystemView().getHomeDirectory().getPath();
             try {
-                String regStr= "^.:\\"+ File.separator+".*\\"+File.separator+".+("+ Config.APP_FILE_NAME+")$";
+                String regStr = "^.:.*(" + Config.APP_FILE_NAME + ")$";
                 Pattern pattern = Pattern.compile(regStr);
-                System.out.println("正在寻找"+s+File.separator+ Config.APP_PACKAGE);
-                Process pro = Runtime.getRuntime().exec("cmd /c dir/s/a/b "+s+File.separator+ Config.APP_FILE_NAME);
+                System.out.println("正在寻找" + s + File.separator + Config.APP_PACKAGE);
+                Process pro = Runtime.getRuntime().exec("cmd /c dir/s/a/b " + s + File.separator + Config.APP_FILE_NAME);
                 BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
                 while ((msg = br.readLine()) != null) {
                     Matcher matcher = pattern.matcher(msg);
-                    if(matcher.find()){
-                        System.out.println("获取到的"+ Config.APP_FILE_NAME+"文件路径:"+msg);
+                    if (matcher.find()) {
+                        System.out.println("获取到的" + Config.APP_FILE_NAME + "文件路径:" + msg);
                         return msg;
                     }
                 }
-                Tooltip.errHint("没有找到"+ Config.APP_FILE_NAME+"文件路径,系统退出");
+                Tooltip.errHint("没有找到" + Config.APP_FILE_NAME + "文件路径,系统退出");
             } catch (IOException e) {
                 e.printStackTrace();
             }
             return null;
         }
+
         /**
          * 检查文件路径是否合法
          */
-        public static void isPuth(String puth){
-            if(puth == null){
-                Tooltip.errHint("文件路径不合法，空的:"+puth);
+        public static void isPuth(String puth) {
+            if (puth == null) {
+                Tooltip.errHint("文件路径不合法，空的:" + puth);
             }
             Pattern pattern = Pattern.compile("^[A-Z]{1}:[\\\\A-Za-z_0-9-\\.]*(\\\\[A-Za-z_0-9-]*)(\\.apk|\\.exe)$");
             Matcher matcher = pattern.matcher(puth);
-            if(!matcher.find() || isChinese(puth)){
-                Tooltip.errHint("文件路径或名称不合法，可能存在中文，特殊字符，请使用英文:"+puth);
+            if (!matcher.find() || isChinese(puth)) {
+                Tooltip.errHint("文件路径或名称不合法，可能存在中文，特殊字符，请使用英文:" + puth);
             }
         }
+
         /**
          * 判断是否包含中文字符
+         *
          * @param strName
          * @return
          */
@@ -529,6 +622,7 @@ public class Devices {
             }
             return false;
         }
+
         private static boolean isChinese(char c) {
             Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
             if (ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
@@ -542,5 +636,26 @@ public class Devices {
             }
             return false;
         }
+    }
+
+    /**
+     * 获取手机时间
+     *
+     * @return
+     */
+
+    public String getIphoneDate() {
+        for (String s : AdbUtil.adb(" shell date")) {
+            if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
+                SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd HH");
+                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", java.util.Locale.ENGLISH);
+                try {
+                    return sfEnd.format(sfStart.parse(s));
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
     }
 }

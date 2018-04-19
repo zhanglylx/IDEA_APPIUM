@@ -104,8 +104,6 @@ public class  DevicesInfo {
     public static String[] adb(String code) {
         String[] str = new String[0];
         try {
-            Devices.installAPPPackage.isPuth(Config.ADB_PUTH);
-            System.out.println(Config.ADB_PUTH + " " + code);
             Process pro = Runtime.getRuntime().exec(Config.ADB_PUTH + " " + code);
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
             String msg = null;
