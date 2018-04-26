@@ -11,12 +11,12 @@ public class RunCase {
         Thread.sleep(5000);
         devices.clickfindElement(By.id("com.mianfeia.book:id/guide3"));
         devices.clickfindElement(By.id("com.mianfeia.book:id/tab_shelf_view"));
-//        initialize(devices);
-//        new Sidebar("测试侧边栏").startCase();
-//        initialize(devices);
-//        new Search("搜索+作者详情页中的在线阅读").startCase();
-//        initialize(devices);
-//        new TheWorkDetails("作者详情页下载和目录").startCase();
+        initialize(devices);
+        new Sidebar("测试侧边栏").startCase();
+        initialize(devices);
+        new Search("搜索+作者详情页中的在线阅读").startCase();
+        initialize(devices);
+        new TheWorkDetails("作者详情页下载、目录、分享").startCase();
         initialize(devices);
         new Read("阅读页").startCase();
         initialize(devices);

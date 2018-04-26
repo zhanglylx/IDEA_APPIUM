@@ -25,6 +25,42 @@ public class test {
         }
         System.out.println("j="+j);
 
+
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                boolean dateB = true;
+                long date = 0;
+                while (true) {
+//                        if (dateB) {
+//                            date = System.currentTimeMillis() + (5 * 1000);
+//                            dateB = false;
+//                        }
+//                        if (System.currentTimeMillis() >= date) {
+//                            time += 5;
+//                            if (stop==1)break;
+//                            System.out.println(time + " 秒");
+//                            dateB = true;
+//                        }
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException   e) {
+                        e.printStackTrace();
+                        Thread.currentThread().interrupt();
+                        return;
+                    }
+                        System.out.println(  " 秒");
+                    }
+                }
+        });
+        t.start();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException   e) {
+            e.printStackTrace();
+            Thread.currentThread().interrupt();
+        }
+        t.interrupt();
     }
 
 }

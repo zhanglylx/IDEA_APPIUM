@@ -1,11 +1,15 @@
 package CXBCase;
 
-import AppTest.Devices;
+/**
+ * 当前支持的免费电子书版本信息:4.0.2
+ */
 
 import java.util.Random;
 
 public class CXBConfig {
     //发现的bug，找回密码服务器随机生成的密码不能作为新密码使用，提示密码错误
+    //兼容手机屏幕坐标,阅读页设置
+    public static final String modelSM = "model:SM_C5000";
     /**
      * 登录用户名和密码
      */
@@ -49,10 +53,7 @@ public class CXBConfig {
      *
      * @return {startX,startY,endX，endY，time}
      */
-    public static int[] slideXY(String element){
-        return slideXY(Devices.getDevices("CXBconfig.slideXY").getWidth(),
-                Devices.getDevices("CXBconfig.slideXY").getHeight(),element);
-    }
+
     public static int[] slideXY(int width, int height, String element) {
         if (element == null) return null;
         switch (element) {
@@ -68,34 +69,35 @@ public class CXBConfig {
         }
 
     }
+
     /**
      * 元素点击坐标
      *
      * @return {x,y}
      */
-    public static int[] chickXY(String element){
-        return slideXY(Devices.getDevices("CXBconfig.slideXY").getWidth(),
-                Devices.getDevices("CXBconfig.slideXY").getHeight(),element);
-    }
     public static int[] chickXY(int width, int height, String element) {
         if (element == null) return null;
         switch (element) {
             //微信登录密码文本框坐标
             case (Loging.passwordName):
                 return new int[]{(int) (width * 0.6), (int) (height * 0.39)};
-                //个人资料中的切换账号
-            case(Loging.switch_account):
+            //个人资料中的切换账号
+            case (Loging.switch_account):
                 return new int[]{(int) (width * 0.5), (int) (height * 0.85)};
-                //微信登录
-            case(Loging.title_Text):
+            //微信登录
+            case (Loging.title_Text):
                 return new int[]{(int) (width * 0.7), (int) (height * 0.7)};
-                //H5登录
-            case(Loging.H5LogingUserName):
+            //H5登录
+            case (Loging.H5LogingUserName):
                 return new int[]{(int) (width * 0.3), (int) (height * 0.215)};
-            case(Loging.H5LogingPassword):
+            case (Loging.H5LogingPassword):
                 return new int[]{(int) (width * 0.3), (int) (height * 0.3)};
-            case(Loging.H5Loging):
+            case (Loging.H5Loging):
                 return new int[]{(int) (width * 0.5), (int) (height * 0.46)};
+            //侧边栏按钮
+            case (Sidebar.BOOK_SHELF_SIDEBAR):
+                return new int[]{(int) (width * 0.07), (int) (height * 0.06)};
+
             default:
                 return null;
         }

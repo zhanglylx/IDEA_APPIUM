@@ -1,13 +1,21 @@
 package CXBCase;
 
-import AppTest.Logs;
 import org.openqa.selenium.By;
 
-import java.lang.ref.PhantomReference;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * 1.检查阅读页
+ * 2.目录检查:随机向上向下滑动，检查目录页是否存在
+ * 2.1滑动到目录底部，检查config中的章节是否存在
+ * 2.2点击config中的章节，检查是否跳转到章节
+ * 3.进度检查:向上向下和滑动上下，检查翻页到指定的章节后，章节是否存在
+ * 4.亮度检查:调至最高、最暗和跟随系统亮度，截图手工检查
+ * 5.设置检查，每一项设置后翻页，检查翻页无问题
+ * 6.末尾推送页，检查推送页和返回书架三种方式
+ */
 public class Read extends StartCase {
     public static final String schedule = "进度";
     public static final String catalog = "目录";
@@ -60,7 +68,6 @@ public class Read extends StartCase {
     }
 
     public boolean caseMap() {
-        System.out.println(devices.getPageXml());
         if ("阅读页".equals(this.caseName)) if (!clickChapter()) return false;
         devices.sleep(2000);
         //关闭视听框
@@ -77,23 +84,7 @@ public class Read extends StartCase {
          * 向下翻页，随机向上翻页
          * 翻页到目录最底页，检查配置中的最后一页章节是否存在
          */
-        if (!checkCatalogue()) return false;
-        if (!"阅读页".equals(this.caseName)) return true;
-        /**
-         * 检查亮度
-         * 滑动到最亮，截图，通过人工检查最亮是否生效
-         * 滑动到最暗，截图，通过人工检查最暗是否生效
-         * 点击跟随系统亮度，截图，通过人工检查跟随系统亮度是否生效
-         */
-        if (!luminance()) return false;
-        /**
-         * 检查进度
-         * 点击上一章，根据配置中设置的页数进行翻章，然后打开目录，检查配置中的上一章是否存在
-         * 点击下一章，根据上一章设置页数+1，打开目录，检查配置中的下一章是否存在
-         * 向上滑动进度，然后关闭设置页，点击页面左侧，然后打开目录，检查配置中的上一章是否存在
-         * 向下滑动进度，根据上一章翻页数+1，然后打开目录，检查配置中的下一章是否存在
-         */
-        if (!progress()) return false;
+
         /**
          * 翻页+设置+末页章节推送
          * 向左向右随机翻页，设置中的随机选择，循环到章节末尾，检查末页章节是否存在
@@ -199,10 +190,7 @@ public class Read extends StartCase {
             if (characterStr == null) characterStr = character[random.nextInt(character.length)];
             if (pageModeStr == null) pageModeStr = pageMode[random.nextInt(pageMode.length)];
             if (volumeStr == null) volumeStr = volume[random.nextInt(volume.length)];
-            ckickStyle(styleStr);
-            clickPageMode(pageModeStr);
-            clickCharacterA(characterStr);
-            clickVolumeTurning(volumeStr);
+            chcikSetting(styleStr,pageModeStr,characterStr,volumeStr);
             //点击屏幕中上方位置，关闭设置页
             devices.clickScreen((int) (devices.getWidth() * 0.5),
                     (int) (devices.getHeight() * 0.3));
@@ -265,7 +253,7 @@ public class Read extends StartCase {
                     print.print("VIP页检查");
                     return false;
                 }
-                for (int i = 0; i < (random.nextInt(10) + 1) * 10; i++) {
+                for (int i = 0; i < (random.nextInt(10) + 10) * 10; i++) {
                     if (chapterNotPush() != 2) break;
                     //点击右滑动
                     if (random.nextInt(2) == 0) {
@@ -312,6 +300,9 @@ public class Read extends StartCase {
                 }
                 //点击Unsealed_push_title_right_view_id
                 devices.clickfindElement(By.id(Unsealed_push_title_right_view_id));
+                devices.sleep(3000);
+                devices.backspace();
+                devices.sleep(1000);
                 //点击书架中的书籍
                 if (!clickChapter()) return false;
                 devices.sleep(1000);
@@ -420,7 +411,21 @@ public class Read extends StartCase {
     /**
      * 风格
      */
-    private void ckickStyle(String style) {
+    private void chcikSetting(String styleStr,String pageModeStr,String characterStr,String volumeStr) {
+        //单独适配
+        if(devices.getDevicesBrand().contains(CXBConfig.modelSM))devices.setHeight(devices.getHeight()+130);
+        Style(styleStr);
+        devices.resetWidth_Height();
+        if(devices.getDevicesBrand().contains(CXBConfig.modelSM))devices.setHeight(devices.getHeight()+50);
+        clickCharacterA(characterStr);
+        clickPageMode(pageModeStr);
+        devices.resetWidth_Height();
+        if(devices.getDevicesBrand().contains(CXBConfig.modelSM))devices.setHeight(devices.getHeight()+40);
+        clickVolumeTurning(volumeStr);
+        devices.resetWidth_Height();
+
+    }
+    private void Style(String style) {
         startX = (int) (devices.getWidth() * 0.87);
         startY = (int) (devices.getHeight() * 0.6);
         endX = (int) (devices.getWidth() * 0.18);
@@ -625,9 +630,9 @@ public class Read extends StartCase {
                 print.print("向下一页翻页检查VIP页");
                 return false;
             }
-            if(!style(schedule))return false;
+            if (!style(schedule)) return false;
         }
-        if(!style(catalog))return false;
+        if (!style(catalog)) return false;
         //检查目录中的章节是否存在BOOK_CHAPTER_END_NEXT
         if (!devices.isElementExsitAndroid(
                 "new UiSelector().text(\"" + CXBConfig.BOOK_CHAPTER_END_NEXT + "\")")) {
@@ -823,18 +828,18 @@ public class Read extends StartCase {
         } else {
             if (Read.bookmark.equals(name) || Read.download.equals(name)) {
                 //点击+按钮
-                if(!devices.clickfindElement(By.id("com.mianfeia.book:id/btn_more"))){
+                if (!devices.clickfindElement(By.id("com.mianfeia.book:id/btn_more"))) {
                     print.print("检查设置中的+按钮字样");
                     return false;
                 }
                 devices.sleep(300);
-                if(Read.bookmark.equals(name)){
-                    if(!devices.clickfindElement("new UiSelector().text(\"添加书签\")")){
+                if (Read.bookmark.equals(name)) {
+                    if (!devices.clickfindElement("new UiSelector().text(\"添加书签\")")) {
                         print.print("检查设置中的" + name + "字样");
                         return false;
                     }
-                }else{
-                    if(!devices.clickfindElement("new UiSelector().text(\"下载\")")){
+                } else {
+                    if (!devices.clickfindElement("new UiSelector().text(\"下载\")")) {
                         print.print("检查设置中的" + name + "字样");
                         return false;
                     }
@@ -861,11 +866,11 @@ public class Read extends StartCase {
         if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog))) {
             if (devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1))) {
                 devices.clickfindElement(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1));
-                if (new Loging(this.caseName).checkWeChatLoginPage())devices.backspace();
+                if (new Loging(this.caseName).checkWeChatLoginPage()) devices.backspace();
                 return 1;
             } else if (devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_2))) {
                 devices.clickfindElement(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_2));
-                if (new Loging(this.caseName).checkWeChatLoginPage())devices.backspace();
+                if (new Loging(this.caseName).checkWeChatLoginPage()) devices.backspace();
                 return 1;
             } else {
                 return 0;

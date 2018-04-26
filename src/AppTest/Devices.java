@@ -42,15 +42,19 @@ public class Devices {
     private DesiredCapabilities cap;
     private int width;
     private int height;
+    //厂家名称
+    private String devicesBrand;
     private DevicesInfo info;
     public static String caseNameStatic;
-
+    private int iphoneVersion;
     private Devices(String caseName) {
         GetRunApp.RunApp();
         this.caseName = caseName;
         newScreenShots();
         // 获取设备信息
         info = DevicesInfo.getDevicesInfo();
+        this.iphoneVersion = Integer.parseInt(info.getDevicesVersion().substring(0,1));
+        this.devicesBrand =info.getDevicesBrand();
         // 检查是否安装appium环境apk
 //        new InstallAppiumApk();
         System.out.println("开始执行Devices");
@@ -71,6 +75,7 @@ public class Devices {
         cap.setCapability("resetKeyboard", "True"); // 支持中文输入，必须两条都配置
         cap.setCapability("noSign", "True"); // 不重新签名apk
         cap.setCapability("newCommandTimeout", "6000"); // 没有新命令，appium30秒退出
+        if(iphoneVersion>6)cap.setCapability("automationName","uiautomator2");
         start_App(cap);
     }
 
@@ -82,8 +87,7 @@ public class Devices {
             driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
             // 隐式等待,元素未找到时等待的时间
             driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);//
-            this.width = driver.manage().window().getSize().width;
-            this.height = driver.manage().window().getSize().height;
+            resetWidth_Height();
             System.out.println(width);
             System.out.println(height);
             System.out.println(info.getDevicesBrand());
@@ -239,12 +243,6 @@ public class Devices {
      * @param y
      */
     public void clickScreen(int x, int y) {
-//        JavascriptExecutor js = (JavascriptExecutor) driver;
-//        HashMap<String, Integer> tapObject = new HashMap<String, Integer>();
-//        tapObject.put("x", x);
-//        tapObject.put("y", y);
-//        tapObject.put("duration", duration);
-//        js.executeScript("mobile: tap", tapObject);
         TouchAction action = new TouchAction(driver);
         action.tap(x, y).perform();
         Logs.saveLog(caseName, "clickScreen:x=" + x + ",y=" + y);
@@ -252,10 +250,22 @@ public class Devices {
     }
 
     public void clickScreen(int[] xy) {
-        if (xy.length != 2) return;
+        if (xy.length != 2) {
+            throw new IllegalArgumentException("参数不正常:"+ Arrays.toString(xy));
+        }
         TouchAction action = new TouchAction(driver);
         action.tap(xy[0], xy[1]).perform();
         Logs.saveLog(caseName, "clickScreen:x=" + xy[0] + ",y=" + xy[1]);
+        sleep(500);
+    }
+    public void clickScreen(String xy) {
+        if(xy.matches("^\\d+(,)\\d+$")){
+            throw new IllegalArgumentException("参数不正常:"+ xy);
+        };
+        String[] arr = xy.split(",");
+        TouchAction action = new TouchAction(driver);
+        action.tap(Integer.parseInt(arr[0]), Integer.parseInt(arr[1])).perform();
+        Logs.saveLog(caseName, "clickScreen:x=" + arr[0] + ",y=" + arr[1]);
         sleep(500);
     }
 
@@ -381,7 +391,11 @@ public class Devices {
      * @return
      */
     public void backspace() {
-        driver.sendKeyEvent(4);
+        if(iphoneVersion>6){
+            AdbUtil.adb("shell input keyevent 4");
+        }else{
+            driver.sendKeyEvent(4);
+        }
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -397,10 +411,19 @@ public class Devices {
      * @volume +,-
      */
     public void clickVolume(String volume) {
+
         if ("+".equals(volume)) {
-            driver.sendKeyEvent(24);
+           if(this.iphoneVersion<7) {
+               driver.sendKeyEvent(24);
+           }else{
+               AdbUtil.adb("shell input keyevent 24");
+           }
         } else {
-            driver.sendKeyEvent(25);
+            if(this.iphoneVersion<7){
+                driver.sendKeyEvent(25);
+            }else{
+                AdbUtil.adb("shell input keyevent 25");
+            }
         }
         try {
             Thread.sleep(1000);
@@ -502,11 +525,16 @@ public class Devices {
     public AndroidDriver getDriver() {
         return driver;
     }
-
+    public String getDevicesBrand(){return this.devicesBrand;}
     public int getWidth() {
         return width;
     }
-
+    public void setWidth(int width){this.width = width; }
+    public void setHeight(int height){this.height =height; }
+    public void resetWidth_Height(){
+        this.width = driver.manage().window().getSize().width;
+        this.height = driver.manage().window().getSize().height;
+    }
     public int getHeight() {
         return height;
     }

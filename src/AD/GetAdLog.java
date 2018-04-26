@@ -10,39 +10,40 @@ public class GetAdLog {
     //记录时间
     public static int time = 0;
     //广告id
-    //
     public static String adId = null;
     //关闭线程
     public static volatile int stop = 0;
-    //记录是否输入了adID
-    public static boolean adIdBoolean = false;
+    //确定线程关闭
+    public static volatile boolean affirmThread = true;
 
-    public static void main(String[] args) {
+    /**
+     * 更新广告位
+     */
+    public static void   updateAdId(){
         //更换id线程
-        Thread ad = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    String str = JOptionPane.showInputDialog(null, "请输入ID，只需要输入ID数字：\n", "广告位ID", JOptionPane.PLAIN_MESSAGE);
-                    if (str == null) break;
-                    try {
-                        Integer.parseInt(str);
-                        if (!("GG-" + Integer.parseInt(str) + ".txt").equals(GetAdLog.adId)) {
-                            GetAdLog.adId = "GG-" + Integer.parseInt(str) + ".txt";
-                            adIdBoolean = true;
-                        }
-                    } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "输入的ID不正确,请输入数字:" + str, "错误提示", JOptionPane.ERROR_MESSAGE);
+        Thread ad = new Thread(() -> {
+            while (true) {
+                String str = JOptionPane.showInputDialog(null, "请输入ID，只需要输入ID数字：\n", "广告位ID", JOptionPane.PLAIN_MESSAGE);
+                if (str == null) break;
+                try {
+                    Integer.parseInt(str);
+                    if (!("GG-" + Integer.parseInt(str) + ".txt").equals(GetAdLog.adId)) {
+                        GetAdLog.adId = "GG-" + Integer.parseInt(str) + ".txt";
                     }
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "输入的ID不正确,请输入数字:" + str, "错误提示", JOptionPane.ERROR_MESSAGE);
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
         });
         ad.start();
+    }
+    public static void main(String[] args) throws InterruptedException {
+        updateAdId();
         String[] GG;
         int n = 0;
         String date = date();
@@ -69,27 +70,36 @@ public class GetAdLog {
             //判断是否切换广告ID
             String adA=adId;
             //时间线程
-            Thread t = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    boolean dateB = true;
-                    long date = 0;
-                    while (true) {
-                        if (stop==1)break;
-                        if (dateB) {
-                            date = System.currentTimeMillis() + (10 * 1000);
-                            dateB = false;
-                        }
-                        if (System.currentTimeMillis() >= date) {
-                            time += 10;
-                            if (stop==1)break;
-                            System.out.println(time + " 秒");
-                            dateB = true;
-                        }
-                        if (stop==1)break;
+            Thread t = new Thread(() -> {
+                boolean dateB = true;
+                long date1 = 0;
+                System.out.println("开启计时");
+                affirmThread = false;
+                while (true) {
+                    if (dateB) {
+                        date1 = System.currentTimeMillis() + (5 * 1000);
+                        dateB = false;
+                    }
+                    if (System.currentTimeMillis() >= date1) {
+                        time += 5;
+                        System.out.println(time + " 秒");
+                        dateB = true;
+                    }
+                    if (stop==1){
+                        time += 5;
+                        System.out.println(time + " 秒");
+                        System.out.println("关闭计时");
+                        affirmThread = true;
+                        break;
+                    }
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
             });
+            //判断是否更换了广告位
             if (!adA.equals(adB) ) {
                 GGlen = 0;
                 adB = adA;
@@ -100,8 +110,12 @@ public class GetAdLog {
             if (GG.length > GGlen) {
                 if(booleanTheard){
                    stop = 1;
-                    System.out.println("关闭计时");
+                   t.interrupt();
                     booleanTheard =false;
+                    Thread.sleep(200);
+                    while (true){
+                        if (affirmThread) break;
+                    }
                 }
                 for (int i = GGlen; i < GG.length; i++) {
                     if (GG[i].equals("")) continue;
@@ -115,28 +129,9 @@ public class GetAdLog {
                     stop = 0;
                     t.start();
                     booleanTheard = true;
-                    System.out.println("开启计时");
                 }
                 GGlen = GG.length;
-                GG = new String[0];
             }
-
-//            boolean nl = false;
-//            fr:
-//            for (String s : GG) {
-//                if(s.contains("GG"))nl=true;
-//                for (String k : GGAD) {
-//                    if (s.equals(k)) {
-//                        continue fr;
-//                    }
-//                }
-//                String r = GG[GG.length-1]
-//                if ((s.contains("返回广告") && !s.contains("服务端返回广告"))
-//                        || s.contains("服务端返回广告---没有广告")) bl = true;
-//                System.out.println(s);
-//
-//            }
-//            if(nl)GGAD = GG;
             if (bl) {
                 System.out.println();
                 switch (n) {

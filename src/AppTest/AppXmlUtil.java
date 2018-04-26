@@ -45,7 +45,16 @@ public class AppXmlUtil {
         if (!attribute.equals(s)) return attribute + "=null";
         str = str.substring(0, str.indexOf("\"", str.indexOf("\"") + 1));
         str = str.substring(str.indexOf("=") + 1, str.length()).replace("\"", "");
-
+        //解析bounds坐标
+        if("bounds".equals(attribute.toLowerCase())){
+            str = str.replace("][",",");
+            str = str.replace("]","");
+            str = str.replace("[","");
+            String [] arr = str.split(",");
+            int x =((Integer.parseInt(arr[2])-Integer.parseInt(arr[0]))/2)+Integer.parseInt(arr[0]);
+            int y =((Integer.parseInt(arr[3])-Integer.parseInt(arr[1]))/2)+Integer.parseInt(arr[1]);;
+            return x+","+y;
+        }
         return str;
 
     }
@@ -168,6 +177,7 @@ public class AppXmlUtil {
         String[] element = new String[0];
         listXpathStr = listXpathStr.substring(listXpathStr.indexOf("("),listXpathStr.length());
         while (true) {
+
             if(!listXpathStr.matches("^\\(.+=.*;\\).*$")) {
                throw new IllegalArgumentException("参数不合法："+listXpathStr+"正确格式:^(.+=.*;).*$");
             }

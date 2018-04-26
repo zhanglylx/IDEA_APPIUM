@@ -56,7 +56,7 @@ public class Config {
     // app启动Activity
     public static String APP_ACTIVITY;
     // 截图是否替换
-    public static boolean SCREEN_SHOTS_REPLACE = true;
+    public static boolean SCREEN_SHOTS_REPLACE = false;
     // app在本地的名称，用于安装app，请将文件放置在桌面或子文件夹中
     public static final String APP_FILE_NAME = "1063.apk";
     // 是否覆盖手机中的包

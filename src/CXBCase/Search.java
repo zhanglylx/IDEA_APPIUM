@@ -3,10 +3,11 @@ package CXBCase;
  * 搜索
  * 1.删除书架配置文件的书籍
  * 2.进入到搜索页，检查搜索页
- * 3.搜索书籍，检查搜索结果页
- * 4.进入在线阅读页，检查阅读页中的目录第一章
- * 5.检查阅读中的喜欢就加入书架
- * 6.搜索页加入书架，检查结果
+ * 3.搜索书籍，检查搜索结果页:检查书名和作者是否正确，在线阅读和加入书架按钮是否出现
+ * 4.进入在线阅读页，检查阅读页中的目录第一章是否与config配置中的相同
+ * 5.检查阅读中的喜欢就加入书架:取消时书架不存在书籍，确认时搜索结果页加入书架按钮消失和书架存在书籍
+ * 6.搜索页加入书架，检查:书架中存在书籍
+ * 7>检查搜索历史存在查询过的书籍
  */
 
 import AppTest.AppXmlUtil;
@@ -150,9 +151,10 @@ public class Search extends StartCase {
             System.out.println("点击确定按钮");
             if(new Read2(this.caseName).readAdd_a_bookcase("确定")!=1)return false;
             if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(searchBookName, author, false)) return false;
-            System.out.println("点击作者详情页中的回到精品按钮");
-            int[] xy = devices.getXY(By.id("com.mianfeia.book:id/title_right_view"));
-            devices.clickScreen(xy[0], xy[1]);
+//            System.out.println("点击作者详情页中的回到精品按钮");
+//            int[] xy = devices.getXY(By.id("com.mianfeia.book:id/title_right_view"));
+//            devices.clickScreen(xy[0], xy[1]);
+            RunCase.initialize(devices);
             devices.sleep(3000);
             devices.backspace();
             if (!bookcase_is_Book(searchBookName)) {
@@ -296,20 +298,18 @@ public class Search extends StartCase {
         //判断配置中的书籍是否显示在书架中
         if (bookcase_is_Book(bookName)) {
             int[] xy = devices.getXY("new UiSelector().text(\"" + bookName + "\")");
-            devices.customSlip(xy[0], xy[1], xy[0], xy[1], 1000);
+            devices.customSlip(xy[0], xy[1], xy[0], xy[1], 2000);
             if (!"删除(1)".equals(devices.getText(By.id("com.mianfeia.book:id/tab_delete_tv"))) ||
                     !"移动(1)".equals(devices.getText(By.id("com.mianfeia.book:id/tab_move_tv"))) ||
                     //com.mianfeia.book:id/title_right_view右侧全选按钮id
-                    !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/title_right_view")) ||
-                    ////android.widget.ImageButton[contains(@index,0)]完成按钮
-                    !devices.isElementExsitAndroid(Sidebar.BOOK_SHELF_SIDEBAR)
+                    !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/title_right_view"))
                     ) {
                 print.print("检查书架书籍删除时的按钮");
                 return false;
             }
             //点击删除按钮
             devices.clickfindElement(By.id("com.mianfeia.book:id/tab_delete_tv"));
-            devices.sleep(1000);
+            devices.sleep(2000);
             //检查删除书籍提示框
             if (!"删除所选书籍".equals(devices.getText(By.id("com.mianfeia.book:id/ygz_common_delete_title"))) ||
                     !"删除源文件".equals(devices.getText(By.id("com.mianfeia.book:id/ygz_common_bottom_check"))) ||

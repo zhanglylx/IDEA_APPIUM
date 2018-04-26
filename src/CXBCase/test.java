@@ -1,5 +1,6 @@
 package CXBCase;
 
+import AppTest.AppXmlUtil;
 import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import java.util.ArrayList;
@@ -61,7 +62,8 @@ public class test {
 //
 //       }
 
-        System.out.println(getXMLText("android.widget.TextView(text=更新5章)(index=1)", str));
+        System.out.println(AppXmlUtil.getXMLElement("android.widget.TextView(text=更新5" +
+                "章;)(index=1;)", str, "bounds"));
     }
 
     private static String getXMLText(String xpath, String xmll) {
