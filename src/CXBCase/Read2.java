@@ -9,8 +9,10 @@ import java.util.Date;
 import java.util.Random;
 
 /**
- * 检查阅读页中的日夜间切换、评论、添加书签
+ * 检查阅读页中的日夜间切换、评论、书库页检查，目录页添加书签
+ *
  */
+//未完成的开发:日夜间切换、评论
 public class Read2 extends StartCase {
     String bookName;
     String author;
@@ -44,6 +46,15 @@ public class Read2 extends StartCase {
     }
 
     private boolean DirectoryPageBookmarks() {
+        RunCase.initialize(devices);
+        //点击书库按钮
+        devices.clickfindElement(ElementAttributes.STACK_ROOM);
+        if(!new BookLibrary(this.caseName).checkBookLibrary())return false;
+
+
+
+
+
         return true;
     }
 
@@ -86,7 +97,7 @@ public class Read2 extends StartCase {
         devices.backspace();
         int i = readAdd_a_bookcase("确定");
         Search search = new Search(this.caseName);
-        search.setBookRackExistsBookName(chaptertitile,true);
+        search.setBookRackExistsBookName(this.bookName,true);
         if(i==0)return false;
         RunCase.initialize(devices);
         if(!search.bookcase_is_Book(chaptertitile)){
