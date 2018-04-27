@@ -10,6 +10,7 @@ import java.util.*;
 public class AppXmlUtil {
     private static int checkListBooleanListA;
     private static int checkListBooleanListB;
+
     /**
      * 获取xml当中指定的值
      * 如:AppXmlUtil.getXMLElement
@@ -22,8 +23,8 @@ public class AppXmlUtil {
      * @return
      */
     public static String getXMLElement(String xpath, String xml, String attribute) {
-        String str = getXMLElementA(xpath,xml,attribute);
-        System.out.println("AppXmlUtil获取到的元素:"+str);
+        String str = getXMLElementA(xpath, xml, attribute);
+        System.out.println("AppXmlUtil获取到的元素:" + str);
         return str;
 
     }
@@ -46,14 +47,15 @@ public class AppXmlUtil {
         str = str.substring(0, str.indexOf("\"", str.indexOf("\"") + 1));
         str = str.substring(str.indexOf("=") + 1, str.length()).replace("\"", "");
         //解析bounds坐标
-        if("bounds".equals(attribute.toLowerCase())){
-            str = str.replace("][",",");
-            str = str.replace("]","");
-            str = str.replace("[","");
-            String [] arr = str.split(",");
-            int x =((Integer.parseInt(arr[2])-Integer.parseInt(arr[0]))/2)+Integer.parseInt(arr[0]);
-            int y =((Integer.parseInt(arr[3])-Integer.parseInt(arr[1]))/2)+Integer.parseInt(arr[1]);;
-            return x+","+y;
+        if ("bounds".equals(attribute.toLowerCase())) {
+            str = str.replace("][", ",");
+            str = str.replace("]", "");
+            str = str.replace("[", "");
+            String[] arr = str.split(",");
+            int x = ((Integer.parseInt(arr[2]) - Integer.parseInt(arr[0])) / 2) + Integer.parseInt(arr[0]);
+            int y = ((Integer.parseInt(arr[3]) - Integer.parseInt(arr[1])) / 2) + Integer.parseInt(arr[1]);
+            ;
+            return x + "," + y;
         }
         return str;
 
@@ -64,9 +66,16 @@ public class AppXmlUtil {
         checkListBooleanListB = 0;
         xpath = xpath.trim();
         List<String> listXpath = new ArrayList<>();
-        if(xpath.startsWith("//"))xpath=xpath.substring(2,xpath.length());
+        if (xpath.startsWith("//")) xpath = xpath.substring(2, xpath.length());
         //提取出xpath
+        //判断xpath是否包含class
+        boolean xpathClass = true;
         while (true) {
+            //判断xpath是否包含class
+            if (xpath.startsWith("(")) {
+                xpathClass = false;
+                break;
+            }
             int n = xpath.indexOf("//");
             if (n != -1) {
                 listXpath.add(xpath.substring(0, n));
@@ -92,17 +101,24 @@ public class AppXmlUtil {
             }
 
         }
-
         //判断xpath是否在xml中
         Map<String, Integer> listMap = new HashMap<>();
         int i = 0;
         for (String strListXml : listXml) {
+            //如果不需要判断class，直接用xpath去判断，包含返回xml
+            if (!xpathClass) {
+                if (checkElement(elementArr(xpath), strListXml, null)) {
+                    return strListXml;
+                }
+                continue;
+            }
             //记录xml树
             String listXpathStr = listXpath.get(i);
             boolean listBoolean = false;
             if (listXpathStr.indexOf("(") != -1) {
                 String listXpathStrClass = listXpathStr.substring(0, listXpathStr.indexOf("("));
                 try {
+                    //判断存在子查询条件
                     if (checkElement(elementArr(listXpathStr), strListXml, listXpathStrClass)) {
                         if (i == listXpath.size() - 1) return strListXml;
                         listMap.put(classStr(listXpath.get(i) + i), i);
@@ -111,7 +127,7 @@ public class AppXmlUtil {
                 } catch (StringIndexOutOfBoundsException e) {
                     e.printStackTrace();
                     return null;
-                }catch (IllegalArgumentException e){
+                } catch (IllegalArgumentException e) {
                     e.printStackTrace();
                     return null;
                 }
@@ -134,9 +150,16 @@ public class AppXmlUtil {
     private static boolean checkElement(String[] element, String strListXml, String listXpathStrClass) {
         boolean elementBoolean = true;
         for (String elementFor : element) {
-            if (!strListXml.contains(elementFor) || !strListXml.contains("class=\"" + listXpathStrClass + "\"")) {
-                elementBoolean = false;
-                break;
+            if (listXpathStrClass == null) {
+                if (!strListXml.contains(elementFor)) {
+                    elementBoolean = false;
+                    break;
+                }
+            } else {
+                if (!strListXml.contains(elementFor) || !strListXml.contains("class=\"" + listXpathStrClass + "\"")) {
+                    elementBoolean = false;
+                    break;
+                }
             }
         }
         return elementBoolean;
@@ -158,6 +181,7 @@ public class AppXmlUtil {
         return i + 1;
     }
 
+    //解析出class
     private static String classStr(String str) {
         if (str.indexOf("(") == -1) {
             return str;
@@ -168,25 +192,25 @@ public class AppXmlUtil {
 
     /**
      * 解析xpath中的参数属性
+     *
      * @param listXpathStr
      * @return
      * @throws StringIndexOutOfBoundsException
      * @throws IllegalArgumentException
      */
-    private static String[] elementArr(String listXpathStr) throws StringIndexOutOfBoundsException,IllegalArgumentException {
+    private static String[] elementArr(String listXpathStr) throws StringIndexOutOfBoundsException, IllegalArgumentException {
         String[] element = new String[0];
-        listXpathStr = listXpathStr.substring(listXpathStr.indexOf("("),listXpathStr.length());
+        listXpathStr = listXpathStr.substring(listXpathStr.indexOf("("), listXpathStr.length());
         while (true) {
-
-            if(!listXpathStr.matches("^\\(.+=.*;\\).*$")) {
-               throw new IllegalArgumentException("参数不合法："+listXpathStr+"正确格式:^(.+=.*;).*$");
+            if (!listXpathStr.matches("^\\(.+=.*;\\).*$")) {
+                throw new IllegalArgumentException("参数不合法：" + listXpathStr + "正确格式:^(.+=.*;).*$");
             }
             element = Arrays.copyOf(element, element.length + 1);
             String strInsertion = "";
-            strInsertion = listXpathStr.substring(1,listXpathStr.indexOf(";)"));
+            strInsertion = listXpathStr.substring(1, listXpathStr.indexOf(";)"));
             element[element.length - 1] = strInsertion.substring(0, strInsertion.indexOf("=") + 1) +
                     "\"" + strInsertion.substring(strInsertion.indexOf("=") + 1, strInsertion.length()) + "\"";
-            listXpathStr = listXpathStr.substring(strInsertion.length()+3,listXpathStr.length());
+            listXpathStr = listXpathStr.substring(strInsertion.length() + 3, listXpathStr.length());
             if (listXpathStr.indexOf("(") == -1) break;
 
         }
