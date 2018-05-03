@@ -18,15 +18,20 @@ public class TheWorkDetails extends StartCase {
     public static final By ONLINE_READING = By.id("com.mianfeia.book:id/book_detail_to_read_view");
     //判断是否为分享调用
     public static  boolean Share_the_call = false;
+    //展开按钮
+    public static boolean unfold ;
+    static{
+        unfold = true;
+    }
     public TheWorkDetails(String caseName) {
-        super(caseName);
+        super(caseName+":TheWorkDetails");
     }
 
     public boolean caseMap() {
         return checkTheWorkDetails(CXBConfig.BOOK_NAME, CXBConfig.BOOK_AUTHOR,2);
     }
-    public boolean checkTheWorkDetails(String bookName, String author, boolean back_trueOrHome_false) {
-        if (back_trueOrHome_false) return checkTheWorkDetails(bookName, author, 0);
+    public boolean checkTheWorkDetails(String bookName, String author, boolean back_true) {
+        if (back_true) return checkTheWorkDetails(bookName, author, 0);
         return checkTheWorkDetails(bookName, author, 1);
     }
 
@@ -56,11 +61,102 @@ public class TheWorkDetails extends StartCase {
             print.print("点击书籍:" + bookName + "跳转到书籍详情页不正确");
             return false;
         }
-        if(!Share_the_call)if(!checkShare(bookName,author))return false;
+        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-14");
+       if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_notice_content")))
+           RecordAd.getRecordAd().setAd("GG-65",devices.getText(By.id("com.mianfeia.book:id/adv_notice_content")));
+        //分享
+        if(!Share_the_call && CXBConfig.CHECK_SHARE)if(!checkShare(bookName,author))return false;
         Share_the_call = false;
+        //展开
+        if(unfold){
+            unfold=false;
+
+        }
+        if(!checkType("书籍介绍"))return false;
+        //书籍介绍内容
+        if(devices.getText(By.id("com.mianfeia.book:id/expand_text_view")).length()<1){
+            print.print("检查书籍介绍内容");
+            return false;
+        }
+        if(!checkType("作者其他图书"))return false;
+        //向下滑动页面到底部
+        for(int i=0;i<4;i++) {
+            devices.swipeToUp(2000);
+        }
+        if(!checkType("大家都在看"))return false;
+        if(!"换一换".equals(devices.getText(By.id("com.mianfeia.book:id/item_board_title_action_view")))){
+            print.print("检查换一换");
+            return false;
+        }
+        if(!checkType("V章补贴声明"))return false;
+        if(!"亲爱的用户，本书为VIP图书，本书所有VIP章节费用已由我司为您承担，您可免费阅读本书。".equals(AppXmlUtil.getXMLElement(
+                "//android.widget.TextView(text=亲爱的用户，本书为VIP图书，本书所有VIP章节费用已由我司为您承担，您可免费阅读本书。)",
+                devices.getPageXml(),"text"
+        ))){
+            print.print("检查V章补贴声明内容");
+            return false;
+        }
+        if("".equals(devices.getText(By.id("com.mianfeia.book:id/item_search_author_tv")))){
+            RecordAd.getRecordAd().setAd("GG-37",devices.getText(By.id("com.mianfeia.book:id/item_search_recommend_tv")));
+        }
         return true;
     }
 
+    /**
+     * 检查作者详情页中的各个类型是否存在
+     * @param name
+     * @return
+     */
+    private boolean checkType(String name){
+        if(!name.equals(AppXmlUtil.getXMLElement("//android.widget.TextView(text="+name+";)",
+                devices.getPageXml(),"text"))){
+            print.print("检查"+name+"介绍");
+            return false;
+        }
+        return true;
+
+    }
+    /**
+     * 检查展开按钮
+     * @return
+     */
+    private boolean checkUnfold(){
+        //获取书籍介绍
+        String unfold = devices.getText("");
+        if(unfold==null){
+            print.print("获取书籍介绍为空");
+            return false;
+        }
+        if(!unfold.endsWith("...")){
+            return true;
+        }else{
+            //点击展开按钮
+            devices.clickfindElement("");
+        }
+        //获取展开后的书籍介绍
+        String chickUnfolded = devices.getText("");
+        if(chickUnfolded==null){
+            print.print("点击展开按钮后获取的text为空");
+            return false;
+        }else{
+            if(chickUnfolded.length()<unfold.length()){
+                print.print("点击展开按钮后获取的text长度小于展开后的长度，展开前:"
+                        +unfold.length()+" 展开后:"+chickUnfolded.length());
+                return false;
+            }
+            if(!chickUnfolded.contains(unfold.substring(0,unfold.length()-2))){
+                print.print("点击展开按钮后获取的tex不包含展开前的介绍"
+                        +unfold.length()+" 展开后:"+chickUnfolded.length());
+                return false;
+            }
+        }
+
+
+
+
+
+        return true;
+    }
     /**
      * 检查开始阅读
      *
@@ -70,7 +166,7 @@ public class TheWorkDetails extends StartCase {
         System.out.println("执行检查开始阅读");
         System.out.println("    //点击开始阅读按钮");
         devices.clickfindElement(By.id("com.mianfeia.book:id/dlg_download_book_btn"));
-        if (!new Read(this.caseName).caseMap()) {
+        if (!new Read(this.caseName).checkCatalogueExternal()) {
             print.print("检查下载后的开始阅读失败");
             return false;
         }
@@ -178,12 +274,8 @@ public class TheWorkDetails extends StartCase {
          */
         System.out.println("执行检查作者详情页");
         if (!checkDetails(bookName, author)) return false;
-
         //点击返回按钮
         if (index == 0) devices.clickfindElement(By.className("android.widget.ImageButton"));
-        //返回到书架
-        if (index == 1) RunCase.initialize(devices);
-
         System.out.println("检查作者详情页成功");
         return true;
     }
@@ -284,4 +376,91 @@ public class TheWorkDetails extends StartCase {
             return 2;
         }
     }
+
+
+    /**
+     * 检查目录
+     * @return
+     */
+    public boolean checkCatalogue(String bookName,String chaptertitle){
+        if(bookName==null){
+            print.print("bookName为空");
+            return false;
+        }
+        if(chaptertitle==null){
+            print.print("chaptertitle为空");
+            return false;
+        }
+        if(!devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/tabIndicatorView1"))){
+            if(!devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/book_detail_to_volume_view"))){
+                print.print("目录不存在");
+            }else{
+                devices.clickfindElement(By.id("com.mianfeia.book:id/book_detail_to_volume_view"));
+            }
+        }
+        //返回按钮
+        if(!devices.isElementExsitAndroid(By.className("android.widget.ImageButton"))||
+                !bookName.equals(devices.getText(By.className("android.widget.TextView")))||
+                !"目录".equals(devices.getText(By.id("com.mianfeia.book:id/tabIndicatorView1")))||
+                !"书签".equals(devices.getText(By.id("com.mianfeia.book:id/tabIndicatorView2")))||
+                !chaptertitle.equals(devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle")))
+                ){
+            print.print("作者详情页中的目录页检查");
+            return false;
+        }
+        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view")))
+            ad.setAd("GG-27",devices.getText(By.id("com.mianfeia.book:id/banner_txt_title")));
+        return true;
+    }
+    /**
+     * 检查目录中的书签
+     * @return
+     */
+    public boolean checkCatalogueBookmark(String chaptertitile,String addDate){
+        devices.clickfindElement(By.id("com.mianfeia.book:id/tabIndicatorView2"));
+        if (chaptertitile == null)
+        {
+            print.print("chaptertitile为空");
+            return false;
+        }
+        if (addDate == null)   {
+            print.print("addDate为空");
+            return false;
+        };
+        if (chaptertitile.length() > 6) chaptertitile = chaptertitile.substring(0, 6);
+        String mark_chapter_title = devices.getText(By.id("com.mianfeia.book:id/mark_chapter_title"));
+        if (mark_chapter_title == null || !mark_chapter_title.contains(chaptertitile)) {
+            print.print("检查书签:" + chaptertitile);
+            return false;
+        }
+        String marksDate = devices.getText(By.id("com.mianfeia.book:id/mark_date"));
+        if (!marksDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}")) {
+            print.print("获取书签日期格式检查:" + marksDate);
+            return false;
+        }
+        marksDate = marksDate.substring(0, marksDate.indexOf(":"));
+        if (!addDate.equals(marksDate)) {
+            print.print("检查书签的日期与加入的日期:addDate:" + addDate + " marksDate:" + marksDate);
+            return false;
+        }
+        String mark_content = devices.getText(By.id("com.mianfeia.book:id/mark_content"));
+        if (mark_content == null ||mark_content.length()<1) {
+            print.print("获取的书签描述:mark_content：" + mark_content+"  阅读页中的简介:"+mark_content);
+            return false;
+        }
+        //点击保存的章节
+        devices.clickfindElement(By.id("com.mianfeia.book:id/mark_chapter_title"));
+        devices.sleep(3000);
+        if(!new Read(this.caseName).style(Read.catalog))return false;
+        if (!devices.isElementExsitAndroid(By.xpath("//android.widget.TextView[contains(@text,\"" + chaptertitile + "\")]"))) {
+            print.print("点击书签后，目录没有跳转到相应的章节");
+            return false;
+        }
+        devices.backspace();
+        devices.backspace();
+        if(new Read2(this.caseName).readAdd_a_bookcase("取消")==0)return false;
+        return true;
+    }
+
+
 }
