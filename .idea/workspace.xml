@@ -6,341 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="增加启动case抽象类，用于定义每一个用例集合的编写规范">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/appium_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Crash.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/产品开发流程/产品开发流程.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/测试流程/项目执行流程.pdf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/组织架构/组织架构.pdf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/行政部流程/提交集团法务合同归档登记表【模板】.xlsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/行政部流程/提交集团财务单据登记表【模板】.xlsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/行政部流程/用章、合同归档及财务单据相关流程.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/bin/adb.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/12.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/13.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/14.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/15.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/16.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/17.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/19.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/20.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/21.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/22.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/23.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/24.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/25.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/26.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/27.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/28.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/29.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/30.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/31.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/32.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/33.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/34.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/35.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/36.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/37.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/38.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/39.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/40.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/41.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/42.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/43.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/44.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/45.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/46.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/47.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/48.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/49.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/50.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/51.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/52.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/53.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/54.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/55.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/56.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/57.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/58.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/59.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/60.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/61.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/62.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/63.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/64.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/65.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/66.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/67.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/68.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/69.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/7.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/70.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/71.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/72.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/73.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/74.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/9.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/12.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/13.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/14.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/15.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/16.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/17.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/19.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/20.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/21.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/22.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/23.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/24.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/25.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/26.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/27.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/28.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/29.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/30.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/31.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/32.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/33.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/34.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/35.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/36.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/37.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/38.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/39.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/40.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/41.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/42.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/43.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/44.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/45.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/46.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/47.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/48.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/49.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/50.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/51.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/52.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/53.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/54.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/55.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/56.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/57.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/58.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/59.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/60.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/7.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab2/9.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/12.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/13.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/14.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/15.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/16.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/17.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/19.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/20.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/21.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/22.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/23.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/24.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/25.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/26.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/27.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/28.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/29.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/30.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/31.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/32.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/33.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/34.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/35.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/36.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/37.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/38.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/39.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/40.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/41.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/42.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/43.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/44.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/45.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/46.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/47.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/48.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/49.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/50.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/51.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/52.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/53.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/54.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/55.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/56.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/57.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/58.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/59.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/60.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/61.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/62.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/63.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/64.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/65.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/66.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/67.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/68.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/69.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/7.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/70.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/71.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/72.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/73.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/74.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab3/9.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/0.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/1.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/10.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/11.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/12.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/13.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/14.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/15.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/16.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/17.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/19.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/2.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/20.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/21.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/22.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/23.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/24.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/25.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/26.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/27.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/28.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/29.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/3.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/30.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/31.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/32.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/33.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/34.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/35.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/36.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/37.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/38.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/39.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/4.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/40.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/41.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/42.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/43.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/44.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/45.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/46.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/47.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/48.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/49.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/5.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/50.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/51.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/52.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/53.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/54.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/55.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/56.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/57.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/58.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/59.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/6.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/60.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/61.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/62.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/7.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/8.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab4/9.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/err.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/logo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/refresh.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/save.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/succeed.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/test.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/commons-beanutils-1.7.0.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/commons-collections-3.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/commons-logging.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/dom4j-1.6.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/ezmorph-1.0.3.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/jdom-2.0.6.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/json-lib-2.4-jdk15.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/jxl.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/poi-3.8-20120326.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/poi-ooxml-3.8-20120326.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/poi-ooxml-schemas-3.8-20120326.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/servlet-api.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/wormy.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/xmlbeans-2.3.0.jar" />
+    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
       <change beforePath="$PROJECT_DIR$/appium.iml" afterPath="$PROJECT_DIR$/appium.iml" />
       <change beforePath="$PROJECT_DIR$/out/production/appium/AD/GetAdLog.class" afterPath="$PROJECT_DIR$/out/production/appium/AD/GetAdLog.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AD/ScreenRecord.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/Devices.class" afterPath="$PROJECT_DIR$/out/production/appium/AppTest/Devices.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/Logs.class" afterPath="$PROJECT_DIR$/out/production/appium/AppTest/Logs.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/RunTest.class" afterPath="$PROJECT_DIR$/out/production/appium/AppTest/RunTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/AppUtil.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/Config.class" afterPath="$PROJECT_DIR$/out/production/appium/AppiumMethod/Config.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/DevicesInfo.class" afterPath="$PROJECT_DIR$/out/production/appium/AppiumMethod/DevicesInfo.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/GetLocalityFilePuth.class" afterPath="$PROJECT_DIR$/out/production/appium/AppiumMethod/GetLocalityFilePuth.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/ScreenshotsOperation.class" afterPath="$PROJECT_DIR$/out/production/appium/AppiumMethod/ScreenshotsOperation.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/installAPPPackage.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/CXBConfig.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/CXBConfig.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/PrintErr.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/PrintErr.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/Read.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/Read.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/RunCase.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/RunCase.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/Sidebar.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/Sidebar.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/test.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/test.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/test.class" afterPath="$PROJECT_DIR$/out/production/appium/JavaStudy/test.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/out/production/appium/META-INF/MANIFEST.MF" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/ConfigMonkey.class" afterPath="$PROJECT_DIR$/out/production/appium/Monkey/ConfigMonkey.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/GetPhoneLog.class" afterPath="$PROJECT_DIR$/out/production/appium/Monkey/GetPhoneLog.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey.class" afterPath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/test.class" afterPath="$PROJECT_DIR$/out/production/appium/Monkey/test.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/main/resources/META-INF/MANIFEST.MF" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -363,16 +33,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pane.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Pane.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="19" column="42" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FlowFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Squirrel/FlowFrame.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -383,11 +43,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="42">
               <caret line="307" column="14" lean-forward="false" selection-start-line="307" selection-start-column="14" selection-end-line="307" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="广告展现顺序逻辑单个用户单个广告位.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/免费电子书AD/广告展现顺序逻辑单个用户单个广告位.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="单日用户曝光与单日广告曝光总量.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/免费电子书AD/单日用户曝光与单日广告曝光总量.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -432,18 +112,6 @@
             <state relative-caret-position="56">
               <caret line="55" column="17" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FlowConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Squirrel/FlowConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -614,9 +282,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="239" />
-    <option name="y" value="121" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="89" />
+    <option name="y" value="-8" />
     <option name="width" value="1366" />
     <option name="height" value="719" />
   </component>
@@ -660,12 +328,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/image" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/xmlbeans-2.3.0.jar!/" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="side&#9;PSI&#9;JAVA://CXBCase.Read#directory_sidebar_class&#10;new UISelector()&#9;null&#9;null" />
@@ -944,7 +612,7 @@
       <workItem from="1526006619829" duration="2079000" />
       <workItem from="1526008828244" duration="48306000" />
       <workItem from="1526434047947" duration="54048000" />
-      <workItem from="1526826550437" duration="19382000" />
+      <workItem from="1526826550437" duration="19627000" />
     </task>
     <task id="LOCAL-00001" summary="修改设置方法">
       <created>1522723341291</created>
@@ -1072,11 +740,18 @@
       <option name="project" value="LOCAL" />
       <updated>1526915771703</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="更新项目结构">
+      <created>1526916303048</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1526916303048</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="679490000" />
+    <option name="totallyTimeSpent" value="679735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1088,23 +763,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="239" y="121" width="1366" height="719" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24394463" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24361159" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15577191" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25957122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642964" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1179,7 +854,8 @@
     <MESSAGE value="添加记录广告类" />
     <MESSAGE value="增加对作者详情中的大家都在看等模块的名称检查" />
     <MESSAGE value="添加松鼠测试工具" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加松鼠测试工具" />
+    <MESSAGE value="更新项目结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新项目结构" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1188,22 +864,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/RunCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="37" column="21" lean-forward="false" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppTest/AdbUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1676,6 +1336,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="307" column="14" lean-forward="false" selection-start-line="307" selection-start-column="14" selection-end-line="307" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/免费电子书AD/广告展现顺序逻辑单个用户单个广告位.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="18" lean-forward="false" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/免费电子书AD/单日用户曝光与单日广告曝光总量.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
           <folding />
         </state>
       </provider>
