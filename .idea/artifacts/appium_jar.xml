@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact name="appium:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/appium_jar</output-path>
+    <root id="root">
+      <element id="archive" name="TestTools.jar">
+        <element id="module-output" name="appium" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="file-copy" path="$PROJECT_DIR$/lib/wormy.jar" />
+      </element>
+      <element id="directory" name="image">
+        <element id="dir-copy" path="$PROJECT_DIR$/image" />
+      </element>
+      <element id="directory" name="bin">
+        <element id="file-copy" path="$PROJECT_DIR$/bin/adb.exe" />
+      </element>
+      <element id="directory" name="File">
+        <element id="dir-copy" path="$PROJECT_DIR$/File" />
+      </element>
+    </root>
+  </artifact>
+</component>
