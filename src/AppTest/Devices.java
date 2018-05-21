@@ -237,6 +237,29 @@ public class Devices {
     }
 
     /**
+     * 获取content-desc
+     * @param using
+     * @return
+     */
+    public String getAttribute(String using) {
+        String text = null;
+        if (isElementExsitAndroid(using)) {
+            text = driver.findElementByAndroidUIAutomator(using).getAttribute("name");
+        }
+        Logs.saveLog(caseName, "getText:" + using + "=" + text);
+        System.out.println("getAttribute:" + using + "=" + text);
+        return text;
+    }
+    public String getAttribute(By by) {
+        String text = null;
+        if (isElementExsitAndroid(by)) {
+            text = driver.findElement(by).getAttribute("name");
+        }
+        Logs.saveLog(caseName, "getText:" + by.toString() + "=" + text);
+        System.out.println("getAttribute:" + by.toString() + "=" + text);
+        return text;
+    }
+    /**
      * 通过坐标点击元素
      *
      * @param x
@@ -259,7 +282,7 @@ public class Devices {
         sleep(500);
     }
     public void clickScreen(String xy) {
-        if(xy.matches("^\\d+(,)\\d+$")){
+        if(!xy.matches("^\\d+(,)\\d+$")){
             throw new IllegalArgumentException("参数不正常:"+ xy);
         };
         String[] arr = xy.split(",");
@@ -298,6 +321,8 @@ public class Devices {
             WebElement element = driver.findElement(elemnt);
             flag = null != element;
         } catch (org.openqa.selenium.NoSuchElementException e) {
+            flag = false;
+        }catch (org.openqa.selenium.WebDriverException e){
             flag = false;
         }
         RunTest.addList(elemnt.toString() + ":" + flag, 1);

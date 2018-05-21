@@ -20,11 +20,14 @@ public class TheWorkDetails extends StartCase {
     public static  boolean Share_the_call = false;
     //展开按钮
     public static boolean unfold ;
+    //类型
+    public static boolean WorkType ;
     static{
         unfold = true;
+        WorkType = true;
     }
     public TheWorkDetails(String caseName) {
-        super(caseName+":TheWorkDetails");
+        super(caseName);
     }
 
     public boolean caseMap() {
@@ -47,6 +50,7 @@ public class TheWorkDetails extends StartCase {
             print.print("booName:" + bookName + " 或者author:" + author + " 为空");
             return false;
         }
+        devices.sleep(3000);
         if (!"作品详情".equals(devices.getText(
                 By.xpath("//android.widget.TextView[contains(@index,1)]")))
                 || !bookName.equals(devices.getText(By.id("com.mianfeia.book:id/book_detail_name_view")))
@@ -61,43 +65,61 @@ public class TheWorkDetails extends StartCase {
             print.print("点击书籍:" + bookName + "跳转到书籍详情页不正确");
             return false;
         }
-        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-14");
+        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-14",
+                devices.getText(By.id("com.mianfeia.book:id/banner_txt_title")));
        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_notice_content")))
            RecordAd.getRecordAd().setAd("GG-65",devices.getText(By.id("com.mianfeia.book:id/adv_notice_content")));
         //分享
         if(!Share_the_call && CXBConfig.CHECK_SHARE)if(!checkShare(bookName,author))return false;
         Share_the_call = false;
-        //展开
-        if(unfold){
-            unfold=false;
+        if(WorkType) {
+            WorkType=false;
+            if (!checkType("书籍介绍")) return false;
+            //书籍介绍内容
+            if (devices.getText(By.id("com.mianfeia.book:id/expand_text_view")).length() < 1) {
+                print.print("检查书籍介绍内容");
+                return false;
+            }
+            if (CXBConfig.BOOK_NAME.equals(bookName)) {
+                if (!CXBConfig.BOOK_SYNOPSIS.equals(devices.getText(By.id("com.mianfeia.book:id/expand_text_view")))) {
+                    print.print("检查书籍介绍中的内容与config不匹配");
+                    return false;
+                }
+                //展开
+                if (unfold) {
+                    unfold = false;
+                    if (!"展开".equals(devices.getText(By.id("com.mianfeia.book:id/expand_open_view")))) {
+                        print.print("检查展开按钮");
+                        return false;
+                    }
+                    devices.clickfindElement(By.id("com.mianfeia.book:id/expand_open_view"));
+                    if (!CXBConfig.BOOK_SYNOPSISOPEN.equals(devices.getText(By.id("com.mianfeia.book:id/expand_text_view")))) {
+                        print.print("检查展开后的简介内容不正确");
+                    }
 
-        }
-        if(!checkType("书籍介绍"))return false;
-        //书籍介绍内容
-        if(devices.getText(By.id("com.mianfeia.book:id/expand_text_view")).length()<1){
-            print.print("检查书籍介绍内容");
-            return false;
-        }
-        if(!checkType("作者其他图书"))return false;
-        //向下滑动页面到底部
-        for(int i=0;i<4;i++) {
-            devices.swipeToUp(2000);
-        }
-        if(!checkType("大家都在看"))return false;
-        if(!"换一换".equals(devices.getText(By.id("com.mianfeia.book:id/item_board_title_action_view")))){
-            print.print("检查换一换");
-            return false;
-        }
-        if(!checkType("V章补贴声明"))return false;
-        if(!"亲爱的用户，本书为VIP图书，本书所有VIP章节费用已由我司为您承担，您可免费阅读本书。".equals(AppXmlUtil.getXMLElement(
-                "//android.widget.TextView(text=亲爱的用户，本书为VIP图书，本书所有VIP章节费用已由我司为您承担，您可免费阅读本书。)",
-                devices.getPageXml(),"text"
-        ))){
-            print.print("检查V章补贴声明内容");
-            return false;
-        }
-        if("".equals(devices.getText(By.id("com.mianfeia.book:id/item_search_author_tv")))){
-            RecordAd.getRecordAd().setAd("GG-37",devices.getText(By.id("com.mianfeia.book:id/item_search_recommend_tv")));
+                }
+            }
+
+            //向下滑动页面到底部
+            for (int i = 0; i < 4; i++) {
+                devices.swipeToUp(2000);
+            }
+            if (!checkType("大家都在看")) return false;
+            if (!"换一换".equals(devices.getText(By.id("com.mianfeia.book:id/item_board_title_action_view")))) {
+                print.print("检查换一换");
+                return false;
+            }
+            if (!checkType("V章补贴声明")) return false;
+            if (!"亲爱的用户，本书为VIP图书，本书所有VIP章节费用已由我司为您承担，您可免费阅读本书。".equals(AppXmlUtil.getXMLElement(
+                    "//android.widget.TextView(text=亲爱的用户，本书为VIP图书，本书所有VIP章节费用已由我司为您承担，您可免费阅读本书。;)",
+                    devices.getPageXml(), "text"
+            ))) {
+                print.print("检查V章补贴声明内容");
+                return false;
+            }
+            if ("".equals(devices.getText(By.id("com.mianfeia.book:id/item_search_author_tv")))) {
+                RecordAd.getRecordAd().setAd("GG-37", devices.getText(By.id("com.mianfeia.book:id/item_search_recommend_tv")));
+            }
         }
         return true;
     }
@@ -108,9 +130,9 @@ public class TheWorkDetails extends StartCase {
      * @return
      */
     private boolean checkType(String name){
-        if(!name.equals(AppXmlUtil.getXMLElement("//android.widget.TextView(text="+name+";)",
+        if(!name.equals(AppXmlUtil.getXMLElement("android.widget.TextView(text="+name+";)",
                 devices.getPageXml(),"text"))){
-            print.print("检查"+name+"介绍");
+            print.print("检查"+name);
             return false;
         }
         return true;

@@ -80,14 +80,13 @@ public class AppXmlUtil {
             if (n != -1) {
                 listXpath.add(xpath.substring(0, n));
                 xpath = xpath.substring(n + 2, xpath.length());
-
             } else {
                 listXpath.add(xpath);
                 break;
             }
         }
-        List<String> listXml = new ArrayList<>();
         //提取出xml
+        List<String> listXml = new ArrayList<>();
         while (true) {
             int n = xml.indexOf("><");
             String s = "";

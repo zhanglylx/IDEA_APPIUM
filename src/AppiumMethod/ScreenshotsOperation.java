@@ -3,6 +3,7 @@ package AppiumMethod;
 import java.io.File;
 import java.io.IOException;
 
+import AppTest.FileUtil;
 import AppTest.RunTest;
 import org.apache.commons.io.FileUtils;
 
@@ -15,7 +16,9 @@ public class ScreenshotsOperation {
     private String fileName;
 
     public ScreenshotsOperation(String caseName) {
+        caseName = FileUtil.FileNameLegal(caseName);
         file = new File(Config.IMAGES_B + File.separator + caseName);
+
         // 检查目录是否存在
         checkList();
     }
@@ -47,15 +50,7 @@ public class ScreenshotsOperation {
             if(CheckFileExists()) this.fileName = System.currentTimeMillis()+fileName;
         }
         try {
-            fileName = fileName.replace(":","-");
-            fileName = fileName.replace("<","《");
-            fileName = fileName.replace(">","》");
-            fileName = fileName.replace("*","x");
-            fileName = fileName.replace("?","问号替换");
-            fileName = fileName.replace("|","-");
-            fileName = fileName.replace("\"","‘");
-            fileName = fileName.replace("\\","l");
-            fileName = fileName.replace("/","l");
+            fileName =FileUtil.FileNameLegal(fileName);
             FileUtils.copyFile(Image, new File(file + File.separator + fileName));
             if (!CheckFileExists()) {
                 RunTest.addList("截图失败:" + fileName,1);

@@ -1,7 +1,6 @@
 package CXBCase;
 
 import org.openqa.selenium.By;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -68,7 +67,8 @@ public class Read extends StartCase {
     }
 
     public boolean caseMap() {
-        if ("阅读页".equals(this.caseName)) if (!clickChapter()) return false;
+            if(!new Search(this.caseName).addBook(CXBConfig.BOOK_NAME,CXBConfig.BOOK_AUTHOR))return false;
+            if (!clickChapter()) return false;
         devices.sleep(2000);
         //关闭视听框
         if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/btn_left"))) {
@@ -76,7 +76,8 @@ public class Read extends StartCase {
             devices.sleep(1000);
             devices.clickScreen(devices.getWidth() / 2, devices.getHeight() / 2);
         }
-        devices.sleep(1000);
+        devices.sleep(2000);
+        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/banner_txt_title")))ad.setAd("GG-30");
         /**
          * 检查目录
          * 吊起设置页，检查目录按钮是否存在
@@ -84,7 +85,22 @@ public class Read extends StartCase {
          * 向下翻页，随机向上翻页
          * 翻页到目录最底页，检查配置中的最后一页章节是否存在
          */
-
+        if (!checkCatalogue()) return false;
+        /**
+         * 检查亮度
+         * 滑动到最亮，截图，通过人工检查最亮是否生效
+         * 滑动到最暗，截图，通过人工检查最暗是否生效
+         * 点击跟随系统亮度，截图，通过人工检查跟随系统亮度是否生效
+         */
+        if (!luminance()) return false;
+        /**
+         * 检查进度
+         * 点击上一章，根据配置中设置的页数进行翻章，然后打开目录，检查配置中的上一章是否存在
+         * 点击下一章，根据上一章设置页数+1，打开目录，检查配置中的下一章是否存在
+         * 向上滑动进度，然后关闭设置页，点击页面左侧，然后打开目录，检查配置中的上一章是否存在
+         * 向下滑动进度，根据上一章翻页数+1，然后打开目录，检查配置中的下一章是否存在
+         */
+        if (!progress()) return false;
         /**
          * 翻页+设置+末页章节推送
          * 向左向右随机翻页，设置中的随机选择，循环到章节末尾，检查末页章节是否存在
@@ -649,7 +665,6 @@ public class Read extends StartCase {
     private boolean luminance() {
         //检查亮度按钮是否存在
         if (!style(luminance)) return false;
-        devices.snapshot("请确认点击" + luminance + "后显示是否正确");
         devices.sleep(1000);
         //滑动亮度条到最亮
         startX = (int) (devices.getWidth() * 0.25);
@@ -668,9 +683,15 @@ public class Read extends StartCase {
         devices.customSlip(startX, startY, endX, endY, time);
         devices.snapshot("请检查滑动" + luminance + "到最暗后的屏幕");
         //点击系统亮度按钮
-        devices.clickScreen(((int) (devices.getWidth() * 0.93)),
-                ((int) (devices.getHeight() * 0.83)));
-        devices.snapshot("请检查点击系统" + luminance + "按钮");
+        if(devices.getDevicesBrand().contains(CXBConfig.modelSM)){
+            devices.clickScreen(((int) (devices.getWidth() * 0.93)),
+                    ((int) (devices.getHeight() * 0.85)));
+
+        }else{
+            devices.clickScreen(((int) (devices.getWidth() * 0.93)),
+                    ((int) (devices.getHeight() * 0.83)));
+        }
+        devices.snapshot("请检查开启系统" + luminance + "按钮");
         return true;
     }
 
@@ -708,6 +729,38 @@ public class Read extends StartCase {
     }
 
     /**
+     * 外部调用检查目录
+     * @return
+     */
+    public boolean checkCatalogueExternal(){
+        devices.sleep(2000);
+        //关闭视听框
+        if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/btn_left"))) {
+            devices.clickfindElement(By.id("com.mianfeia.book:id/btn_left"));
+            devices.sleep(1000);
+            devices.clickScreen(devices.getWidth() / 2, devices.getHeight() / 2);
+        }
+        devices.sleep(1000);
+        if (!style(catalog)) return false;
+        devices.sleep(2000);
+        /**
+         * 检查目录框是否展示
+         */
+        if (!catalog.equals(devices.getText(By.id(sidebar_catalog_id)))
+                || !bookmark.equals(devices.getText(By.id(sidebar_bookmark_id)))
+                || !devices.isElementExsitAndroid(By.className(directory_sidebar_class))) {
+            print.print("检查" + catalog + "是否展示");
+            return false;
+        }
+        //点击目录
+        devices.clickfindElement(By.id(sidebar_catalog_id));
+        devices.sleep(2000);
+        //检查第一个章节是否正确
+        if (!checkChapterFirst()) return false;
+        return true;
+
+    }
+    /**
      * 检查目录
      */
     private boolean checkCatalogue() {
@@ -727,7 +780,6 @@ public class Read extends StartCase {
         devices.sleep(2000);
         //检查第一个章节是否正确
         if (!checkChapterFirst()) return false;
-        if (!"阅读页".equals(this.caseName)) return true;
         /**
          * 滑动目录由上而下到底部
          */
@@ -818,6 +870,7 @@ public class Read extends StartCase {
      * @return
      */
     public boolean style(String name) {
+        if(clickReadmore()==0)return false;
         if (!setting()) return false;
         if (catalog.equals(name)) {
             if (!name.equals(devices.getText(
@@ -863,6 +916,8 @@ public class Read extends StartCase {
      * @return 0为页面存在后检查失败，1为存在,2为不存在
      */
     public int clickReadmore() {
+        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adtitle")))ad.setAd("GG-31",
+                devices.getText(By.id("com.mianfeia.book:id/adtitle")));
         if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog))) {
             if (devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1))) {
                 devices.clickfindElement(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1));

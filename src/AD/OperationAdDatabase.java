@@ -1,6 +1,7 @@
 package AD;
 
 import DataBase.ConnectDataBase;
+import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -96,6 +97,10 @@ public class OperationAdDatabase {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.out.println("初始化数据库失败");
+            System.exit(0);
+        } catch (CommunicationsException e) {
+            e.printStackTrace();
+            System.out.println("连接数据库失败");
             System.exit(0);
         } catch (SQLException e) {
             e.printStackTrace();

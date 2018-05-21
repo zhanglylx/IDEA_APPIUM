@@ -1,5 +1,7 @@
 package DataBase;
 
+import com.mysql.jdbc.CommunicationsException;
+
 import java.sql.*;
 
 public class ConnectDataBase {
@@ -29,7 +31,8 @@ public class ConnectDataBase {
      * @param password
      * @return
      */
-    public void coonnect(String url, String username, String password) throws IllegalArgumentException, SQLException {
+    public void coonnect(String url, String username, String password) throws IllegalArgumentException, SQLException ,
+            CommunicationsException{
         if (url == null) throw new IllegalArgumentException("url为空");
         if (username == null) throw new IllegalArgumentException("username为空");
         if (password == null) throw new IllegalArgumentException("password为空");

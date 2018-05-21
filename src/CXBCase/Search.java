@@ -45,7 +45,25 @@ public class Search extends StartCase {
         if (!searchResult(CXBConfig.BOOK_NAME, CXBConfig.BOOK_AUTHOR)) return false;
         return true;
     }
+    public boolean addBook(String name,String author){
+        if(bookcase_is_Book(name))return true;
+        if (!search()) return false;
+        if (!searchBook(name)) return false;
+        if(!checkSearchResult(name,author))return false;
+        devices.clickfindElement(search_result_to_add_btn);
+        RunCase.initialize(devices);
+        return bookcase_is_Book(name);
+    }
 
+    /**
+     * 进入到指定书籍的搜索结果页
+     */
+    public boolean entranceBookSearchEngineResultsPage(String name,String author ){
+        if (!search()) return false;
+        if (!searchBook(name)) return false;
+        if(!checkSearchResult(name,author))return false;
+        return true;
+    }
     /*
      *搜索书籍
      */
@@ -62,7 +80,6 @@ public class Search extends StartCase {
         //com.mianfeia.book:id/title_right_view搜索按钮
         devices.clickfindElement(By.id("com.mianfeia.book:id/title_right_view"));
         devices.sleep(1000);
-        System.out.println("搜索书籍成功");
         return true;
     }
     public void setBookRackExistsBookName(String bookName,boolean b){
@@ -151,14 +168,9 @@ public class Search extends StartCase {
             System.out.println("点击确定按钮");
             if(new Read2(this.caseName).readAdd_a_bookcase("确定")!=1)return false;
             if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(searchBookName, author, false)) return false;
-//            System.out.println("点击作者详情页中的回到精品按钮");
-//            int[] xy = devices.getXY(By.id("com.mianfeia.book:id/title_right_view"));
-//            devices.clickScreen(xy[0], xy[1]);
             RunCase.initialize(devices);
-            devices.sleep(3000);
-            devices.backspace();
             if (!bookcase_is_Book(searchBookName)) {
-                print.print("检查取消加入书架后，书架不存在书籍");
+                print.print("检查取消加入书架后，书架不存在书籍:"+searchBookName);
                 return false;
             }
             if (!deleteBook(searchBookName)) return false;
@@ -198,7 +210,7 @@ public class Search extends StartCase {
             //点击在线阅读按钮
             devices.sleep(2000);
             devices.clickfindElement(Search.search_result_to_read_btn);
-            if (!new Read(this.caseName).caseMap()) return false;
+            if (!new Read(this.caseName).checkCatalogueExternal()) return false;
             devices.backspace();
             devices.sleep(300);
             devices.backspace();
@@ -206,10 +218,11 @@ public class Search extends StartCase {
             System.out.println(" //点击作者简介");
             devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_title_view"));
             devices.sleep(2000);
+            if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(searchBookName, author, false)) return false;
             System.out.println(" //点击在线阅读");
             devices.clickfindElement(TheWorkDetails.ONLINE_READING);
             devices.sleep(2000);
-            if (!new Read(this.caseName).caseMap()) return false;
+            if (!new Read(this.caseName).checkCatalogueExternal()) return false;
             System.out.println("点击屏幕右侧，关闭目录页");
             devices.clickScreen((int) (devices.getWidth() * 0.9),
                     (int) (devices.getHeight() * 0.5));
@@ -235,7 +248,7 @@ public class Search extends StartCase {
             //点击在线阅读按钮
             devices.sleep(2000);
             devices.clickfindElement(Search.search_result_to_read_btn);
-            if (!new Read(this.caseName).caseMap()) return false;
+            if (!new Read(this.caseName).checkCatalogueExternal()) return false;
             devices.backspace();
             devices.sleep(300);
             devices.backspace();
@@ -406,6 +419,7 @@ public class Search extends StartCase {
     public boolean search() {
         System.out.println("执行搜索");
         //点击书架中的搜索按钮
+        RunCase.initialize(devices);
         devices.clickfindElement(By.id("com.mianfeia.book:id/title_right_view_2"));
         devices.sleep(3000);
         //检查搜索页面
@@ -416,8 +430,10 @@ public class Search extends StartCase {
 //        devices.clickScreen(xy[0], xy[1]);
         devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_summary_view"));
         devices.sleep(2000);
+        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-17",
+                devices.getText(By.id("com.mianfeia.book:id/banner_txt_title")));
         if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(bookName, bookAuthor, true)) return false;
-        System.out.println("搜索成功");
+        System.out.println("搜索页面成功");
         return true;
     }
 }

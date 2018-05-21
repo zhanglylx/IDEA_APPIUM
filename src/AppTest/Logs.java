@@ -1,7 +1,9 @@
 package AppTest;
 
 import AppiumMethod.Config;
+import AppiumMethod.Tooltip;
 
+import java.awt.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -33,16 +35,27 @@ public class Logs {
     }
 
     public static void saveLog(String name, String text) {
+        name = FileUtil.FileNameLegal(name);
         File file = new File(Config.IMAGES_B + File.separator + name);
         if (!file.exists() || !file.isDirectory()) {
             file.mkdirs();
         }
         PrintWriter pw = null;
         try {
+            File f = new File(file.getPath() + File.separator + Logs.dateName + ".txt");
+            if(!f.exists()){
+                if(!f.createNewFile()){
+                    Tooltip.errHint("创建日志目录失败,请重新运行程序");
+                }
+            }
             pw = new PrintWriter(
                     new FileWriter(
                             file.getPath() + File.separator + Logs.dateName + ".txt", true));
-            pw.println(Devices.caseNameStatic+": "+text);
+            if(Devices.caseNameStatic==null){
+                pw.println("null: "+text);
+            }else{
+                pw.println(Devices.caseNameStatic+": "+text);
+            }
             pw.flush();
         } catch (IOException e) {
             e.printStackTrace();

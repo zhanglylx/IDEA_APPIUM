@@ -5,7 +5,7 @@ import AppiumMethod.DevicesInfo;
 import javax.swing.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-
+// GG-32 聚效广告返回广告失败
 public class GetAdLog {
     //记录时间
     public static int time = 0;

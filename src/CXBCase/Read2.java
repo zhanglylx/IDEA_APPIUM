@@ -3,6 +3,7 @@ package CXBCase;
 import AppTest.AppXmlUtil;
 import org.openqa.selenium.By;
 
+import javax.naming.ldap.PagedResultsControl;
 import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,12 +11,12 @@ import java.util.Random;
 
 /**
  * 检查阅读页中的日夜间切换、评论、书库页检查，目录页添加书签
- *
  */
 //未完成的开发:日夜间切换、评论
 public class Read2 extends StartCase {
     String bookName;
     String author;
+    String firstChaptertitle;
 
     public Read2(String caseName) {
         super(caseName);
@@ -49,10 +50,7 @@ public class Read2 extends StartCase {
         RunCase.initialize(devices);
         //点击书库按钮
         devices.clickfindElement(ElementAttributes.STACK_ROOM);
-        if(!new BookLibrary(this.caseName).checkBookLibrary())return false;
-
-
-
+        if (!new BookLibrary(this.caseName).checkBookLibrary()) return false;
 
 
         return true;
@@ -60,13 +58,15 @@ public class Read2 extends StartCase {
 
 
     /**
-     * 检查书签
+     * 检查书签和作者详情页目录中的书签
      *
      * @return boolean
      */
     private boolean bookMark() {
         //进入目录
         if (!new Read(this.caseName).style(Read.catalog)) return false;
+        //将书籍第一个章节赋值
+        this.firstChaptertitle = devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
         /**
          * 滑动目录由上而下到底部
          */
@@ -95,19 +95,31 @@ public class Read2 extends StartCase {
         if (!CheckBookmarks(chaptertitile, addDate)) return false;
         devices.backspace();
         devices.backspace();
+        //将书籍添加到书架
         int i = readAdd_a_bookcase("确定");
         Search search = new Search(this.caseName);
-        search.setBookRackExistsBookName(this.bookName,true);
-        if(i==0)return false;
+        if (i == 0) return false;
         RunCase.initialize(devices);
-        if(!search.bookcase_is_Book(chaptertitile)){
-            print.print("检查从阅读页添加到书架的书籍:"+chaptertitile);
+        if (!search.bookcase_is_Book(this.bookName)) {
+            print.print("检查从阅读页添加到书架的书籍:" + this.bookName);
         }
+        //进入到作者详情页检查书签
+        if (!search.entranceBookSearchEngineResultsPage(this.bookName, this.author)) return false;
+        System.out.println(" //点击作者简介");
+        devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_title_view"));
+        TheWorkDetails twd = new TheWorkDetails(this.caseName);
+        //验证目录页和书签
+        if(!twd.checkTheWorkDetails(this.bookName,this.author,false))return false;
+        if(!twd.checkCatalogue(this.bookName, this.firstChaptertitle))return false;
+        if(!twd.checkCatalogueBookmark(chaptertitile,addDate))return false;
         return true;
     }
 
     /**
      * 检查书签
+     * 检查加入的书签和书签中保存的信息是否一致
+     * 点击目录，在目录页中随机向上滑动，然后点击第一个章节
+     * 打开书签，点击书签后检查目录页中是否存在点击书签的章节
      *
      * @param chaptertitile
      * @return
@@ -136,8 +148,34 @@ public class Read2 extends StartCase {
             print.print("获取的书签描述:mark_content：" + mark_content);
             return false;
         }
+        //点击目录
+        devices.clickfindElement(By.id("com.mianfeia.book:id/tabIndicatorView2"));
+        int[] xy = CXBConfig.slideXY(width, height, Read.catalog);
+        //向上滑动目录
+        for (int i = 0; i < new Random().nextInt(10) + 5; i++) {
+            devices.customSlip(xy[0], xy[3], xy[0], xy[1], xy[4]);
+        }
+        if (chaptertitile.equals(AppXmlUtil.getXMLElement("text=" + chaptertitile, devices.getPageXml(), "text"))) {
+            print.print("自动检测书签失败，请手动检测");
+            return true;
+        }
+        //点击目录中第一个章节
+        devices.clickfindElement(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
+        devices.sleep(1000);
+        if (!new Read(this.caseName).style(Read.catalog)) return false;
+        //点击书签
+        devices.clickfindElement(By.id("com.mianfeia.book:id/tabIndicatorView1"));
+        //点击书签中保存的书签
+        devices.clickfindElement(By.id("com.mianfeia.book:id/mark_chapter_title"));
+        //点击目录
+        if (!new Read(this.caseName).style(Read.catalog)) return false;
+        if (!devices.isElementExsitAndroid(By.xpath("//android.widget.TextView[contains(@text,\"" + chaptertitile + "\")]"))) {
+            print.print("点击书签后，目录没有跳转到相应的章节");
+            return false;
+        }
         return true;
     }
+
 
     /**
      * 从精品页进入阅读页
@@ -159,10 +197,10 @@ public class Read2 extends StartCase {
                 return false;
             }
         }
-        this.bookName = AppXmlUtil.getXMLElement("android.view.View//android.support.v7.widget.RecyclerView//android.widget.LinearLayout(index=1;)//" +
+        this.bookName = AppXmlUtil.getXMLElement("android.support.v7.widget.RecyclerView//android.widget.LinearLayout(index=1;)//" +
                 "android.widget.TextView(resource-id=com.mianfeia.book:id/search_result_title_view;)" +
                 "(index=0;)", devices.getPageXml(), "text");
-        this.author = AppXmlUtil.getXMLElement("android.view.View//android.support.v7.widget.RecyclerView//android.widget.LinearLayout(index=1;)//" +
+        this.author = AppXmlUtil.getXMLElement("android.support.v7.widget.RecyclerView//android.widget.LinearLayout(index=1;)//" +
                 "android.widget.TextView(resource-id=com.mianfeia.book:id/search_result_author_view;)" +
                 "(index=2;)", devices.getPageXml(), "text");
         //点击书籍

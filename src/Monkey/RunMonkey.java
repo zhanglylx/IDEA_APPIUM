@@ -151,7 +151,7 @@ public class RunMonkey {
                         date + ".txt");
             }
 //            } else {
-//                Tooltip.finishHint("拉取monkeyLog失败了，可能因为手机中断或者其他原因，所以执行了筛选运行时的log信息中，没有发现ANR");
+//                TooltipUtil.finishHint("拉取monkeyLog失败了，可能因为手机中断或者其他原因，所以执行了筛选运行时的log信息中，没有发现ANR");
 //            }
         } catch (IOException e) {
             e.printStackTrace();

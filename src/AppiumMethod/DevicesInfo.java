@@ -69,9 +69,11 @@ public class  DevicesInfo {
         String[] adb = adb(" devices -l");
         for(String s : adb){
             if(s.contains("model")){
-                devicesBrand = s;
+                this.devicesBrand = s;
+                return;
             }
         }
+        this.devicesBrand="没有获取到手机model";
     }
     public static  void err(String[] adb, String errName) {
         if(errName ==null){

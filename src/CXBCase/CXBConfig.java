@@ -22,6 +22,9 @@ public class CXBConfig {
     public static final String BOOK_NAME = "闪婚老公太凶猛";
     //书籍第一章节
     public static final String BOOK_CHAPTER_FIRST = "第1章 再傻也懂了";
+    //书籍简介
+    public static final String BOOK_SYNOPSIS  = "结婚前一天，她亲眼目睹男友和他的准大嫂在办公室上演限制级戏码，心碎之时，一个沉稳的男人出现在她身边。“跟我结婚，这样，他们两个无耻的男女就要每天叫你大嫂？…";
+    public static final String BOOK_SYNOPSISOPEN = "结婚前一天，她亲眼目睹男友和他的准大嫂在办公室上演限制级戏码，心碎之时，一个沉稳的男人出现在她身边。“跟我结婚，这样，他们两个无耻的男女就要每天叫你大嫂？怎样？”就这样，领了证。可是，谁能想到，原本坐在轮椅上的老公不仅不无能，还动不动就把她吃干抹净……";
     //书籍作者
     public static final String BOOK_AUTHOR = "温煦依依";
     //请配置目录页最后一页中的章节,不要配置最后一个章节，尽量配置最后最后一页中的中间部分章节
@@ -46,6 +49,8 @@ public class CXBConfig {
      */
     //BOOK_NAME的所需积分
     public static final String BOOK_NAME_INTEGRAL = "所需积分：66";
+    //是否检查分享
+    public static final boolean CHECK_SHARE = false;
 
 
     /**

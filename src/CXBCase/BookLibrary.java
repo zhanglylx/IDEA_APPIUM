@@ -34,19 +34,19 @@ public class BookLibrary extends StartCase {
         devices.clickScreen(AppXmlUtil.getXMLElement
                 ("android.widget.TextView(" +
                         "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
-                        "(text=" + schoolgirl + ")", devices.getPageXml(), "bounds"));
+                        "(text=" + schoolgirl + ";)", devices.getPageXml(), "bounds"));
         if (!checkPage(schoolgirl)) return false;
         //点击出版
         devices.clickScreen(AppXmlUtil.getXMLElement
                 ("android.widget.TextView(" +
                         "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
-                        "(text=" + publish + ")", devices.getPageXml(), "bounds"));
+                        "(text=" + publish + ";)", devices.getPageXml(), "bounds"));
         if (!checkPage(publish)) return false;
         //点击男生
         devices.clickScreen(AppXmlUtil.getXMLElement
                 ("android.widget.TextView(" +
                         "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
-                        "(text=" + schoolboy + ")", devices.getPageXml(), "bounds"));
+                        "(text=" + schoolboy + ";)", devices.getPageXml(), "bounds"));
         if (!checkPage(schoolboy)) return false;
         return true;
     }
@@ -57,31 +57,9 @@ public class BookLibrary extends StartCase {
      * @return
      */
     private boolean checkPage(String tab) {
-        String xml = devices.getPageXml();
-        if (!schoolboy.equals(
-                AppXmlUtil.getXMLElement
-                        ("android.widget.TextView(" +
-                                "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
-                                "(text=" + schoolboy + ")", xml, "text"))) {
-            print.print("检查首页" + schoolboy + "存在");
-            return false;
-        }
-        if (!schoolgirl.equals(
-                AppXmlUtil.getXMLElement
-                        ("android.widget.TextView(" +
-                                "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
-                                "(text=" + schoolgirl + ")", xml, "text"))) {
-            print.print("检查首页" + schoolgirl + "存在");
-            return false;
-        }
-        if (!publish.equals(
-                AppXmlUtil.getXMLElement
-                        ("android.widget.TextView(" +
-                                "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
-                                "(text=" + publish + ")", xml, "text"))) {
-            print.print("检查首页" + publish + "存在");
-            return false;
-        }
+        if (!checkTitle(schoolboy)) return false;
+        if (!checkTitle(schoolgirl)) return false;
+        if (!checkTitle(publish)) return false;
         if (!devices.isElementExsitAndroid(item_stacks_board_view) ||
                 !devices.isElementExsitAndroid(item_stacks_classify_tv)
                 ) {
@@ -95,8 +73,8 @@ public class BookLibrary extends StartCase {
         //点击返回按钮
         if (new Random().nextInt(2) == 0) {
             devices.clickScreen(AppXmlUtil.getXMLElement(
-                    "android.widget.ImageButton(index=0)", devices.getPageXml(), "bounds"));
-        }else{
+                    "android.widget.ImageButton(index=0;)", devices.getPageXml(), "bounds"));
+        } else {
             //检查跳转到精品
             if (!new Sidebar(this.caseName).checkBoutiqueButton()) return false;
             devices.clickfindElement(ElementAttributes.STACK_ROOM);
@@ -110,11 +88,28 @@ public class BookLibrary extends StartCase {
         if (!checkSubpage(tv)) return false;
         if (new Random().nextInt(2) == 0) {
             devices.clickScreen(AppXmlUtil.getXMLElement(
-                    "android.widget.ImageButton(index=0)", devices.getPageXml(), "bounds"));
-        }else{
+                    "android.widget.ImageButton(index=0;)", devices.getPageXml(), "bounds"));
+        } else {
             //检查跳转到精品
             if (!new Sidebar(this.caseName).checkBoutiqueButton()) return false;
             devices.clickfindElement(ElementAttributes.STACK_ROOM);
+        }
+        return true;
+    }
+
+    /**
+     * 检查书库左侧标题
+     *
+     * @return
+     */
+    private boolean checkTitle(String title) {
+        if (!title.equals(
+                AppXmlUtil.getXMLElement
+                        ("android.widget.TextView(" +
+                                "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
+                                "(text=" + title + ";)", devices.getPageXml(), "text"))) {
+            print.print("检查首页" + title + "存在");
+            return false;
         }
         return true;
     }
@@ -126,6 +121,17 @@ public class BookLibrary extends StartCase {
      * @return
      */
     private boolean checkSubpage(String tab) {
+        switch (tab) {
+            case schoolboy:
+                tab = "男频-";
+                break;
+            case schoolgirl:
+                tab = "女频-";
+                break;
+            case publish:
+                tab = "出版";
+                break;
+        }
         if (!devices.getText(By.className("android.widget.TextView")).contains(tab) ||
                 !devices.isElementExsitAndroid(By.className("android.widget.ImageButton")) ||
                 !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/title_right_view"))

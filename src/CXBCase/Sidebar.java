@@ -13,6 +13,7 @@ import java.util.Random;
  * 2.检查侧边栏中的赚积分、积分商城、积分记录、获赠记录、今日推荐和关于我们按钮是否存在和点击后的页面title是否展示和
  * 页面中不存在加载失败提示按钮
  * 3.检查页面右上角跳转到精品页按钮:精品按钮页检查是否出现男频和侧边栏是否关闭
+ * 4.随机检查房子按钮和返回按钮
  */
 public class Sidebar extends StartCase {
     //书架左上角侧边栏按钮
@@ -49,7 +50,7 @@ public class Sidebar extends StartCase {
          * 验证赚积分页
          */
         if (!verificationEarnPoints(ToEarnPoints, 1)) return false;
-        if (!verificationEarnPoints(integralShopping, 2)) return false;
+//        if (!verificationEarnPoints(integralShopping, 2)) return false;
         if (!verificationEarnPoints(integralRecord, 3)) return false;
         if (!verificationEarnPoints(MyMonthly, 4)) return false;
         if (!verificationEarnPoints(GivenRecord, 5)) return false;
@@ -158,7 +159,13 @@ public class Sidebar extends StartCase {
         if (integralShopping.equals(name) || integralRecord.equals(name) ||
                 MyMonthly.equals(name) || GivenRecord.equals(name)
                 || dailyRecommendation.equals(name) || AboutUs.equals(name)) {
-            if (new Random().nextInt(5) < 3) if (!checkBoutiqueButton(name)) return false;
+            if (new Random().nextInt(5) < 3){
+                if (!checkBoutiqueButton(name)) return false;
+            }else{
+                devices.clickfindElement(By.className("android.widget.ImageButton"));
+                devices.sleep(1000);
+
+            }
         } else {
             //点击返回按钮
             devices.clickfindElement(By.className("android.widget.ImageButton"));
@@ -189,7 +196,7 @@ public class Sidebar extends StartCase {
 
     public boolean checkNetWork() {
         if (AppXmlUtil.getXMLElement(
-                "android.webkit.WebView(text=网页无法打开;)",
+                "(text=网页无法打开;)",
                 devices.getPageXml(), "text").contains("网页无法打开")) {
             print.print("检查页面失败");
             return false;
@@ -205,7 +212,6 @@ public class Sidebar extends StartCase {
     private boolean dayTimeNight() {
         if (!"夜间模式".equals(devices.getText(By.id("com.mianfeia.book:id/txt_eye_mode")))) {
             print.print("检查夜间模式按钮是否存在");
-            ;
             return false;
         }
         //点击白夜间按钮
@@ -216,6 +222,7 @@ public class Sidebar extends StartCase {
             return false;
         }
         //置回默认值
+        devices.sleep(2000);
         devices.clickfindElement(By.id("com.mianfeia.book:id/txt_eye_mode"));
         return true;
     }
@@ -278,7 +285,7 @@ public class Sidebar extends StartCase {
             return false;
         }
         if (!"男频".equals(AppXmlUtil.getXMLElement(
-                "//android.view.View//android.support.v7.widget.RecyclerView//" +
+                "//android.support.v7.widget.RecyclerView//" +
                         "android.widget.LinearLayout(index=2;)//android.widget.LinearLayout(index=0;)//" +
                         "android.widget.TextView(text=男频;)", devices.getPageXml(), "text"))) {
             print.print("检查跳转到精品页后没有找到男频");
