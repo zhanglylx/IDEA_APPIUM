@@ -196,5 +196,27 @@ public class WindosUtils {
         return null;
     }
 
+    /**
+     * 获取指定目录下的文件或目录
+     * @param path
+     * @return
+     */
+    public static File[] getDirectoryFilesName(String path){
+        if(path == null) {
+            TooltipUtil.errTooltip("getFilesName路径为空："+path);
+            return null;
+        }
+        File file = new File(path);
+        if(!file.exists()){
+            TooltipUtil.errTooltip("getFilesName文件不存在："+path);
+            return null;
+        }
+        if(!file.isDirectory()){
+            TooltipUtil.errTooltip("不是目录："+path);
+            return null;
+        }
+        return file.listFiles();
+
+    }
 
 }

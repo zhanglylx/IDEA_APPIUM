@@ -8,6 +8,7 @@ import java.io.File;
 
 import SquirrelFrame.*;
 import Utlis.FrameUtils;
+import Utlis.WindosUtils;
 import org.openqa.selenium.os.WindowsUtils;
 
 /**
@@ -18,21 +19,8 @@ public class FlowFrame extends Pane {
     public FlowFrame(String buttonText, JDialog frame) {
         super(buttonText, frame);
         //添加制定流程中的按钮
-        switch (buttonText) {
-            case testFlow:
-                addButton(FlowConfig.projectFlow);
-                break;
-            case administrativeProcess:
-                addButton(FlowConfig.administrativeProcessFlow);
-                break;
-            case staffLevel:
-                addButton(FlowConfig.staffLevelFlow);
-                break;
-            case development:
-                addButton(FlowConfig.developmentFlow);
-                break;
-        }
-
+        addButton(FrameUtils.addFilesShiftArrays(
+                WindosUtils.getDirectoryFilesName(FlowConfig.fileSit+buttonText),new String[0]));
         setJDialog();
     }
 

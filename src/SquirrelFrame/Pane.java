@@ -7,8 +7,11 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.util.Arrays;
 
 import Squirrel.*;
+import Utlis.FrameUtils;
+import Utlis.WindosUtils;
 
 /**
  * 窗格类
@@ -19,13 +22,18 @@ public class Pane extends JDialog {
     public static final String staffLevel = "组织架构";
     public static final String development = "产品开发流程";
     public static final String administrativeProcess = "行政部流程";
-    public static final String[] flow;
+    private static String[] flow;
     public static final String getADLog = "获取广告日志";
 
+    /**
+     * 流程二级页面创建方法:在File中创建一个目录，系统会自动加在二级页面中，
+     * 在三级页面中加入相应文件即可加入到三级页面中
+     */
     static {
-        flow = new String[]{
-                testFlow, approvalProcess, staffLevel, development, administrativeProcess
-        };
+//        flow = new String[]{
+//                testFlow, approvalProcess, staffLevel, development, administrativeProcess
+//        };
+        flow = FrameUtils.addFilesShiftArrays(WindosUtils.getDirectoryFilesName(FlowConfig.fileSit),flow);
     }
 
 
@@ -68,20 +76,11 @@ public class Pane extends JDialog {
         f.addActionListener(e -> {
             String text = f.getText();
             switch (text) {
-                case testFlow :
-                    new FlowFrame(testFlow, this);
-                    break;
-                case staffLevel:
-                    new FlowFrame( staffLevel,this);
-                    break;
                 case getADLog:
                     new GetADLog(text, this);
                     break;
-                case development:
-                    new FlowFrame( development,this);
-                    break;
-                case administrativeProcess:
-                    new FlowFrame(administrativeProcess, this);
+              default:
+                    new FlowFrame(f.getText(), this);
                     break;
 
             }

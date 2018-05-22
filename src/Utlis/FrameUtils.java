@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.util.Arrays;
 
 public class FrameUtils {
     /**
@@ -52,7 +53,27 @@ public class FrameUtils {
         return null;
     }
 
+    /**
+     * 将file中文件名称转换成数组
+     * @param files
+     * @param arrays
+     * @return
+     */
+    public static String[] addFilesShiftArrays(File[] files,String[] arrays){
+        if(arrays==null)arrays=new String[0];
+        for (File file : files) {
+            arrays = Arrays.copyOf(arrays, arrays.length + 1);
+            arrays[arrays.length-1]=file.getName();
+        }
+        return arrays;
+    }
+
+
+
     public static void main(String[] args) {
         System.out.println(saveFileFrame(new Frame(), new File("Crash.txt")));
     }
+
+
+
 }
