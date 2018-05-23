@@ -65,6 +65,7 @@ public class HomePage extends JFrame {
 
     public static HomePage getHomePage() {
         if (homePage == null) homePage = new HomePage();
+
         return homePage;
     }
 
@@ -285,7 +286,7 @@ public class HomePage extends JFrame {
 
 
     public static void main(String[] args) {
-        HomePage S = new HomePage();
+         HomePage.getHomePage();
     }
 
 

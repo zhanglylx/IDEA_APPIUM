@@ -6,8 +6,9 @@ import java.sql.SQLException;
 public class text {
     public static void main(String[] args) {
         try {
+
             ConnectDataBase c = new ConnectDataBase("mysql");
-            c.closeDatabase();
+
             c.coonnect("192.168.1.246:3306/freezwsc","root_rw","loto5522");
             ResultSet rs =  c.selectSql("select * from freeadrelease");
             String job = null;
@@ -31,10 +32,12 @@ public class text {
                 //输出结果
                 System.out.println(id + "\t" + job);
             }
+            c.closeDatabase();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 }

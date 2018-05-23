@@ -19,8 +19,10 @@ public class FlowFrame extends Pane {
     public FlowFrame(String buttonText, JDialog frame) {
         super(buttonText, frame);
         //添加制定流程中的按钮
-        addButton(FrameUtils.addFilesShiftArrays(
-                WindosUtils.getDirectoryFilesName(FlowConfig.fileSit+buttonText),new String[0]));
+        String[] flow = FrameUtils.addFilesShiftArrays(
+                WindosUtils.getDirectoryFilesName(FlowConfig.fileSit+buttonText),new String[0]);
+        addButton(flow);
+        setWidthAndHeight(flow);
         setJDialog();
     }
 
@@ -29,7 +31,7 @@ public class FlowFrame extends Pane {
      * @param button
      */
     private void addButton(String[] button) {
-        setLayout(new GridLayout(button.length,2));
+        setLayout(new GridLayout(button.length,1));
         for (int i = 0; i < button.length; i++) {
             saveButton=FrameUtils.jbuttonImage("save.png");
 //            saveButton.setText((i+1)+"");

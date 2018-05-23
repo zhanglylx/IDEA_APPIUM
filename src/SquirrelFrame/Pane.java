@@ -13,26 +13,21 @@ import Squirrel.*;
 import Utlis.FrameUtils;
 import Utlis.WindosUtils;
 
+import static Squirrel.testTools.*;
+
 /**
  * 窗格类
  */
 public class Pane extends JDialog {
     public static final String testFlow = "测试流程";
     public static final String approvalProcess = "审批流程";
-    public static final String staffLevel = "组织架构";
-    public static final String development = "产品开发流程";
-    public static final String administrativeProcess = "行政部流程";
     private static String[] flow;
-    public static final String getADLog = "获取广告日志";
 
     /**
      * 流程二级页面创建方法:在File中创建一个目录，系统会自动加在二级页面中，
      * 在三级页面中加入相应文件即可加入到三级页面中
      */
     static {
-//        flow = new String[]{
-//                testFlow, approvalProcess, staffLevel, development, administrativeProcess
-//        };
         flow = FrameUtils.addFilesShiftArrays(WindosUtils.getDirectoryFilesName(FlowConfig.fileSit),flow);
     }
 
@@ -40,6 +35,7 @@ public class Pane extends JDialog {
     public Pane(String buttonText, JDialog frame) {
         super(frame, true);
         setTitle(buttonText);
+
     }
 
     public static boolean windowsClose = false;
@@ -62,8 +58,11 @@ public class Pane extends JDialog {
                 break;
             case HomePage.testTools:
                 setLayout(new GridLayout(3, 3));
-                setButton(getADLog);
+                for(String s : testTools){
+                    setButton(s);
+                }
         }
+        setWidthAndHeight(flow);
         setJDialog();
     }
 
@@ -75,18 +74,19 @@ public class Pane extends JDialog {
     public void buttonMouseListener(JButton f) {
         f.addActionListener(e -> {
             String text = f.getText();
-            switch (text) {
-                case getADLog:
-                    new GetADLog(text, this);
-                    break;
-              default:
-                    new FlowFrame(f.getText(), this);
-                    break;
-
+            if(checkArraysContainText(flow,text)){
+                new FlowFrame(f.getText(), this);
+            }else if (checkArraysContainText(testTools,text)){
+                invokingTestFrame(text,this);
             }
         });
     }
-
+    public boolean checkArraysContainText(String[] arrays,String text){
+        for(String str : arrays){
+            if(str.equals(text))return true;
+        }
+        return false;
+    }
     /**
      * 设置窗口
      */
@@ -100,13 +100,27 @@ public class Pane extends JDialog {
 
             }
         });
-        setSize(400, 250);
         setLocation(400, 200);
         setLocationRelativeTo(null);
         setVisible(true);
 
     }
-
+    /**
+     * 设置大小
+     */
+    public void setWidthAndHeight(String[] len){
+        int max = 0;
+        for(String s : len){
+            if(s.length()>max)max=s.length();
+        }
+        int height =len.length*50;
+        if(len.length==1)height=100;
+        if(max<10){
+            setSize(max*40, height);
+        }else{
+            setSize(max*25, height);
+        }
+    }
 
     /**
      * 设置按钮

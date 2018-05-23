@@ -24,7 +24,7 @@ public class Menubar extends JPanel {
     public void buttonMouseListener(JMenuItem f) {
         String text = f.getText();
         f.addActionListener(e -> {
-            new WindowsText(text,HomePage.getHomePage()).button(text);
+            new WindowsText(text,HomePage.getHomePage());
         });
     }
 }

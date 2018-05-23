@@ -84,9 +84,11 @@ public class WindowsText extends JDialog implements ActionListener{
         }
     }
 
-
+    /**
+     *
+     * @param text
+     */
     public void button(String text){
-
         switch (text) {
             case HomePage.getLocalIP:
                 jta.setText(Utlis.WindosUtils.getLocalIP());
@@ -97,16 +99,16 @@ public class WindowsText extends JDialog implements ActionListener{
                 jta.setEnabled(false);
                 jta.setBackground(Color.DARK_GRAY);
                 jta.setText(Config.guanyu);
+                break;
             default:
-                jta.setText(GetADLog.list.toString());
-                if (text.contains("GG-") ) {
-                    System.out.println("00000000000000000000000000000000000000000");
-                    if(jscrollPane!=null)jscrollPane.repaint();
-                    this.repaint();
-                    jta.repaint();
-                    jta.setText(GetADLog.list.toString());
-                }
-                jta.setText(GetADLog.list.toString());
+//                jta.setText(GetADLog.list.toString());
+//                if (text.contains("GG-") ) {
+//                    if(jscrollPane!=null)jscrollPane.repaint();
+//                    this.repaint();
+//                    jta.repaint();
+//                    jta.setText(GetADLog.list.toString());
+//                }
+//                jta.setText(GetADLog.list.toString());
         }
     }
     public void setText(String text){

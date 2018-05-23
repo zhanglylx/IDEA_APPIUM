@@ -26,7 +26,7 @@ public class ConnectDataBase {
     /**
      * 连接数据库
      *
-     * @param url
+     * @param url   ip地址:端口/库
      * @param username
      * @param password
      * @return
@@ -43,7 +43,7 @@ public class ConnectDataBase {
         if(!con.isClosed()) System.out.println("数据库连接成功");
 
         }
-
+    public Connection getCon(){return con;}
     /**
      * 查询select
      * @param sql

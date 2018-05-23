@@ -68,12 +68,19 @@ public class FrameUtils {
         return arrays;
     }
 
+    /**
+     * 添加JDialog窗口关闭监听器
+     * @param jDialog
+     */
+    public static void jdialogClose(JDialog jDialog){
+        jDialog.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                jDialog.setDefaultCloseOperation(2);
 
-
-    public static void main(String[] args) {
-        System.out.println(saveFileFrame(new Frame(), new File("Crash.txt")));
+            }
+        });
     }
-
-
 
 }
