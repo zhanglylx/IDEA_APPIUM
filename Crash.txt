@@ -12112,3 +12112,61 @@ java.lang.InterruptedException: sleep interrupted
 [List of devices attached, ]
 2018-05-23-18-38-59:
 [List of devices attached, ]
+2018-05-23-22-08-36:
+[List of devices attached, ]
+2018-05-23-22-08-36:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-10-58:
+[List of devices attached, ]
+2018-05-23-22-11-44:
+[List of devices attached, ]
+2018-05-23-22-13-09:
+[List of devices attached, ]
+2018-05-23-22-13-09:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-16-54:
+[List of devices attached, ]
+2018-05-23-22-16-54:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-17-27:
+[List of devices attached, ]
+2018-05-23-22-22-34:
+[List of devices attached, ]
+2018-05-23-22-22-34:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-24-09:
+[List of devices attached, ]
+2018-05-23-22-24-09:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-28-03:
+[List of devices attached, ]
+2018-05-23-22-28-03:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-29-01:
+[List of devices attached, ]
+2018-05-23-22-29-46:
+[List of devices attached, ]
+2018-05-23-22-30-01:
+[List of devices attached, ]
+2018-05-23-22-30-01:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-31-39:
+[List of devices attached, ]
+2018-05-23-22-31-39:
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.

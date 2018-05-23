@@ -4,9 +4,6 @@ import DataBase.ConnectDataBase;
 import SquirrelFrame.OutputText;
 import Utlis.SaveCrash;
 import com.mysql.jdbc.CommunicationsException;
-
-import javax.swing.*;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ZhiBoDataBase {
@@ -14,12 +11,36 @@ public class ZhiBoDataBase {
     private OutputText opt;
     public static final String DATABASE_USER="root_rw";
     public static final String DATABASE_PASSWORD = "loto5522";
+    private  boolean dataBaseOnline ;//判断数据库是否连接成功
+
     public ZhiBoDataBase(OutputText opt){
+        dataBaseOnline=false;
         this.opt = opt;
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String[] s = new String[]{".","..","..."};
+                int index=0;
+                while (true){
+                    if(index>=s.length)index=0;
+                    opt.setText("正在连接数据库，请等待"+s[index]);
+                    index++;
+                    try {
+                        Thread.sleep(300);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+
+            }
+        });
+        t.start();
         try {
             cdb = new ConnectDataBase("mysql");
             cdb.coonnect("192.168.1.246:3306/wwlive",DATABASE_USER,DATABASE_PASSWORD);
             if(!cdb.getCon().isClosed())opt.addText("数据连接成功:192.168.1.246:3306/wwlive\n");
+            dataBaseOnline=true;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             SaveCrash.save(e.toString());
@@ -35,10 +56,13 @@ public class ZhiBoDataBase {
             SaveCrash.save(e.toString());
             opt.setText("数据库连接失败");
             cdb=null;
+        }finally {
+            t.interrupt();
         }
 
     }
     public ConnectDataBase getCdb(){
         return cdb;
     }
+    public boolean getdataBaseOnline(){return dataBaseOnline;}
 }

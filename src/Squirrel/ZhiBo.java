@@ -71,7 +71,6 @@ class Backpack_gift extends JDialog {
     public Backpack_gift(JDialog jDialog) {
         super(jDialog, true);
         setTitle(backpack_gift);
-
         setResizable(false);//禁止拖拽大小
         setLayout(null);//手动设置布局
         setSize(900, 500);
@@ -96,8 +95,34 @@ class Backpack_gift extends JDialog {
         setLocationRelativeTo(null);
         add(jsc);
         jdialogClose(this);
-        zbdb = new ZhiBoDataBase(opt);
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                zbdb = new ZhiBoDataBase(opt);
+            }
+        });
+        t.start();
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+               while (true){
+                   if(zbdb==null || !zbdb.getdataBaseOnline()){
+                       submit.setEnabled(false);
+                   }else{
+                       submit.setEnabled(true);
+                       break;
+                   }
+                   try {
+                       Thread.sleep(1000);
+                   } catch (InterruptedException e) {
+                       e.printStackTrace();
+                   }
+               }
+            }
+        });
+        th.start();
         setVisible(true);
+
     }
 
     /**
