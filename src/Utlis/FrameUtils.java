@@ -43,7 +43,7 @@ public class FrameUtils {
         fileChooser.setApproveButtonText("确定");
         fileChooser.setSelectedFile(fileName);
         fileChooser.setCurrentDirectory(fsv.getHomeDirectory());//默认桌面
-        fileChooser.setAcceptAllFileFilterUsed(false);//去掉所有文件选项
+//        fileChooser.setAcceptAllFileFilterUsed(false);//去掉所有文件选项
         int ch = fileChooser.showDialog(parent, "保存文件");
         if (JFileChooser.APPROVE_OPTION == ch) {
             String path = fileChooser.getSelectedFile().getPath();
