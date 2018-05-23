@@ -12170,3 +12170,49 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
 
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-36-02:
+[List of devices attached, ]
+2018-05-23-22-37-51:
+[List of devices attached, ]
+2018-05-23-22-42-08:
+[List of devices attached, ]
