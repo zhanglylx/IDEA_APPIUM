@@ -38,7 +38,12 @@ public class ZhiBoDataBase {
         try {
                 cdb = new ConnectDataBase("mysql");
                 cdb.coonnect("192.168.1.246:3306/wwlive", DATABASE_USER, DATABASE_PASSWORD);
-            if(!cdb.getCon().isClosed())opt.addText("数据连接成功:192.168.1.246:3306/wwlive\n");
+            t.interrupt();
+            if(!cdb.getCon().isClosed()){
+                opt.addText("数据连接成功:192.168.1.246:3306/wwlive\n");
+            }else{
+                opt.setText("数据库连接失败:192.168.1.246:3306/wwlive");
+            }
             dataBaseOnline=true;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -61,8 +66,20 @@ public class ZhiBoDataBase {
 
     }
     public static ZhiBoDataBase getZhiBoDataBase(OutputText opt){
-        if(zhiBoDataBase==null)zhiBoDataBase=new ZhiBoDataBase(opt);
-
+        if(zhiBoDataBase==null){
+            zhiBoDataBase=new ZhiBoDataBase(opt);
+        }else{
+            try {
+                if(!zhiBoDataBase.getCdb().getCon().isClosed()){
+                    opt.addText("数据连接成功:192.168.1.246:3306/wwlive\n");
+                }else{
+                    opt.setText("数据库连接失败:192.168.1.246:3306/wwlive");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+                opt.setText("数据库连接失败:192.168.1.246:3306/wwlive");
+            }
+        }
         return zhiBoDataBase;
     }
 

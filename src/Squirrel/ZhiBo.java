@@ -10,6 +10,8 @@ import org.apache.commons.lang.StringUtils;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -62,10 +64,10 @@ class Backpack_gift extends JDialog {
     private String userID;
     private ZhiBoDataBase zbdb;
     public static JButton refresh;//刷新按钮
-    public static volatile boolean refreshEndTherad;//判断线程是否结束
+    public static volatile boolean refreshEndTherad;//判断线程是否结束,true为关闭刷新线程
     private JButton clear;//清空按钮
     private JButton automationRefresh;//自定刷新
-    private boolean automationRefreshThread;//判断自动刷新是否在执行,false为关闭，true为执行
+    private boolean automationRefreshThread;//判断自动刷新是否在执行,false为关闭自动刷新线程
     private boolean automationRefreshThreadClose;//确认刷新线程关闭,false为正在执行，true为关闭
 
     static {
@@ -106,7 +108,17 @@ class Backpack_gift extends JDialog {
         jsc.setLocation(this.getX(), this.getY() + 50);
         setLocationRelativeTo(null);
         add(jsc);
-        jdialogClose(this);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                refreshEndTherad=true;//关闭刷新图标
+                automationRefreshThread=false;//关闭自动刷新线程
+                jDialog.setDefaultCloseOperation(2);
+
+
+            }
+        });
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -244,8 +256,6 @@ class Backpack_gift extends JDialog {
                 opt.addText("select * from biz_backpack_gift where user_id = " + userID + "\n");
             }
             ResultSetMetaData data = rs.getMetaData();
-
-
             ArrayList<String> list = new ArrayList<>();
             while (rs.next()) {
                 StringBuffer stb = new StringBuffer();
