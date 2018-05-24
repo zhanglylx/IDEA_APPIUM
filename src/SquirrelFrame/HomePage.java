@@ -42,8 +42,9 @@ public class HomePage extends JFrame {
         jpanel.add(panelGetLocalIp());
         jpanel.add(addButton(testTools, ""));
 //        jpanel.add(panelBottom());    //添加关于按钮
-        setSize(300, 100);//设置窗体宽高
-        setLocationRelativeTo(null);//设置窗体位置,中间显示
+       setSize(300, 100);//设置窗体宽高
+//        setLocationRelativeTo( null);//设置窗体位置,中间显示
+        setLocation(100,50);
         setIconImage(
                 Toolkit.getDefaultToolkit().getImage("image/logo.png")
         );
