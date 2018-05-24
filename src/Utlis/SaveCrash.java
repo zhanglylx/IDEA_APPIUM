@@ -11,7 +11,7 @@ public class SaveCrash {
         BufferedWriter bf = null;
         try {
             bf = new BufferedWriter(new FileWriter(file,true));
-            bf.write(Date.systemTime+":\n");
+            bf.write(WindosUtils.getDate()+":\n");
             bf.write((String)str);
             bf.write("\n");
             bf.flush();

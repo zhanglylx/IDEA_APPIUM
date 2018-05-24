@@ -6,7 +6,9 @@ import AppiumMethod.Tooltip;
 import javax.swing.*;
 import java.io.*;
 import java.nio.charset.Charset;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -218,5 +220,22 @@ public class WindosUtils {
         return file.listFiles();
 
     }
+    /**
+     * 获取系统时间
+     * @param format  指定的格式
+     * @return
+     */
+    public static String  getDate(String format){
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat(format);
+        return sdf.format(date);
+    }
 
+    /**
+     * 获取系统时间，默认时间格式:yyyy-MM-dd HH:mm:ss
+     * @return date
+     */
+    public static String getDate(){
+        return getDate("yyyy-MM-dd HH:mm:ss");
+    }
 }

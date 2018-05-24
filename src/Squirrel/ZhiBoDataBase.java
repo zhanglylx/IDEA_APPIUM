@@ -12,8 +12,8 @@ public class ZhiBoDataBase {
     public static final String DATABASE_USER="root_rw";
     public static final String DATABASE_PASSWORD = "loto5522";
     private  boolean dataBaseOnline ;//判断数据库是否连接成功
-
-    public ZhiBoDataBase(OutputText opt){
+    private static ZhiBoDataBase zhiBoDataBase;
+    private ZhiBoDataBase(OutputText opt){
         dataBaseOnline=false;
         this.opt = opt;
         Thread t = new Thread(new Runnable() {
@@ -28,7 +28,6 @@ public class ZhiBoDataBase {
                     try {
                         Thread.sleep(300);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
                         break;
                     }
                 }
@@ -37,30 +36,36 @@ public class ZhiBoDataBase {
         });
         t.start();
         try {
-            cdb = new ConnectDataBase("mysql");
-            cdb.coonnect("192.168.1.246:3306/wwlive",DATABASE_USER,DATABASE_PASSWORD);
+                cdb = new ConnectDataBase("mysql");
+                cdb.coonnect("192.168.1.246:3306/wwlive", DATABASE_USER, DATABASE_PASSWORD);
             if(!cdb.getCon().isClosed())opt.addText("数据连接成功:192.168.1.246:3306/wwlive\n");
             dataBaseOnline=true;
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             SaveCrash.save(e.toString());
-            opt.setText("数据库连接失败");
+            opt.setText("数据库连接失败:192.168.1.246:3306/wwlive");
             cdb=null;
         } catch (CommunicationsException e) {
             e.printStackTrace();
             SaveCrash.save(e.toString());
-            opt.setText("数据库连接失败");
+            opt.setText("数据库连接失败:192.168.1.246:3306/wwlive");
             cdb=null;
         } catch (SQLException e) {
             e.printStackTrace();
             SaveCrash.save(e.toString());
-            opt.setText("数据库连接失败");
+            opt.setText("数据库连接失败:192.168.1.246:3306/wwlive");
             cdb=null;
         }finally {
             t.interrupt();
         }
 
     }
+    public static ZhiBoDataBase getZhiBoDataBase(OutputText opt){
+        if(zhiBoDataBase==null)zhiBoDataBase=new ZhiBoDataBase(opt);
+
+        return zhiBoDataBase;
+    }
+
     public ConnectDataBase getCdb(){
         return cdb;
     }
