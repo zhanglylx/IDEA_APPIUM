@@ -25,6 +25,7 @@ public class FrameUtils {
         jbutton.setIcon(icon1);
         jbutton.setBorderPainted(false);// 不绘制边框
         jbutton.setFocusable(true);  // 设置焦点控制
+        jbutton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));//设置鼠标变为小手
         return jbutton;
     }
 
@@ -82,5 +83,21 @@ public class FrameUtils {
             }
         });
     }
+
+    /**
+     * 各种方法
+     */
+    public static void method(){
+        /**
+         * JButton方法
+         */
+        JButton jbutton = new JButton();
+        jbutton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));//设置鼠标变为小手
+        jbutton.setBorderPainted(false);// 不绘制边框
+        jbutton.setContentAreaFilled(false);//透明的设置
+        jbutton.setToolTipText("保存");//鼠标悬停文字
+    }
+
+
 
 }
