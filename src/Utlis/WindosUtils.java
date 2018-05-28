@@ -35,20 +35,22 @@ public class WindosUtils {
             TooltipUtil.errTooltip("打开" + file + "失败，请联系管理员");
         }
     }
-    public static void copyFile(JDialog jdialog, String filePath,JButton jbutton){
-        if(copyFile(jdialog,filePath)){
-            jbutton.setIcon(new ImageIcon(("image/succeed.png" )));
-        }else{
-            jbutton.setIcon(new ImageIcon(("image/err.png" )));
+
+    public static void copyFile(JDialog jdialog, String filePath, JButton jbutton) {
+        if (copyFile(jdialog, filePath)) {
+            jbutton.setIcon(new ImageIcon(("image/succeed.png")));
+        } else {
+            jbutton.setIcon(new ImageIcon(("image/err.png")));
         }
     }
 
     /**
      * 复制文件
+     *
      * @param jdialog
      * @param filePath
      */
-    public static boolean copyFile(JDialog jdialog, String filePath){
+    public static boolean copyFile(JDialog jdialog, String filePath) {
         File fe = new File(filePath);
         String err = filePath;
         if (!fe.exists() && (filePath = getPuth(filePath)) == null) {
@@ -57,43 +59,43 @@ public class WindosUtils {
         }
         fe = new File(filePath);
         //文件名称
-        String fileName =filePath.substring(filePath.lastIndexOf(File.separator)+1,filePath.length());
-        String copyPath=null;
+        String fileName = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.length());
+        String copyPath = null;
         try {
-            copyPath=FrameUtils.saveFileFrame(jdialog, new File(filePath));
-        }catch (IllegalArgumentException e){
+            copyPath = FrameUtils.saveFileFrame(jdialog, new File(filePath));
+        } catch (IllegalArgumentException e) {
             SaveCrash.save(e.toString());
         }
-        if(copyPath == null)return false;
-        copyPath +=fileName;
-        if(new File(copyPath).exists()){
-            TooltipUtil.errTooltip("文件已存在:"+filePath);
+        if (copyPath == null) return false;
+        copyPath += fileName;
+        if (new File(copyPath).exists()) {
+            TooltipUtil.errTooltip("文件已存在:" + filePath);
             return false;
         }
         InputStream ips = null;
         OutputStream ops = null;
-        try{
+        try {
             ips = new FileInputStream(fe);
             byte[] ipsBuffer = new byte[ips.available()];
             ips.read(ipsBuffer);
             ops = new FileOutputStream(copyPath);
             ops.write(ipsBuffer);
             ops.flush();
-            TooltipUtil.generalTooltip("保存成功:"+copyPath);
+            TooltipUtil.generalTooltip("保存成功:" + copyPath);
             return true;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if(ops!=null){
+        } finally {
+            if (ops != null) {
                 try {
                     ops.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-            if(ips!=null){
+            if (ips != null) {
                 try {
                     ips.close();
                 } catch (IOException e) {
@@ -200,32 +202,107 @@ public class WindosUtils {
 
     /**
      * 获取指定目录下的文件或目录
+     *
      * @param path
      * @return
      */
-    public static File[] getDirectoryFilesName(String path){
-        if(path == null) {
-            TooltipUtil.errTooltip("getFilesName路径为空："+path);
+    public static File[] getDirectoryFilesName(String path) {
+        if (path == null) {
+            TooltipUtil.errTooltip("getFilesName路径为空：" + path);
             return null;
         }
         File file = new File(path);
-        if(!file.exists()){
-            TooltipUtil.errTooltip("getFilesName文件不存在："+path);
+        if (!file.exists()) {
+            TooltipUtil.errTooltip("getFilesName文件不存在：" + path);
             return null;
         }
-        if(!file.isDirectory()){
-            TooltipUtil.errTooltip("不是目录："+path);
+        if (!file.isDirectory()) {
+            TooltipUtil.errTooltip("不是目录：" + path);
             return null;
         }
         return file.listFiles();
 
     }
+
     /**
-     * 获取系统时间
-     * @param format  指定的格式
+     * 获取指定进程的pid
+     *
+     * @param process
+     * @return -1为未获取
+     */
+    public static int[] getProcessPID(String process) {
+        if (process == null) throw new IllegalArgumentException("process为空");
+        String[] processArrays = new String[0];
+        try {
+            processArrays = cmd("tasklist");
+        } catch (IOException e) {
+            e.printStackTrace();
+            SaveCrash.save(e.toString());
+            TooltipUtil.errTooltip("获取指定进程PID失败" + process);
+        }
+        int [] getPID=new int[0];
+        for (String s : processArrays) {
+            if (s.startsWith(process)) {
+                String str;
+                try {
+                    str = s.substring(0, s.indexOf("Console")).trim();
+                    str = str.substring(str.lastIndexOf(" "), str.length()).trim();
+                    if (str.matches("\\d+")){
+                        getPID = Arrays.copyOf(getPID,getPID.length+1);
+                        getPID[getPID.length-1] =Integer.parseInt(str);
+                    }else{
+                        TooltipUtil.errTooltip("获取进行pid发生错误，请务必联系管理员，谢谢");
+                        SaveCrash.save("获取进行pid发生错误，请联系管理员"+s);
+                    }
+                } catch (StringIndexOutOfBoundsException e) {
+                    e.printStackTrace();
+                    SaveCrash.save("截取pid错误:"+s+"   "+e.toString());
+                    return getPID;
+                }
+
+            }
+        }
+        return getPID;
+    }
+
+    /**
+     * 关闭指定的进程
+     *
+     * @param process
      * @return
      */
-    public static String  getDate(String format){
+    public static boolean closeProcess(String process) {
+        if (process == null) throw new IllegalArgumentException("process为空");
+        int[] closePID = getProcessPID(process);
+        if (closePID.length == 0) return true;
+        try {
+            for(int pid: closePID){
+                if(Arrays.toString(
+                        //taskkill /im 通过名称关闭  /f
+                        cmd("taskkill /pid "+pid+"  /f")).contains("错误:"))return false;
+
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            TooltipUtil.errTooltip("关闭进程发生错误,进程名称:"+process);
+            SaveCrash.save("关闭进程发生错误,进程名称:"+process+"     "+e.toString());
+        }
+        if(getProcessPID(process).length!=0){
+            return false;
+        }else{
+            return true;
+        }
+
+
+    }
+
+    /**
+     * 获取系统时间
+     *
+     * @param format 指定的格式
+     * @return
+     */
+    public static String getDate(String format) {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         return sdf.format(date);
@@ -233,9 +310,10 @@ public class WindosUtils {
 
     /**
      * 获取系统时间，默认时间格式:yyyy-MM-dd HH:mm:ss
+     *
      * @return date
      */
-    public static String getDate(){
+    public static String getDate() {
         return getDate("yyyy-MM-dd HH:mm:ss");
     }
 }
