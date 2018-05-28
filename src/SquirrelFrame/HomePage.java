@@ -9,6 +9,7 @@ import java.util.TimerTask;
 import Utlis.Adb;
 import Utlis.FrameUtils;
 import Utlis.JavaUtils;
+import Utlis.WindosUtils;
 import com.worm.StratWorm;
 
 /**
@@ -53,6 +54,7 @@ public class HomePage extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) { //设置退出监听器
                 super.windowClosing(e);
+                WindosUtils.closeProcess("adb.exe");
                 System.exit(0);
             }
         });
