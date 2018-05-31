@@ -116,7 +116,7 @@ public class GetADLog extends Pane {
         String date = date();
         //用于关闭线程
         boolean booleanTheard = false;
-
+        String adIdRecord = "";//记录广告是否被切换
         while (true) {
             if (logPaint == null) continue;
             if (windowsClose) {
@@ -124,6 +124,11 @@ public class GetADLog extends Pane {
                 stop=1;
                 break;
             }
+            //切换广告后，置为默认值
+            if(!adIdRecord.equals(adId)){
+                GGlen=0;
+                adIdRecord=adId;
+           }
             //时间线程
             Thread t = new Thread(() -> {
                 boolean dateB = true;
@@ -158,7 +163,6 @@ public class GetADLog extends Pane {
             boolean bl = false;
             GG = Adb.adb(" shell cat /sdcard/FreeBook/ad/" + date + "/" + adId + ".txt");
             if (Arrays.toString(GG).contains("errdevices")) break;
-            System.out.println(Arrays.toString(GG));
             if (Arrays.toString(GG).equals("[]") && !getLog) {
                 getLog = true;
                 addText("没有获取到日志:"+adId+Arrays.toString(GG));
@@ -195,7 +199,6 @@ public class GetADLog extends Pane {
             }
 
             if (bl) {
-                System.out.println();
                 switch (n) {
                     case (0):
                         addText("=========");
@@ -233,9 +236,9 @@ public class GetADLog extends Pane {
     public void addText(String text) {
         if (text.contains("=")) text += "     " + adId;
         logPaint.append(text + "\n");
-        //下面的代码就是移动到文本域的最后面
+//        //下面的代码就是移动到文本域的最后面
         logPaint.selectAll();
-        if (logPaint.getSelectedText() != null) {
+        if (logPaint.getSelectedText() != null && logPaint !=null) {
             logPaint.setCaretPosition(logPaint.getSelectedText().length());
             logPaint.requestFocus();
         }
