@@ -13,9 +13,7 @@ import javax.swing.JLabel;
 public class test {
     JButton open=null;
     public static void main(String[] args) {
-        RuntimeMXBean runtimeMXBean = ManagementFactory.getRuntimeMXBean();
-        System.out.println(runtimeMXBean.getName());
-
+        System.out.println(WindosUtils.closeProcess("松鼠"));
     }
 
 }  

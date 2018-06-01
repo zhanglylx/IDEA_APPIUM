@@ -22,7 +22,7 @@ public class Adb {
             String dev = " ";
             if(devices!=null)dev=" -s "+devices+" ";
 //            Process pro = Runtime.getRuntime().exec(AppiumMethod.Config.ADB_PUTH +dev+ code);
-            Process pro = Runtime.getRuntime().exec("bin"+ File.separator+"adb.exe" +dev+ code);
+            Process pro = Runtime.getRuntime().exec("platform-tools"+ File.separator+"adb.exe" +dev+ code);
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream(), Charset.forName("utf-8")));
             String msg = null;
             while ((msg = br.readLine()) != null) {

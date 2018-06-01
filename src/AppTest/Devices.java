@@ -8,9 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -47,26 +45,26 @@ public class Devices {
     private DevicesInfo info;
     public static String caseNameStatic;
     private int iphoneVersion;
+
     private Devices(String caseName) {
-        GetRunApp.RunApp();
+        GetRunAppName.RunApp();
         this.caseName = caseName;
         newScreenShots();
         // 获取设备信息
         info = DevicesInfo.getDevicesInfo();
-        this.iphoneVersion = Integer.parseInt(info.getDevicesVersion().substring(0,1));
-        this.devicesBrand =info.getDevicesBrand();
+        this.iphoneVersion = Integer.parseInt(info.getDevicesVersion().substring(0, 1));
+        this.devicesBrand = info.getDevicesBrand();
         // 检查是否安装appium环境apk
-//        new InstallAppiumApk();
+        //new InstallAppiumApk();
         System.out.println("开始执行Devices");
         cap = new DesiredCapabilities();
         cap.setCapability("automationName", "Appium");// appium做自动化
         // cap.setCapability("app", "C:\\software\\jrtt.apk");//安装apk
-//         cap.setCapability("browserName", "chrome");//设置HTML5的自动化，打开谷歌浏览器
+        //cap.setCapability("browserName", "chrome");//设置HTML5的自动化，打开谷歌浏览器
         cap.setCapability("deviceName", info.getDevicesName());// 设备名称
         cap.setCapability("platformName", "Android"); // 安卓自动化还是IOS自动化
         cap.setCapability("platformVersion", info.getDevicesVersion()); // 安卓操作系统版本
-        // cap.setCapability("udid", "03157df3d9998625"); // 设备的udid (adb
-        // // devices 查看到的)
+        // cap.setCapability("udid", "03157df3d9998625"); // 设备的udid (adb   devices 查看到的)
         cap.setCapability("appPackage", Config.APP_PACKAGE);// 被测app的包名
         System.out.println("被测app的包名:" + Config.APP_PACKAGE);
         cap.setCapability("appActivity", Config.APP_ACTIVITY);// 被测app的入口Activity名称
@@ -75,7 +73,7 @@ public class Devices {
         cap.setCapability("resetKeyboard", "True"); // 支持中文输入，必须两条都配置
         cap.setCapability("noSign", "True"); // 不重新签名apk
         cap.setCapability("newCommandTimeout", "6000"); // 没有新命令，appium30秒退出
-        if(iphoneVersion>6)cap.setCapability("automationName","uiautomator2");
+        if (iphoneVersion > 6) cap.setCapability("automationName", "uiautomator2");
         start_App(cap);
     }
 
@@ -238,6 +236,7 @@ public class Devices {
 
     /**
      * 获取content-desc
+     *
      * @param using
      * @return
      */
@@ -250,6 +249,7 @@ public class Devices {
         System.out.println("getAttribute:" + using + "=" + text);
         return text;
     }
+
     public String getAttribute(By by) {
         String text = null;
         if (isElementExsitAndroid(by)) {
@@ -259,6 +259,7 @@ public class Devices {
         System.out.println("getAttribute:" + by.toString() + "=" + text);
         return text;
     }
+
     /**
      * 通过坐标点击元素
      *
@@ -274,17 +275,19 @@ public class Devices {
 
     public void clickScreen(int[] xy) {
         if (xy.length != 2) {
-            throw new IllegalArgumentException("参数不正常:"+ Arrays.toString(xy));
+            throw new IllegalArgumentException("参数不正常:" + Arrays.toString(xy));
         }
         TouchAction action = new TouchAction(driver);
         action.tap(xy[0], xy[1]).perform();
         Logs.saveLog(caseName, "clickScreen:x=" + xy[0] + ",y=" + xy[1]);
         sleep(500);
     }
+
     public void clickScreen(String xy) {
-        if(!xy.matches("^\\d+(,)\\d+$")){
-            throw new IllegalArgumentException("参数不正常:"+ xy);
-        };
+        if (!xy.matches("^\\d+(,)\\d+$")) {
+            throw new IllegalArgumentException("参数不正常:" + xy);
+        }
+        ;
         String[] arr = xy.split(",");
         TouchAction action = new TouchAction(driver);
         action.tap(Integer.parseInt(arr[0]), Integer.parseInt(arr[1])).perform();
@@ -322,7 +325,7 @@ public class Devices {
             flag = null != element;
         } catch (org.openqa.selenium.NoSuchElementException e) {
             flag = false;
-        }catch (org.openqa.selenium.WebDriverException e){
+        } catch (org.openqa.selenium.WebDriverException e) {
             flag = false;
         }
         RunTest.addList(elemnt.toString() + ":" + flag, 1);
@@ -349,15 +352,16 @@ public class Devices {
 
     /**
      * 通过adb输入文字
+     *
      * @return
      */
-    public boolean adbInput(String text){
+    public boolean adbInput(String text) {
         boolean b = true;
-        if(AdbUtil.adb("shell input text\""+text+"\"").length>0){
+        if (AdbUtil.adb("shell input text\"" + text + "\"").length > 0) {
             b = false;
         }
-        RunTest.addList("adbInput:"+b, 1);
-        Logs.saveLog(caseName, "adbInput"+ ":" + b);
+        RunTest.addList("adbInput:" + b, 1);
+        Logs.saveLog(caseName, "adbInput" + ":" + b);
         return b;
     }
 
@@ -405,8 +409,8 @@ public class Devices {
      */
     public String getPageXml() {
         String s = driver.getPageSource();
-        RunTest.addList("getPageXml:" + s );
-        Logs.saveLog(caseName, "getPageXml:" + s );
+        RunTest.addList("getPageXml:" + s);
+        Logs.saveLog(caseName, "getPageXml:" + s);
         return s;
     }
 
@@ -416,9 +420,9 @@ public class Devices {
      * @return
      */
     public void backspace() {
-        if(iphoneVersion>6){
+        if (iphoneVersion > 6) {
             AdbUtil.adb("shell input keyevent 4");
-        }else{
+        } else {
             driver.sendKeyEvent(4);
         }
         try {
@@ -438,15 +442,15 @@ public class Devices {
     public void clickVolume(String volume) {
 
         if ("+".equals(volume)) {
-           if(this.iphoneVersion<7) {
-               driver.sendKeyEvent(24);
-           }else{
-               AdbUtil.adb("shell input keyevent 24");
-           }
+            if (this.iphoneVersion < 7) {
+                driver.sendKeyEvent(24);
+            } else {
+                AdbUtil.adb("shell input keyevent 24");
+            }
         } else {
-            if(this.iphoneVersion<7){
+            if (this.iphoneVersion < 7) {
                 driver.sendKeyEvent(25);
-            }else{
+            } else {
                 AdbUtil.adb("shell input keyevent 25");
             }
         }
@@ -550,16 +554,28 @@ public class Devices {
     public AndroidDriver getDriver() {
         return driver;
     }
-    public String getDevicesBrand(){return this.devicesBrand;}
+
+    public String getDevicesBrand() {
+        return this.devicesBrand;
+    }
+
     public int getWidth() {
         return width;
     }
-    public void setWidth(int width){this.width = width; }
-    public void setHeight(int height){this.height =height; }
-    public void resetWidth_Height(){
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void resetWidth_Height() {
         this.width = driver.manage().window().getSize().width;
         this.height = driver.manage().window().getSize().height;
     }
+
     public int getHeight() {
         return height;
     }

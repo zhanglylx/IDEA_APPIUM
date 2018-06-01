@@ -55,7 +55,7 @@ public class RunTest {
         Log.alllogList.add(StringUtils.repeat("-", 150));
     }
     public static void main(String[] args) {
-        GetRunApp.RunApp();
+        GetRunAppName.RunApp();
         int n=0;
         while(true) {
             ArrayList<String> conutList =  new ArrayList<String>();
@@ -80,7 +80,7 @@ public class RunTest {
                 runTestCase(conutList, testCase.getFistNum());
                 n=testCase.getCaseList().size();
             }
-            if( GetRunApp.numDIY==0) {
+            if( GetRunAppName.numDIY==0) {
                 if (JOptionPane.showConfirmDialog(null, "是否继续执行自定义模式", "自定义？", JOptionPane.YES_NO_OPTION) == 1) {
                     break;
                 }
@@ -168,7 +168,7 @@ public class RunTest {
             } else {
                 addList("没有找到需要执行的操作:" + s, 1);
             }
-            if( GetRunApp.numDeBug==0){
+            if( GetRunAppName.numDeBug==0){
                 if(JOptionPane.showConfirmDialog(null,
                         "继续？", "调试",JOptionPane.YES_NO_OPTION)==1)break;
             }
@@ -503,11 +503,11 @@ public class RunTest {
 //    private void waitHomePage() {
 //        System.out.println("等待主页展示.....");
 //        while (true) {
-//            if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/tab_shelf_view"))) {
+//            if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tab_shelf_view"))) {
 //                devices.snapshot("主页展现");
 //                break;
-//            }else if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/img_ad_detail"))
-//                    || devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/tab_comp_view"))
+//            }else if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/img_ad_detail"))
+//                    || devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tab_comp_view"))
 //                    ){
 //                devices.snapshot("当前未在主页");
 //                backBookRack();
@@ -532,7 +532,7 @@ public class RunTest {
 //    private void backBookRack(){
 //        while(true){
 //            devices.backspace();
-//            if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/message_two_tip"))){
+//            if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/message_two_tip"))){
 //                devices.backspace();
 //                break;
 //            }

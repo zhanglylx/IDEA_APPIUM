@@ -160,13 +160,22 @@ public class HomePage extends JFrame {
     private JButton panelLogo() {
 
         JPanel jp = new JPanel();
-        cartoon = FrameUtils.jbuttonImage("image/test.png");
+//        cartoon = FrameUtils.jbuttonImage("image/test.png");
+        cartoon = new JButton();
+        cartoon.setBorderPainted(false);// 不绘制边框
+        cartoon.setContentAreaFilled(false);//透明的设置
         jp.setLayout(new FlowLayout());
         jp.setPreferredSize(new Dimension(200, 100));
         jp.setBorder(BorderFactory.createEtchedBorder());
         jp.add(cartoon);
         return cartoon;
     }
+
+
+
+
+
+
 
     /**
      * 页面最底部按钮
@@ -299,10 +308,18 @@ public class HomePage extends JFrame {
  * 动画类
  */
 class Cartoon implements Runnable {
+
     int i= 0;
     int tab=1;
     @Override
     public void run() {
+       HomePage.cartoon.setIcon(new ImageIcon("image/test.png"));
+        try {
+            Thread.sleep(2500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         File fileImage = null;
         File fileTab = null;
         String imagePath = "image" + File.separator + "Cartoon" + File.separator + "tab";

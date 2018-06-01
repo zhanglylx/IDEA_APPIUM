@@ -13,11 +13,11 @@
       <element id="directory" name="image">
         <element id="dir-copy" path="$PROJECT_DIR$/image" />
       </element>
-      <element id="directory" name="bin">
-        <element id="file-copy" path="$PROJECT_DIR$/bin/adb.exe" />
-      </element>
       <element id="directory" name="File">
         <element id="dir-copy" path="$PROJECT_DIR$/File" />
+      </element>
+      <element id="directory" name="platform-tools">
+        <element id="dir-copy" path="$PROJECT_DIR$/platform-tools" />
       </element>
     </root>
   </artifact>
