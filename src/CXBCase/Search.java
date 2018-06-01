@@ -19,11 +19,11 @@ import java.util.Map;
 
 public class Search extends StartCase {
     //加入书架按钮
-    public static final By search_result_to_add_btn = By.id("com.mianfeia.book:id/search_result_to_add_btn");
+    public static final By search_result_to_add_btn = By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_to_add_btn");
     //搜索文本框
     public static final By EditText = By.className("android.widget.EditText");
     //在线阅读按钮
-    public static final By search_result_to_read_btn =  By.id("com.mianfeia.book:id/search_result_to_read_btn");
+    public static final By search_result_to_read_btn =  By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_to_read_btn");
 
     //书架是否存在书籍
     private Map<String, Boolean> bookRackExistsBookName = new HashMap<>();
@@ -78,7 +78,7 @@ public class Search extends StartCase {
         //输入搜索词
         devices.inputCharacter(Search.EditText, searchBookName);
         //com.mianfeia.book:id/title_right_view搜索按钮
-        devices.clickfindElement(By.id("com.mianfeia.book:id/title_right_view"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"));
         devices.sleep(1000);
         return true;
     }
@@ -95,7 +95,7 @@ public class Search extends StartCase {
     public boolean checkSearchResult(String searchBookName, String author) {
         System.out.println("执行检查搜索页结果页:" + searchBookName);
         if (!searchBookName.equals(devices.getText(Search.EditText))
-                || !searchBookName.equals(devices.getText(By.id("com.mianfeia.book:id/search_result_title_view")))
+                || !searchBookName.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view")))
                 ) {
             print.print("检查搜索结果页中的:" + searchBookName);
             return false;
@@ -122,7 +122,7 @@ public class Search extends StartCase {
                 return false;
             }
         }
-        if (!author.equals(devices.getText(By.id("com.mianfeia.book:id/search_result_author_view")))) {
+        if (!author.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_author_view")))) {
             print.print("检查搜素结果中的作者");
             return false;
         }
@@ -216,7 +216,7 @@ public class Search extends StartCase {
             devices.backspace();
             if (!readAdd_a_bookcase(searchBookName, author)) return false;
             System.out.println(" //点击作者简介");
-            devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_title_view"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view"));
             devices.sleep(2000);
             if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(searchBookName, author, false)) return false;
             System.out.println(" //点击在线阅读");
@@ -243,7 +243,7 @@ public class Search extends StartCase {
                 return false;
             }
             //检查点击书籍后进入到作者详情页
-            devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_title_view"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view"));
             if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(searchBookName, author, true)) return false;
             //点击在线阅读按钮
             devices.sleep(2000);
@@ -312,31 +312,31 @@ public class Search extends StartCase {
         if (bookcase_is_Book(bookName)) {
             int[] xy = devices.getXY("new UiSelector().text(\"" + bookName + "\")");
             devices.customSlip(xy[0], xy[1], xy[0], xy[1], 2000);
-            if (!"删除(1)".equals(devices.getText(By.id("com.mianfeia.book:id/tab_delete_tv"))) ||
-                    !"移动(1)".equals(devices.getText(By.id("com.mianfeia.book:id/tab_move_tv"))) ||
+            if (!"删除(1)".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tab_delete_tv"))) ||
+                    !"移动(1)".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tab_move_tv"))) ||
                     //com.mianfeia.book:id/title_right_view右侧全选按钮id
-                    !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/title_right_view"))
+                    !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"))
                     ) {
                 print.print("检查书架书籍删除时的按钮");
                 return false;
             }
             //点击删除按钮
-            devices.clickfindElement(By.id("com.mianfeia.book:id/tab_delete_tv"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tab_delete_tv"));
             devices.sleep(2000);
             //检查删除书籍提示框
-            if (!"删除所选书籍".equals(devices.getText(By.id("com.mianfeia.book:id/ygz_common_delete_title"))) ||
-                    !"删除源文件".equals(devices.getText(By.id("com.mianfeia.book:id/ygz_common_bottom_check"))) ||
-                    !"取消".equals(devices.getText(By.id("com.mianfeia.book:id/ygz_common_bottom_cancel"))) ||
-                    !"确定".equals(devices.getText(By.id("com.mianfeia.book:id/ygz_common_bottom_sure")))
+            if (!"删除所选书籍".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_delete_title"))) ||
+                    !"删除源文件".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_check"))) ||
+                    !"取消".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_cancel"))) ||
+                    !"确定".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_sure")))
                     ) {
                 print.print("检查删除书籍提示框");
                 return false;
             }
             //点击删除源文件
-            devices.clickfindElement(By.id("com.mianfeia.book:id/ygz_common_bottom_check"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_check"));
             devices.snapshot("请检查点击删除源文件后是否被选中");
             //点击确定按钮
-            devices.clickfindElement(By.id("com.mianfeia.book:id/ygz_common_bottom_sure"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_sure"));
             devices.sleep(2000);
             xy = devices.getXY("new UiSelector().text(\"" + bookName + "\")");
             if ((xy[0] != 0 || xy[1] != 0)) {
@@ -348,9 +348,9 @@ public class Search extends StartCase {
                 return false;
             }
             //com.mianfeia.book:id/ygz_common_bottom_sure删除提示框确定按钮
-            if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/ygz_common_bottom_sure")) ||
+            if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_sure")) ||
                     //com.mianfeia.book:id/tab_move_tv删除框中的移动按钮
-                    devices.isElementExsitAndroid(By.className("com.mianfeia.book:id/tab_move_tv"))) {
+                    devices.isElementExsitAndroid(By.className(AppiumMethod.Config.APP_PACKAGE+":id/tab_move_tv"))) {
                 print.print("删除书籍后，删除编辑框没有关闭");
                 return false;
             }
@@ -395,18 +395,18 @@ public class Search extends StartCase {
         System.out.println("执行检查搜索页");
         if (!devices.isElementExsitAndroid("new UiSelector().text(\"搜索关键词\")") ||
                 //com.mianfeia.book:id/item_search_keyword_view搜索关键词中的词
-                !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/item_search_keyword_view")) ||
+                !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_search_keyword_view")) ||
                 !devices.isElementExsitAndroid("new UiSelector().text(\"大家都在搜\")") ||
                 //com.mianfeia.book:id/search_result_title_view大家都在搜中的title
-                !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/search_result_title_view")) ||
+                !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view")) ||
                 //com.mianfeia.book:id/search_result_summary_view大家都在搜中的描述
-                !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/search_result_summary_view")) ||
+                !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_summary_view")) ||
                 //com.mianfeia.book:id/search_result_author_view大家都在搜中的作者
-                !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/search_result_author_view")) ||
+                !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_author_view")) ||
                 //com.mianfeia.book:id/search_result_words_view大家都在搜中的字数
-                !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/search_result_words_view")) ||
+                !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_words_view")) ||
                 //com.mianfeia.book:id/search_result_type_view大家都在搜索中的类型
-                !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/search_result_type_view"))
+                !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_type_view"))
 
                 ) {
             print.print("检查搜索页面显示是否正确");
@@ -420,18 +420,18 @@ public class Search extends StartCase {
         System.out.println("执行搜索");
         //点击书架中的搜索按钮
         RunCase.initialize(devices);
-        devices.clickfindElement(By.id("com.mianfeia.book:id/title_right_view_2"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view_2"));
         devices.sleep(3000);
         //检查搜索页面
         if (!checkSearch()) return false;
-        String bookName = devices.getText(By.id("com.mianfeia.book:id/search_result_title_view"));
-        String bookAuthor = devices.getText(By.id("com.mianfeia.book:id/search_result_author_view"));
+        String bookName = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view"));
+        String bookAuthor = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_author_view"));
 //        int[] xy = devices.getXY("new UiSelector().text(\"" + bookName + "\")");
 //        devices.clickScreen(xy[0], xy[1]);
-        devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_summary_view"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_summary_view"));
         devices.sleep(2000);
-        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-17",
-                devices.getText(By.id("com.mianfeia.book:id/banner_txt_title")));
+        if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-17",
+                devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/banner_txt_title")));
         if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(bookName, bookAuthor, true)) return false;
         System.out.println("搜索页面成功");
         return true;

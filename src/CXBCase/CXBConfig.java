@@ -42,8 +42,8 @@ public class CXBConfig {
     //目录滑动限制次数达到BOOK_CATALOGUE_SLIDE_COUNT后每个多少次检查一次
     public static final int BOOK_CATALOGUE_SLIDE_COUNT_index = 2;
     //阅读页VIP页中的提示文字
-    public static final String BOOK_VIP_CHAPTER_NEXT_CHAPTER_1 = "com.mianfeia.book:id/btn_nextChapter";
-    public static final String BOOK_VIP_CHAPTER_NEXT_CHAPTER_2 = "com.mianfeia.book:id/each_btn_nextChapter";
+    public static final String BOOK_VIP_CHAPTER_NEXT_CHAPTER_1 = AppiumMethod.Config.APP_PACKAGE+":id/btn_nextChapter";
+    public static final String BOOK_VIP_CHAPTER_NEXT_CHAPTER_2 = AppiumMethod.Config.APP_PACKAGE+":id/each_btn_nextChapter";
     /**
      * 作者详情页
      */

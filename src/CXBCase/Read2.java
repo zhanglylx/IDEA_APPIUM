@@ -66,7 +66,7 @@ public class Read2 extends StartCase {
         //进入目录
         if (!new Read(this.caseName).style(Read.catalog)) return false;
         //将书籍第一个章节赋值
-        this.firstChaptertitle = devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
+        this.firstChaptertitle = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle"));
         /**
          * 滑动目录由上而下到底部
          */
@@ -76,9 +76,9 @@ public class Read2 extends StartCase {
             devices.customSlip(CXBConfig.slideXY(width, height, Read.catalog));
         }
         devices.sleep(3000);
-        String chaptertitile = devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
+        String chaptertitile = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle"));
         //点击第一个章节
-        devices.clickfindElement(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle"));
         devices.sleep(1000);
         if (new Read(this.caseName).clickReadmore() == 0) {
             print.print("点击书籍中的:" + chaptertitile + "章节后的检查VIP页");
@@ -90,7 +90,7 @@ public class Read2 extends StartCase {
         //进入目录
         if (!new Read(this.caseName).style(Read.catalog)) return false;
         //点击书签
-        devices.clickfindElement(By.id("com.mianfeia.book:id/tabIndicatorView1"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView1"));
         //检查书签
         if (!CheckBookmarks(chaptertitile, addDate)) return false;
         devices.backspace();
@@ -106,7 +106,7 @@ public class Read2 extends StartCase {
         //进入到作者详情页检查书签
         if (!search.entranceBookSearchEngineResultsPage(this.bookName, this.author)) return false;
         System.out.println(" //点击作者简介");
-        devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_title_view"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view"));
         TheWorkDetails twd = new TheWorkDetails(this.caseName);
         //验证目录页和书签
         if(!twd.checkTheWorkDetails(this.bookName,this.author,false))return false;
@@ -128,12 +128,12 @@ public class Read2 extends StartCase {
         if (chaptertitile == null) return false;
         if (addDate == null) return false;
         if (chaptertitile.length() > 6) chaptertitile = chaptertitile.substring(0, 6);
-        String mark_chapter_title = devices.getText(By.id("com.mianfeia.book:id/mark_chapter_title"));
+        String mark_chapter_title = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_chapter_title"));
         if (mark_chapter_title == null || !mark_chapter_title.contains(chaptertitile)) {
             print.print("检查书签:" + chaptertitile);
             return false;
         }
-        String marksDate = devices.getText(By.id("com.mianfeia.book:id/mark_date"));
+        String marksDate = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_date"));
         if (!marksDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}")) {
             print.print("获取书签日期格式检查:" + marksDate);
             return false;
@@ -143,13 +143,13 @@ public class Read2 extends StartCase {
             print.print("检查书签的日期与加入的日期:addDate:" + addDate + " marksDate:" + marksDate);
             return false;
         }
-        String mark_content = devices.getText(By.id("com.mianfeia.book:id/mark_content"));
+        String mark_content = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_content"));
         if (mark_content == null || mark_content.length() < 1) {
             print.print("获取的书签描述:mark_content：" + mark_content);
             return false;
         }
         //点击目录
-        devices.clickfindElement(By.id("com.mianfeia.book:id/tabIndicatorView2"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView2"));
         int[] xy = CXBConfig.slideXY(width, height, Read.catalog);
         //向上滑动目录
         for (int i = 0; i < new Random().nextInt(10) + 5; i++) {
@@ -160,13 +160,13 @@ public class Read2 extends StartCase {
             return true;
         }
         //点击目录中第一个章节
-        devices.clickfindElement(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle"));
         devices.sleep(1000);
         if (!new Read(this.caseName).style(Read.catalog)) return false;
         //点击书签
-        devices.clickfindElement(By.id("com.mianfeia.book:id/tabIndicatorView1"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView1"));
         //点击书签中保存的书签
-        devices.clickfindElement(By.id("com.mianfeia.book:id/mark_chapter_title"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_chapter_title"));
         //点击目录
         if (!new Read(this.caseName).style(Read.catalog)) return false;
         if (!devices.isElementExsitAndroid(By.xpath("//android.widget.TextView[contains(@text,\"" + chaptertitile + "\")]"))) {
@@ -189,7 +189,7 @@ public class Read2 extends StartCase {
         long startTime = System.currentTimeMillis() + (1000 * 60 * 10);
         for (; ; ) {
             devices.swipeToUp((int) ((Math.random() * 9 + 1) * 100));
-            if ("暂无更多内容".equals(devices.getText(By.id("com.mianfeia.book:id/item_load_more_view")))) {
+            if ("暂无更多内容".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_load_more_view")))) {
                 break;
             }
             if (System.currentTimeMillis() > startTime) {
@@ -219,18 +219,18 @@ public class Read2 extends StartCase {
      * @code 取消，确定，其他
      */
     public int readAdd_a_bookcase(String code) {
-        if ("喜欢就加入书架吧！".equals(devices.getText(By.id("com.mianfeia.book:id/message_two_tip")))) {
-            if (!"喜欢就加入书架吧！".equals(devices.getText(By.id("com.mianfeia.book:id/message_two_tip")))
-                    || !"取消".equals(devices.getText(By.id("com.mianfeia.book:id/btn_left")))
-                    || !"确定".equals(devices.getText(By.id("com.mianfeia.book:id/btn_right")))
+        if ("喜欢就加入书架吧！".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/message_two_tip")))) {
+            if (!"喜欢就加入书架吧！".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/message_two_tip")))
+                    || !"取消".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left")))
+                    || !"确定".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_right")))
                     ) {
                 print.print("检查阅读页中加入书架");
                 return 0;
             }
             if ("取消".equals(code)) {
-                devices.clickfindElement(By.id("com.mianfeia.book:id/btn_left"));
+                devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left"));
             } else if ("确定".equals(code)) {
-                devices.clickfindElement(By.id("com.mianfeia.book:id/btn_right"));
+                devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_right"));
             }
             return 1;
         }

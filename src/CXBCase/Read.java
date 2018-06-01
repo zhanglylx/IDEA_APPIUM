@@ -39,21 +39,21 @@ public class Read extends StartCase {
      * 元素
      */
     //目录侧边栏目录元素id
-    private String sidebar_catalog_id = "com.mianfeia.book:id/tabIndicatorView2";
+    private String sidebar_catalog_id = AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView2";
     //目录侧边栏书签元素id
-    private String sidebar_bookmark_id = "com.mianfeia.book:id/tabIndicatorView1";
+    private String sidebar_bookmark_id = AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView1";
     //目录侧边栏class
     private String directory_sidebar_class = "android.widget.RelativeLayout";
     //VIP页框架继续阅读
-    private String VIP_rl_each_dialog = "com.mianfeia.book:id/rl_each_dialog";
+    private String VIP_rl_each_dialog = AppiumMethod.Config.APP_PACKAGE+":id/rl_each_dialog";
     //末章推送页title框架id
-    private String Unsealed_push_frame = "com.mianfeia.book:id/title_bar_view";
+    private String Unsealed_push_frame = AppiumMethod.Config.APP_PACKAGE+":id/title_bar_view";
     //末章推送页title
     private String Unsealed_push_title = "已读完《" + CXBConfig.BOOK_NAME + "》";
     //末章推送页title_class
     private String Unsealed_push_title_class = "android.widget.TextView";
     //末章推送页首页按钮id
-    private String Unsealed_push_title_right_view_id = "com.mianfeia.book:id/title_right_view";
+    private String Unsealed_push_title_right_view_id = AppiumMethod.Config.APP_PACKAGE+":id/title_right_view";
     //末章推送页返回按钮
     private String Unsealed_push_title_right_view_back = "new UiSelector().className(" +
             "\"android.widget.LinearLayout\").childSelector(new UiSelector().className(\"android.widget.ImageButton\").index(" +
@@ -71,13 +71,13 @@ public class Read extends StartCase {
             if (!clickChapter()) return false;
         devices.sleep(2000);
         //关闭视听框
-        if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/btn_left"))) {
-            devices.clickfindElement(By.id("com.mianfeia.book:id/btn_left"));
+        if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left"))) {
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left"));
             devices.sleep(1000);
             devices.clickScreen(devices.getWidth() / 2, devices.getHeight() / 2);
         }
         devices.sleep(2000);
-        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/banner_txt_title")))ad.setAd("GG-30");
+        if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/banner_txt_title")))ad.setAd("GG-30");
         /**
          * 检查目录
          * 吊起设置页，检查目录按钮是否存在
@@ -700,12 +700,12 @@ public class Read extends StartCase {
      */
     private boolean setting() {
         int i = 0;
-        if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/RelativeLayout_Item"))) {
+        if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/RelativeLayout_Item"))) {
             devices.clickScreen((int) (devices.getWidth() / 2), (int) (devices.getHeight() / 2));
             devices.clickScreen((int) (devices.getWidth() / 2), (int) (devices.getHeight() / 2));
         }
         while (true) {
-            if (!devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/RelativeLayout_Item"))) {
+            if (!devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/RelativeLayout_Item"))) {
                 devices.clickScreen((int) (devices.getWidth() / 2), (int) (devices.getHeight() / 2));
             } else {
                 break;
@@ -721,7 +721,7 @@ public class Read extends StartCase {
 
 
     public boolean checkChapterFirst() {
-        if (!CXBConfig.BOOK_CHAPTER_FIRST.equals(devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle")))) {
+        if (!CXBConfig.BOOK_CHAPTER_FIRST.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle")))) {
             print.print("检查目录第一章节");
             return false;
         }
@@ -735,8 +735,8 @@ public class Read extends StartCase {
     public boolean checkCatalogueExternal(){
         devices.sleep(2000);
         //关闭视听框
-        if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/btn_left"))) {
-            devices.clickfindElement(By.id("com.mianfeia.book:id/btn_left"));
+        if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left"))) {
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left"));
             devices.sleep(1000);
             devices.clickScreen(devices.getWidth() / 2, devices.getHeight() / 2);
         }
@@ -808,7 +808,7 @@ public class Read extends StartCase {
                         "new UiSelector().text(\"" + CXBConfig.BOOK_CHAPTER_END + "\")")) break;
                 count += CXBConfig.BOOK_CATALOGUE_SLIDE_COUNT_index;
                 //检查当前目录是否存在
-                chaptertitle = devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/chapterlist_chaptertitle"));
+                chaptertitle = devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle"));
                 //检查循环超过slideNumber次或者目录是否存在
                 if (slideNumber > CXBConfig.BOOK_CATALOGUE_RESTRICT_SLIDE_SUM || !chaptertitle) {
                     print.print("检查" + catalog + "最后一章章节错误");
@@ -849,7 +849,7 @@ public class Read extends StartCase {
         /**
          * 检查点击目录页目录页是否关闭
          */
-        if (devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/left"))) {
+        if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/left"))) {
             print.print("点击目录页章节后目录没有关闭");
             return false;
         }
@@ -881,7 +881,7 @@ public class Read extends StartCase {
         } else {
             if (Read.bookmark.equals(name) || Read.download.equals(name)) {
                 //点击+按钮
-                if (!devices.clickfindElement(By.id("com.mianfeia.book:id/btn_more"))) {
+                if (!devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_more"))) {
                     print.print("检查设置中的+按钮字样");
                     return false;
                 }
@@ -916,8 +916,8 @@ public class Read extends StartCase {
      * @return 0为页面存在后检查失败，1为存在,2为不存在
      */
     public int clickReadmore() {
-        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adtitle")))ad.setAd("GG-31",
-                devices.getText(By.id("com.mianfeia.book:id/adtitle")));
+        if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adtitle")))ad.setAd("GG-31",
+                devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adtitle")));
         if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog))) {
             if (devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1))) {
                 devices.clickfindElement(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1));
@@ -942,7 +942,7 @@ public class Read extends StartCase {
      */
     private int clickReadmore(String name) {
         if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog))) {
-            if (!CXBConfig.BOOK_CHAPTER_END.equals(devices.getText(By.id("com.mianfeia.book:id/chapter_name"))) &&
+            if (!CXBConfig.BOOK_CHAPTER_END.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapter_name"))) &&
                     devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1))) {
                 return 0;
             }

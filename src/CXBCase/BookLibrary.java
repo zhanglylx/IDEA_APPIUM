@@ -10,9 +10,9 @@ public class BookLibrary extends StartCase {
     public static final String schoolgirl = "女生";
     public static final String publish = "出版";
     //排行
-    public static final By item_stacks_board_view = By.id("com.mianfeia.book:id/item_stacks_board_view");
+    public static final By item_stacks_board_view = By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_stacks_board_view");
     //推荐
-    public static final By item_stacks_classify_tv = By.id("com.mianfeia.book:id/item_stacks_classify_tv");
+    public static final By item_stacks_classify_tv = By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_stacks_classify_tv");
 
     public BookLibrary(String caseName) {
         super(caseName);
@@ -134,7 +134,7 @@ public class BookLibrary extends StartCase {
         }
         if (!devices.getText(By.className("android.widget.TextView")).contains(tab) ||
                 !devices.isElementExsitAndroid(By.className("android.widget.ImageButton")) ||
-                !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/title_right_view"))
+                !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"))
                 ) {
             print.print("检查H5子页面失败");
             return false;

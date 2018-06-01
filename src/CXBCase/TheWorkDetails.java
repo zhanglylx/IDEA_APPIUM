@@ -15,7 +15,7 @@ import java.util.concurrent.RecursiveTask;
  */
 public class TheWorkDetails extends StartCase {
     //在线阅读
-    public static final By ONLINE_READING = By.id("com.mianfeia.book:id/book_detail_to_read_view");
+    public static final By ONLINE_READING = By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_to_read_view");
     //判断是否为分享调用
     public static  boolean Share_the_call = false;
     //展开按钮
@@ -53,22 +53,22 @@ public class TheWorkDetails extends StartCase {
         devices.sleep(3000);
         if (!"作品详情".equals(devices.getText(
                 By.xpath("//android.widget.TextView[contains(@index,1)]")))
-                || !bookName.equals(devices.getText(By.id("com.mianfeia.book:id/book_detail_name_view")))
-                || !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/item_board_title_view"))
-                || !author.equals(devices.getText(By.id("com.mianfeia.book:id/book_detail_author_view")))
+                || !bookName.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_name_view")))
+                || !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_board_title_view"))
+                || !author.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_author_view")))
                 || !"在线阅读".equals(devices.getText(TheWorkDetails.ONLINE_READING))
-                || !"下载".equals(devices.getText(By.id("com.mianfeia.book:id/book_detail_to_download_view")))
-                || !"目录".equals(devices.getText(By.id("com.mianfeia.book:id/book_detail_to_volume_view")))
+                || !"下载".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_to_download_view")))
+                || !"目录".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_to_volume_view")))
                 //返回按钮
                 || !devices.isElementExsitAndroid(By.className("android.widget.ImageButton"))
                 ) {
             print.print("点击书籍:" + bookName + "跳转到书籍详情页不正确");
             return false;
         }
-        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-14",
-                devices.getText(By.id("com.mianfeia.book:id/banner_txt_title")));
-       if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_notice_content")))
-           RecordAd.getRecordAd().setAd("GG-65",devices.getText(By.id("com.mianfeia.book:id/adv_notice_content")));
+        if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-14",
+                devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/banner_txt_title")));
+       if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_notice_content")))
+           RecordAd.getRecordAd().setAd("GG-65",devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_notice_content")));
         //分享
         if(!Share_the_call && CXBConfig.CHECK_SHARE)if(!checkShare(bookName,author))return false;
         Share_the_call = false;
@@ -76,24 +76,24 @@ public class TheWorkDetails extends StartCase {
             WorkType=false;
             if (!checkType("书籍介绍")) return false;
             //书籍介绍内容
-            if (devices.getText(By.id("com.mianfeia.book:id/expand_text_view")).length() < 1) {
+            if (devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/expand_text_view")).length() < 1) {
                 print.print("检查书籍介绍内容");
                 return false;
             }
             if (CXBConfig.BOOK_NAME.equals(bookName)) {
-                if (!CXBConfig.BOOK_SYNOPSIS.equals(devices.getText(By.id("com.mianfeia.book:id/expand_text_view")))) {
+                if (!CXBConfig.BOOK_SYNOPSIS.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/expand_text_view")))) {
                     print.print("检查书籍介绍中的内容与config不匹配");
                     return false;
                 }
                 //展开
                 if (unfold) {
                     unfold = false;
-                    if (!"展开".equals(devices.getText(By.id("com.mianfeia.book:id/expand_open_view")))) {
+                    if (!"展开".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/expand_open_view")))) {
                         print.print("检查展开按钮");
                         return false;
                     }
-                    devices.clickfindElement(By.id("com.mianfeia.book:id/expand_open_view"));
-                    if (!CXBConfig.BOOK_SYNOPSISOPEN.equals(devices.getText(By.id("com.mianfeia.book:id/expand_text_view")))) {
+                    devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/expand_open_view"));
+                    if (!CXBConfig.BOOK_SYNOPSISOPEN.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/expand_text_view")))) {
                         print.print("检查展开后的简介内容不正确");
                     }
 
@@ -105,7 +105,7 @@ public class TheWorkDetails extends StartCase {
                 devices.swipeToUp(2000);
             }
             if (!checkType("大家都在看")) return false;
-            if (!"换一换".equals(devices.getText(By.id("com.mianfeia.book:id/item_board_title_action_view")))) {
+            if (!"换一换".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_board_title_action_view")))) {
                 print.print("检查换一换");
                 return false;
             }
@@ -117,8 +117,8 @@ public class TheWorkDetails extends StartCase {
                 print.print("检查V章补贴声明内容");
                 return false;
             }
-            if ("".equals(devices.getText(By.id("com.mianfeia.book:id/item_search_author_tv")))) {
-                RecordAd.getRecordAd().setAd("GG-37", devices.getText(By.id("com.mianfeia.book:id/item_search_recommend_tv")));
+            if ("".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_search_author_tv")))) {
+                RecordAd.getRecordAd().setAd("GG-37", devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/item_search_recommend_tv")));
             }
         }
         return true;
@@ -187,7 +187,7 @@ public class TheWorkDetails extends StartCase {
     private boolean checkRead() {
         System.out.println("执行检查开始阅读");
         System.out.println("    //点击开始阅读按钮");
-        devices.clickfindElement(By.id("com.mianfeia.book:id/dlg_download_book_btn"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_download_book_btn"));
         if (!new Read(this.caseName).checkCatalogueExternal()) {
             print.print("检查下载后的开始阅读失败");
             return false;
@@ -215,17 +215,17 @@ public class TheWorkDetails extends StartCase {
             if (!search.searchBook(bookName)) return false;
             if (!search.checkSearchResult(bookName, author)) return false;
             System.out.println("    //点击搜索结果页简介");
-            devices.clickfindElement(By.id("com.mianfeia.book:id/search_result_summary_view"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_summary_view"));
             devices.sleep(3000);
             if (!checkDetails(bookName, author)) return false;
             System.out.println("    //点击目录按钮");
-            devices.clickfindElement(By.id("com.mianfeia.book:id/book_detail_to_volume_view"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_to_volume_view"));
             devices.sleep(2000);
             if (!devices.isElementExsitAndroid(By.className("android.widget.ImageButton")) ||
                     !bookName.equals(devices.getText(By.className("android.widget.TextView"))) ||
-                    !"目录".equals(devices.getText(By.id("com.mianfeia.book:id/tabIndicatorView1"))) ||
-                    !"书签".equals(devices.getText(By.id("com.mianfeia.book:id/tabIndicatorView2"))) ||
-                    !CXBConfig.BOOK_CHAPTER_FIRST.equals(devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle")))
+                    !"目录".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView1"))) ||
+                    !"书签".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView2"))) ||
+                    !CXBConfig.BOOK_CHAPTER_FIRST.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle")))
                     ) {
                 print.print("检查作者详情页中的目录");
                 return false;
@@ -235,7 +235,7 @@ public class TheWorkDetails extends StartCase {
             devices.sleep(2000);
             if (!checkDetails(bookName, author)) return false;
             System.out.println("    //点击下载");
-            devices.clickfindElement(By.id("com.mianfeia.book:id/book_detail_to_download_view"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_to_download_view"));
             devices.sleep(2000);
             int downloadTheBox = downloadTheBox(bookName);
             //判断下载框是积分不足还是积分充足
@@ -247,13 +247,13 @@ public class TheWorkDetails extends StartCase {
                 return true;
             } else {
                 System.out.println("    //点击确定兑换按钮");
-                devices.clickfindElement(By.id("com.mianfeia.book:id/dlg_buy_book_submit_view"));
+                devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_submit_view"));
                 devices.sleep(2000);
-                if (!"已加入书架，正在下载中…".equals(devices.getText(By.id("com.mianfeia.book:id/dlg_download_book_title_view"))) ||
+                if (!"已加入书架，正在下载中…".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_download_book_title_view"))) ||
                         //com.mianfeia.book:id/dlg_download_book_prg_view进度条
-                        !devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/dlg_download_book_prg_view")) ||
-                        !"开始阅读".equals(devices.getText(By.id("com.mianfeia.book:id/dlg_download_book_btn"))) ||
-                        !devices.getText(By.id("com.mianfeia.book:id/dlg_download_book_prg_tv")).endsWith("%")
+                        !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_download_book_prg_view")) ||
+                        !"开始阅读".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_download_book_btn"))) ||
+                        !devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_download_book_prg_tv")).endsWith("%")
                         ) {
                     print.print("检查正在下载框失败");
                     return false;
@@ -266,14 +266,14 @@ public class TheWorkDetails extends StartCase {
                         print.print("下载超时10分钟");
                         return false;
                     }
-                    String dlg_download_book_prg_tv = devices.getText(By.id("com.mianfeia.book:id/dlg_download_book_prg_tv"));
+                    String dlg_download_book_prg_tv = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_download_book_prg_tv"));
                     if (dlg_download_book_prg_tv == null) {
                         print.print("获取下载进度:" + dlg_download_book_prg_tv);
                         return false;
                     }
                     num = Integer.parseInt(dlg_download_book_prg_tv.replace("%", ""));
                     if (num == 100) {
-                        if (!"下载成功".equals(devices.getText(By.id("com.mianfeia.book:id/dlg_download_book_title_view")))) {
+                        if (!"下载成功".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_download_book_title_view")))) {
                             print.print("下载为100%时，下载状态检查");
                             return false;
                         }
@@ -306,18 +306,18 @@ public class TheWorkDetails extends StartCase {
      */
     private boolean checkShare(String bookName,String author){
         //检查分享给好友
-        if(!devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/share_activity_title"))){
-            devices.clickfindElement(By.id("com.mianfeia.book:id/title_right_view"));
+        if(!devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/share_activity_title"))){
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"));
         }
-        if(!"分享给好友".equals(devices.getText(By.id("com.mianfeia.book:id/share_activity_title"))) ||
-                !"微信".equals(devices.getText(By.id("com.mianfeia.book:id/umeng_share_wechat")))||
-                !"朋友圈".equals(devices.getText(By.id("com.mianfeia.book:id/umeng_share_wechat_wxcircle")))
+        if(!"分享给好友".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/share_activity_title"))) ||
+                !"微信".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/umeng_share_wechat")))||
+                !"朋友圈".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/umeng_share_wechat_wxcircle")))
                 ){
             print.print("检查分享给好友框架");
             return false;
         }
         //点击微信
-        devices.clickfindElement(By.id("com.mianfeia.book:id/umeng_share_wechat"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/umeng_share_wechat"));
         devices.sleep(5000);
         if(!"微信号/QQ/邮箱登录".equals(devices.getText(By.id("com.tencent.mm:id/k5")))&&
                 !"创建新聊天".equals(devices.getText(By.id("com.tencent.mm:id/amo")))){
@@ -328,9 +328,9 @@ public class TheWorkDetails extends StartCase {
         Share_the_call = true;
         if (!checkDetails(bookName, author)) return false;
         //点击分享框
-        devices.clickfindElement(By.id("com.mianfeia.book:id/title_right_view"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"));
         //点击朋友圈
-        devices.clickfindElement(By.id("com.mianfeia.book:id/umeng_share_wechat_wxcircle"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/umeng_share_wechat_wxcircle"));
         devices.sleep(5000);
         if("微信号/QQ/邮箱登录".equals(devices.getText(By.id("com.tencent.mm:id/k5")))){
             devices.backspace();
@@ -359,9 +359,9 @@ public class TheWorkDetails extends StartCase {
      */
     private int downloadTheBox(String booKName) {
         //所需积分
-        String dlg_buy_book_price_view = devices.getText(By.id("com.mianfeia.book:id/dlg_buy_book_price_view"));
+        String dlg_buy_book_price_view = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_price_view"));
         //已有积分
-        String dlg_buy_book_balance_view = devices.getText(By.id("com.mianfeia.book:id/dlg_buy_book_balance_view"));
+        String dlg_buy_book_balance_view = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_balance_view"));
         if (Integer.parseInt(dlg_buy_book_price_view.substring(dlg_buy_book_price_view.indexOf("：") + 1, dlg_buy_book_price_view.length()))
                 >
                 Integer.parseInt(dlg_buy_book_balance_view.substring(dlg_buy_book_price_view.indexOf("：") + 1, dlg_buy_book_balance_view.length()))) {
@@ -371,12 +371,12 @@ public class TheWorkDetails extends StartCase {
                 print.print("检查当前积分余额不足;" + "所需积分:" + dlg_buy_book_price_view + " 已有积分:" + dlg_buy_book_balance_view);
                 return 0;
             }
-            if (!"去赚积分".equals(devices.getText(By.id("com.mianfeia.book:id/dlg_buy_book_submit_view")))) {
+            if (!"去赚积分".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_submit_view")))) {
                 print.print("当前积分余额不足显示去赚积分按钮");
                 return 0;
             }
             //点击去赚积分
-            devices.clickfindElement(By.id("com.mianfeia.book:id/dlg_buy_book_submit_view"));
+            devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_submit_view"));
             devices.sleep(2000);
             //验证跳转到赚积分页
             if (!new Sidebar(this.caseName).chickShow(Sidebar.ToEarnPoints)) return 0;
@@ -385,12 +385,12 @@ public class TheWorkDetails extends StartCase {
             return 1;
         } else {
             if (dlg_buy_book_balance_view == null ||
-                    !booKName.equals(devices.getText(By.id("com.mianfeia.book:id/dlg_buy_book_name_view"))) ||
-                    !CXBConfig.BOOK_NAME_INTEGRAL.equals(devices.getText(By.id("com.mianfeia.book:id/dlg_buy_book_price_view"))) ||
+                    !booKName.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_name_view"))) ||
+                    !CXBConfig.BOOK_NAME_INTEGRAL.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_price_view"))) ||
                     !dlg_buy_book_balance_view.startsWith("已有积分") ||
                     !AppXmlUtil.getXMLElement("android.widget.TextView(index=3;)",
                             devices.getPageXml(), "text").equals("下载后无需流量，可离线阅读") ||
-                    !"确认兑换".equals(devices.getText(By.id("com.mianfeia.book:id/dlg_buy_book_submit_view")))
+                    !"确认兑换".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_submit_view")))
                     ) {
                 print.print("检查作者详情页中的下载框");
                 return 0;
@@ -413,25 +413,25 @@ public class TheWorkDetails extends StartCase {
             print.print("chaptertitle为空");
             return false;
         }
-        if(!devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/tabIndicatorView1"))){
-            if(!devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/book_detail_to_volume_view"))){
+        if(!devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView1"))){
+            if(!devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_to_volume_view"))){
                 print.print("目录不存在");
             }else{
-                devices.clickfindElement(By.id("com.mianfeia.book:id/book_detail_to_volume_view"));
+                devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/book_detail_to_volume_view"));
             }
         }
         //返回按钮
         if(!devices.isElementExsitAndroid(By.className("android.widget.ImageButton"))||
                 !bookName.equals(devices.getText(By.className("android.widget.TextView")))||
-                !"目录".equals(devices.getText(By.id("com.mianfeia.book:id/tabIndicatorView1")))||
-                !"书签".equals(devices.getText(By.id("com.mianfeia.book:id/tabIndicatorView2")))||
-                !chaptertitle.equals(devices.getText(By.id("com.mianfeia.book:id/chapterlist_chaptertitle")))
+                !"目录".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView1")))||
+                !"书签".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView2")))||
+                !chaptertitle.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle")))
                 ){
             print.print("作者详情页中的目录页检查");
             return false;
         }
-        if(devices.isElementExsitAndroid(By.id("com.mianfeia.book:id/adv_plaque_view")))
-            ad.setAd("GG-27",devices.getText(By.id("com.mianfeia.book:id/banner_txt_title")));
+        if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_plaque_view")))
+            ad.setAd("GG-27",devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/banner_txt_title")));
         return true;
     }
     /**
@@ -439,7 +439,7 @@ public class TheWorkDetails extends StartCase {
      * @return
      */
     public boolean checkCatalogueBookmark(String chaptertitile,String addDate){
-        devices.clickfindElement(By.id("com.mianfeia.book:id/tabIndicatorView2"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tabIndicatorView2"));
         if (chaptertitile == null)
         {
             print.print("chaptertitile为空");
@@ -450,12 +450,12 @@ public class TheWorkDetails extends StartCase {
             return false;
         };
         if (chaptertitile.length() > 6) chaptertitile = chaptertitile.substring(0, 6);
-        String mark_chapter_title = devices.getText(By.id("com.mianfeia.book:id/mark_chapter_title"));
+        String mark_chapter_title = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_chapter_title"));
         if (mark_chapter_title == null || !mark_chapter_title.contains(chaptertitile)) {
             print.print("检查书签:" + chaptertitile);
             return false;
         }
-        String marksDate = devices.getText(By.id("com.mianfeia.book:id/mark_date"));
+        String marksDate = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_date"));
         if (!marksDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}")) {
             print.print("获取书签日期格式检查:" + marksDate);
             return false;
@@ -465,13 +465,13 @@ public class TheWorkDetails extends StartCase {
             print.print("检查书签的日期与加入的日期:addDate:" + addDate + " marksDate:" + marksDate);
             return false;
         }
-        String mark_content = devices.getText(By.id("com.mianfeia.book:id/mark_content"));
+        String mark_content = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_content"));
         if (mark_content == null ||mark_content.length()<1) {
             print.print("获取的书签描述:mark_content：" + mark_content+"  阅读页中的简介:"+mark_content);
             return false;
         }
         //点击保存的章节
-        devices.clickfindElement(By.id("com.mianfeia.book:id/mark_chapter_title"));
+        devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_chapter_title"));
         devices.sleep(3000);
         if(!new Read(this.caseName).style(Read.catalog))return false;
         if (!devices.isElementExsitAndroid(By.xpath("//android.widget.TextView[contains(@text,\"" + chaptertitile + "\")]"))) {
