@@ -47,11 +47,12 @@ public class ClearIphone {
                 rm.add("sdcard/FreeBook/");
                 rm.add ("sdcard/.freebook");
                 rm.add ("sdcard/.cxb");
+                rm.add ("sdcard/.hide_freebook/");
                 break;
             case HomePage.ZHIBO:
                 code = "com.chineseall.youzi";
-                rm.add ("sdcard/.hide_freebook/");
                 rm.add ("sdcard/.hide_live/");
+                rm.add ("sdcard/.hide_freebook/");
                 break;
             default:
                 throw new IllegalArgumentException("未找到包名:" + packageName);

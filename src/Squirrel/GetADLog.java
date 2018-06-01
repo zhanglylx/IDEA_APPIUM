@@ -35,6 +35,7 @@ public class GetADLog extends Pane {
     private int GGlen = 0;
     //判断是否打印了没有获取日志的错误信息,禁止重复打印
     boolean getLog = false;
+
     /**
      * 设置广告位
      */
@@ -89,6 +90,7 @@ public class GetADLog extends Pane {
 
     /**
      * 设置按钮监听器
+     *
      * @param f
      */
     public void buttonMouseListener(JButton f) {
@@ -96,15 +98,18 @@ public class GetADLog extends Pane {
             f.setBackground(Color.magenta);
             adId = f.getText();
             GGlen = 0;
-            logPaint.setText("");
+            logPaint.setText("请等待，正在刷新:" + f.getText() + "\n");
             t = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    if (!runT) log();
+                        if (!runT) {
+                            log();
+
+                        }
                 }
             });
             t.start();
-            getLog=false;
+            getLog = false;
         });
 
     }
@@ -120,15 +125,15 @@ public class GetADLog extends Pane {
         while (true) {
             if (logPaint == null) continue;
             if (windowsClose) {
-                windowsClose=false;
-                stop=1;
+                windowsClose = false;
+                stop = 1;
                 break;
             }
             //切换广告后，置为默认值
-            if(!adIdRecord.equals(adId)){
-                GGlen=0;
-                adIdRecord=adId;
-           }
+            if (!adIdRecord.equals(adId)) {
+                GGlen = 0;
+                adIdRecord = adId;
+            }
             //时间线程
             Thread t = new Thread(() -> {
                 boolean dateB = true;
@@ -136,7 +141,7 @@ public class GetADLog extends Pane {
                 addText("开启计时");
                 affirmThread = false;
                 while (true) {
-                    if(windowsClose)break;
+                    if (windowsClose) break;
                     if (dateB) {
                         date1 = System.currentTimeMillis() + (5 * 1000);
                         dateB = false;
@@ -165,7 +170,7 @@ public class GetADLog extends Pane {
             if (Arrays.toString(GG).contains("errdevices")) break;
             if (Arrays.toString(GG).equals("[]") && !getLog) {
                 getLog = true;
-                addText("没有获取到日志:"+adId+Arrays.toString(GG));
+                addText("没有获取到日志:" + adId + Arrays.toString(GG));
             }
             if (GG.length < 1) continue;
             if (GG.length > GGlen) {
@@ -238,7 +243,7 @@ public class GetADLog extends Pane {
         logPaint.append(text + "\n");
 //        //下面的代码就是移动到文本域的最后面
         logPaint.selectAll();
-        if (logPaint.getSelectedText() != null && logPaint !=null) {
+        if (logPaint.getSelectedText() != null && logPaint != null) {
             logPaint.setCaretPosition(logPaint.getSelectedText().length());
             logPaint.requestFocus();
         }
