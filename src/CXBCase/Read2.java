@@ -198,10 +198,10 @@ public class Read2 extends StartCase {
             }
         }
         this.bookName = AppXmlUtil.getXMLElement("android.support.v7.widget.RecyclerView//android.widget.LinearLayout(index=1;)//" +
-                "android.widget.TextView(resource-id=com.mianfeia.book:id/search_result_title_view;)" +
+                "android.widget.TextView(resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view;)" +
                 "(index=0;)", devices.getPageXml(), "text");
         this.author = AppXmlUtil.getXMLElement("android.support.v7.widget.RecyclerView//android.widget.LinearLayout(index=1;)//" +
-                "android.widget.TextView(resource-id=com.mianfeia.book:id/search_result_author_view;)" +
+                "android.widget.TextView(resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/search_result_author_view;)" +
                 "(index=2;)", devices.getPageXml(), "text");
         //点击书籍
         devices.clickScreen(devices.getXY(By.xpath("//android.widget.TextView[contains(@text,\"" +
