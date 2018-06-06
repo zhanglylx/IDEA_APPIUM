@@ -12,10 +12,14 @@ import java.util.Arrays;
  */
 public class ClearIphone {
     private String packageName;
-
-    public ClearIphone(String packageName)  {
+    private String clearPackageName;
+    public static final String CLEAR_CACHE ="清理缓存";
+    public static final String CLEAR_FILE = "清理文件";
+    public static final String CLEAR_ALL = "清理全部";
+    public ClearIphone(String packageName,String clearPackageName)  {
         if (packageName == null) throw new IllegalArgumentException("packageName为空");
         this.packageName = packageName;
+        this.clearPackageName =clearPackageName;
         try {
             clear();
         } catch (IllegalArgumentException E) {
@@ -57,13 +61,19 @@ public class ClearIphone {
             default:
                 throw new IllegalArgumentException("未找到包名:" + packageName);
         }
-        if(Arrays.toString(Adb.adb("uninstall "+code)).contains("errdevices"))return;
-        if(checkIphoneAppPackageExist(code)){
-            TooltipUtil.errTooltip("包卸载失败了，具体原因您查看下日志，然后自己删吧");
-        }
-        for (String r : rm){
-            if(Arrays.toString(Adb.adb("shell rm -r "+r)).contains("Is a directory") ){
-                TooltipUtil.errTooltip("本地目录删除失败了，具体原因您查看下日志，然后自己删吧");
+        System.out.println(clearPackageName);
+        if(this.clearPackageName.equals(CLEAR_ALL) ||
+                this.clearPackageName.equals(CLEAR_FILE)) {
+            if(this.clearPackageName.equals(CLEAR_ALL) ) {
+                if (Arrays.toString(Adb.adb("uninstall " + code)).contains("errdevices")) return;
+                if (checkIphoneAppPackageExist(code)) {
+                    TooltipUtil.errTooltip("包卸载失败了，具体原因您查看下日志，然后自己删吧");
+                }
+            }
+            for (String r : rm) {
+                if (Arrays.toString(Adb.adb("shell rm -r " + r)).contains("Is a directory")) {
+                    TooltipUtil.errTooltip("本地目录删除失败了，具体原因您查看下日志，然后自己删吧");
+                }
             }
         }
         TooltipUtil.generalTooltip(packageName+":完成");
