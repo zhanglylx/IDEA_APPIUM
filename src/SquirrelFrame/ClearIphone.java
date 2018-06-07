@@ -61,20 +61,23 @@ public class ClearIphone {
             default:
                 throw new IllegalArgumentException("未找到包名:" + packageName);
         }
-        System.out.println(clearPackageName);
         if(this.clearPackageName.equals(CLEAR_ALL) ||
                 this.clearPackageName.equals(CLEAR_FILE)) {
             if(this.clearPackageName.equals(CLEAR_ALL) ) {
-                if (Arrays.toString(Adb.adb("uninstall " + code)).contains("errdevices")) return;
+                if (Arrays.toString(Adb.operationAdb("uninstall " + code)).contains("errdevices")) return;
                 if (checkIphoneAppPackageExist(code)) {
                     TooltipUtil.errTooltip("包卸载失败了，具体原因您查看下日志，然后自己删吧");
                 }
             }
             for (String r : rm) {
-                if (Arrays.toString(Adb.adb("shell rm -r " + r)).contains("Is a directory")) {
+                if (Arrays.toString(Adb.operationAdb("shell rm -r " + r)).contains("Is a directory")) {
                     TooltipUtil.errTooltip("本地目录删除失败了，具体原因您查看下日志，然后自己删吧");
                 }
             }
+        }else{
+            if(!Arrays.toString(
+                    Adb.operationAdb("shell pm clear "+packageName)).contains("Success")
+                    ) TooltipUtil.errTooltip("应用缓存删除失败了，具体原因您查看下日志，然后自己删吧");
         }
         TooltipUtil.generalTooltip(packageName+":完成");
 
@@ -86,7 +89,7 @@ public class ClearIphone {
      */
     public boolean checkIphoneAppPackageExist(String packageName){
         boolean exist = false;
-        for(String p : Adb.adb("shell pm list package")){
+        for(String p : Adb.operationAdb("shell pm list package")){
             if(p.contains(packageName)){
                 exist=true;
                 break;
