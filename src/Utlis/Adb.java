@@ -52,7 +52,7 @@ public class Adb {
      * @param code
      * @return
      */
-    public static String[] adb(String code) {
+    public static String[] operationAdb(String code) {
         //检查是否连接设备
         if(!checkDevices())return new String[]{"errdevices"};
         return runAdb(code);
