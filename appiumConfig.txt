@@ -1,0 +1,3 @@
+packageName = com.mfcdxiaoshuo.book
+Activity = com.chineseall.reader.ui.FrameActivity
+截图保存地址:C:\Users\Administrator\Desktop\log
