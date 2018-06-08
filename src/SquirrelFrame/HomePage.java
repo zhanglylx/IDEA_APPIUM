@@ -1,10 +1,11 @@
 package SquirrelFrame;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.util.TimerTask;
+import java.util.Random;
 
 import Utlis.Adb;
 import Utlis.FrameUtils;
@@ -18,6 +19,7 @@ import com.worm.StratWorm;
 public class HomePage extends JFrame {
     //选择的项目
     private String projectName;
+    private String clearProjectName;
     public static final String ZWSC = "中文书城";
     public static final String CXB = "免费电子书";
     public static final String ZHIBO = "直播";
@@ -30,37 +32,38 @@ public class HomePage extends JFrame {
     private JButton getLocalIPButton;
     private static HomePage homePage;
     public static TextArea textArea;
+    public static JButton cartoonLog;
     private JButton refresh;
     //动画
-    public  static JButton cartoon;
+    public static JButton cartoon;
+
     private HomePage() {
         super(Config.TOOLSTITLE);
-        JPanel jpanel = new JPanel();       //添加项目
-        jpanel.setLayout(new GridLayout(6, 1));//设置布局
-        jpanel.add(new Menubar());    //添加菜单条
-        jpanel.add(panelProject()); //添加项目
-        jpanel.add(panelClearIphone());
-        jpanel.add(panelGetLocalIp());
-        jpanel.add(addButton(testTools, ""));
-//        jpanel.add(panelBottom());    //添加关于按钮
-       setSize(300, 100);//设置窗体宽高
-//        setLocationRelativeTo( null);//设置窗体位置,中间显示
-        setLocation(100,50);
+        setLayout(null);
+        setSize(700, 500);
         setIconImage(
                 Toolkit.getDefaultToolkit().getImage("image/logo.png")
         );
-        setLayout(new GridLayout(2, 1));//设置框架布局
+        Menubar menubar = new Menubar();
+        menubar.setSize(this.getWidth() * 10, 37);
+        menubar.setLocation(this.getX(), 5);
+        add(menubar);//添加菜单条
+        add(panelProject());//添加项目
+        add(functionOfPanel());
+        add(addTestButton(testTools));
+        setLocationRelativeTo(null);//设置窗体位置,中间显示
+
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) { //设置退出监听器
                 super.windowClosing(e);
-                WindosUtils.closeProcess("adb.exe");
+                WindosUtils.closeProcess("operationAdb.exe");
                 System.exit(0);
             }
         });
-        add(jpanel);
-        add(panelLogo());
-        pack();//自适应
+        add(addCartoon());
+//        pack();//自适应
+
         setVisible(true);//设置窗口可见
         Thread t = new Thread(new Cartoon());
         t.start();
@@ -87,7 +90,12 @@ public class HomePage extends JFrame {
                         CXB.equals(text)) {
                     projectName = f.getText();
                     clearIphoneButtpm.setEnabled(true);
+                } else if (ClearIphone.CLEAR_ALL.equals(text) ||
+                        ClearIphone.CLEAR_CACHE.equals(text) ||
+                        ClearIphone.CLEAR_FILE.equals(text)) {
+                    clearProjectName = text;
                 }
+
             }
         });
     }
@@ -100,7 +108,7 @@ public class HomePage extends JFrame {
     private void buttonMouseListener(JButton f) {
         f.addActionListener(e -> {
             //判断是否为刷新按钮
-            if(refresh.equals(f)){
+            if (refresh.equals(f)) {
                 textArea.setText("正在刷新");
                 Thread t = new Thread(new Runnable() {
                     @Override
@@ -144,7 +152,7 @@ public class HomePage extends JFrame {
             @Override
             public void run() {
                 if (clearIphone.equals(text)) {
-                    new ClearIphone(projectName);
+                    new ClearIphone(projectName, clearProjectName);
                     clearIphoneButtpm.setEnabled(true);
                 }
             }
@@ -152,30 +160,34 @@ public class HomePage extends JFrame {
         t.start();
     }
 
+//    /**
+//     * logo面板
+//     *
+//     * @return
+//     */
+//    private JButton panelLogo() {
+//        cartoon = new JButton();
+//        cartoon.setBorderPainted(false);// 不绘制边框
+//        cartoon.setContentAreaFilled(false);//透明的设置
+//        cartoon.setLocation(this.getX()-350,250);
+//        cartoon.setSize(this.getWidth(),200);
+//        return cartoon;
+//    }
+
     /**
-     * logo面板
+     * 添加动画
      *
      * @return
      */
-    private JButton panelLogo() {
-
-        JPanel jp = new JPanel();
-//        cartoon = FrameUtils.jbuttonImage("image/test.png");
-        cartoon = new JButton();
-        cartoon.setBorderPainted(false);// 不绘制边框
-        cartoon.setContentAreaFilled(false);//透明的设置
-        jp.setLayout(new FlowLayout());
-        jp.setPreferredSize(new Dimension(200, 100));
-        jp.setBorder(BorderFactory.createEtchedBorder());
-        jp.add(cartoon);
-        return cartoon;
+    private JButton addCartoon() {
+        cartoonLog = new JButton();
+        cartoonLog.setBorderPainted(false);// 不绘制边框
+        cartoonLog.setContentAreaFilled(false);//透明的设置
+        cartoonLog.setLocation(0, 250);
+        cartoonLog.setLayout(null);
+        cartoonLog.setSize(300, 30);
+        return cartoonLog;
     }
-
-
-
-
-
-
 
     /**
      * 页面最底部按钮
@@ -198,7 +210,9 @@ public class HomePage extends JFrame {
      */
     private JPanel panelProject() {
         JPanel p1 = new JPanel();
-        p1.add(new JLabel("请选择一个项目:"));
+        p1.setLayout(new GridLayout(2, 1));
+        JPanel Project = new JPanel();
+        Project.add(new JLabel("请选择一个项目:"));
         JRadioButton zwsc = new JRadioButton("中文书城");
         JRadioButton cxb = new JRadioButton("免费电子书");
         JRadioButton zhibo = new JRadioButton("直播");
@@ -210,16 +224,47 @@ public class HomePage extends JFrame {
         group.add(zwsc);
         group.add(cxb);
         group.add(zhibo);
-        p1.add(zwsc);
-        p1.add(cxb);
-        p1.add(zhibo);
-        p1.setLayout(new FlowLayout(0));
-        p1.add(new JLabel("当前设备名称:"));
+        Project.add(zwsc);
+        Project.add(cxb);
+        Project.add(zhibo);
+        Project.setLayout(new FlowLayout(0));
+        Project.add(new JLabel("当前设备名称:"));
         textArea = new TextArea(200, 100);
         Adb.setDevices();
         setRefresh();
-        p1.add(refresh);
-        p1.add(textArea);
+        Project.add(refresh);
+        Project.add(textArea);
+        p1.add(Project);
+        JPanel clearJPanel = new JPanel();
+        clearJPanel.setLayout(new FlowLayout(0));
+        clearJPanel.add(new JLabel("请选择清理方式:"));
+        JRadioButton clearCache = new JRadioButton(ClearIphone.CLEAR_CACHE);
+        JRadioButton clearFile = new JRadioButton(ClearIphone.CLEAR_FILE);
+        JRadioButton clearAll = new JRadioButton(ClearIphone.CLEAR_ALL);
+        jRadioButtonMouseListener(clearCache);
+        jRadioButtonMouseListener(clearFile);
+        jRadioButtonMouseListener(clearAll);
+        // 单选按钮组,同一个单选按钮组的互斥.
+        ButtonGroup clear = new ButtonGroup();
+        clear.add(clearAll);
+        clearAll.setSelected(true);
+        clearProjectName = clearAll.getText();
+        clear.add(clearFile);
+        clear.add(clearCache);
+        clearJPanel.add(clearAll);
+        clearJPanel.add(clearFile);
+        clearJPanel.add(clearCache);
+        clearIphoneButtpm = new JButton(clearIphone);
+        clearIphoneButtpm.setEnabled(false);
+        buttonMouseListener(clearIphoneButtpm);
+        clearJPanel.add(clearIphoneButtpm);
+        p1.add(clearJPanel);
+
+        //设置大小
+        p1.setSize(this.getWidth() * 10, 100);
+        p1.setLocation(this.getX() - 1, 50);
+        p1.setBorder(new EtchedBorder(EtchedBorder.RAISED));
+
         return p1;
     }
 
@@ -240,21 +285,24 @@ public class HomePage extends JFrame {
     }
 
     /**
-     * 清理手机面板
+     * 工具面板
      *
      * @return
      */
-    private JPanel panelClearIphone() {
-        //添加clearIphone按钮和worm按钮
+    private JPanel functionOfPanel() {
         JPanel p2 = new JPanel();
-        clearIphoneButtpm = new JButton(clearIphone);
-        clearIphoneButtpm.setEnabled(false);
         JButton wormButton = new JButton(worm);
-        p2.add(clearIphoneButtpm);
-        buttonMouseListener(clearIphoneButtpm);
         p2.add(wormButton);
         buttonMouseListener(wormButton);
+        getLocalIPButton = new JButton(getLocalIP);
+        buttonMouseListener(getLocalIPButton);
+        p2.add(getLocalIPButton);//添加获取本地IP地址
+        JButton work = new JButton(workFlow);
+        buttonMouseListener(work);
+        p2.add(work);
         p2.setLayout(new GridLayout(1, 2));
+        p2.setSize(400, 45);
+        p2.setLocation(this.getX() + 70, 153);
         return p2;
     }
 
@@ -265,40 +313,19 @@ public class HomePage extends JFrame {
      * @return
      */
 
-    private JPanel addButton(String buttonText1, String buttonText2) {
-        //添加clearIphone按钮和worm按钮
-        JPanel p2 = new JPanel();
-        JButton jb = new JButton(buttonText1);
-        JButton wormButton = new JButton(buttonText2);
-        p2.add(jb);
-        buttonMouseListener(jb);
-        p2.add(wormButton);
-        buttonMouseListener(wormButton);
-        p2.setLayout(new GridLayout(1, 2));
-        return p2;
-    }
-
-    /**
-     * 获取本机IP地址
-     *
-     * @return
-     */
-    private JPanel panelGetLocalIp() {
-        JPanel p = new JPanel();
-        getLocalIPButton = new JButton(getLocalIP);
-        p.add(getLocalIPButton);
-        buttonMouseListener(getLocalIPButton);
-        JButton work = new JButton(workFlow);
-        p.add(work);
-        buttonMouseListener(work);
-        p.setLayout(new GridLayout(1, 2));
-        return p;
-
+    private JButton addTestButton(String buttonText1) {
+        JButton testButton = FrameUtils.jbuttonImage("TestTools.png");
+        testButton.setText(buttonText1);
+        testButton.setFont(new Font("Arial", Font.BOLD, 0));
+        testButton.setLocation(this.getX() - 10, 150);
+        testButton.setSize(100, 50);
+        buttonMouseListener(testButton);
+        return testButton;
     }
 
 
     public static void main(String[] args) {
-         HomePage.getHomePage();
+        HomePage.getHomePage();
     }
 
 
@@ -309,38 +336,81 @@ public class HomePage extends JFrame {
  */
 class Cartoon implements Runnable {
 
-    int i= 0;
-    int tab=1;
-    @Override
+    int i = 0;
+    int tab = 1;
+
+    //    @Override
+//    public void run() {
+//        HomePage.cartoon.setIcon(new ImageIcon("image/test.png"));
+//        try {
+//            Thread.sleep(2500);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        File fileImage = null;
+//        File fileTab = null;
+//        String imagePath = "image" + File.separator + "cartoonLog" + File.separator + "tab";
+//        while (true) {
+//            if ((fileTab = new File(
+//                    imagePath + tab)).isDirectory()
+//                    ) {
+//                if ((fileImage = new File(fileTab.getPath() + File.separator + i + ".png")).exists()
+//                        ) {
+//                    HomePage.cartoon.setIcon(new ImageIcon(fileImage.getPath()));
+//                    i++;
+//                } else {
+//                    JavaUtils.sleep(5000l);
+//                    i = 0;
+//                    tab++;
+//                }
+//            } else {
+//
+//                break;
+//            }
+//            JavaUtils.sleep(100);
+//        }
+//    }
     public void run() {
-       HomePage.cartoon.setIcon(new ImageIcon("image/test.png"));
-        try {
-            Thread.sleep(2500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        File fileImage = null;
-        File fileTab = null;
-        String imagePath = "image" + File.separator + "Cartoon" + File.separator + "tab";
-        while (true) {
-            if ((fileTab = new File(
-                    imagePath + tab)).isDirectory()
-                    ) {
-                if ((fileImage = new File(fileTab.getPath() +File.separator+ i + ".png")).exists()
-                        ) {
-                    HomePage.cartoon.setIcon(new ImageIcon(fileImage.getPath()));
-                    i++;
-                } else {
-                    JavaUtils.sleep(5000l);
-                    i=0;
-                    tab++;
+        HomePage.cartoonLog.setText("曹静大美女");
+        HomePage.cartoonLog.setFont(new Font("宋体",Font.BOLD,25));//设置字体
+        Color[] colors = new Color[]{Color.DARK_GRAY,
+                Color.magenta, Color.orange, Color.yellow, Color.green, Color.blue,
+                Color.BLUE, Color.darkGray, Color.pink, Color.cyan};
+        int x = 0;
+        int y = 250;
+        boolean xBoolean=true;
+        boolean yBoolean=true;
+       while(true){
+            if(xBoolean ){
+                if(yBoolean){
+                    HomePage.cartoonLog.setLocation(x+=1,y+=1);
+                }else {
+                    HomePage.cartoonLog.setLocation(x+=1,y-=1);
                 }
-            }else{
-
-                break;
+            }else if(!xBoolean ) {
+                if(yBoolean){
+                    HomePage.cartoonLog.setLocation(x-=1,y+=1);
+                }else {
+                    HomePage.cartoonLog.setLocation(x-=1,y-=1);
+                }
             }
-            JavaUtils.sleep(100);
+            if(new Random().nextInt(100)==9){
+                HomePage.cartoonLog.setForeground(colors[i]);
+                i++;
+            }
+            if (i == colors.length - 1) i = 0;
+            if(x>400){
+                xBoolean=false;
+            }
+            if(x<10)xBoolean=true;
+            if(y<250)yBoolean=true;
+            if(y>400)yBoolean=false;
+
+            try {
+                Thread.sleep(30);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

@@ -96,6 +96,7 @@ public class FrameUtils {
         jbutton.setBorderPainted(false);// 不绘制边框
         jbutton.setContentAreaFilled(false);//透明的设置
         jbutton.setToolTipText("保存");//鼠标悬停文字
+        jbutton.setFont(new Font("Arial",Font.BOLD,0));//设置字体
     }
 
 

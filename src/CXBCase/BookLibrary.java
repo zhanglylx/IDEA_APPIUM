@@ -33,19 +33,19 @@ public class BookLibrary extends StartCase {
         //点击女生
         devices.clickScreen(AppXmlUtil.getXMLElement
                 ("android.widget.TextView(" +
-                        "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
+                        "resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/item_stacks_left_tv;)" +
                         "(text=" + schoolgirl + ";)", devices.getPageXml(), "bounds"));
         if (!checkPage(schoolgirl)) return false;
         //点击出版
         devices.clickScreen(AppXmlUtil.getXMLElement
                 ("android.widget.TextView(" +
-                        "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
+                        "resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/item_stacks_left_tv;)" +
                         "(text=" + publish + ";)", devices.getPageXml(), "bounds"));
         if (!checkPage(publish)) return false;
         //点击男生
         devices.clickScreen(AppXmlUtil.getXMLElement
                 ("android.widget.TextView(" +
-                        "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
+                        "resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/item_stacks_left_tv;)" +
                         "(text=" + schoolboy + ";)", devices.getPageXml(), "bounds"));
         if (!checkPage(schoolboy)) return false;
         return true;
@@ -106,7 +106,7 @@ public class BookLibrary extends StartCase {
         if (!title.equals(
                 AppXmlUtil.getXMLElement
                         ("android.widget.TextView(" +
-                                "resource-id=com.mianfeia.book:id/item_stacks_left_tv;)" +
+                                "resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/item_stacks_left_tv;)" +
                                 "(text=" + title + ";)", devices.getPageXml(), "text"))) {
             print.print("检查首页" + title + "存在");
             return false;

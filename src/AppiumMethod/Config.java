@@ -18,7 +18,7 @@ public class Config {
                 Config.ADB_PUTH = (String) ois.readObject();
             }
             if (null == Config.ADB_PUTH || !(new File(Config.ADB_PUTH).exists())) {
-                Config.ADB_PUTH = GetLocalityFilePuth.getPuth("adb.exe");
+                Config.ADB_PUTH = GetLocalityFilePuth.getPuth("operationAdb.exe");
                 ous = new ObjectOutputStream(new FileOutputStream("adb_puth.dat"));
                 ous.writeObject(Config.ADB_PUTH);
                 ous.flush();
@@ -48,8 +48,8 @@ public class Config {
         }
     }
 
-    // adb.exe文件地址,不用动，已经配置好，自动搜索，如果不需要请填写路径
-//    public static String ADB_PUTH = GetLocalityFilePuth.getPuth("adb.exe");
+    // operationAdb.exe文件地址,不用动，已经配置好，自动搜索，如果不需要请填写路径
+//    public static String ADB_PUTH = GetLocalityFilePuth.getPuth("operationAdb.exe");
     public static String ADB_PUTH;
     // app文件包名
     public static String APP_PACKAGE;

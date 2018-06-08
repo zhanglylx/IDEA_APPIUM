@@ -49,7 +49,7 @@ public class RunCase {
                 devices.backspace();
                 if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-3",
                         devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/banner_txt_title")));
-                if("9".equals(AppXmlUtil.getXMLElement("android.widget.RelativeLayout(resource-id=com.mianfeia.book:id/adv_plaque_view;)(index=0;)",
+                if("9".equals(AppXmlUtil.getXMLElement("android.widget.RelativeLayout(resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/adv_plaque_view;)(index=0;)",
                         devices.getPageXml(),"index"))) RecordAd.getRecordAd().setAd("GG-43");
                 return;
             }

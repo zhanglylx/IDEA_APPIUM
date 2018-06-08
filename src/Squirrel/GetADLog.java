@@ -166,7 +166,7 @@ public class GetADLog extends Pane {
                 }
             });
             boolean bl = false;
-            GG = Adb.adb(" shell cat /sdcard/FreeBook/ad/" + date + "/" + adId + ".txt");
+            GG = Adb.operationAdb(" shell cat /sdcard/FreeBook/ad/" + date + "/" + adId + ".txt");
             if (Arrays.toString(GG).contains("errdevices")) break;
             if (Arrays.toString(GG).equals("[]") && !getLog) {
                 getLog = true;
@@ -250,7 +250,7 @@ public class GetADLog extends Pane {
     }
 
     private static String date() {
-        for (String s : Adb.adb(" shell date")) {
+        for (String s : Adb.operationAdb(" shell date")) {
             if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
                 String dateString = s;
                 SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd");

@@ -64,7 +64,7 @@ public class Devices {
         cap.setCapability("deviceName", info.getDevicesName());// 设备名称
         cap.setCapability("platformName", "Android"); // 安卓自动化还是IOS自动化
         cap.setCapability("platformVersion", info.getDevicesVersion()); // 安卓操作系统版本
-        // cap.setCapability("udid", "03157df3d9998625"); // 设备的udid (adb   devices 查看到的)
+        // cap.setCapability("udid", "03157df3d9998625"); // 设备的udid (operationAdb   devices 查看到的)
         cap.setCapability("appPackage", Config.APP_PACKAGE);// 被测app的包名
         System.out.println("被测app的包名:" + Config.APP_PACKAGE);
         cap.setCapability("appActivity", Config.APP_ACTIVITY);// 被测app的入口Activity名称
@@ -120,7 +120,7 @@ public class Devices {
             e.printStackTrace();
         }
         try {
-            Process exec = Runtime.getRuntime().exec("adb shell am start -n " + Config.APP_PACKAGE + "/" + Config.APP_ACTIVITY);
+            Process exec = Runtime.getRuntime().exec("operationAdb shell am start -n " + Config.APP_PACKAGE + "/" + Config.APP_ACTIVITY);
             BufferedReader bf = new BufferedReader(new InputStreamReader(exec.getInputStream()));
             String msg = null;
             while ((msg = bf.readLine()) != null) {

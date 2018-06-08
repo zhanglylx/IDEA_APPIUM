@@ -6,14 +6,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.File;
-import java.util.Arrays;
 
 import Squirrel.*;
 import Utlis.FrameUtils;
 import Utlis.WindosUtils;
 
-import static Squirrel.testTools.*;
+import static Squirrel.TestTools.*;
 
 /**
  * 窗格类
@@ -47,7 +45,7 @@ public class Pane extends JDialog {
      * @param frame
      */
     public Pane(String buttonText, JFrame frame) {
-        super(frame, true);
+        super(frame, false);
         setTitle(buttonText);
         switch (buttonText) {
             case HomePage.workFlow:
@@ -55,14 +53,17 @@ public class Pane extends JDialog {
                 for (String s : flow) {
                     setButton(s);
                 }
+                setWidthAndHeight(flow);
                 break;
             case HomePage.testTools:
                 setLayout(new GridLayout(3, 3));
-                for(String s : testTools){
+                for(String s : TestTools.testTools){
                     setButton(s);
                 }
+                setWidthAndHeight(TestTools.testTools);
+                break;
         }
-        setWidthAndHeight(flow);
+
         setJDialog();
     }
 

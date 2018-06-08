@@ -33,7 +33,6 @@ public class Adb {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        SaveCrash.save(Arrays.toString(str));
         return str;
     }
     private static String[] devicesInfo(){

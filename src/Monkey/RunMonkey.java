@@ -82,7 +82,7 @@ public class RunMonkey {
                 Tooltip.errHint("RunMonkey_pullMonkeyLog获取devicesName为空");
             }
             Process pro = Runtime.getRuntime()
-                    .exec("cmd /c adb -s " + ConfigMonkey.devicesName + " pull "+puth+" " + System.getProperty("user.dir"));
+                    .exec("cmd /c operationAdb -s " + ConfigMonkey.devicesName + " pull "+puth+" " + System.getProperty("user.dir"));
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
             String msg;
             boolean deleteMonkeyLog = deleteMonkeyLog();

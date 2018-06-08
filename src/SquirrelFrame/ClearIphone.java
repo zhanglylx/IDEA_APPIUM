@@ -67,6 +67,7 @@ public class ClearIphone {
                 if (Arrays.toString(Adb.operationAdb("uninstall " + code)).contains("errdevices")) return;
                 if (checkIphoneAppPackageExist(code)) {
                     TooltipUtil.errTooltip("包卸载失败了，具体原因您查看下日志，然后自己删吧");
+
                 }
             }
             for (String r : rm) {
@@ -74,12 +75,17 @@ public class ClearIphone {
                     TooltipUtil.errTooltip("本地目录删除失败了，具体原因您查看下日志，然后自己删吧");
                 }
             }
+            TooltipUtil.generalTooltip(packageName+":完成");
         }else{
             if(!Arrays.toString(
-                    Adb.operationAdb("shell pm clear "+packageName)).contains("Success")
-                    ) TooltipUtil.errTooltip("应用缓存删除失败了，具体原因您查看下日志，然后自己删吧");
+                    Adb.operationAdb("shell pm clear "+code)).contains("Success")
+                    ){
+                TooltipUtil.errTooltip("应用缓存删除失败了，具体原因您查看下日志，然后自己删吧");
+                return;
+            }
+            TooltipUtil.generalTooltip(packageName+":完成");
         }
-        TooltipUtil.generalTooltip(packageName+":完成");
+
 
     }
 

@@ -154,7 +154,7 @@ public class ScreenRecord extends Thread {
         System.out.println("开始拉取手机文件");
         try {
             Process pro = Runtime.getRuntime()
-                    .exec("cmd /c adb  pull "+puth+" " + System.getProperty("user.dir"));
+                    .exec("cmd /c operationAdb  pull "+puth+" " + System.getProperty("user.dir"));
             BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
             String msg;
             boolean pull = false;

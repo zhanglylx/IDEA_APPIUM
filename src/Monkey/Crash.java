@@ -82,7 +82,7 @@ public class Crash {
         System.out.println("开始拉取手机文件");
         try {
                 Process pro = Runtime.getRuntime()
-                        .exec("cmd /c adb pull /sdcard/monkeyLog.txt " + System.getProperty("user.dir"));
+                        .exec("cmd /c operationAdb pull /sdcard/monkeyLog.txt " + System.getProperty("user.dir"));
                 BufferedReader br = new BufferedReader(new InputStreamReader(pro.getInputStream()));
                 String msg;
                 boolean succeed = false;

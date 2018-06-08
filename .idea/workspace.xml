@@ -6,385 +6,306 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/appium_jar.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/appium_jar.xml" />
+    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="更改运行adb命令函数的函数名称">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Crash.txt" afterPath="$PROJECT_DIR$/Crash.txt" />
-      <change beforePath="$PROJECT_DIR$/File/测试流程/bug流程.pdf" afterPath="$PROJECT_DIR$/File/测试流程/bug流程.pdf" />
-      <change beforePath="$PROJECT_DIR$/File/测试流程/测试时间安排总结.docx" afterPath="$PROJECT_DIR$/File/测试流程/测试时间安排总结.docx" />
-      <change beforePath="$PROJECT_DIR$/bin/AdbWinApi.dll" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/AdbWinUsbApi.dll" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/NOTICE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/adb.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/api/annotations.zip" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/api/api-versions.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/dmtracedump.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/etc1tool.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/fastboot.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/hprof-conv.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/lib64/libc++.so" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/libwinpthread-1.dll" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/make_f2fs.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/mke2fs.conf" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/mke2fs.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/package.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/source.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/sqlite3.exe" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/NOTICE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/UPSTREAM_REVISION" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/battor/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/battor/battor_binary_dependencies.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/battor/battor_error.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/battor/battor_wrapper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/battor/battor_wrapper_devicetest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/battor/battor_wrapper_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/bin/run_py_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/battor/bin/upload_battor_binaries.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/bin/run_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/bin/run_eslint" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/bin/run_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/eslint/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/eslint/smoke_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/rules/catapult-camelcase.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/eslint/tests/catapult-camelcase.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/lab/commits.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/lab/hardware.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/lab/keychain_unlock.sh" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/node_runner/node_runner/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/node_runner/node_runner/node_binaries.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/node_runner/node_runner/node_util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/node_runner/node_runner/package.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/README.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/run_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/setup.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/decorators.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/decorators_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/log.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/log_io_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/meta_class.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/multiprocessing_shim.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/parsed_trace_events.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/trace_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_time.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_trace_event/py_trace_event/trace_time_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/PRESUBMIT.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/binary_manager.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/binary_manager_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/chrome_binaries.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/cloud_storage.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/cloud_storage_global_lock.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/cloud_storage_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/contextlib_ext.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/contextlib_ext_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/dependency_util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/lock.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/lock_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/py_utils_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/base_symbol.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/class_definition.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/function_definition.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/import_statement.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/reference.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/module.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/offset_token.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor/snippet.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor_util/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/refactor_util/move.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/shell_util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/tempfile_ext.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/tempfile_ext_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/test_data/foo.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/common/py_utils/py_utils/xvfb.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/PRESUBMIT.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/bin/run_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/bin/update" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/archive_info.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/base_config.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/base_config_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/cloud_storage_info.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/cloud_storage_info_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/dependency_info.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/dependency_info_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/dependency_manager_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/dependency_manager_util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/dependency_manager_util_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/exceptions.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/local_path_info.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/manager.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/uploader.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/dependency_manager/uploader_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/dependency_manager/pylintrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/PRESUBMIT.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/bin/generate_md_docs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/bin/run_py_devicetests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/bin/run_py_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/apk_helper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/apk_helper_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/app_ui.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/app_ui_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/battery_utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/battery_utils_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/constants/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/constants/chrome.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/constants/file_system.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/decorators.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/decorators_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_blacklist.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_blacklist_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_errors.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_errors_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_list.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_signal.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_temp_file.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_test_case.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_utils_devicetest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/device_utils_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/fastboot_utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/fastboot_utils_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/flag_changer.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/flag_changer_devicetest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/flag_changer_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/forwarder.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/install_commands.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/logcat_monitor.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/logcat_monitor_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/md5sum.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/md5sum_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/perf/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/perf/cache_control.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/perf/perf_control.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/perf/perf_control_devicetest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/perf/surface_stats_collector.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/perf/thermal_throttle.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/ports.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/aapt.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/adb_compatibility_devicetest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/adb_wrapper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/adb_wrapper_devicetest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/adb_wrapper_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/build_tools.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/dexdump.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/fastboot.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/gce_adb_wrapper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/intent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/keyevent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/shared_prefs.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/shared_prefs_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/split_select.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/test/data/push_directory/push_directory_contents.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/test/data/push_file.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/sdk/version_codes.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/settings.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/adb_run_shell_cmd.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/cpufreq.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/device_monitor.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/device_monitor_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/device_recovery.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/device_status.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/flash_device.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/keyboard.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/provision_devices.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/screenshot.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/script_common.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/script_common_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/video_recorder.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/tools/wait_for_devices.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/valgrind_tools/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/android/valgrind_tools/base_tool.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/base_error.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/constants/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/constants/exit_codes.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/devil_dependencies.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/devil_env.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/devil_env_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/battor_device_mapping.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/cmd_helper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/cmd_helper_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/file_utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/find_usb_devices.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/find_usb_devices_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/geometry.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/geometry_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/host_utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/lazy/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/lazy/weak_constant.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/lsusb.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/lsusb_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/markdown.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/markdown_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/mock_calls.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/mock_calls_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/parallelizer.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/parallelizer_test.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/reraiser_thread.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/reraiser_thread_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/reset_usb.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/run_tests_helper.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/signal_handler.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/test/data/test_serial_map.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/timeout_retry.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/timeout_retry_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/update_mapping.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/usb_hubs.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/watchdog_timer.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/devil/utils/zip_utils.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/docs/adb_wrapper.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/docs/device_blacklist.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/docs/device_utils.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/docs/markdown.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/docs/persistent_device_list.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/devil/pylintrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/PRESUBMIT.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/Application.mk" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/file_utils.cc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/file_utils.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/logging.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/main.cc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/process_info.cc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/process_info.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/process_memory_stats.cc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/atrace_helper/jni/process_memory_stats.h" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/bin/adb_profile_chrome" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/bin/adb_profile_chrome_startup" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/bin/run_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/bin/systrace" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/chrome_startup_tracing_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/chrome_startup_tracing_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/chrome_tracing_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/chrome_tracing_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/ddms_tracing_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/ddms_tracing_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/fake_agent_1.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/fake_agent_2.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/flags.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/main.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/perf_tracing_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/perf_tracing_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/profiler.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/profiler_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/run_tests" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/third_party/COPYING" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/third_party/README.chromium" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/third_party/perf_to_tracing.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/ui.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/profile_chrome/util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/pylintrc" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/AUTHORS" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/README.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/decorators.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/monitor_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/output_generator.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/output_generator_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/prefix.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/run_systrace.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/suffix.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/systrace_runner.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/systrace_trace_viewer.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_data" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_data_raw" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_data_stripped" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_extracted_tgids" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_extracted_threads" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_fixed_tgids" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_missing_tgids" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/atrace_procfs_dump" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/battor_test_data.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/compressed_atrace_data.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/decompressed_atrace_data.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/test_data/profile-chrome_systrace_perf_chrome_data" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/trace_result.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/agents_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/android_process_data_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/atrace_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/atrace_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/atrace_from_file_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/atrace_from_file_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/battor_trace_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/battor_trace_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/ftrace_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/ftrace_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/walt_agent.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_agents/walt_agent_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/tracing_controller.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/update_systrace_trace_viewer.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/util.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/systrace/systrace/util_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/LICENSE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/README.chromium" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/linux-product_info.patch" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/rfc2217.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/serialcli.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/serialjava.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/serialposix.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/serialutil.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/serialwin32.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/sermsdos.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/tools/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/tools/list_ports.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/tools/list_ports_linux.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/tools/list_ports_osx.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/tools/list_ports_posix.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/tools/list_ports_windows.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/tools/miniterm.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/urlhandler/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_hwgrep.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_loop.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_rfc2217.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_socket.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/pyserial/serial/win32.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/zipfile/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/zipfile/README.chromium" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/third_party/zipfile/zipfile_2_7_13.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/tracing/tracing/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/tracing/tracing/trace_data/__init__.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/tracing/tracing/trace_data/trace_data.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/tracing/tracing/trace_data/trace_data_unittest.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/catapult/tracing/tracing_project.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/bin/systrace/systrace.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/Case.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/Crash.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/0.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/0.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/1.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/1.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/10.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/11.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/12.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/13.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/14.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/15.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/17.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/18.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/19.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/2.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/2.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/20.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/21.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/22.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/23.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/24.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/25.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/26.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/27.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/28.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/29.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/3.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/3.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/30.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/31.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/33.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/34.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/35.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/36.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/37.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/38.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/39.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/4.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/4.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/40.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/41.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/42.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/43.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/44.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/45.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/46.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/47.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/48.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/49.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/5.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/5.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/51.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/52.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/53.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/54.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/55.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/56.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/57.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/58.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/59.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/6.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/6.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/61.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/62.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/63.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/64.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/65.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/66.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/67.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/68.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/69.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/7.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/7.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/70.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/71.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/72.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/73.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/74.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/8.png" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/8.png" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab1/9.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/0.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/10.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/11.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/12.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/13.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/14.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/15.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/17.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/18.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/19.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/20.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/21.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/22.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/23.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/24.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/25.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/26.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/27.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/28.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/29.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/3.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/30.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/31.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/33.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/34.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/35.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/36.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/37.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/38.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/39.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/4.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/40.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/41.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/42.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/43.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/44.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/45.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/46.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/47.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/48.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/49.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/5.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/51.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/52.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/53.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/54.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/55.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/56.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/57.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/58.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/59.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/6.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/7.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/8.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab2/9.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/0.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/10.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/11.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/12.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/13.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/14.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/15.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/17.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/18.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/19.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/20.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/21.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/22.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/23.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/24.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/25.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/26.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/27.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/28.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/29.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/3.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/30.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/31.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/33.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/34.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/35.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/36.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/37.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/38.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/39.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/4.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/40.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/41.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/42.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/43.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/44.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/45.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/46.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/47.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/48.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/49.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/5.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/51.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/52.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/53.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/54.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/55.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/56.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/57.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/58.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/59.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/6.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/61.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/62.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/63.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/64.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/65.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/66.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/67.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/68.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/69.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/7.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/70.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/71.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/72.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/73.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/74.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/8.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab3/9.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/0.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/1.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/10.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/11.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/12.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/13.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/14.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/15.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/16.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/17.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/18.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/19.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/2.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/20.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/21.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/22.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/23.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/24.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/25.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/26.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/27.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/28.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/29.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/3.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/30.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/31.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/32.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/33.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/34.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/35.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/36.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/37.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/38.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/39.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/4.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/40.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/41.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/42.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/43.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/44.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/45.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/46.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/47.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/48.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/49.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/5.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/50.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/51.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/52.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/53.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/54.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/55.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/56.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/57.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/58.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/59.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/6.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/60.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/61.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/62.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/7.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/8.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/image/Cartoon/tab4/9.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/Devices.class" afterPath="$PROJECT_DIR$/out/production/appium/AppTest/Devices.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/GetRunApp.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/RunTest.class" afterPath="$PROJECT_DIR$/out/production/appium/AppTest/RunTest.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/CXBConfig.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/CXBConfig.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/Read.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/Read.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/Config.class" afterPath="$PROJECT_DIR$/out/production/appium/AppiumMethod/Config.class" />
       <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/RunCase.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/RunCase.class" />
       <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/Sidebar.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/Sidebar.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/test.class" afterPath="$PROJECT_DIR$/out/production/appium/CXBCase/test.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/get.class" afterPath="$PROJECT_DIR$/out/production/appium/免费电子书AD/get.class" />
-      <change beforePath="$PROJECT_DIR$/src/AppTest/Case.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/Crash.class" afterPath="$PROJECT_DIR$/out/production/appium/Monkey/Crash.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey$1.class" afterPath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey.class" afterPath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey.class" />
+      <change beforePath="$PROJECT_DIR$/src/AppTest/AdbUtil.java" afterPath="$PROJECT_DIR$/src/AppTest/AdbUtil.java" />
       <change beforePath="$PROJECT_DIR$/src/AppTest/Devices.java" afterPath="$PROJECT_DIR$/src/AppTest/Devices.java" />
-      <change beforePath="$PROJECT_DIR$/src/AppTest/RunTest.java" afterPath="$PROJECT_DIR$/src/AppTest/RunTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/AppiumMethod/Config.java" afterPath="$PROJECT_DIR$/src/AppiumMethod/Config.java" />
+      <change beforePath="$PROJECT_DIR$/src/AppiumMethod/ScreenRecord.java" afterPath="$PROJECT_DIR$/src/AppiumMethod/ScreenRecord.java" />
+      <change beforePath="$PROJECT_DIR$/src/CXBCase/BookLibrary.java" afterPath="$PROJECT_DIR$/src/CXBCase/BookLibrary.java" />
+      <change beforePath="$PROJECT_DIR$/src/CXBCase/RunCase.java" afterPath="$PROJECT_DIR$/src/CXBCase/RunCase.java" />
+      <change beforePath="$PROJECT_DIR$/src/Monkey/Crash.java" afterPath="$PROJECT_DIR$/src/Monkey/Crash.java" />
+      <change beforePath="$PROJECT_DIR$/src/Monkey/RunMonkey.java" afterPath="$PROJECT_DIR$/src/Monkey/RunMonkey.java" />
       <change beforePath="$PROJECT_DIR$/src/Squirrel/GetADLog.java" afterPath="$PROJECT_DIR$/src/Squirrel/GetADLog.java" />
+      <change beforePath="$PROJECT_DIR$/src/Squirrel/testTools.java" afterPath="$PROJECT_DIR$/src/Squirrel/TestTools.java" />
       <change beforePath="$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java" afterPath="$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java" />
-      <change beforePath="$PROJECT_DIR$/src/SquirrelFrame/Config.java" afterPath="$PROJECT_DIR$/src/SquirrelFrame/Config.java" />
       <change beforePath="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" afterPath="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" />
+      <change beforePath="$PROJECT_DIR$/src/SquirrelFrame/Menubar.java" afterPath="$PROJECT_DIR$/src/SquirrelFrame/Menubar.java" />
+      <change beforePath="$PROJECT_DIR$/src/SquirrelFrame/Pane.java" afterPath="$PROJECT_DIR$/src/SquirrelFrame/Pane.java" />
       <change beforePath="$PROJECT_DIR$/src/Utlis/Adb.java" afterPath="$PROJECT_DIR$/src/Utlis/Adb.java" />
-      <change beforePath="$PROJECT_DIR$/src/Utlis/test.java" afterPath="$PROJECT_DIR$/src/Utlis/test.java" />
-      <change beforePath="$PROJECT_DIR$/src/免费电子书AD/get.java" afterPath="$PROJECT_DIR$/src/免费电子书AD/get.java" />
+      <change beforePath="$PROJECT_DIR$/src/Utlis/FrameUtils.java" afterPath="$PROJECT_DIR$/src/Utlis/FrameUtils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -395,7 +316,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/appium$HomePage.coverage" NAME="HomePage Coverage Results" MODIFIED="1527143865166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/appium$HomePage.coverage" NAME="HomePage Coverage Results" MODIFIED="1528359423061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>Utlis.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/appium$RunCase.coverage" NAME="RunCase Coverage Results" MODIFIED="1525330815138" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -407,104 +328,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GetRunAppName.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppTest/GetRunAppName.java">
+      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-91">
-              <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+            <state relative-caret-position="116">
+              <caret line="373" column="42" lean-forward="false" selection-start-line="373" selection-start-column="42" selection-end-line="373" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppiumMethod/Config.java">
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="36" />
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunCase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CXBCase/RunCase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CXBCase/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="69" column="18" lean-forward="true" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Sidebar.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CXBCase/Sidebar.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="162" column="16" lean-forward="true" selection-start-line="161" selection-start-column="16" selection-end-line="162" selection-end-column="16" />
-              <folding>
-                <element signature="e#1176#1177#0" expanded="true" />
-                <element signature="e#1207#1208#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CXBConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CXBCase/CXBConfig.java">
+      <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
+        <entry file="jar://D:/java/jdk/src.zip!/java/awt/Color.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
-              <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <caret line="185" column="30" lean-forward="false" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppXmlUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppTest/AppXmlUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TheWorkDetails.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CXBCase/TheWorkDetails.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="385" column="16" lean-forward="true" selection-start-line="385" selection-start-column="16" selection-end-line="385" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Devices.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppTest/Devices.java">
+      <file leaf-file-name="Adb.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21">
-              <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+              <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Read2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CXBCase/Read2.java">
+      <file leaf-file-name="FrameUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="202" column="33" lean-forward="false" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
+            <state relative-caret-position="340">
+              <caret line="99" column="5" lean-forward="false" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZhiBoDataBase.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBoDataBase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ZhiBo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="112" column="54" lean-forward="false" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pane.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Pane.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OutputText.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/OutputText.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlowFrame.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Squirrel/FlowFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -525,9 +443,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new RecordAd().</find>
-      <find>new RecordAd</find>
-      <find>gett</find>
       <find>检查日间模式按钮是否存在</find>
       <find>RecordAd.getRecordAd()</find>
       <find>GG-14</find>
@@ -555,6 +470,9 @@
       <find>XMLU</find>
       <find>getSelectedText</find>
       <find>&quot;com.mianfeia.book:</find>
+      <find>com.mianfeia.b</find>
+      <find>com.mianfeia.book</find>
+      <find>com.mianfeia.book:</find>
     </findStrings>
     <replaceStrings>
       <replace>new UiSelector</replace>
@@ -594,10 +512,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Frame/TooltipUtil.java" />
-        <option value="$PROJECT_DIR$/src/Utlis/TooltipUtil.java" />
-        <option value="$PROJECT_DIR$/src/Frame/TextArea.java" />
-        <option value="$PROJECT_DIR$/src/Frame/HomePage.java" />
         <option value="$PROJECT_DIR$/src/Frame/Menubar.java" />
         <option value="$PROJECT_DIR$/src/Frame/ClearIphone.java" />
         <option value="$PROJECT_DIR$/src/Frame/WindowsText.java" />
@@ -618,12 +532,10 @@
         <option value="$PROJECT_DIR$/src/SquirrelFrame/SquirrelFrame.java" />
         <option value="$PROJECT_DIR$/src/SquirrelFrame/test.java" />
         <option value="$PROJECT_DIR$/src/Squirrel/testTools.java" />
-        <option value="$PROJECT_DIR$/src/SquirrelFrame/Menubar.java" />
         <option value="$PROJECT_DIR$/src/SquirrelFrame/WindowsText.java" />
         <option value="$PROJECT_DIR$/src/SquirrelFrame/FrameSqiorrel.java" />
         <option value="$PROJECT_DIR$/src/DataBase/text.java" />
         <option value="$PROJECT_DIR$/src/DataBase/ConnectDataBase.java" />
-        <option value="$PROJECT_DIR$/src/SquirrelFrame/Pane.java" />
         <option value="$PROJECT_DIR$/src/Utlis/JavaUtils.java" />
         <option value="$PROJECT_DIR$/src/Utlis/Date.java" />
         <option value="$PROJECT_DIR$/src/Utlis/SaveCrash.java" />
@@ -631,20 +543,26 @@
         <option value="$PROJECT_DIR$/src/Squirrel/ZhiBoDataBase.java" />
         <option value="$PROJECT_DIR$/src/Squirrel/ZhiBo.java" />
         <option value="$PROJECT_DIR$/src/Squirrel/FlowFrame.java" />
-        <option value="$PROJECT_DIR$/src/Utlis/Adb.java" />
         <option value="$PROJECT_DIR$/src/Utlis/WindosUtils.java" />
-        <option value="$PROJECT_DIR$/src/SquirrelFrame/Config.java" />
         <option value="$PROJECT_DIR$/src/Utlis/test.java" />
         <option value="$PROJECT_DIR$/src/AppTest/Devices.java" />
-        <option value="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" />
-        <option value="$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java" />
-        <option value="$PROJECT_DIR$/src/Utlis/FrameUtils.java" />
         <option value="$PROJECT_DIR$/src/Squirrel/GetADLog.java" />
         <option value="$PROJECT_DIR$/src/免费电子书AD/get.java" />
         <option value="$PROJECT_DIR$/src/AppTest/GetRunAppName.java" />
-        <option value="$PROJECT_DIR$/src/CXBCase/RunCase.java" />
         <option value="$PROJECT_DIR$/src/CXBCase/test.java" />
         <option value="$PROJECT_DIR$/src/CXBCase/Sidebar.java" />
+        <option value="$PROJECT_DIR$/src/Test/test.java" />
+        <option value="$PROJECT_DIR$/src/CXBCase/Read2.java" />
+        <option value="$PROJECT_DIR$/src/CXBCase/RunCase.java" />
+        <option value="$PROJECT_DIR$/src/CXBCase/BookLibrary.java" />
+        <option value="$PROJECT_DIR$/src/SquirrelFrame/Pane.java" />
+        <option value="$PROJECT_DIR$/src/Squirrel/TestTools.java" />
+        <option value="$PROJECT_DIR$/src/SquirrelFrame/Menubar.java" />
+        <option value="$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java" />
+        <option value="$PROJECT_DIR$/src/Utlis/Adb.java" />
+        <option value="$PROJECT_DIR$/src/Utlis/FrameUtils.java" />
+        <option value="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" />
+        <option value="$PROJECT_DIR$/src/SquirrelFrame/Config.java" />
       </list>
     </option>
   </component>
@@ -657,10 +575,11 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="width" value="1368" />
-    <option name="height" value="720" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -696,10 +615,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -710,24 +625,32 @@
             <path>
               <item name="appium" type="b2602c69:ProjectViewProjectNode" />
               <item name="appium" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appium" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appium" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appium" type="b2602c69:ProjectViewProjectNode" />
               <item name="appium" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AppTest" type="462c0819:PsiDirectoryNode" />
+              <item name="Squirrel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appium" type="b2602c69:ProjectViewProjectNode" />
               <item name="appium" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="CXBCase" type="462c0819:PsiDirectoryNode" />
+              <item name="SquirrelFrame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appium" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="SquirrelFrame" type="462c0819:PsiDirectoryNode" />
+              <item name="HomePage.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="appium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appium" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Utlis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="appium" type="b2602c69:ProjectViewProjectNode" />
@@ -737,14 +660,18 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/platform-tools" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -770,7 +697,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.RunCase">
+  <component name="RunManager" selected="Application.HomePage">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="WIDTH" value="0" />
@@ -867,14 +794,14 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Utlis.*" />
+          <option name="PATTERN" value="Test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="Utlis.test" />
+      <option name="MAIN_CLASS_NAME" value="Test.test" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -953,18 +880,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.HomePage" />
-      <item index="1" class="java.lang.String" itemvalue="Application.test" />
-      <item index="2" class="java.lang.String" itemvalue="Application.GetAdLog" />
-      <item index="3" class="java.lang.String" itemvalue="Application.单日用户曝光与单日广告曝光总量" />
-      <item index="4" class="java.lang.String" itemvalue="Application.RunCase" />
+      <item index="1" class="java.lang.String" itemvalue="Application.GetAdLog" />
+      <item index="2" class="java.lang.String" itemvalue="Application.单日用户曝光与单日广告曝光总量" />
+      <item index="3" class="java.lang.String" itemvalue="Application.RunCase" />
+      <item index="4" class="java.lang.String" itemvalue="Application.test (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.RunCase" />
-        <item index="1" class="java.lang.String" itemvalue="Application.单日用户曝光与单日广告曝光总量" />
-        <item index="2" class="java.lang.String" itemvalue="Application.HomePage" />
-        <item index="3" class="java.lang.String" itemvalue="Application.GetAdLog" />
-        <item index="4" class="java.lang.String" itemvalue="Application.test" />
+        <item index="0" class="java.lang.String" itemvalue="Application.HomePage" />
+        <item index="1" class="java.lang.String" itemvalue="Application.RunCase" />
+        <item index="2" class="java.lang.String" itemvalue="Application.test (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.单日用户曝光与单日广告曝光总量" />
+        <item index="4" class="java.lang.String" itemvalue="Application.GetAdLog" />
       </list>
     </recent_temporary>
   </component>
@@ -1017,7 +944,12 @@
       <workItem from="1527157118349" duration="1578000" />
       <workItem from="1527477751735" duration="18920000" />
       <workItem from="1527668025579" duration="9264000" />
-      <workItem from="1527750627624" duration="10015000" />
+      <workItem from="1527750627624" duration="17979000" />
+      <workItem from="1528098868338" duration="574000" />
+      <workItem from="1528178154055" duration="1230000" />
+      <workItem from="1528265108193" duration="8135000" />
+      <workItem from="1528336111222" duration="5307000" />
+      <workItem from="1528353304476" duration="13088000" />
     </task>
     <task id="LOCAL-00001" summary="修改设置方法">
       <created>1522723341291</created>
@@ -1243,11 +1175,53 @@
       <option name="project" value="LOCAL" />
       <updated>1527826063538</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="更新代码">
+      <created>1527826193231</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1527826193231</updated>
+    </task>
+    <task id="LOCAL-00034" summary="更新read2代码，将包名配置静态常量">
+      <created>1527845103647</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1527845103647</updated>
+    </task>
+    <task id="LOCAL-00035" summary="加入支持清理本地，全部和缓存方式">
+      <created>1528280475863</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1528280475863</updated>
+    </task>
+    <task id="LOCAL-00036" summary="更改运行adb命令函数的函数名称">
+      <created>1528337437101</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1528337437101</updated>
+    </task>
+    <task id="LOCAL-00037" summary="加入清除缓存功能">
+      <created>1528338335921</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1528338335921</updated>
+    </task>
+    <task id="LOCAL-00038" summary="更新首页动画和首页界面">
+      <created>1528361753465</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1528361753465</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="771093000" />
+    <option name="totallyTimeSpent" value="807391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1259,31 +1233,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="720" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23978686" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23922114" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6780239" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.042628776" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37649062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28975534" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30862328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41307372" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39693356" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39638385" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1358,11 +1332,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加adb工具类" />
-    <MESSAGE value="增加Read2类，ElementAttributes类" />
-    <MESSAGE value="更新所有文件线上线下保持一致" />
-    <MESSAGE value="在lib下添加mysqlJDBC包" />
-    <MESSAGE value="添加书库页面检查" />
     <MESSAGE value="添加书库和目录页添加书签" />
     <MESSAGE value="AppXmlUtil增加不需要class判断代码" />
     <MESSAGE value="添加记录广告类" />
@@ -1383,7 +1352,12 @@
     <MESSAGE value="更新侧边栏今日推荐会选中书架中的bug并降低了跳转到精品的概率" />
     <MESSAGE value="添加免电套壳包" />
     <MESSAGE value="更新代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新代码" />
+    <MESSAGE value="更新read2代码，将包名配置静态常量" />
+    <MESSAGE value="加入支持清理本地，全部和缓存方式" />
+    <MESSAGE value="更改运行adb命令函数的函数名称" />
+    <MESSAGE value="加入清除缓存功能" />
+    <MESSAGE value="更新首页动画和首页界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新首页动画和首页界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1392,60 +1366,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://D:/java/jdk/src.zip!/java/lang/Runnable.java" />
-    <entry file="jar://D:/java/jdk/src.zip!/java/sql/Statement.java" />
-    <entry file="jar://D:/java/jdk/src.zip!/java/sql/Connection.java" />
-    <entry file="jar://E:/JAVA/java/src.zip!/java/lang/Runnable.java" />
-    <entry file="jar://E:/JAVA/java/src.zip!/javax/swing/AbstractButton.java" />
-    <entry file="file://$PROJECT_DIR$/src/Utlis/Date.java" />
-    <entry file="file://$PROJECT_DIR$/src/Utlis/SaveCrash.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/java/jdk/src.zip!/java/awt/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65541">
-          <caret line="3243" column="27" lean-forward="false" selection-start-line="3243" selection-start-column="27" selection-end-line="3243" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Squirrel/FlowFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBoDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#2947#2948#0" expanded="false" />
-            <element signature="e#2973#2974#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataBase/ConnectDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="42" column="15" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Utlis/TooltipUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1453,15 +1377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="110" column="19" lean-forward="false" selection-start-line="110" selection-start-column="19" selection-end-line="110" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,7 +1384,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,7 +1391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1485,7 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1496,51 +1408,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="57" column="18" lean-forward="false" selection-start-line="57" selection-start-column="18" selection-end-line="57" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Pane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-972">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="146" column="30" lean-forward="false" selection-start-line="146" selection-start-column="30" selection-end-line="146" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/java/jdk/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="744" column="0" lean-forward="false" selection-start-line="744" selection-start-column="0" selection-end-line="744" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="57" column="6" lean-forward="false" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1548,7 +1419,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1556,7 +1426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5523">
           <caret line="273" column="56" lean-forward="false" selection-start-line="273" selection-start-column="56" selection-end-line="273" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1564,15 +1433,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="98" column="5" lean-forward="false" selection-start-line="98" selection-start-column="5" selection-end-line="98" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1580,15 +1440,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Squirrel/testTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,6 +1447,238 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="12" column="39" lean-forward="false" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/javax/swing/text/JTextComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="1664" column="16" lean-forward="false" selection-start-line="1664" selection-start-column="16" selection-end-line="1664" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Squirrel/GetADLog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/免费电子书AD/单日用户曝光与单日广告曝光总量.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppTest/Case.java" />
+    <entry file="file://$PROJECT_DIR$/src/免费电子书AD/get.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppTest/RunTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2300">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="69" column="18" lean-forward="false" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppTest/AppXmlUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="24" column="35" lean-forward="false" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/CXBConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppTest/Devices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/Sidebar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="162" column="16" lean-forward="false" selection-start-line="161" selection-start-column="16" selection-end-line="162" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/RecordAd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="19" column="78" lean-forward="false" selection-start-line="19" selection-start-column="78" selection-end-line="19" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/TheWorkDetails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1134">
+          <caret line="64" column="42" lean-forward="false" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/免费电子书AD/requestUrl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="6" selection-end-line="61" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kibana.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="1368" column="1372" lean-forward="false" selection-start-line="1368" selection-start-column="1372" selection-end-line="1368" selection-end-column="1372" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/BookLibrary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/PrintErr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/StartCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/Search.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="32" column="11" lean-forward="false" selection-start-line="32" selection-start-column="11" selection-end-line="32" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/Read2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1932">
+          <caret line="101" column="22" lean-forward="false" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CXBCase/RunCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppiumMethod/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppTest/GetCase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppTest/GetRunAppName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1113">
+          <caret line="55" column="56" lean-forward="false" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/java/jdk/src.zip!/java/awt/Container.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7203">
+          <caret line="415" column="21" lean-forward="false" selection-start-line="415" selection-start-column="21" selection-end-line="415" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Squirrel/TestTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Menubar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1554">
+          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBoDataBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="112" column="54" lean-forward="false" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Pane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="20" column="37" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1608,158 +1691,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://D:/java/jdk/src.zip!/javax/swing/text/JTextComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/Squirrel/FlowFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="1664" column="16" lean-forward="false" selection-start-line="1664" selection-start-column="16" selection-end-line="1664" selection-end-column="16" />
+        <state relative-caret-position="374">
+          <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Squirrel/GetADLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/免费电子书AD/单日用户曝光与单日广告曝光总量.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/StartCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="9" column="15" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppTest/GetCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1176">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppTest/Case.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/免费电子书AD/get.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppTest/RunTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2300">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/BookLibrary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppiumMethod/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="69" column="18" lean-forward="true" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/TheWorkDetails.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="385" column="16" lean-forward="true" selection-start-line="385" selection-start-column="16" selection-end-line="385" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/Read2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="202" column="33" lean-forward="false" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppTest/AppXmlUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/CXBConfig.java">
+    <entry file="jar://D:/java/jdk/src.zip!/java/awt/Color.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <caret line="185" column="30" lean-forward="false" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppTest/GetRunAppName.java">
+    <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-91">
-          <caret line="45" column="38" lean-forward="true" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+        <state relative-caret-position="340">
+          <caret line="99" column="5" lean-forward="false" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppTest/Devices.java">
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
+        <state relative-caret-position="116">
+          <caret line="373" column="42" lean-forward="false" selection-start-line="373" selection-start-column="42" selection-end-line="373" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/RunCase.java">
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="29" column="16" lean-forward="false" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        <state relative-caret-position="168">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CXBCase/Sidebar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="162" column="16" lean-forward="true" selection-start-line="161" selection-start-column="16" selection-end-line="162" selection-end-column="16" />
-          <folding>
-            <element signature="e#1176#1177#0" expanded="true" />
-            <element signature="e#1207#1208#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
