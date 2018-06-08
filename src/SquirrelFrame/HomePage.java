@@ -371,7 +371,7 @@ class Cartoon implements Runnable {
 //        }
 //    }
     public void run() {
-        HomePage.cartoonLog.setText("曹静大美女");
+
         HomePage.cartoonLog.setFont(new Font("宋体",Font.BOLD,25));//设置字体
         Color[] colors = new Color[]{Color.DARK_GRAY,
                 Color.magenta, Color.orange, Color.yellow, Color.green, Color.blue,
@@ -381,6 +381,7 @@ class Cartoon implements Runnable {
         boolean xBoolean=true;
         boolean yBoolean=true;
        while(true){
+
             if(xBoolean ){
                 if(yBoolean){
                     HomePage.cartoonLog.setLocation(x+=1,y+=1);
@@ -397,6 +398,11 @@ class Cartoon implements Runnable {
             if(new Random().nextInt(100)==9){
                 HomePage.cartoonLog.setForeground(colors[i]);
                 i++;
+                if(new Random().nextInt(2)==1){
+                    HomePage.cartoonLog.setText("中文万维");
+                }else{
+                    HomePage.cartoonLog.setText(Config.TOOLSTITLE);
+                }
             }
             if (i == colors.length - 1) i = 0;
             if(x>400){
