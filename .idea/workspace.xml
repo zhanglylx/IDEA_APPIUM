@@ -6,390 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="图片">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Cartoon.rar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/人力部流程/考勤制度规范.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/人力部流程/请假加班外出流程.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/技术部流程/openvpn ldap认证操作指南.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/技术部流程/中文万维-钉钉用户使用说明书-无财务.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/技术部流程/关于ldap用户密码修改与重置操作指南.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/技术部流程/开发环境.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/技术部流程/服务端工程结构规范.pdf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/测试地址/免费电子书配置地址.xmind" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/测试地址/测试环境地址和账户.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/File/测试流程/bug提交规范.docx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/commons.bundle.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/commons.style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/dashboard.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/discover.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/icon.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/kibana.bundle.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/kibana.style.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/play-circle.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/sentinl.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/settings.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/visualize.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Kibana_files/wrench.svg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/appiumConfig.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/Cartoon/tab1/11111.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/TIM截图20180530183546.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/image/TestTools.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/AdbWinApi.dll" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/AdbWinUsbApi.dll" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/NOTICE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/adb.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/api/annotations.zip" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/api/api-versions.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/dmtracedump.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/etc1tool.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/fastboot.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/hprof-conv.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/lib64/libc++.so" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/libwinpthread-1.dll" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/make_f2fs.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/mke2fs.conf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/mke2fs.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/package.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/source.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/sqlite3.exe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/NOTICE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/UPSTREAM_REVISION" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/battor/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/battor/battor_binary_dependencies.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/battor/battor_error.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/battor/battor_wrapper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/battor/battor_wrapper_devicetest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/battor/battor_wrapper_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/bin/run_py_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/battor/bin/upload_battor_binaries.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/bin/run_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/bin/run_eslint" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/bin/run_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/eslint/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/eslint/smoke_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/rules/catapult-camelcase.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/eslint/tests/catapult-camelcase.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/lab/commits.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/lab/hardware.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/lab/keychain_unlock.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/node_runner/node_runner/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/node_runner/node_runner/node_binaries.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/node_runner/node_runner/node_util.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/node_runner/node_runner/package.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/README.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/run_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/setup.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/decorators.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/decorators_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/log.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/log_io_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/meta_class.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/multiprocessing_shim.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/parsed_trace_events.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_impl/trace_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_event_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_time.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_trace_event/py_trace_event/trace_time_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/PRESUBMIT.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/binary_manager.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/binary_manager_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/chrome_binaries.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/cloud_storage.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/cloud_storage_global_lock.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/cloud_storage_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/contextlib_ext.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/contextlib_ext_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/dependency_util.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/lock.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/lock_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/py_utils_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/base_symbol.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/class_definition.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/function_definition.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/import_statement.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/annotated_symbol/reference.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/module.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/offset_token.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor/snippet.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor_util/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/refactor_util/move.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/shell_util.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/tempfile_ext.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/tempfile_ext_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/test_data/foo.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/common/py_utils/py_utils/xvfb.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/PRESUBMIT.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/bin/run_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/bin/update" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/archive_info.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/base_config.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/base_config_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/cloud_storage_info.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/cloud_storage_info_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/dependency_info.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/dependency_info_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/dependency_manager_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/dependency_manager_util.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/dependency_manager_util_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/exceptions.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/local_path_info.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/manager.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/uploader.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/dependency_manager/uploader_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/dependency_manager/pylintrc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/PRESUBMIT.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/bin/generate_md_docs" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/bin/run_py_devicetests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/bin/run_py_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/apk_helper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/apk_helper_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/app_ui.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/app_ui_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/battery_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/battery_utils_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/constants/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/constants/chrome.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/constants/file_system.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/decorators.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/decorators_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_blacklist.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_blacklist_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_errors.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_errors_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_list.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_signal.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_temp_file.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_test_case.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_utils_devicetest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/device_utils_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/fastboot_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/fastboot_utils_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/flag_changer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/flag_changer_devicetest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/flag_changer_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/forwarder.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/install_commands.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/logcat_monitor.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/logcat_monitor_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/md5sum.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/md5sum_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/perf/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/perf/cache_control.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/perf/perf_control.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/perf/perf_control_devicetest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/perf/surface_stats_collector.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/perf/thermal_throttle.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/ports.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/aapt.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/adb_compatibility_devicetest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/adb_wrapper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/adb_wrapper_devicetest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/adb_wrapper_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/build_tools.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/dexdump.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/fastboot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/gce_adb_wrapper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/intent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/keyevent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/shared_prefs.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/shared_prefs_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/split_select.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/test/data/push_directory/push_directory_contents.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/test/data/push_file.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/sdk/version_codes.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/adb_run_shell_cmd.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/cpufreq.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/device_monitor.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/device_monitor_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/device_recovery.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/device_status.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/flash_device.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/keyboard.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/provision_devices.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/screenshot.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/script_common.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/script_common_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/video_recorder.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/tools/wait_for_devices.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/valgrind_tools/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/android/valgrind_tools/base_tool.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/base_error.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/constants/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/constants/exit_codes.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/devil_dependencies.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/devil_env.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/devil_env_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/battor_device_mapping.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/cmd_helper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/cmd_helper_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/file_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/find_usb_devices.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/find_usb_devices_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/geometry.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/geometry_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/host_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/lazy/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/lazy/weak_constant.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/lsusb.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/lsusb_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/markdown.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/markdown_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/mock_calls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/mock_calls_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/parallelizer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/parallelizer_test.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/reraiser_thread.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/reraiser_thread_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/reset_usb.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/run_tests_helper.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/signal_handler.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/test/data/test_serial_map.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/timeout_retry.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/timeout_retry_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/update_mapping.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/usb_hubs.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/watchdog_timer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/devil/utils/zip_utils.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/docs/adb_wrapper.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/docs/device_blacklist.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/docs/device_utils.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/docs/markdown.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/docs/persistent_device_list.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/devil/pylintrc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/PRESUBMIT.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/Application.mk" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/file_utils.cc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/file_utils.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/logging.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/main.cc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/process_info.cc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/process_info.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/process_memory_stats.cc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/atrace_helper/jni/process_memory_stats.h" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/bin/adb_profile_chrome" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/bin/adb_profile_chrome_startup" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/bin/run_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/bin/systrace" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/chrome_startup_tracing_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/chrome_startup_tracing_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/chrome_tracing_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/chrome_tracing_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/ddms_tracing_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/ddms_tracing_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/fake_agent_1.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/fake_agent_2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/flags.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/main.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/perf_tracing_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/perf_tracing_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/profiler.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/profiler_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/run_tests" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/third_party/COPYING" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/third_party/README.chromium" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/third_party/perf_to_tracing.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/ui.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/profile_chrome/util.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/pylintrc" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/AUTHORS" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/README.md" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/decorators.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/monitor_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/output_generator.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/output_generator_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/prefix.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/run_systrace.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/suffix.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/systrace_runner.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/systrace_trace_viewer.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_data" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_data_raw" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_data_stripped" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_extracted_tgids" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_extracted_threads" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_fixed_tgids" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_missing_tgids" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/atrace_procfs_dump" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/battor_test_data.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/compressed_atrace_data.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/decompressed_atrace_data.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/test_data/profile-chrome_systrace_perf_chrome_data" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/trace_result.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/agents_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/android_process_data_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/atrace_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/atrace_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/atrace_from_file_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/atrace_from_file_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/battor_trace_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/battor_trace_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/ftrace_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/ftrace_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/walt_agent.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_agents/walt_agent_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/tracing_controller.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/update_systrace_trace_viewer.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/util.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/systrace/systrace/util_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/LICENSE.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/README.chromium" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/linux-product_info.patch" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/rfc2217.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/serialcli.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/serialjava.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/serialposix.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/serialutil.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/serialwin32.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/sermsdos.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/tools/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/tools/list_ports.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/tools/list_ports_linux.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/tools/list_ports_osx.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/tools/list_ports_posix.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/tools/list_ports_windows.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/tools/miniterm.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/urlhandler/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_hwgrep.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_loop.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_rfc2217.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/urlhandler/protocol_socket.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/pyserial/serial/win32.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/zipfile/LICENSE" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/zipfile/README.chromium" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/third_party/zipfile/zipfile_2_7_13.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/tracing/tracing/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/tracing/tracing/trace_data/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/tracing/tracing/trace_data/trace_data.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/tracing/tracing/trace_data/trace_data_unittest.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/catapult/tracing/tracing_project.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/platform-tools/systrace/systrace.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Test/test.java" />
+    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/IDEA.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/Squirrel/TestTools.java" afterPath="$PROJECT_DIR$/src/Squirrel/TestTools.java" />
+      <change beforePath="$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java" afterPath="$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java" />
+      <change beforePath="$PROJECT_DIR$/src/免费电子书AD/config.java" afterPath="$PROJECT_DIR$/src/免费电子书AD/config.java" />
+      <change beforePath="$PROJECT_DIR$/src/免费电子书AD/get.java" afterPath="$PROJECT_DIR$/src/免费电子书AD/get.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -415,18 +38,18 @@
       <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="373" column="42" lean-forward="false" selection-start-line="373" selection-start-column="42" selection-end-line="373" selection-end-column="42" />
+            <state relative-caret-position="778">
+              <caret line="401" column="56" lean-forward="false" selection-start-line="401" selection-start-column="56" selection-end-line="401" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
-              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -435,18 +58,28 @@
       <file leaf-file-name="Color.java" pinned="false" current-in-tab="false">
         <entry file="jar://D:/java/jdk/src.zip!/java/awt/Color.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
+            <state relative-caret-position="3318">
               <caret line="185" column="30" lean-forward="false" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Adb.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Adb.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="21">
-              <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+            <state relative-caret-position="84">
+              <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClearIphone.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="194">
+              <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -455,18 +88,8 @@
       <file leaf-file-name="FrameUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
+            <state relative-caret-position="1848">
               <caret line="99" column="5" lean-forward="false" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZhiBoDataBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBoDataBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -475,7 +98,7 @@
       <file leaf-file-name="ZhiBo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="1869">
               <caret line="112" column="54" lean-forward="false" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
               <folding />
             </state>
@@ -495,7 +118,7 @@
       <file leaf-file-name="OutputText.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/OutputText.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="630">
               <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
               <folding />
             </state>
@@ -505,7 +128,7 @@
       <file leaf-file-name="FlowFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Squirrel/FlowFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
+            <state relative-caret-position="630">
               <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="62" />
               <folding />
             </state>
@@ -660,8 +283,8 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1399" />
+    <option name="y" value="172" />
     <option name="width" value="1456" />
     <option name="height" value="876" />
   </component>
@@ -699,6 +322,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -738,6 +364,12 @@
             </path>
             <path>
               <item name="appium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appium" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="免费电子书AD" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appium" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -745,9 +377,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -756,7 +385,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="SearchEverywhereHistoryKey" value="side&#9;PSI&#9;JAVA://CXBCase.Read#directory_sidebar_class&#10;new UISelector()&#9;null&#9;null" />
@@ -1033,7 +662,10 @@
       <workItem from="1528178154055" duration="1230000" />
       <workItem from="1528265108193" duration="8135000" />
       <workItem from="1528336111222" duration="5307000" />
-      <workItem from="1528353304476" duration="13729000" />
+      <workItem from="1528353304476" duration="14933000" />
+      <workItem from="1528683659686" duration="24000" />
+      <workItem from="1528683945807" duration="17000" />
+      <workItem from="1528684344977" duration="810000" />
     </task>
     <task id="LOCAL-00001" summary="修改设置方法">
       <created>1522723341291</created>
@@ -1308,11 +940,46 @@
       <option name="project" value="LOCAL" />
       <updated>1528451170501</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="更新文件">
+      <created>1528452372869</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1528452372869</updated>
+    </task>
+    <task id="LOCAL-00041" summary="添加截图类">
+      <created>1528684924395</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1528684924395</updated>
+    </task>
+    <task id="LOCAL-00042" summary="修改首页logo">
+      <created>1528684956234</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1528684956234</updated>
+    </task>
+    <task id="LOCAL-00043" summary="添加广告获取线上请求">
+      <created>1528685110457</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1528685110457</updated>
+    </task>
+    <task id="LOCAL-00044" summary="更改Utlis中执行adb命令无设备时返回空">
+      <created>1528685154577</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1528685154577</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="808032000" />
+    <option name="totallyTimeSpent" value="810087000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1324,7 +991,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="1358" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32879046" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1335,20 +1002,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1488178" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6780239" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37649062" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962447" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30862328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3051576" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41307372" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39638385" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1357,6 +1023,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295107" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41307372" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1423,11 +1090,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AppXmlUtil增加不需要class判断代码" />
-    <MESSAGE value="添加记录广告类" />
-    <MESSAGE value="增加对作者详情中的大家都在看等模块的名称检查" />
-    <MESSAGE value="添加松鼠测试工具" />
-    <MESSAGE value="更新项目结构" />
     <MESSAGE value="更新项目结构，将jar包整理到lib下" />
     <MESSAGE value="将流程通过本地目录中存在文件实时加载到界面中" />
     <MESSAGE value="添加直播礼物查询页面和类" />
@@ -1448,7 +1110,12 @@
     <MESSAGE value="加入清除缓存功能" />
     <MESSAGE value="更新首页动画和首页界面" />
     <MESSAGE value="更新" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新" />
+    <MESSAGE value="更新文件" />
+    <MESSAGE value="添加截图类" />
+    <MESSAGE value="修改首页logo" />
+    <MESSAGE value="添加广告获取线上请求" />
+    <MESSAGE value="更改Utlis中执行adb命令无设备时返回空" />
+    <option name="LAST_COMMIT_MESSAGE" value="更改Utlis中执行adb命令无设备时返回空" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1602,7 +1269,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="158" column="19" lean-forward="false" selection-start-line="158" selection-start-column="19" selection-end-line="158" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1694,7 +1360,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1050">
           <caret line="54" column="36" lean-forward="false" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1709,7 +1374,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1113">
           <caret line="55" column="56" lean-forward="false" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="56" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1717,7 +1381,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7203">
           <caret line="415" column="21" lean-forward="false" selection-start-line="415" selection-start-column="21" selection-end-line="415" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1737,25 +1400,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1554">
-          <caret line="81" column="22" lean-forward="false" selection-start-line="81" selection-start-column="22" selection-end-line="81" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBoDataBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
+        <state relative-caret-position="1260">
           <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
           <folding />
         </state>
@@ -1763,7 +1410,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Squirrel/ZhiBo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="1869">
           <caret line="112" column="54" lean-forward="false" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
           <folding />
         </state>
@@ -1779,7 +1426,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/OutputText.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="630">
           <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
           <folding />
         </state>
@@ -1787,7 +1434,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Squirrel/FlowFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="630">
           <caret line="39" column="62" lean-forward="false" selection-start-line="39" selection-start-column="23" selection-end-line="39" selection-end-column="62" />
           <folding />
         </state>
@@ -1795,7 +1442,7 @@
     </entry>
     <entry file="jar://D:/java/jdk/src.zip!/java/awt/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
+        <state relative-caret-position="3318">
           <caret line="185" column="30" lean-forward="false" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
           <folding />
         </state>
@@ -1803,16 +1450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="1848">
           <caret line="99" column="5" lean-forward="false" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="373" column="42" lean-forward="false" selection-start-line="373" selection-start-column="42" selection-end-line="373" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1820,7 +1459,31 @@
     <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="778">
+          <caret line="401" column="56" lean-forward="false" selection-start-line="401" selection-start-column="56" selection-end-line="401" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="53" column="34" lean-forward="false" selection-start-line="53" selection-start-column="34" selection-end-line="53" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1903,7 +1566,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>IDEA</last-edited>
+          <last-edited>lib</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

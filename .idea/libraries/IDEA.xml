@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="IDEA">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/out/artifacts/IDEA_jar/IDEA.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

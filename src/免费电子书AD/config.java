@@ -15,7 +15,7 @@ public class config {
 	//渠道
 	final static String CNID = "1062";
 	//访问人数
-	final static int userNumber = 1000;
+	final static int userNumber = 10000;
 	//广告位
 	final static int GGNumber = 68;
 	//服务器单日广告曝光总量

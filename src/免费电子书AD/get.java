@@ -27,7 +27,7 @@ public class get {
 			getResponseCode = ((HttpURLConnection) connection).getResponseCode();
 			if (getResponseCode != 200) {// 检查服务器响应
 				System.out.println("服务器响应不是200" + "；响应：" + getResponseCode + "；URL:" + urlNameString);
-				return "{}";
+				return null;
 				}
 			// 获取所有响应头字段
 			Map<String, List<String>> map = connection.getHeaderFields();
