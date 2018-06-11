@@ -53,7 +53,7 @@ public class Adb {
      */
     public static String[] operationAdb(String code) {
         //检查是否连接设备
-        if(!checkDevices())return new String[]{"errdevices"};
+        if(!checkDevices()) return null;
         return runAdb(code);
     }
     /**
