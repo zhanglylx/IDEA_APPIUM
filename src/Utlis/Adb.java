@@ -101,10 +101,18 @@ public class Adb {
      */
     public static void setDevices(String[] deivcesInfo) {
         if (deivcesInfo.length == 0) {
-            if (HomePage.textArea != null) HomePage.textArea.setText("没有连接设备");
+            if (HomePage.textArea != null){
+                HomePage.textArea.setText("没有连接设备");
+            }else{
+                TooltipUtil.errTooltip("连接的设备没有开放权限");
+            }
         } else if (deivcesInfo.length == 1) {
             if (deivcesInfo[0].contains("unauthorized")) {
-                HomePage.textArea.setText("设备没有开放权限");
+                if (HomePage.textArea != null){
+                    HomePage.textArea.setText("设备没有开放权限");
+                }else{
+                    TooltipUtil.errTooltip("连接的设备没有开放权限");
+                }
             } else {
                 devices =
                         (deivcesInfo[0].substring(0, deivcesInfo[0].indexOf(" "))).trim();
@@ -116,7 +124,11 @@ public class Adb {
         } else {
             String de = TooltipUtil.listSelectTooltip("发现" + deivcesInfo.length + "设备,请选择一个设备", deivcesInfo);
             if (de.contains("unauthorized")) {
-                HomePage.textArea.setText("设备没有开放权限");
+                if (HomePage.textArea != null){
+                    HomePage.textArea.setText("设备没有开放权限");
+                }else{
+                    TooltipUtil.errTooltip("连接的设备没有开放权限");
+                }
             } else {
                 devices =
                         (de.substring(0, de.indexOf(" "))).trim();
