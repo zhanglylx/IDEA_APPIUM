@@ -380,6 +380,7 @@ class Cartoon implements Runnable {
         int y = 250;
         boolean xBoolean=true;
         boolean yBoolean=true;
+        HomePage.cartoonLog.setText(Config.TOOLSTITLE);
        while(true){
 
             if(xBoolean ){
