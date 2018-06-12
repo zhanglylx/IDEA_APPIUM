@@ -135,7 +135,7 @@
       <option name="presentableId" value="Default" />
       <updated>1528806684121</updated>
       <workItem from="1528806687175" duration="447000" />
-      <workItem from="1528807347170" duration="38000" />
+      <workItem from="1528807347170" duration="149000" />
     </task>
     <task id="LOCAL-00001" summary="添加技术部流程规范">
       <created>1528806785459</created>
@@ -144,11 +144,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528806785459</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="更新">
+      <created>1528807453571</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1528807453571</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="485000" />
+    <option name="totallyTimeSpent" value="596000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -161,12 +168,12 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.30972517" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.30972517" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -190,6 +197,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加技术部流程规范" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加技术部流程规范" />
+    <MESSAGE value="更新" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新" />
   </component>
 </project>
