@@ -45,8 +45,6 @@ public class Adb {
                 devicesArr = Arrays.copyOf(devicesArr, devicesArr.length + 1);
                 devicesArr[devicesArr.length - 1] = s;
             }
-
-            System.out.println(s);
         }
         return devicesArr;
     }
