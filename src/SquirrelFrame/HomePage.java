@@ -12,6 +12,7 @@ import Utlis.FrameUtils;
 import Utlis.JavaUtils;
 import Utlis.WindosUtils;
 import com.worm.StratWorm;
+import javafx.embed.swt.SWTFXUtils;
 
 /**
  * 首页
@@ -31,7 +32,7 @@ public class HomePage extends JFrame {
     private JButton clearIphoneButtpm;
     private JButton getLocalIPButton;
     private static HomePage homePage;
-    public static TextArea textArea;
+    public static JTextField textArea;
     public static JButton cartoonLog;
     private JButton refresh;
     //动画
@@ -44,6 +45,14 @@ public class HomePage extends JFrame {
         setIconImage(
                 Toolkit.getDefaultToolkit().getImage("image/logo.png")
         );
+        //检查adb端口是否被占用
+        Thread adbNetstat = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Utlis.Adb.killNetStatAdb();
+            }
+        });
+        adbNetstat.start();
         Menubar menubar = new Menubar();
         menubar.setSize(this.getWidth() * 10, 37);
         menubar.setLocation(this.getX(), 5);
@@ -57,7 +66,7 @@ public class HomePage extends JFrame {
             @Override
             public void windowClosing(WindowEvent e) { //设置退出监听器
                 super.windowClosing(e);
-                WindosUtils.closeProcess("operationAdb.exe");
+//               WindosUtils.closeProcess("adb.exe");
                 System.exit(0);
             }
         });
@@ -67,6 +76,7 @@ public class HomePage extends JFrame {
         setVisible(true);//设置窗口可见
         Thread t = new Thread(new Cartoon());
         t.start();
+
     }
 
     public static HomePage getHomePage() {
@@ -113,7 +123,32 @@ public class HomePage extends JFrame {
                 Thread t = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        Adb.setDevices();
+//                        Adb.setDevices();
+                        int i = 0;
+                        while (true) {
+                            if (i > 4) i = 0;
+                            if( !textArea.getText().contains("正在刷新"))break;
+                            switch (i) {
+                                case 0:
+                                    textArea.setText("正在刷新.");
+                                    break;
+                                case 1:
+                                    textArea.setText("正在刷新..");
+                                    break;
+                                case 2:
+                                    textArea.setText("正在刷新...");
+                                    break;
+                                default:
+                                    textArea.setText("正在刷新....");
+                                    break;
+                            }
+                            i++;
+                            try {
+                                Thread.sleep(100);
+                            } catch (InterruptedException e1) {
+                                e1.printStackTrace();
+                            }
+                        }
                     }
                 });
                 t.start();
@@ -229,7 +264,8 @@ public class HomePage extends JFrame {
         Project.add(zhibo);
         Project.setLayout(new FlowLayout(0));
         Project.add(new JLabel("当前设备名称:"));
-        textArea = new TextArea(200, 100);
+        textArea = new JTextField(15);
+        textArea.setFont(new Font("黑体",Font.BOLD,15));
         Adb.setDevices();
         setRefresh();
         Project.add(refresh);
@@ -372,45 +408,46 @@ class Cartoon implements Runnable {
 //    }
     public void run() {
 
-        HomePage.cartoonLog.setFont(new Font("宋体",Font.BOLD,25));//设置字体
+        HomePage.cartoonLog.setFont(new Font("宋体", Font.BOLD, 25));//设置字体
         Color[] colors = new Color[]{Color.DARK_GRAY,
                 Color.magenta, Color.orange, Color.yellow, Color.green, Color.blue,
                 Color.BLUE, Color.darkGray, Color.pink, Color.cyan};
         int x = 0;
         int y = 250;
-        boolean xBoolean=true;
-        boolean yBoolean=true;
-       while(true){
+        boolean xBoolean = true;
+        boolean yBoolean = true;
+        HomePage.cartoonLog.setText(Config.TOOLSTITLE);
+        while (true) {
 
-            if(xBoolean ){
-                if(yBoolean){
-                    HomePage.cartoonLog.setLocation(x+=1,y+=1);
-                }else {
-                    HomePage.cartoonLog.setLocation(x+=1,y-=1);
+            if (xBoolean) {
+                if (yBoolean) {
+                    HomePage.cartoonLog.setLocation(x += 1, y += 1);
+                } else {
+                    HomePage.cartoonLog.setLocation(x += 1, y -= 1);
                 }
-            }else if(!xBoolean ) {
-                if(yBoolean){
-                    HomePage.cartoonLog.setLocation(x-=1,y+=1);
-                }else {
-                    HomePage.cartoonLog.setLocation(x-=1,y-=1);
+            } else if (!xBoolean) {
+                if (yBoolean) {
+                    HomePage.cartoonLog.setLocation(x -= 1, y += 1);
+                } else {
+                    HomePage.cartoonLog.setLocation(x -= 1, y -= 1);
                 }
             }
-            if(new Random().nextInt(100)==9){
+            if (new Random().nextInt(100) == 9) {
                 HomePage.cartoonLog.setForeground(colors[i]);
                 i++;
-                if(new Random().nextInt(2)==1){
+                if (new Random().nextInt(2) == 1) {
                     HomePage.cartoonLog.setText("中文万维");
-                }else{
+                } else {
                     HomePage.cartoonLog.setText(Config.TOOLSTITLE);
                 }
             }
             if (i == colors.length - 1) i = 0;
-            if(x>400){
-                xBoolean=false;
+            if (x > 400) {
+                xBoolean = false;
             }
-            if(x<10)xBoolean=true;
-            if(y<250)yBoolean=true;
-            if(y>400)yBoolean=false;
+            if (x < 10) xBoolean = true;
+            if (y < 250) yBoolean = true;
+            if (y > 400) yBoolean = false;
 
             try {
                 Thread.sleep(30);

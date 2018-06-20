@@ -1,11 +1,13 @@
 package Utlis;
 
 import SquirrelFrame.HomePage;
+import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
@@ -16,6 +18,11 @@ public class Adb {
      * @return 获取到adb返回内容的字符数组
      */
     public static String devices;
+    private static int killNetStatAdb;
+
+    static {
+        killNetStatAdb = -1;
+    }
 
     private static String[] runAdb(String code) {
         String[] str = new String[0];
@@ -29,7 +36,6 @@ public class Adb {
             while ((msg = br.readLine()) != null) {
                 str = Arrays.copyOf(str, str.length + 1);
                 str[str.length - 1] = msg;
-
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -37,16 +43,68 @@ public class Adb {
         return str;
     }
 
+    @Test
+    public void test() {
+        killNetStatAdb();
+    }
+
+    /**
+     * 杀死占用5037端口应用
+     */
+    public static void killNetStatAdb() {
+
+        try {
+            String pid = "";
+            if (WindosUtils.isPortUsing("127.0.0.1", 5037)) {
+                int p = -1;
+                if ((p = WindosUtils.selectNetstatPid(5037)) != -1) {
+                    pid = WindosUtils.getPIDName(p);
+                    if (pid == null || pid.contains("adb.exe")) return;
+                }
+
+            } else {
+                return;
+            }
+            if (killNetStatAdb != -1) {
+                TooltipUtil.errTooltip("您的系统adb端口5037被占用，连接手机功能宕机\n" +
+                        "占用的程序:" + pid);
+                return;
+            }
+            String finalPid = pid;
+            Thread t = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    WindosUtils.closeProcess(finalPid);
+                }
+            });
+            t.start();
+            operationAdb("");
+            killNetStatAdb++;
+            killNetStatAdb();
+
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        {
+
+        }
+    }
+
+
+    /**
+     * 查看设备相信信息
+     *
+     * @return
+     */
     private static String[] devicesInfo() {
         String[] devicesArr = new String[0];
         for (String s : runAdb("devices -l")) {
+            System.out.println(s);
             if ((s.toUpperCase().contains("device".toUpperCase()) && s.contains("model")) ||
                     s.contains("unauthorized")) {
                 devicesArr = Arrays.copyOf(devicesArr, devicesArr.length + 1);
                 devicesArr[devicesArr.length - 1] = s;
             }
-
-            System.out.println(s);
         }
         return devicesArr;
     }
@@ -68,9 +126,12 @@ public class Adb {
      */
     public static boolean checkDevices() {
         String[] deivcesInfo = devicesInfo();
-        if (deivcesInfo.length == 0) {
-            TooltipUtil.errTooltip("请至少将一台设备连接到电脑");
-            return false;
+        for (int i = 0; i < 2; i++) {
+            if (deivcesInfo.length == 0 && i == 1) {
+                TooltipUtil.errTooltip("请至少将一台设备连接到电脑");
+                return false;
+            }
+            deivcesInfo = devicesInfo();
         }
         if (devices == null) {
             setDevices();
@@ -91,7 +152,22 @@ public class Adb {
      * 指定设备
      */
     public static void setDevices() {
-        setDevices(devicesInfo());
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    setDevices(devicesInfo());
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        },"setDevices");
+        System.out.println(t.getName());
+        t.start();
     }
 
     /**
@@ -101,17 +177,13 @@ public class Adb {
      */
     public static void setDevices(String[] deivcesInfo) {
         if (deivcesInfo.length == 0) {
-            if (HomePage.textArea != null){
+            if (HomePage.textArea != null) {
                 HomePage.textArea.setText("没有连接设备");
-            }else{
-                TooltipUtil.errTooltip("连接的设备没有开放权限");
             }
         } else if (deivcesInfo.length == 1) {
             if (deivcesInfo[0].contains("unauthorized")) {
-                if (HomePage.textArea != null){
+                if (HomePage.textArea != null) {
                     HomePage.textArea.setText("设备没有开放权限");
-                }else{
-                    TooltipUtil.errTooltip("连接的设备没有开放权限");
                 }
             } else {
                 devices =
@@ -122,12 +194,19 @@ public class Adb {
                         ));
             }
         } else {
-            String de = TooltipUtil.listSelectTooltip("发现" + deivcesInfo.length + "设备,请选择一个设备", deivcesInfo);
+            if(HomePage.textArea.getText().contains("用户手动关闭"))return;
+            String[] devicesArr = devicesInfo();
+            if (devicesArr == null) return;
+            if (Arrays.toString(devicesArr).contains(HomePage.textArea.getText()) &&
+                    !HomePage.textArea.getText().equals("")) return;
+            String de = TooltipUtil.listSelectTooltip("发现" + deivcesInfo.length + "设备,请选择一个设备", devicesArr);
+            if (de == null  ) {
+                HomePage.textArea.setText("用户手动关闭");
+                return;
+            }
             if (de.contains("unauthorized")) {
-                if (HomePage.textArea != null){
+                if (HomePage.textArea != null) {
                     HomePage.textArea.setText("设备没有开放权限");
-                }else{
-                    TooltipUtil.errTooltip("连接的设备没有开放权限");
                 }
             } else {
                 devices =

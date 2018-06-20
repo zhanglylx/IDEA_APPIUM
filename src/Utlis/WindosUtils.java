@@ -5,12 +5,19 @@ import AppiumMethod.Tooltip;
 
 import javax.swing.*;
 import java.io.*;
+import java.net.InetAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import org.junit.Test;
+
 
 public class WindosUtils {
     /**
@@ -35,7 +42,56 @@ public class WindosUtils {
             TooltipUtil.errTooltip("打开" + file + "失败，请联系管理员");
         }
     }
+    /***
+     * 测试主机Host的port端口是否被使用
+     * @param host
+     * @param port
+     * @throws UnknownHostException
+     */
+    public static boolean isPortUsing(String host,int port) throws UnknownHostException {
+        boolean flag = false;
+        InetAddress Address = InetAddress.getByName(host);
+        try {
+            Socket socket = new Socket(Address,port);  //建立一个Socket连接
+            flag = true;
+        } catch (IOException e) {
 
+        }
+        return flag;
+    }
+    /**
+     * 查询使用端口的PID
+     * @param netstat
+     * @return PID
+     */
+    public static int selectNetstatPid(int netstat){
+        if(!String.valueOf(netstat).matches("\\d+"))throw new IllegalArgumentException(
+                "参数错误，不是整数:"+netstat);
+        try {
+            String [] cmd =cmd("netstat -ano ");
+            String result = null;
+            for(int i=0;i<cmd.length;i++){
+                if(cmd[i].contains("127.0.0.1:"+netstat+" ")){
+                    result=cmd[i];
+                    break;
+                }
+            }
+            if(result==null)return -1;
+            result=result.substring(result.lastIndexOf(" "),result.length()).trim();
+            return Integer.parseInt(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return -1;
+        }
+
+    }
+
+    /**
+     * 复制文件
+     * @param jdialog
+     * @param filePath
+     * @param jbutton
+     */
     public static void copyFile(JDialog jdialog, String filePath, JButton jbutton) {
         if (copyFile(jdialog, filePath)) {
             jbutton.setIcon(new ImageIcon(("image/succeed.png")));
@@ -225,6 +281,32 @@ public class WindosUtils {
     }
 
     /**
+     * 获取指定PID名称
+     * @return
+     */
+    public static String getPIDName(int  pid){
+        if(!String.valueOf(pid).matches("\\d+"))throw new IllegalArgumentException("参数不合法:"+pid);
+        try {
+            String [] request=cmd("tasklist");
+            for(int i=0;i<request.length;i++){
+                String r = request[i];
+                if(r.equals(""))continue;
+                r=r.trim();
+                r = r.substring(r.indexOf(" "),r.length()).trim();
+                if(r.startsWith(String.valueOf(pid))){
+                    r=request[i].trim();
+                    return  r.substring(0,r.indexOf(" "));
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }catch (java.lang.StringIndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
      * 获取指定进程的pid
      *
      * @param process
@@ -245,6 +327,7 @@ public class WindosUtils {
             if (s.startsWith(process)) {
                 String str;
                 try {
+                    if(!s.contains("Console"))continue;
                     str = s.substring(0, s.indexOf("Console")).trim();
                     str = str.substring(str.lastIndexOf(" "), str.length()).trim();
                     if (str.matches("\\d+")){
@@ -280,6 +363,7 @@ public class WindosUtils {
                 if(Arrays.toString(
                         //taskkill /im 通过名称关闭  /f
                         cmd("taskkill /pid "+pid+"  /f")).contains("错误:"))return false;
+                System.out.println(Arrays.toString(Adb.operationAdb("devices")));
 
             }
         } catch (IOException e) {
@@ -288,6 +372,7 @@ public class WindosUtils {
             SaveCrash.save("关闭进程发生错误,进程名称:"+process+"     "+e.toString());
         }
         if(getProcessPID(process).length!=0){
+            System.out.println(Arrays.toString(getProcessPID(process)));
             return false;
         }else{
             return true;
