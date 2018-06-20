@@ -52,7 +52,6 @@ public class Adb {
      * 杀死占用5037端口应用
      */
     public static void killNetStatAdb() {
-
         try {
             String pid = "";
             if (WindosUtils.isPortUsing("127.0.0.1", 5037)) {
@@ -61,7 +60,6 @@ public class Adb {
                     pid = WindosUtils.getPIDName(p);
                     if (pid == null || pid.contains("adb.exe")) return;
                 }
-
             } else {
                 return;
             }
@@ -165,7 +163,7 @@ public class Adb {
                 }
 
             }
-        },"setDevices");
+        }, "setDevices");
         System.out.println(t.getName());
         t.start();
     }
@@ -194,13 +192,13 @@ public class Adb {
                         ));
             }
         } else {
-            if(HomePage.textArea.getText().contains("用户手动关闭"))return;
+            if (HomePage.textArea.getText().contains("用户手动关闭")) return;
             String[] devicesArr = devicesInfo();
             if (devicesArr == null) return;
             if (Arrays.toString(devicesArr).contains(HomePage.textArea.getText()) &&
                     !HomePage.textArea.getText().equals("")) return;
             String de = TooltipUtil.listSelectTooltip("发现" + deivcesInfo.length + "设备,请选择一个设备", devicesArr);
-            if (de == null  ) {
+            if (de == null) {
                 HomePage.textArea.setText("用户手动关闭");
                 return;
             }
@@ -219,3 +217,4 @@ public class Adb {
         }
     }
 }
+//
