@@ -6,70 +6,97 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="">
+    <list default="true" id="1f59aa44-a073-4a9a-a47d-45be1cab9fbe" name="Default" comment="更新松鼠自动检测手机">
+      <change afterPath="$PROJECT_DIR$/Crash.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/技术部流程/gitlab调整.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/技术部流程/直播免费电子书新版本开发环境说明.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/File/行政部流程/行政-关于用章、合同归档、财务票据提交及取回流程 1.1版.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OnlineData.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CXBCase/TestGGTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/qaplug_profiles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AD/GetAdLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AD/GuoLv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AD/guolvdata.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/Log.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/Logs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppTest/RunTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/GetLocalityFilePuth.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/InstallAppiumApk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/OpenFileDirectory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/AppiumMethod/Tooltip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/CXBConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/Read.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/RunCase.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/Sidebar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/CXBCase/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/IOUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/Objces.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/TextIOUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/ceshi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/shixian.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/JavaStudy/zilei.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/ConfigMonkey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/Crash.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/GetPhoneLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/RunMonkey.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/logAnalysis.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Monkey/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Print/Print.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/Print/ReadSelectedLine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/zhibohuodong/Nonce.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/zhibohuodong/UserUid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/zhibohuodong/getExcelXlsx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/zhibohuodong/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/zhibohuodong/uuid.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/MedialCadence$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/MedialCadence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/TestPvAndUv$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/TestPvAndUv.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/config.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appium/免费电子书AD/config.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/countMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/createUserIdAndGG.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/get.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/printList.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/requestUrl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/单日总点击量.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/单日用户曝光与单日广告曝光总量.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/单日用户点击量与单日点击总量.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/广告展现顺序逻辑.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/技术部流程/中文万维-钉钉用户使用说明书-无财务.docx" beforeDir="false" afterPath="$PROJECT_DIR$/File/技术部流程/中文万维-钉钉用户使用说明书-无财务.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/File/测试流程/bug流程.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/File/测试流程/bug流程.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appium.iml" beforeDir="false" afterPath="$PROJECT_DIR$/appium.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/HelloWorld/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AD/GetAdLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AD/GuoLv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AD/ScreenRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AD/guolvdata.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppTest/Case.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppTest/Devices.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppTest/GetCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppTest/GetRunApp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppTest/Log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppTest/RunTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/AppUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/Config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/DevicesInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/GetLocalityFilePuth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/InstallAppiumApk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/OpenFileDirectory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/ScreenshotsOperation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/Tooltip.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/AppiumMethod/installAPPPackage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/CXBCase/PrintErr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/CXBCase/RunCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/CXBCase/Sidebar.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/JavaStudy/IOUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/JavaStudy/Objces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/JavaStudy/TextIOUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/JavaStudy/ceshi.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/JavaStudy/shixian.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/JavaStudy/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/JavaStudy/zilei.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/ConfigMonkey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/Crash.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/GetPhoneLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/RunMonkey$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/RunMonkey$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/RunMonkey$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/RunMonkey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/logAnalysis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Monkey/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Print/Print.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/Print/ReadSelectedLine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/kaiqiao/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/src.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/zhibohuodong/Nonce.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/zhibohuodong/UserUid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/zhibohuodong/getExcelXlsx.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/zhibohuodong/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/zhibohuodong/uuid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/ArrayIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/MedialCadence$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/MedialCadence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/Point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/TestPvAndUv$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/TestPvAndUv.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/check.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appium/免费电子书AD/check.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/config.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/countMap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/createUserIdAndGG.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/get.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/printList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/requestUrl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appium/免费电子书AD/requestUrl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/单日总点击量.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/单日用户曝光与单日广告曝光总量.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/单日用户点击量与单日点击总量.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/广告展现顺序逻辑.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appium/免费电子书AD/广告展现顺序逻辑.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/广告展现顺序逻辑单个用户单个广告位.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/测试单日广告总量曝光.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/测试后台统计用户点击量_曝光量_广告总点击量_广告总曝光量And保存广告接口性能测试用户数据.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IDEA/免费电子书AD/测试广告总流量曝光.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appium/zhibohuodong/UserUid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appium/zhibohuodong/UserUid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/get.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appium/免费电子书AD/get.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/广告展现顺序逻辑单个用户单个广告位.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/appium/免费电子书AD/广告展现顺序逻辑单个用户单个广告位.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/测试单日广告总量曝光.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/测试后台统计用户点击量_曝光量_广告总点击量_广告总曝光量And保存广告接口性能测试用户数据.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/appium/免费电子书AD/测试广告总流量曝光.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/platform-tools/adb.exe" beforeDir="false" afterPath="$PROJECT_DIR$/platform-tools/adb.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utlis/Adb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utlis/Adb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/免费电子书AD/getDataOnline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/免费电子书AD/getDataOnline.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,11 +113,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Adb.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Adb.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="167" column="21" selection-start-line="167" selection-start-column="21" selection-end-line="167" selection-end-column="21" />
+            <state relative-caret-position="196">
+              <caret line="219" column="2" lean-forward="true" selection-start-line="219" selection-start-column="2" selection-end-line="219" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1355#1356#0" expanded="true" />
@@ -105,8 +132,8 @@
       <file leaf-file-name="WindosUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utlis/WindosUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7039">
-              <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+            <state relative-caret-position="124">
+              <caret line="286" column="25" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -141,8 +168,8 @@
       <file leaf-file-name="FrameUtils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="98" column="53" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="53" />
+            <state relative-caret-position="273">
+              <caret line="100" selection-start-line="99" selection-start-column="5" selection-end-line="100" />
             </state>
           </provider>
         </entry>
@@ -156,11 +183,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+            <state relative-caret-position="76">
+              <caret line="429" column="11" lean-forward="true" selection-start-line="429" selection-start-column="11" selection-end-line="429" selection-end-column="11" />
               <folding>
                 <element signature="e#1474#1475#0" expanded="true" />
                 <element signature="e#1532#1533#0" expanded="true" />
@@ -323,8 +350,8 @@
         <option value="$PROJECT_DIR$/src/SquirrelFrame/ClearIphone.java" />
         <option value="$PROJECT_DIR$/src/Utlis/FrameUtils.java" />
         <option value="$PROJECT_DIR$/src/SquirrelFrame/Config.java" />
-        <option value="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" />
         <option value="$PROJECT_DIR$/src/Utlis/Adb.java" />
+        <option value="$PROJECT_DIR$/src/SquirrelFrame/HomePage.java" />
       </list>
     </option>
   </component>
@@ -338,10 +365,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1399" />
-    <option name="y" value="172" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="x" value="260" />
+    <option name="y" value="20" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -402,6 +429,12 @@
               <item name="appium" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Utlis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appium" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appium" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="免费电子书AD" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -939,11 +972,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528685154577</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="更新松鼠自动检测手机">
+      <created>1529464874375</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1529464874376</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="810188000" />
+    <option name="totallyTimeSpent" value="811282000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -960,19 +1000,19 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.3280757" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49926794" visible="true" weight="0.3280757" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="9" sideWeight="0.50073206" side_tool="true" visible="true" weight="0.3280757" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.30441642" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49926794" weight="0.329653" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18008785" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18008785" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1014,33 +1054,33 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Designer" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.29812607" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.11684783" />
       <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Analysis" order="12" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.27083334" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.15672913" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.11684783" />
       <window_info id="Image Layers" order="5" />
-      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="2" />
       <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39863715" />
-      <window_info anchor="right" id="Maven Projects" order="4" />
-      <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.15672913" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.29812607" />
-      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
   </component>
@@ -1077,7 +1117,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="更新项目结构，将jar包整理到lib下" />
     <MESSAGE value="将流程通过本地目录中存在文件实时加载到界面中" />
     <MESSAGE value="添加直播礼物查询页面和类" />
     <MESSAGE value="添加获取背包礼物数据库正在加载样式和数据库连接失败后提交按钮置灰" />
@@ -1102,7 +1141,8 @@
     <MESSAGE value="修改首页logo" />
     <MESSAGE value="添加广告获取线上请求" />
     <MESSAGE value="更改Utlis中执行adb命令无设备时返回空" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改Utlis中执行adb命令无设备时返回空" />
+    <MESSAGE value="更新松鼠自动检测手机" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新松鼠自动检测手机" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1389,13 +1429,6 @@
       </provider>
     </entry>
     <entry file="jar://D:/java/jdk/src.zip!/java/awt/Color.java" />
-    <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="98" column="53" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1410,10 +1443,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
+    <entry file="file://$PROJECT_DIR$/src/Utlis/FrameUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="100" selection-start-line="99" selection-start-column="5" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utlis/WindosUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
-          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <caret line="286" column="25" selection-start-line="286" selection-start-column="25" selection-end-line="286" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="219" column="2" lean-forward="true" selection-start-line="219" selection-start-column="2" selection-end-line="219" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1355#1356#0" expanded="true" />
+            <element signature="e#1387#1388#0" expanded="true" />
+            <element signature="e#2211#2212#0" expanded="true" />
+            <element signature="e#2285#2286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SquirrelFrame/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="429" column="11" lean-forward="true" selection-start-line="429" selection-start-column="11" selection-end-line="429" selection-end-column="11" />
           <folding>
             <element signature="e#1474#1475#0" expanded="true" />
             <element signature="e#1532#1533#0" expanded="true" />
@@ -1421,27 +1482,6 @@
             <element signature="e#2180#2181#0" expanded="true" />
             <element signature="e#11221#11222#0" expanded="true" />
             <element signature="e#11259#11260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utlis/WindosUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7039">
-          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utlis/Adb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="167" column="21" selection-start-line="167" selection-start-column="21" selection-end-line="167" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1355#1356#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#2211#2212#0" expanded="true" />
-            <element signature="e#2285#2286#0" expanded="true" />
           </folding>
         </state>
       </provider>

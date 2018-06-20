@@ -17,7 +17,7 @@ public class getDataOnline {
         PrintWriter pw=null;
         for(int i=0;i<userIdData.length;i++){
             if(GGDataIndex==GGData.length)GGDataIndex=0;
-            String data = "1206&umeng=test_test&version=4.0.1&" +
+            String data = "1460&umeng=test_test&version=4.0.2&" +
                     "vercode=64&imei=865736034224322&imsi=&" +
                     "uid=" +userIdData[i]+
                     "&packname=com.mianfeia.book&oscode=25&" +
@@ -28,7 +28,8 @@ public class getDataOnline {
                     "&userId=" +userIdData[i]+
                     "&currId=-1&net=WIFI";
             GGDataIndex++;
-//           String response = get.sendGet(url,data);
+           String response = get.sendGet(url,data);
+            System.out.println(response);
 //           if(response==null || (response.contains("{}")&&!response.contains("adname"))){
 //               System.out.println(response+"       "+data);
 //           }

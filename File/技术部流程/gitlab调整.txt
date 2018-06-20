@@ -1,0 +1,75 @@
+gitlab项目目录调整
+
+免费电子书 
+    freebook-server
+	原项目地址：http://git.iwanvi.com/server/cx_www.git
+	新项目地址：http://git.iwanvi.com/freebook-server/iwanvi-freebook-app-web.git
+
+	原项目地址：http://git.iwanvi.com/server/zwsc_app.git 使用分支：*/miandian
+	新项目地址：http://git.iwanvi.com/freebook-server/iwanvi-freebook-app-dubbo.git 使用分支：*/miandian
+
+    freebook-ops
+	原项目地址：http://git.iwanvi.com/server/FreeZwscManage.git
+	新项目地址：http://git.iwanvi.com/freebook-ops/iwanvi-freebook-manage.git
+
+
+广告
+    ad-server
+	原项目地址：http://git.iwanvi.com/server/ad.cread.com.git
+	新项目地址：http://git.iwanvi.com/ad-server/iwanvi-ad-lua.git
+
+
+中文书城
+    bookstore-server
+	原项目地址：http://git.iwanvi.com/server/zwsc-web-tomcat.git
+	新项目地址：http://git.iwanvi.com/bookstore-server/iwanvi-bookstore-app-web.git
+
+	原项目地址：http://git.iwanvi.com/server/zwsc_app.git
+	新项目地址：http://git.iwanvi.com/bookstore-server/iwanvi-bookstore-app-dubbo.git
+
+	原项目地址：http://git.iwanvi.com/server/zwsc_app.git 使用分支：*/usersign
+	新项目地址：http://git.iwanvi.com/bookstore-server/iwanvi-bookstore-app-dubbo-qiandao.git 使用分支：*/usersign
+
+	原项目地址：http://git.iwanvi.com/server/pc-web-tomcat.git	
+	新项目地址：http://git.iwanvi.com/bookstore-server/iwanvi-bookstore-pc-web.git	
+
+	原项目地址：http://git.iwanvi.com/server/zwsc_app-dubbo.git
+	新项目地址：http://git.iwanvi.com/bookstore-server/iwanvi-bookstore-pc-dubbo.git
+
+	原项目地址：http://git.iwanvi.com/server/zwsc-web-tomcat.git
+	新项目地址：http://git.iwanvi.com/bookstore-server/iwanvi-bookstore-single-web.git
+
+	原项目地址：http://git.iwanvi.com/server/zwsc_app.git 使用分支：*/weishucheng
+	新项目地址：http://git.iwanvi.com/bookstore-server/iwanvi-bookstore-single-dubbo.git 使用分支：*/weishucheng
+
+
+直播
+    livecast-server
+	原项目地址：http://git.iwanvi.com/server/wwlive.git
+	新项目地址：http://git.iwanvi.com/livecast-server/iwanvi-livecast-web.git
+	
+	原项目地址：http://git.iwanvi.com/server/zhibo-guanwang.git
+	新项目地址：http://git.iwanvi.com/livecast-server/iwanvi-livecast-guanwang.git
+
+大数据
+    fishworm-server
+	原项目地址：http://git.iwanvi.com/hadoop/etl_pro.git
+	新项目地址：http://git.iwanvi.com/fishworm-server/iwanvi-fishworm-etl-pro.git
+
+	原项目地址：http://git.iwanvi.com/hadoop/iwanvi-data-analysis.git
+	新项目地址：http://git.iwanvi.com/fishworm-server/iwanvi-fishworm-data-analysis.git
+
+	原项目地址：http://git.iwanvi.com/hadoop/kettleScript.git
+	新项目地址：http://git.iwanvi.com/fishworm-server/iwanvi-fishworm-kettle-script.git
+
+	原项目地址：http://git.iwanvi.com/hadoop/kettle.git
+	新项目地址：http://git.iwanvi.com/fishworm-server/iwanvi-fishworm-kettle.git
+
+	原项目地址：http://git.iwanvi.com/hadoop/SendEmailReport.git
+	新项目地址：http://git.iwanvi.com/fishworm-server/iwanvi-fishworm-send-email-report.git
+
+	原项目地址：http://git.iwanvi.com/hadoop/static_new.git
+	新项目地址：http://git.iwanvi.com/fishworm-server/iwanvi-fishworm-static-new.git
+
+	原项目地址：http://git.iwanvi.com/hadoop/crontab.git
+	新项目地址：http://git.iwanvi.com/fishworm-server/iwanvi-fishworm-crontab.git
