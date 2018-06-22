@@ -18,7 +18,7 @@ public class Config {
                 Config.ADB_PUTH = (String) ois.readObject();
             }
             if (null == Config.ADB_PUTH || !(new File(Config.ADB_PUTH).exists())) {
-                Config.ADB_PUTH = GetLocalityFilePuth.getPuth("operationAdb.exe");
+                Config.ADB_PUTH = GetLocalityFilePuth.getPuth("adb.exe");
                 ous = new ObjectOutputStream(new FileOutputStream("adb_puth.dat"));
                 ous.writeObject(Config.ADB_PUTH);
                 ous.flush();
