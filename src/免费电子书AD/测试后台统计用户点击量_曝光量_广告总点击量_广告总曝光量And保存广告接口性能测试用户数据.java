@@ -58,7 +58,7 @@ public class 测试后台统计用户点击量_曝光量_广告总点击量_广�
 				id = pvUv.getRequestCurrId();
 				//拼接请求
 				String requestData = requestUrl.getAdPerformance(GGData, userIdData, id);
-				saveData(requestData);
+
 				// 发送请求广告
 				String response = get.sendGet(config.url, requestData);
 				ggArrayIndex++;
@@ -74,12 +74,13 @@ public class 测试后台统计用户点击量_曝光量_广告总点击量_广�
 					e.printStackTrace();
 				}
 				if (!check.checkId(jsonObj, response, i)) {i++;continue;}
+				saveData(requestData,"re");
 				id = Integer.parseInt(jsonObj.get("id").toString());
 				
 				String exposureRequest = requestUrl.exposureRequest(jsonObj, 0, id, userIdData);
 				//发送请求
 				String exposureResponse = get.sendGet(config.superior, exposureRequest);
-				saveData(exposureRequest);
+				saveData(exposureRequest,"pvuv");
 				//将请求和响应添加到list
 				countMap.list(exposureRequest, exposureResponse);
 				//第三步：
@@ -98,7 +99,7 @@ public class 测试后台统计用户点击量_曝光量_广告总点击量_广�
 					 exposureRequest = requestUrl.exposureRequest(jsonObj, 1, id, userIdData);
 					//发送请求
 					 exposureResponse = get.sendGet(config.superior, exposureRequest);
-					saveData(exposureRequest);
+					saveData(exposureRequest,"pvuv");
 					//将请求和响应添加到list
 					countMap.list(exposureRequest, exposureResponse);
 					//第三步：
@@ -128,8 +129,6 @@ public class 测试后台统计用户点击量_曝光量_广告总点击量_广�
 		System.out.println("测试完毕");
 		System.exit(0);
 	}
-
-	
 	public static LinkedHashMap<String, Integer> addUv(LinkedHashMap<String, Integer> userMap, 
 			LinkedHashMap<String, Integer> uvMap,int user,String GG,int GGid){
 		if(!userMap.containsKey(user+GG)){
@@ -137,9 +136,16 @@ public class 测试后台统计用户点击量_曝光量_广告总点击量_广�
 		}
 		return uvMap;
 	}
-	public static void saveData(String data){
+	public static void saveData(String data,String type){
+
 		try {
-			OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("ad.txt",true));
+			String ty =type.equals("re")?type:"pvuv" ;
+			if(ty.equals("pvuv")){
+				data=data.substring("appname=".length(),data.length());
+			}else{
+				data=data.substring("cnid=".length(),data.length());
+			}
+			OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream(ty+".txt",true));
 			PrintWriter bw = new PrintWriter(osw);
 			bw.println(data);
 			bw.flush();
