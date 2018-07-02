@@ -668,7 +668,7 @@ public class Devices {
             if (puth == null) {
                 Tooltip.errHint("文件路径不合法，空的:" + puth);
             }
-            Pattern pattern = Pattern.compile("^[A-Z]{1}:[\\\\A-Za-z_0-9-\\.]*(\\\\[A-Za-z_0-9-]*)(\\.apk|\\.exe)$");
+            Pattern pattern = Pattern.compile("^[A-Z]{1}:[\\\\A-Za-z_0-9- \\.]*(\\\\[A-Za-z_0-9- ]*)(\\.apk|\\.exe)$");
             Matcher matcher = pattern.matcher(puth);
             if (!matcher.find() || isChinese(puth)) {
                 Tooltip.errHint("文件路径或名称不合法，可能存在中文，特殊字符，请使用英文:" + puth);
