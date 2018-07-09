@@ -97,9 +97,8 @@ public class Adb {
     private static String[] devicesInfo() {
         String[] devicesArr = new String[0];
         for (String s : runAdb("devices -l")) {
-            System.out.println(s);
             if ((s.toUpperCase().contains("device".toUpperCase()) && s.contains("model")) ||
-                    s.contains("unauthorized")) {
+                    s.contains("unauthorized") || s.contains("connecting")) {
                 devicesArr = Arrays.copyOf(devicesArr, devicesArr.length + 1);
                 devicesArr[devicesArr.length - 1] = s;
             }
@@ -153,18 +152,9 @@ public class Adb {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                while (true) {
                     setDevices(devicesInfo());
-                    try {
-                        Thread.sleep(1000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-
             }
         }, "setDevices");
-        System.out.println(t.getName());
         t.start();
     }
 
@@ -179,7 +169,7 @@ public class Adb {
                 HomePage.textArea.setText("没有连接设备");
             }
         } else if (deivcesInfo.length == 1) {
-            if (deivcesInfo[0].contains("unauthorized")) {
+            if (deivcesInfo[0].contains("unauthorized") || deivcesInfo[0].contains("connecting")) {
                 if (HomePage.textArea != null) {
                     HomePage.textArea.setText("设备没有开放权限");
                 }
@@ -202,7 +192,7 @@ public class Adb {
                 HomePage.textArea.setText("用户手动关闭");
                 return;
             }
-            if (de.contains("unauthorized")) {
+            if (de.contains("unauthorized") || de.contains("connecting")) {
                 if (HomePage.textArea != null) {
                     HomePage.textArea.setText("设备没有开放权限");
                 }
