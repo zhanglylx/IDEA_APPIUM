@@ -7,8 +7,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
 
 import SquirrelFrame.*;
 import SquirrelFrame.Pane;
@@ -16,17 +15,10 @@ import Utlis.Adb;
 
 public class GetADLog extends Pane {
     public static String[] AD;
-    //确定线程关闭
-    public static volatile boolean affirmThread = true;
-    //记录时间
-    public static int time = 0;
     //广告id
     public static String adId = null;
-    //关闭线程
-    public static volatile int stop = 0;
     public WindowsText windowsText;
     public static ArrayList<String> list;
-    public static GetADLog getADLog;
     Thread t;
     JTextArea logPaint = null;
     //判断线程是否在运行
@@ -126,7 +118,6 @@ public class GetADLog extends Pane {
             if (logPaint == null) continue;
             if (windowsClose) {
                 windowsClose = false;
-                stop = 1;
                 break;
             }
             //切换广告后，置为默认值
@@ -134,71 +125,22 @@ public class GetADLog extends Pane {
                 GGlen = 0;
                 adIdRecord = adId;
             }
-            //时间线程
-            Thread t = new Thread(() -> {
-                boolean dateB = true;
-                long date1 = 0;
-                addText("开启计时");
-                affirmThread = false;
-                while (true) {
-                    if (windowsClose) break;
-                    if (dateB) {
-                        date1 = System.currentTimeMillis() + (5 * 1000);
-                        dateB = false;
-                    }
-                    if (System.currentTimeMillis() >= date1) {
-                        time += 5;
-                        addText(time + " 秒");
-                        dateB = true;
-                    }
-                    if (stop == 1) {
-                        time += 5;
-                        addText(time + " 秒");
-                        addText("关闭计时");
-                        affirmThread = true;
-                        break;
-                    }
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
             boolean bl = false;
             GG = Adb.operationAdb(" shell cat /sdcard/FreeBook/ad/" + date + "/" + adId + ".txt");
+            System.out.println(" shell cat /sdcard/FreeBook/ad/" + date + "/" + adId + ".txt");
             if (Arrays.toString(GG).contains("errdevices")) break;
             if (Arrays.toString(GG).equals("[]") && !getLog) {
                 getLog = true;
                 addText("没有获取到日志:" + adId + Arrays.toString(GG));
             }
-            if (GG.length < 1) continue;
+            if (GG == null ||GG.length < 1) continue;
             if (GG.length > GGlen) {
-                if (booleanTheard) {
-                    stop = 1;
-                    t.interrupt();
-                    booleanTheard = false;
-                    try {
-                        Thread.sleep(200);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    while (true) {
-                        if (affirmThread) break;
-                    }
-                }
                 for (int i = GGlen; i < GG.length; i++) {
                     if (GG[i].equals("")) continue;
                     addText(date + "  " + GG[i]);
                     if ((GG[i].contains("返回广告") && !GG[i].contains("服务端返回广告"))
                             || GG[i].contains("服务端返回广告---没有广告") ||
                             GG[i].contains("请求失败")) bl = true;
-                }
-                if (bl) {
-                    time = 0;
-                    stop = 0;
-                    t.start();
-                    booleanTheard = true;
                 }
                 GGlen = GG.length;
             }
@@ -250,19 +192,20 @@ public class GetADLog extends Pane {
     }
 
     private static String date() {
+        //因通过手机过滤时间时发现日志转换不正确，所以采用获取点击方式
         for (String s : Adb.operationAdb(" shell date")) {
             if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
-                String dateString = s;
+                s = s.replace("CST","");
                 SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd");
-                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", java.util.Locale.ENGLISH);
+                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy",Locale.ENGLISH);
                 try {
-                    return sfEnd.format(sfStart.parse(dateString));
+                   return sfEnd.format(sfStart.parse(s));
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
             }
         }
-        return null;
+        return  new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
     /**
