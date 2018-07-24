@@ -116,17 +116,23 @@ public class WindosUtils {
         fe = new File(filePath);
         //文件名称
         String fileName = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.length());
+        System.out.println(fileName);
         String copyPath = null;
         try {
             copyPath = FrameUtils.saveFileFrame(jdialog, new File(filePath));
+
         } catch (IllegalArgumentException e) {
             SaveCrash.save(e.toString());
         }
         if (copyPath == null) return false;
         copyPath += fileName;
+        //文件如果存在，重新名称
         if (new File(copyPath).exists()) {
-            TooltipUtil.errTooltip("文件已存在:" + filePath);
-            return false;
+            int filePathIndex =copyPath.lastIndexOf(".");
+            StringBuffer sb = new StringBuffer(copyPath);
+            sb.insert(filePathIndex,WindosUtils.getDate(" MM-dd-HH-mm-ss"));
+
+            copyPath = sb.toString();
         }
         InputStream ips = null;
         OutputStream ops = null;
@@ -401,4 +407,6 @@ public class WindosUtils {
     public static String getDate() {
         return getDate("yyyy-MM-dd HH:mm:ss");
     }
+
+
 }
