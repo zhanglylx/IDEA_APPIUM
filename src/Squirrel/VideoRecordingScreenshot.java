@@ -1,9 +1,7 @@
 package Squirrel;
 
 import SquirrelFrame.Config;
-import Utlis.FrameUtils;
 import Utlis.WindosUtils;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -27,16 +25,16 @@ public class VideoRecordingScreenshot extends JDialog {
         setLayout(null);
         screenshot = new JButton(SCREENSHOT);
         screenshot.setSize(60, 40);
-        screenshot.setLocation(0, 0);
+        screenshot.setLocation(5, 0);
         buttonMouseListener(screenshot);
         add(screenshot);
         setLocationRelativeTo(null);//设置中间显示
-        setSize(400, 600);
+        setSize(400, 700);
         RefreshTheImage refreshTheImage = new RefreshTheImage();
         Thread t = new Thread(refreshTheImage);
         t.start();
         add(refreshTheImage.getjButton());
-        setLocation(350, 100);
+        setLocation(350, 10);
         addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
@@ -78,7 +76,7 @@ class RefreshTheImage implements Runnable {
     private JButton jButton;
     public RefreshTheImage(){
         jButton = new JButton();
-        jButton.setSize(300, 550);  //设置大小
+        jButton.setSize(300, 650);  //设置大小
         jButton.setLocation(82, 0);
     }
     public void stopMe() {
@@ -94,7 +92,7 @@ class RefreshTheImage implements Runnable {
     public void run() {
         String[] adb;
         image = new ImageIcon("image/wait.png");
-        image.setImage(image.getImage().getScaledInstance(200, 300, Image.SCALE_DEFAULT));
+        image.setImage(image.getImage().getScaledInstance(200, 350, Image.SCALE_DEFAULT));
         jButton.setIcon(image);
         //adb shell screencap -p /sdcard/1.png
         while (stopMe) {
@@ -104,9 +102,13 @@ class RefreshTheImage implements Runnable {
                     adb = Utlis.Adb.operationAdb("shell screencap -p /sdcard/" + SCREENSHOT_SQUIRREL);
                     System.out.println(Arrays.toString(adb));
                     adb = Utlis.Adb.operationAdb("pull  /sdcard/" + SCREENSHOT_SQUIRREL + " " + Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
+                    if(!Arrays.toString(adb).contains("100%")){
+                        image = new ImageIcon("image/wait.png");
+                    }else{
+                        image = new ImageIcon(Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
+                    }
                     System.out.println(Arrays.toString(adb));
-                    image = new ImageIcon(Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
-                    image.setImage(image.getImage().getScaledInstance(300, 500, Image.SCALE_DEFAULT));
+                    image.setImage(image.getImage().getScaledInstance(300, 650, Image.SCALE_DEFAULT));
                     jButton.setIcon(image);
                     sleep(100);
                 } catch (InterruptedException e) {
