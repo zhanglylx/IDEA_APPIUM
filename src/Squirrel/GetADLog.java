@@ -94,10 +94,10 @@ public class GetADLog extends Pane {
             t = new Thread(new Runnable() {
                 @Override
                 public void run() {
-                        if (!runT) {
-                            log();
+                    if (!runT) {
+                        log();
 
-                        }
+                    }
                 }
             });
             t.start();
@@ -111,8 +111,6 @@ public class GetADLog extends Pane {
         String[] GG;
         int n = 0;
         String date = date();
-        //用于关闭线程
-        boolean booleanTheard = false;
         String adIdRecord = "";//记录广告是否被切换
         while (true) {
             if (logPaint == null) continue;
@@ -133,7 +131,7 @@ public class GetADLog extends Pane {
                 getLog = true;
                 addText("没有获取到日志:" + adId + Arrays.toString(GG));
             }
-            if (GG == null ||GG.length < 1) continue;
+            if (GG == null || GG.length < 1) continue;
             if (GG.length > GGlen) {
                 for (int i = GGlen; i < GG.length; i++) {
                     if (GG[i].equals("")) continue;
@@ -167,7 +165,7 @@ public class GetADLog extends Pane {
 
             }
             try {
-                Thread.sleep(1500);
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -193,19 +191,23 @@ public class GetADLog extends Pane {
 
     private static String date() {
         //因通过手机过滤时间时发现日志转换不正确，所以采用获取点击方式
-        for (String s : Adb.operationAdb(" shell date")) {
-            if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
-                s = s.replace("CST","");
-                SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd");
-                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy",Locale.ENGLISH);
-                try {
-                   return sfEnd.format(sfStart.parse(s));
-                } catch (ParseException e) {
-                    e.printStackTrace();
+        try {
+            for (String s : Adb.operationAdb(" shell date")) {
+                if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
+                    s = s.replace("CST", "");
+                    SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd");
+                    SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
+                    try {
+                        return sfEnd.format(sfStart.parse(s));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        return  new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 
     /**
