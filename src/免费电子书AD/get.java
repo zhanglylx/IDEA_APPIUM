@@ -21,13 +21,15 @@ public class get {
 			// 设置通用的请求属性
 			// 不能使用缓存
 			connection.setUseCaches(false);
+			connection.setConnectTimeout(2000);
 			// 建立实际的连接
 			connection.connect();
+
 			int getResponseCode = 0;
 			getResponseCode = ((HttpURLConnection) connection).getResponseCode();
 			if (getResponseCode != 200) {// 检查服务器响应
 				System.out.println("服务器响应不是200" + "；响应：" + getResponseCode + "；URL:" + urlNameString);
-				return null;
+				return "{}";
 				}
 			// 获取所有响应头字段
 			Map<String, List<String>> map = connection.getHeaderFields();
@@ -52,6 +54,7 @@ public class get {
 				e2.printStackTrace();
 			}
 		}
+		if("".equals(result.toString()))return "{}";
 		return result.toString();
 
 	}

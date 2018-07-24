@@ -26,15 +26,15 @@ public class RunCase {
         Thread.sleep(5000);
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/guide3"));
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tab_shelf_view"));
-        initialize(devices);
+//        initialize(devices);
 //        new Sidebar("测试侧边栏").startCase();
-//        initialize(devices);
-//        new Search("搜索+作者详情页中的在线阅读").startCase();
-//        initialize(devices);
-//        new TheWorkDetails("作者详情页下载、目录、分享").startCase();
-//        initialize(devices);
-//        new Read("阅读页").startCase();
-//        initialize(devices);
+        initialize(devices);
+        new Search("搜索+作者详情页中的在线阅读").startCase();
+        initialize(devices);
+        new TheWorkDetails("作者详情页下载、目录、分享").startCase();
+        initialize(devices);
+        new Read("阅读页").startCase();
+        initialize(devices);
         new Read2("阅读页Read2").startCase();
         Logs.prrLogs();
         RecordAd.getRecordAd().printAd();
@@ -43,8 +43,11 @@ public class RunCase {
      * 初始化到桌面
      */
     public static void initialize(Devices devices) {
-
+         int i = 0;
         while (true) {
+            if((AppiumMethod.Config.APP_PACKAGE).contains("com.mianfeizs.book")){
+                if(i>10)break;
+            }
             if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left"))) {
                 devices.backspace();
                 if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-3",
@@ -54,6 +57,7 @@ public class RunCase {
                 return;
             }
             devices.backspace();
+            i++;
         }
     }
 }

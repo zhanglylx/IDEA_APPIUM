@@ -13,14 +13,14 @@ import java.util.Arrays;
 public class FrameUtils {
     /**
      * 设置Jbutton按钮中的图片
-     * @param imageName
+     * @param imageNamePath
      * @return
      */
-    public static JButton jbuttonImage(String imageName) {
-        JButton jbutton = new JButton();     //添加刷新按钮
+    public static JButton jbuttonImage(String imageNamePath) {
+        JButton jbutton = new JButton();
 //        jbutton.setBorder(BorderFactory.createRaisedBevelBorder());//设置凸起来的按钮
         jbutton.setContentAreaFilled(false);//透明的设置
-        ImageIcon icon1 = new ImageIcon(("image/" + imageName));  // 设置按钮背景图像
+        ImageIcon icon1 = new ImageIcon((imageNamePath));  // 设置按钮背景图像
         jbutton.setMargin(new Insets(0, 0, 0, 0)); // 设置按钮边框与边框内容之间的像素数
         jbutton.setIcon(icon1);
         jbutton.setBorderPainted(false);// 不绘制边框
@@ -97,6 +97,8 @@ public class FrameUtils {
         jbutton.setContentAreaFilled(false);//透明的设置
         jbutton.setToolTipText("保存");//鼠标悬停文字
         jbutton.setFont(new Font("Arial",Font.BOLD,0));//设置字体
+
+        //image.setImage(image.getImage().getScaledInstance(300, 500, Image.SCALE_DEFAULT));设置图片大小
     }
 
 

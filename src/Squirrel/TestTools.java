@@ -18,6 +18,7 @@ public class TestTools {
                 break;
             case Video_RECORDING_AND_SCREENSHOT:
                 new VideoRecordingScreenshot(Video_RECORDING_AND_SCREENSHOT,jdialog);
+
                 break;
         }
     }

@@ -138,7 +138,7 @@ public class Read2 extends StartCase {
             print.print("获取书签日期格式检查:" + marksDate);
             return false;
         }
-        marksDate = marksDate.substring(0, marksDate.indexOf(":"));
+        marksDate = marksDate.substring(0, marksDate.indexOf(" "));
         if (!addDate.equals(marksDate)) {
             print.print("检查书签的日期与加入的日期:addDate:" + addDate + " marksDate:" + marksDate);
             return false;

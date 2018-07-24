@@ -19,7 +19,7 @@ public class Adb {
      */
     public static String devices;
     private static int killNetStatAdb;
-
+    public static long errTime = 0;
     static {
         killNetStatAdb = -1;
     }
@@ -105,7 +105,22 @@ public class Adb {
         }
         return devicesArr;
     }
-
+    /**
+     * 查看设备相信信息
+     *
+     * @return
+     */
+    private static String[] checkdevicesInfo() {
+        String[] devicesArr = new String[0];
+        for (String s : runAdb("devices ")) {
+            if ((s.toUpperCase().contains("device".toUpperCase()) && s.contains("model")) ||
+                    s.contains("unauthorized") || s.contains("connecting")) {
+                devicesArr = Arrays.copyOf(devicesArr, devicesArr.length + 1);
+                devicesArr[devicesArr.length - 1] = s;
+            }
+        }
+        return devicesArr;
+    }
     /**
      * 执行adb命令
      *
@@ -122,10 +137,11 @@ public class Adb {
      * 检查设备
      */
     public static boolean checkDevices() {
-        String[] deivcesInfo = devicesInfo();
+        String[] deivcesInfo = checkdevicesInfo();
         for (int i = 0; i < 2; i++) {
-            if (deivcesInfo.length == 0 && i == 1) {
+            if (deivcesInfo.length == 0 && i == 1  && errTime <System.currentTimeMillis()) {
                 TooltipUtil.errTooltip("请至少将一台设备连接到电脑");
+                errTime = System.currentTimeMillis()+(10*1000);
                 return false;
             }
             deivcesInfo = devicesInfo();
@@ -138,7 +154,10 @@ public class Adb {
                 if (s.contains(devices)) dev = true;
             }
             if (!dev) {
-                TooltipUtil.errTooltip("当前设备未找到，请重新选择设备");
+                if(errTime <System.currentTimeMillis()){
+                    TooltipUtil.errTooltip("当前设备未找到，请重新选择设备");
+                    errTime = System.currentTimeMillis()+(10*1000);
+                }
                 setDevices();
             }
         }

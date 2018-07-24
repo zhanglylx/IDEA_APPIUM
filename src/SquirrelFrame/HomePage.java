@@ -123,11 +123,16 @@ public class HomePage extends JFrame {
                 Thread t = new Thread(new Runnable() {
                     @Override
                     public void run() {
-//                        Adb.setDevices();
+
                         int i = 0;
                         while (true) {
+                            refresh.setEnabled(false);
+                            Adb.setDevices();
                             if (i > 4) i = 0;
-                            if( !textArea.getText().contains("正在刷新"))break;
+                            if( !textArea.getText().contains("正在刷新")){
+                                refresh.setEnabled(true);
+                                break;
+                            }
                             switch (i) {
                                 case 0:
                                     textArea.setText("正在刷新.");
@@ -350,7 +355,7 @@ public class HomePage extends JFrame {
      */
 
     private JButton addTestButton(String buttonText1) {
-        JButton testButton = FrameUtils.jbuttonImage("TestTools.png");
+        JButton testButton = FrameUtils.jbuttonImage("image/TestTools.png");
         testButton.setText(buttonText1);
         testButton.setFont(new Font("Arial", Font.BOLD, 0));
         testButton.setLocation(this.getX() - 10, 150);

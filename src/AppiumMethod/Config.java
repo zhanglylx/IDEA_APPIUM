@@ -104,7 +104,7 @@ public class Config {
             try {
                 br = new BufferedReader(
                         new FileReader(file));
-                String msg = null;
+                String msg;
                 while ((msg = br.readLine()) != null) {
                     String[] str = msg.split("=");
                     switch (str[0].trim()) {

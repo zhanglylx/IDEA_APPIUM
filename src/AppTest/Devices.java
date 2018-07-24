@@ -9,12 +9,15 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import AppiumMethod.Config;
 import AppiumMethod.Tooltip;
+import Utlis.Adb;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -714,10 +717,11 @@ public class Devices {
      */
 
     public String getIphoneDate() {
-        for (String s : AdbUtil.adb(" shell date")) {
+        for (String s : Adb.operationAdb(" shell date")) {
             if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
-                SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd HH");
-                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", java.util.Locale.ENGLISH);
+                s = s.replace("CST","");
+                SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy",Locale.ENGLISH);
                 try {
                     return sfEnd.format(sfStart.parse(s));
                 } catch (ParseException e) {
@@ -725,6 +729,6 @@ public class Devices {
                 }
             }
         }
-        return null;
+        return  new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 }

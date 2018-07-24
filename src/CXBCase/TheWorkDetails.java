@@ -358,6 +358,7 @@ public class TheWorkDetails extends StartCase {
      * @return 0验证失败，1积分不足验证成功，2积分充足验证成功
      */
     private int downloadTheBox(String booKName) {
+        if ( (AppiumMethod.Config.APP_PACKAGE).contains("com.mianfeizs.book"))return 2;
         //所需积分
         String dlg_buy_book_price_view = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/dlg_buy_book_price_view"));
         //已有积分
@@ -461,7 +462,7 @@ public class TheWorkDetails extends StartCase {
             return false;
         }
         marksDate = marksDate.substring(0, marksDate.indexOf(":"));
-        if (!addDate.equals(marksDate)) {
+        if (!marksDate.contains(addDate)) {
             print.print("检查书签的日期与加入的日期:addDate:" + addDate + " marksDate:" + marksDate);
             return false;
         }

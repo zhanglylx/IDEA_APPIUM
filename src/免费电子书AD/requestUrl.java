@@ -81,12 +81,14 @@ public class requestUrl {
     //随机选取版本
     public static String randVersions() {
         Random rd = new Random();
-        int i = rd.nextInt(3);
+        int i = rd.nextInt(4);
         switch (i) {
             case 0:
                 return "3.9.3";
             case 1:
                 return "4.0.0";
+            case 2:
+                return "4.1.0";
             default:
                 return "4.0.1";
         }

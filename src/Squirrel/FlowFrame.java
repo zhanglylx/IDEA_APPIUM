@@ -33,7 +33,7 @@ public class FlowFrame extends Pane {
     private void addButton(String[] button) {
         setLayout(new GridLayout(button.length,1));
         for (int i = 0; i < button.length; i++) {
-            saveButton=FrameUtils.jbuttonImage("save.png");
+            saveButton=FrameUtils.jbuttonImage("image/save.png");
             saveButton.setToolTipText("保存");//鼠标悬停文字
 //            saveButton.setText((i+1)+"");
             saveButton.setText("save"+button[i]);

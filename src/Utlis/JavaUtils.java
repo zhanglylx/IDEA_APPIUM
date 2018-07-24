@@ -1,5 +1,7 @@
 package Utlis;
 
+import java.io.IOException;
+
 public class JavaUtils {
     /**
      * 睡眠
@@ -16,5 +18,15 @@ public class JavaUtils {
     public static void sleep(int time){
         sleep((long)time);
     }
+    /**
+     * java方法
+     */
+    private void fangfa(){
 
+        try {
+            System.in.read();//按任意键
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
