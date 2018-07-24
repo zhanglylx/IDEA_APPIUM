@@ -1,7 +1,16 @@
 package Squirrel;
 
+import SquirrelFrame.Config;
+import Utlis.FrameUtils;
+import Utlis.WindosUtils;
+
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.Arrays;
+import static Squirrel.VideoRecordingScreenshot.SCREENSHOT_SQUIRREL;
+import static java.lang.Thread.sleep;
 
 
 /**
@@ -11,22 +20,37 @@ public class VideoRecordingScreenshot extends JDialog {
     private JButton screenshot;
     private JButton recordVideo;
     public static final String SCREENSHOT = "截屏";
+    public static final String SCREENSHOT_SQUIRREL = "Squirrel.png";//截图保存名称
     public VideoRecordingScreenshot(String title, JDialog jDialog) {
         super(jDialog, false);
         setTitle(title);
         setLayout(null);
         screenshot = new JButton(SCREENSHOT);
-        screenshot.setSize(60,40);
-        screenshot.setLocation(0,0);
+        screenshot.setSize(60, 40);
+        screenshot.setLocation(0, 0);
         buttonMouseListener(screenshot);
         add(screenshot);
         setLocationRelativeTo(null);//设置中间显示
-        setSize(500, 500);
+        setSize(400, 600);
+        RefreshTheImage refreshTheImage = new RefreshTheImage();
+        Thread t = new Thread(refreshTheImage);
+        t.start();
+        add(refreshTheImage.getjButton());
+        setLocation(350, 100);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                //关闭刷新线程
+                refreshTheImage.stopMe();
+                jDialog.setDefaultCloseOperation(2);
 
+            }
+        });
         setVisible(true);
 
-
     }
+
     /**
      * 设置鼠标监听
      *
@@ -35,7 +59,11 @@ public class VideoRecordingScreenshot extends JDialog {
     public void buttonMouseListener(JButton f) {
         f.addActionListener(e -> {
             String text = f.getText();
-
+            switch (text) {
+                case SCREENSHOT:
+                    WindosUtils.copyFile(this, Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
+                    break;
+            }
         });
     }
 }
@@ -44,12 +72,47 @@ public class VideoRecordingScreenshot extends JDialog {
  * 截取图片并实时刷新
  */
 class RefreshTheImage implements Runnable {
-
+    // 用于停止线程
+    private boolean stopMe = true;
+    private ImageIcon image;
+    private JButton jButton;
+    public RefreshTheImage(){
+        jButton = new JButton();
+        jButton.setSize(300, 550);  //设置大小
+        jButton.setLocation(82, 0);
+    }
+    public void stopMe() {
+        stopMe = false;
+    }
+    public ImageIcon getImage(){
+        return this.image;
+    }
+    public JButton getjButton(){
+        return this.jButton;
+    }
     @Override
     public void run() {
+        String[] adb;
+        image = new ImageIcon("image/wait.png");
+        image.setImage(image.getImage().getScaledInstance(200, 300, Image.SCALE_DEFAULT));
+        jButton.setIcon(image);
         //adb shell screencap -p /sdcard/1.png
-                String[] adb = Utlis.Adb.operationAdb("shell screencap - p /sdcard/Squirrel.png");
-                if(adb == null)return;
-
+        while (stopMe) {
+            //设置锁
+            synchronized (RefreshTheImage.class) {
+                try {
+                    adb = Utlis.Adb.operationAdb("shell screencap -p /sdcard/" + SCREENSHOT_SQUIRREL);
+                    System.out.println(Arrays.toString(adb));
+                    adb = Utlis.Adb.operationAdb("pull  /sdcard/" + SCREENSHOT_SQUIRREL + " " + Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
+                    System.out.println(Arrays.toString(adb));
+                    image = new ImageIcon(Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
+                    image.setImage(image.getImage().getScaledInstance(300, 500, Image.SCALE_DEFAULT));
+                    jButton.setIcon(image);
+                    sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }
