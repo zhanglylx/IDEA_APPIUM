@@ -1,7 +1,8 @@
 package Squirrel;
 
 import SquirrelFrame.Config;
-import Utlis.WindosUtils;
+import ZLYUtils.AdbUtils;
+import ZLYUtils.WindosUtils;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
@@ -99,9 +100,9 @@ class RefreshTheImage implements Runnable {
             //设置锁
             synchronized (RefreshTheImage.class) {
                 try {
-                    adb = Utlis.Adb.operationAdb("shell screencap -p /sdcard/" + SCREENSHOT_SQUIRREL);
+                    adb = AdbUtils.operationAdb("shell screencap -p /sdcard/" + SCREENSHOT_SQUIRREL);
                     System.out.println(Arrays.toString(adb));
-                    adb = Utlis.Adb.operationAdb("pull  /sdcard/" + SCREENSHOT_SQUIRREL + " " + Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
+                    adb = AdbUtils.operationAdb("pull  /sdcard/" + SCREENSHOT_SQUIRREL + " " + Config.Screenshot_save_path + SCREENSHOT_SQUIRREL);
                     if(!Arrays.toString(adb).contains("100%")){
                         image = new ImageIcon("image/wait.png");
                     }else{
@@ -110,8 +111,7 @@ class RefreshTheImage implements Runnable {
                     System.out.println(Arrays.toString(adb));
                     image.setImage(image.getImage().getScaledInstance(300, 650, Image.SCALE_DEFAULT));
                     jButton.setIcon(image);
-                    sleep(100);
-                } catch (InterruptedException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
