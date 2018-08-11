@@ -1,4 +1,4 @@
-package Utlis;
+package ZLYUtils;
 
 import SquirrelFrame.HomePage;
 import org.junit.Test;
@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
 import java.nio.charset.Charset;
 import java.util.Arrays;
 
-public class Adb {
+public class AdbUtils {
     /**
      * 执行adb命令
      *

@@ -1,7 +1,4 @@
-package Utlis;
-
-import AppTest.Devices;
-import AppiumMethod.Tooltip;
+package ZLYUtils;
 
 import javax.swing.*;
 import java.io.*;
@@ -12,11 +9,6 @@ import java.nio.charset.Charset;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-import org.junit.Test;
 
 
 public class WindosUtils {
@@ -369,7 +361,7 @@ public class WindosUtils {
                 if(Arrays.toString(
                         //taskkill /im 通过名称关闭  /f
                         cmd("taskkill /pid "+pid+"  /f")).contains("错误:"))return false;
-                System.out.println(Arrays.toString(Adb.operationAdb("devices")));
+                System.out.println(Arrays.toString(AdbUtils.operationAdb("devices")));
 
             }
         } catch (IOException e) {

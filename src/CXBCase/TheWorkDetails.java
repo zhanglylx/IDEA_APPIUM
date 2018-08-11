@@ -76,7 +76,7 @@ public class TheWorkDetails extends StartCase {
             WorkType=false;
             if (!checkType("书籍介绍")) return false;
             //书籍介绍内容
-            if (devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/expand_text_view")).length() < 1) {
+            if (devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/etv")).length() < 1) {
                 print.print("检查书籍介绍内容");
                 return false;
             }

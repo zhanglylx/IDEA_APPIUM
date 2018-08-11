@@ -23,11 +23,11 @@ public class RunCase {
      */
     public static void main(String[] args) throws InterruptedException {
         Devices devices = Devices.getDevices("开启免电");
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/guide3"));
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/tab_shelf_view"));
-//        initialize(devices);
-//        new Sidebar("测试侧边栏").startCase();
+        initialize(devices);
+        new Sidebar("测试侧边栏").startCase();
         initialize(devices);
         new Search("搜索+作者详情页中的在线阅读").startCase();
         initialize(devices);

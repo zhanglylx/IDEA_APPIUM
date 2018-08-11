@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 import AppiumMethod.Config;
 import AppiumMethod.Tooltip;
-import Utlis.Adb;
+import ZLYUtils.AdbUtils;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -75,7 +75,7 @@ public class Devices {
         cap.setCapability("unicodeKeyboard", "True"); // 支持中文输入
         cap.setCapability("resetKeyboard", "True"); // 支持中文输入，必须两条都配置
         cap.setCapability("noSign", "True"); // 不重新签名apk
-        cap.setCapability("newCommandTimeout", "6000"); // 没有新命令，appium30秒退出
+        cap.setCapability("newCommandTimeout", "6000"); // 没有新命令，appium秒退出
         if (iphoneVersion > 6) cap.setCapability("automationName", "uiautomator2");
         start_App(cap);
     }
@@ -717,7 +717,7 @@ public class Devices {
      */
 
     public String getIphoneDate() {
-        for (String s : Adb.operationAdb(" shell date")) {
+        for (String s : AdbUtils.operationAdb(" shell date")) {
             if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
                 s = s.replace("CST","");
                 SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd");

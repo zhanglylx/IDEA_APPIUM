@@ -39,13 +39,22 @@ public class RunMonkey {
                 }
                 System.out.println("开始执行monkey");
 //                 –pct-touch 30.0   –-pct-motion 25.0 –-pct-nav 20.0 –-pct-majornav 15.0 -–pct-appswitch 5.0  –-pct-anyevent 5.0 –-pct-trackball 0.0 –-pct-syskeys 0.0
-             adbs("-s "+ConfigMonkey.devicesName+" shell monkey  -p " + cf.getPackageName()
-                        +  ""+
-                         " --monitor-native-crashes " +
-                        " --ignore-crashes --ignore-timeouts --ignore-native-crashes " +""+
-                        " -v -v -v " + "--throttle "
+//             adbs("-s "+ConfigMonkey.devicesName+" shell monkey  -p " + cf.getPackageName()
+//                        +  ""+
+//                         " --monitor-native-crashes " +
+//                        " --ignore-crashes --ignore-timeouts --ignore-native-crashes " +""+
+//                        " -v -v -v " + "--throttle "
+//                        + cf.getEventsTime() + " "
+//                        + cf.getRunCount() + " –-pct-touch 30.0 –-pct-motion 25.0 " +
+//                     "–-pct-nav 20.0 –-pct-majornav 15.0 -–pct-appswitch 5.0 " +
+//                     " –-pct-anyevent 5.0 –-pct-trackball 0.0 –-pct-syskeys 0.0  ");
+                //以下为发生崩溃即停止
+                adbs("-s "+ConfigMonkey.devicesName+" shell monkey  -p " + cf.getPackageName()
+                        + " -v -v -v " + "--throttle "
                         + cf.getEventsTime() + " "
-                        + cf.getRunCount() + " –-pct-touch 30.0 –-pct-motion 25.0 –-pct-nav 20.0 –-pct-majornav 15.0 -–pct-appswitch 5.0  –-pct-anyevent 5.0 –-pct-trackball 0.0 –-pct-syskeys 0.0  ");
+                        + cf.getRunCount() + " –-pct-touch 30.0 –-pct-motion 25.0 " +
+                        "–-pct-nav 20.0 –-pct-majornav 15.0 -–pct-appswitch 5.0 " +
+                        " –-pct-anyevent 5.0 –-pct-trackball 0.0 –-pct-syskeys 0.0  ");
                 analyze();
 
             }

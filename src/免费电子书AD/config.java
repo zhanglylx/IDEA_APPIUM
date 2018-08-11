@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 
 public class config {
 	//请求广告URL
-	final static String url = "http://ad.cread.com/getAd";
+	final static String url = "http://test.cread.com/getAd";
 	//上传曝光URL
 	final static String superior = "http://test.cread.com:8088/pvuvreport";
 	//循环次数限制
@@ -15,9 +15,9 @@ public class config {
 	//渠道
 	final static String CNID = "1062";
 	//访问人数
-	final static int userNumber = 50;
+	final static int userNumber = 1000;
 	//广告位
-	final static int GGNumber = 68;
+	final static int GGNumber = 72;
 	//服务器单日广告曝光总量
 	final static int dayGGbgzl = 30;
 	//单日用户广告曝光总量
