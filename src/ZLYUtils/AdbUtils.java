@@ -1,6 +1,4 @@
 package ZLYUtils;
-
-import SquirrelFrame.HomePage;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -147,7 +145,6 @@ public class AdbUtils {
             deivcesInfo = devicesInfo();
         }
         if (devices == null) {
-            setDevices();
         } else {
             boolean dev = false;
             for (String s : deivcesInfo) {
@@ -158,72 +155,13 @@ public class AdbUtils {
                     TooltipUtil.errTooltip("当前设备未找到，请重新选择设备");
                     errTime = System.currentTimeMillis()+(10*1000);
                 }
-                setDevices();
             }
         }
         return true;
     }
 
-    /**
-     * 指定设备
-     */
-    public static void setDevices() {
-        Thread t = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                    setDevices(devicesInfo());
-            }
-        }, "setDevices");
-        t.start();
-    }
 
-    /**
-     * 指定设备
-     *
-     * @param deivcesInfo
-     */
-    public static void setDevices(String[] deivcesInfo) {
-        if (deivcesInfo.length == 0) {
-            if (HomePage.textArea != null) {
-                HomePage.textArea.setText("没有连接设备");
-            }
-        } else if (deivcesInfo.length == 1) {
-            if (deivcesInfo[0].contains("unauthorized") || deivcesInfo[0].contains("connecting")) {
-                if (HomePage.textArea != null) {
-                    HomePage.textArea.setText("设备没有开放权限");
-                }
-            } else {
-                devices =
-                        (deivcesInfo[0].substring(0, deivcesInfo[0].indexOf(" "))).trim();
-                if (HomePage.textArea != null) HomePage.textArea.setText(
-                        deivcesInfo[0].substring(deivcesInfo[0].indexOf("model") + 6,
-                                deivcesInfo[0].lastIndexOf("device")
-                        ));
-            }
-        } else {
-            if (HomePage.textArea.getText().contains("用户手动关闭")) return;
-            String[] devicesArr = devicesInfo();
-            if (devicesArr == null) return;
-            if (Arrays.toString(devicesArr).contains(HomePage.textArea.getText()) &&
-                    !HomePage.textArea.getText().equals("")) return;
-            String de = TooltipUtil.listSelectTooltip("发现" + deivcesInfo.length + "设备,请选择一个设备", devicesArr);
-            if (de == null) {
-                HomePage.textArea.setText("用户手动关闭");
-                return;
-            }
-            if (de.contains("unauthorized") || de.contains("connecting")) {
-                if (HomePage.textArea != null) {
-                    HomePage.textArea.setText("设备没有开放权限");
-                }
-            } else {
-                devices =
-                        (de.substring(0, de.indexOf(" "))).trim();
-                if (HomePage.textArea != null) HomePage.textArea.setText(
-                        de.substring(de.indexOf("model") + 6,
-                                de.lastIndexOf("device"))
-                );
-            }
-        }
-    }
+
+
 }
 //
