@@ -1,0 +1,31 @@
+﻿请在每一个=后填写，手机请关闭锁屏和密码解锁
+
+//包名，不填写包名程序不执行
+
+packageName = com.mianfeia.book
+
+//运行时间,单位：小时，不填写默认8小时，暂时没有用到，不用填写
+
+runTime = 
+
+//apk名称,不填写默认从当前运行文件搜索.apk文件
+
+apkName = 
+
+//是否重新安装apk,true是安装，false是不安装,默认安装
+
+apkReInstall = false
+
+//运行次数,默认为10000000
+
+runCount = 
+
+//事件间隔时间:单位:毫秒，默认为:300
+
+eventsTime = 
+
+说明:如果apkReInstall为true并且apkName没有填写，程序会在当前目录下自动获取一个尾椎为.apk的文件进行安装
+
+
+程序通过config文件获取运行monkey时的参数等信息并保存在电脑运行目录下，monkey结束后程序自动分析log是否存在错误日志
+

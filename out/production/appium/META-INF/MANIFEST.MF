@@ -1,5 +1,0 @@
-Manifest-Version: 1.0
-Class-Path: lib\wormy.jar lib\mysql-connector-java-5.1.46-bin.jar lib\
- commons-lang-2.5.jar
-Main-Class: SquirrelFrame.HomePage
-
