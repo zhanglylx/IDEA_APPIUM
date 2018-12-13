@@ -2,7 +2,7 @@ package CXBCase;
 
 import org.openqa.selenium.By;
 
-public class Loging extends StartCase {
+public class Loging extends CaseFrame {
     //登录微信标题
     private final By title = By.id("android:id/text1");
     //登录微信标题名称

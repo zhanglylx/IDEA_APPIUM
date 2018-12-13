@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 import java.util.Random;
 
-public class BookLibrary extends StartCase {
+public class BookLibrary extends CaseFrame {
     public static final String schoolboy = "男生";
     public static final String schoolgirl = "女生";
     public static final String publish = "出版";
@@ -63,7 +63,7 @@ public class BookLibrary extends StartCase {
         if (!devices.isElementExsitAndroid(item_stacks_board_view) ||
                 !devices.isElementExsitAndroid(item_stacks_classify_tv)
                 ) {
-            print.print("检查书库页面中的排行和推荐");
+            print.printErr("检查书库页面中的排行和推荐");
             return false;
         }
         devices.clickfindElement(item_stacks_board_view);
@@ -108,7 +108,7 @@ public class BookLibrary extends StartCase {
                         ("android.widget.TextView(" +
                                 "resource-id="+AppiumMethod.Config.APP_PACKAGE+":id/item_stacks_left_tv;)" +
                                 "(text=" + title + ";)", devices.getPageXml(), "text"))) {
-            print.print("检查首页" + title + "存在");
+            print.printErr("检查首页" + title + "存在");
             return false;
         }
         return true;
@@ -136,7 +136,7 @@ public class BookLibrary extends StartCase {
                 !devices.isElementExsitAndroid(By.className("android.widget.ImageButton")) ||
                 !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"))
                 ) {
-            print.print("检查H5子页面失败");
+            print.printErr("检查H5子页面失败");
             return false;
         }
         return new Sidebar(this.caseName).checkNetWork();

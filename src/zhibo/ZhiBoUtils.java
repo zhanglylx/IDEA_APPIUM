@@ -37,7 +37,7 @@ public class ZhiBoUtils {
                 devices.sleep(3000);
                if((!"首页".equals(devices.getText(By.id("com.chineseall.youzi:id/tab_title")))) ||
                        !checkNetorkAbnormal(devices) ){
-                   print.print("首页检查失败");
+                   print.printErr("首页检查失败");
                    System.exit(0);
                }
 
@@ -45,7 +45,7 @@ public class ZhiBoUtils {
             }
             devices.backspace();
             if(System.currentTimeMillis()>startTime){
-                print.print("返回30秒后没有回到直播首页");
+                print.printErr("返回30秒后没有回到直播首页");
                 System.exit(0);
             }
         }
@@ -69,17 +69,17 @@ public class ZhiBoUtils {
         System.out.println("检查直播间的名字");
         if(liveName==null)throw  new IllegalArgumentException("liveName为空");
         if(!liveName.equals(devices.getText(By.id("com.chineseall.youzi:id/wgt_anchor_name_view")))){
-            print.print("直播间名字检查");
+            print.printErr("直播间名字检查");
             return false;
         }
         System.out.println("检查贡献值是否出现");
         String wgt_mobile_live_pc_top_view = devices.getText(By.id("com.chineseall.youzi:id/wgt_mobile_live_pc_top_view"));
         if(wgt_mobile_live_pc_top_view==null){
-            print.print("贡献值为空");
+            print.printErr("贡献值为空");
             return false;
         }
         if(!wgt_mobile_live_pc_top_view.startsWith("贡献值: ")){
-            print.print("贡献值不正确");
+            print.printErr("贡献值不正确");
             return false;
         }
         System.out.println("检查底部type");
@@ -89,7 +89,7 @@ public class ZhiBoUtils {
                 !devices.isElementExsitAndroid(By.id("com.chineseall.youzi:id/wgt_mobile_live_car_view"))||
                 !devices.isElementExsitAndroid(By.id("com.chineseall.youzi:id/wgt_mobile_live_game_view"))||
                 !devices.isElementExsitAndroid(By.id("com.chineseall.youzi:id/wgt_mobile_live_gift_view"))){
-            print.print("底部type检查");
+            print.printErr("底部type检查");
             return false;
         }
         return true;

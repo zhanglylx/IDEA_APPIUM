@@ -1,7 +1,6 @@
 package CXBCase;
 
 import AppTest.Devices;
-import com.gargoylesoftware.htmlunit.javascript.host.event.DeviceStorageChangeEvent;
 
 public class PrintErr {
     String caseName;
@@ -11,7 +10,7 @@ public class PrintErr {
         this.caseName = caseName;
         devices = Devices.getDevices(caseName);
     }
-    public void print(String err){
+    public void printErr(String err){
         try{
             p(err);
         }catch (Exception e){

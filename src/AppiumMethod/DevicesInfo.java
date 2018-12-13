@@ -69,7 +69,7 @@ public class  DevicesInfo {
         String[] adb = adb(" devices -l");
         for(String s : adb){
             if(s.contains("model")){
-                this.devicesBrand = s;
+                this.devicesBrand = s.substring(s.indexOf("model")+6,s.indexOf(" ",s.indexOf("model")+5));
                 return;
             }
         }

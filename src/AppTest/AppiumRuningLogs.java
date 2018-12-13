@@ -3,12 +3,11 @@ package AppTest;
 import AppiumMethod.Config;
 import AppiumMethod.Tooltip;
 
-import java.awt.*;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Logs {
+public class AppiumRuningLogs {
     public static String logs = "";
     public static String logsErr = "";
     public static String dateName;
@@ -21,17 +20,17 @@ public class Logs {
 
     public static void recordLogs(String name, boolean state) {
         if (state) {
-            Logs.logs += name + ":成功\n";
+            AppiumRuningLogs.logs += name + ":成功\n";
         } else {
-            Logs.logsErr += name + "：失败\n";
+            AppiumRuningLogs.logsErr += name + "：失败\n";
         }
     }
 
-    public static void prrLogs() {
-        System.out.println("成功的用例:" + Logs.logs);
+    public static void printLogs() {
+        System.out.println("成功的用例:" + AppiumRuningLogs.logs);
         System.out.println("=========================" +
                 "===================================");
-        System.out.println("失败的用例：" + Logs.logsErr);
+        System.out.println("失败的用例：" + AppiumRuningLogs.logsErr);
     }
 
     public static void saveLog(String name, String text) {
@@ -42,7 +41,7 @@ public class Logs {
         }
         PrintWriter pw = null;
         try {
-            File f = new File(file.getPath() + File.separator + Logs.dateName + ".txt");
+            File f = new File(file.getPath() + File.separator + AppiumRuningLogs.dateName + ".txt");
             if(!f.exists()){
                 if(!f.createNewFile()){
                     Tooltip.errHint("创建日志目录失败,请重新运行程序");
@@ -50,7 +49,7 @@ public class Logs {
             }
             pw = new PrintWriter(
                     new FileWriter(
-                            file.getPath() + File.separator + Logs.dateName + ".txt", true));
+                            file.getPath() + File.separator + AppiumRuningLogs.dateName + ".txt", true));
             if(Devices.caseNameStatic==null){
                 pw.println("null: "+text);
             }else{

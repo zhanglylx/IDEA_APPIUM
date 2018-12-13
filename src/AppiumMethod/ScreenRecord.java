@@ -62,7 +62,7 @@ public class ScreenRecord extends Thread {
 
     }
     /**
-     * 录制视频 如果视频文件创建视频，会重试2次
+     * 录制视频 如果视频文件创建失败，会重试2次
      */
     public void run() {
         deleteCaseVoidFile();

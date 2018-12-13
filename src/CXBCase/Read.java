@@ -15,7 +15,7 @@ import java.util.Random;
  * 5.设置检查，每一项设置后翻页，检查翻页无问题
  * 6.末尾推送页，检查推送页和返回书架三种方式
  */
-public class Read extends StartCase {
+public class Read extends CaseFrame {
     public static final String schedule = "进度";
     public static final String catalog = "目录";
     public static final String luminance = "亮度";
@@ -174,7 +174,7 @@ public class Read extends StartCase {
         devices.sleep(1500);
         System.out.println("点击书架中的书籍:" + CXBConfig.BOOK_NAME);
         if (!devices.clickfindElement("new UiSelector().text(\"" + CXBConfig.BOOK_NAME + "\")")) {
-            print.print("检查书架中的" + CXBConfig.BOOK_NAME);
+            print.printErr("检查书架中的" + CXBConfig.BOOK_NAME);
             return false;
         }
         return true;
@@ -266,7 +266,7 @@ public class Read extends StartCase {
             //用于提高速度
             if (listClear) {
                 if (clickReadmore() == 0) {
-                    print.print("VIP页检查");
+                    print.printErr("VIP页检查");
                     return false;
                 }
                 for (int i = 0; i < (random.nextInt(10) + 10) * 10; i++) {
@@ -282,14 +282,14 @@ public class Read extends StartCase {
                     }
                     slideRight++;
                     if (clickReadmore() == 0) {
-                        print.print("VIP页检查");
+                        print.printErr("VIP页检查");
                         return false;
                     }
 
                 }
             }
             if (clickReadmore() == 0) {
-                print.print("VIP页检查");
+                print.printErr("VIP页检查");
                 return false;
             }
             int chapterNotPush = chapterNotPush();
@@ -297,7 +297,7 @@ public class Read extends StartCase {
                 /*
                  * 以下代码为检查在末章推送页返回到书架时的三种方式是否正确
                  */
-                print.print("检查末章推送");
+                print.printErr("检查末章推送");
                 return false;
             } else if (chapterNotPush == 1) {
                 //点击退格键返回到书架首页
@@ -311,7 +311,7 @@ public class Read extends StartCase {
                 //滑动<---
                 devices.swipeToLeft((random.nextInt(10) + 1) * 100);
                 if (chapterNotPush() != 1) {
-                    print.print("检查末章推送");
+                    print.printErr("检查末章推送");
                     return false;
                 }
                 //点击Unsealed_push_title_right_view_id
@@ -328,7 +328,7 @@ public class Read extends StartCase {
                 //滑动<---
                 devices.swipeToLeft((random.nextInt(10) + 1) * 100);
                 if (chapterNotPush() != 1) {
-                    print.print("检查末章推送");
+                    print.printErr("检查末章推送");
                     return false;
                 }
                 devices.clickfindElement(Unsealed_push_title_right_view_back);
@@ -338,7 +338,7 @@ public class Read extends StartCase {
                 if (!style(setting)) return false;
             }
             if ((slideRight - slideLeft) > 2000) {
-                print.print("循环向右点击2000次后未达到章节末尾");
+                print.printErr("循环向右点击2000次后未达到章节末尾");
                 return false;
             }
         }
@@ -348,7 +348,7 @@ public class Read extends StartCase {
                     randHight);
             int clickReadmore = clickReadmore();
             if (clickReadmore == 0) {
-                print.print("点击上一章检查vip页");
+                print.printErr("点击上一章检查vip页");
                 return false;
             } else if (clickReadmore == 1) {
                 i--;
@@ -515,7 +515,7 @@ public class Read extends StartCase {
             devices.clickScreen(startX, startY);
             int clickReadmore = clickReadmore();
             if (clickReadmore == 0) {
-                print.print("点击上一章检查vip页");
+                print.printErr("点击上一章检查vip页");
                 return false;
             } else if (clickReadmore == 1) {
                 style(schedule);
@@ -530,7 +530,7 @@ public class Read extends StartCase {
         devices.sleep(3500);
         if (!devices.isElementExsitAndroid(
                 "new UiSelector().text(\"" + CXBConfig.BOOK_CHAPTER_END_LAST + "\")")) {
-            print.print("检查上一章按钮目录中的章节是否存在BOOK_CHAPTER_END_LAST:" + CXBConfig.BOOK_CHAPTER_END_LAST);
+            print.printErr("检查上一章按钮目录中的章节是否存在BOOK_CHAPTER_END_LAST:" + CXBConfig.BOOK_CHAPTER_END_LAST);
             return false;
         }
         devices.backspace();
@@ -546,7 +546,7 @@ public class Read extends StartCase {
             int clickReadmore = clickReadmore();
             //点击下一章按钮不存在vip页
             if (clickReadmore == 0) {
-                print.print("点击下一章按钮检查vip页");
+                print.printErr("点击下一章按钮检查vip页");
                 return false;
             } else if (clickReadmore == 1) {
                 style(schedule);
@@ -559,7 +559,7 @@ public class Read extends StartCase {
         style(catalog);
         if (!devices.isElementExsitAndroid(
                 "new UiSelector().text(\"" + CXBConfig.BOOK_CHAPTER_END_NEXT + "\")")) {
-            print.print("检查下一章按钮中的章节是否存在BOOK_CHAPTER_END_NEXT:" + CXBConfig.BOOK_CHAPTER_END_NEXT);
+            print.printErr("检查下一章按钮中的章节是否存在BOOK_CHAPTER_END_NEXT:" + CXBConfig.BOOK_CHAPTER_END_NEXT);
             return false;
         }
         devices.backspace();
@@ -597,7 +597,7 @@ public class Read extends StartCase {
             int clickReadmore = clickReadmore();
             //向上一页翻页不存在VIP页
             if (clickReadmore == 0) {
-                print.print("向上一页翻页VIP页检查");
+                print.printErr("向上一页翻页VIP页检查");
                 return false;
             }
             style(schedule);
@@ -606,7 +606,7 @@ public class Read extends StartCase {
         //检查目录中的章节是否存在BOOKCHAPTERENDLAST
         if (!devices.isElementExsitAndroid(
                 "new UiSelector().text(\"" + CXBConfig.BOOK_CHAPTER_END_LAST + "\")")) {
-            print.print("检查滑动<-目录中的章节是否存在BOOK_CHAPTER_END_LAST:" + CXBConfig.BOOK_CHAPTER_END_LAST);
+            print.printErr("检查滑动<-目录中的章节是否存在BOOK_CHAPTER_END_LAST:" + CXBConfig.BOOK_CHAPTER_END_LAST);
             return false;
         }
         devices.backspace();
@@ -643,7 +643,7 @@ public class Read extends StartCase {
             int clickReadmore = clickReadmore();
             //向下一页翻页存在VIP页
             if (clickReadmore == 0) {
-                print.print("向下一页翻页检查VIP页");
+                print.printErr("向下一页翻页检查VIP页");
                 return false;
             }
             if (!style(schedule)) return false;
@@ -652,7 +652,7 @@ public class Read extends StartCase {
         //检查目录中的章节是否存在BOOK_CHAPTER_END_NEXT
         if (!devices.isElementExsitAndroid(
                 "new UiSelector().text(\"" + CXBConfig.BOOK_CHAPTER_END_NEXT + "\")")) {
-            print.print("检查滑动->中的章节是否存在BOOK_CHAPTER_END_NEXT:" + CXBConfig.BOOK_CHAPTER_END_NEXT);
+            print.printErr("检查滑动->中的章节是否存在BOOK_CHAPTER_END_NEXT:" + CXBConfig.BOOK_CHAPTER_END_NEXT);
             return false;
         }
         devices.backspace();
@@ -711,7 +711,7 @@ public class Read extends StartCase {
                 break;
             }
             if (i > 10) {
-                print.print("找不到设置");
+                print.printErr("找不到设置");
                 return false;
             }
             i++;
@@ -722,7 +722,7 @@ public class Read extends StartCase {
 
     public boolean checkChapterFirst() {
         if (!CXBConfig.BOOK_CHAPTER_FIRST.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle")))) {
-            print.print("检查目录第一章节");
+            print.printErr("检查目录第一章节");
             return false;
         }
         return true;
@@ -749,7 +749,7 @@ public class Read extends StartCase {
         if (!catalog.equals(devices.getText(By.id(sidebar_catalog_id)))
                 || !bookmark.equals(devices.getText(By.id(sidebar_bookmark_id)))
                 || !devices.isElementExsitAndroid(By.className(directory_sidebar_class))) {
-            print.print("检查" + catalog + "是否展示");
+            print.printErr("检查" + catalog + "是否展示");
             return false;
         }
         //点击目录
@@ -772,7 +772,7 @@ public class Read extends StartCase {
         if (!catalog.equals(devices.getText(By.id(sidebar_catalog_id)))
                 || !bookmark.equals(devices.getText(By.id(sidebar_bookmark_id)))
                 || !devices.isElementExsitAndroid(By.className(directory_sidebar_class))) {
-            print.print("检查" + catalog + "是否展示");
+            print.printErr("检查" + catalog + "是否展示");
             return false;
         }
         //点击目录
@@ -811,7 +811,7 @@ public class Read extends StartCase {
                 chaptertitle = devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle"));
                 //检查循环超过slideNumber次或者目录是否存在
                 if (slideNumber > CXBConfig.BOOK_CATALOGUE_RESTRICT_SLIDE_SUM || !chaptertitle) {
-                    print.print("检查" + catalog + "最后一章章节错误");
+                    print.printErr("检查" + catalog + "最后一章章节错误");
                     return false;
                 }
             }
@@ -850,14 +850,14 @@ public class Read extends StartCase {
          * 检查点击目录页目录页是否关闭
          */
         if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/left"))) {
-            print.print("点击目录页章节后目录没有关闭");
+            print.printErr("点击目录页章节后目录没有关闭");
             return false;
         }
         /**
          * 检查VIP页是否打开
          */
         if (clickReadmore("目录") == 0) {
-            print.print("在目录页点击章节后检查VIP页是否打开");
+            print.printErr("在目录页点击章节后检查VIP页是否打开");
             return false;
         }
         return true;
@@ -875,32 +875,32 @@ public class Read extends StartCase {
         if (catalog.equals(name)) {
             if (!name.equals(devices.getText(
                     By.xpath("//android.widget.RelativeLayout/android.widget.TextView")))) {
-                print.print("检查设置中的" + name + "字样");
+                print.printErr("检查设置中的" + name + "字样");
                 return false;
             }
         } else {
             if (Read.bookmark.equals(name) || Read.download.equals(name)) {
                 //点击+按钮
                 if (!devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_more"))) {
-                    print.print("检查设置中的+按钮字样");
+                    print.printErr("检查设置中的+按钮字样");
                     return false;
                 }
                 devices.sleep(300);
                 if (Read.bookmark.equals(name)) {
                     if (!devices.clickfindElement("new UiSelector().text(\"添加书签\")")) {
-                        print.print("检查设置中的" + name + "字样");
+                        print.printErr("检查设置中的" + name + "字样");
                         return false;
                     }
                 } else {
                     if (!devices.clickfindElement("new UiSelector().text(\"下载\")")) {
-                        print.print("检查设置中的" + name + "字样");
+                        print.printErr("检查设置中的" + name + "字样");
                         return false;
                     }
                 }
             } else {
                 if (!devices.isElementExsitAndroid(
                         "new UiSelector().text(\"" + name + "\")")) {
-                    print.print("检查设置中的" + name + "字样");
+                    print.printErr("检查设置中的" + name + "字样");
                     return false;
                 }
             }
@@ -918,7 +918,8 @@ public class Read extends StartCase {
     public int clickReadmore() {
         if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adtitle")))ad.setAd("GG-31",
                 devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adtitle")));
-        if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog))) {
+        if (devices.isElementExsitAndroid(By.id(VIP_rl_each_dialog)) ||
+                devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/each_btn_nextChapter"))) {
             if (devices.isElementExsitAndroid(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1))) {
                 devices.clickfindElement(By.id(CXBConfig.BOOK_VIP_CHAPTER_NEXT_CHAPTER_1));
                 if (new Loging(this.caseName).checkWeChatLoginPage()) devices.backspace();
@@ -932,6 +933,8 @@ public class Read extends StartCase {
             }
 
         }
+
+
         return 2;
     }
 

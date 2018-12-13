@@ -176,7 +176,6 @@ public class main {
             MessageDigest md5 = MessageDigest.getInstance("MD5");
             md5.update(url.getBytes("UTF-8"));
             byte messageDigest[] = md5.digest();
-
             StringBuffer hexString = new StringBuffer();
             for (int i = 0; i < messageDigest.length; i++) {
                 String t = Integer.toHexString(0xFF & messageDigest[i]);
@@ -190,7 +189,7 @@ public class main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return "";
+        return null;
     }
 
 }

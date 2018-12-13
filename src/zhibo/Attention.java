@@ -1,8 +1,7 @@
 package zhibo;
 
 import AppTest.AppXmlUtil;
-import AppTest.Devices;
-import CXBCase.StartCase;
+import CXBCase.CaseFrame;
 import org.openqa.selenium.By;
 
 import java.util.Random;
@@ -13,7 +12,7 @@ import java.util.Random;
  * 2.进入到直播页
  * 3.进行关注和取消关注的检查
  */
-public class Attention extends StartCase {
+public class Attention extends CaseFrame {
     //直播间名称
     private String liveName;
     //粉丝数
@@ -85,7 +84,7 @@ public class Attention extends StartCase {
             if(!clickAttention())return false;
         }
         if (!checkAttentionText("＋关注")) {
-            print.print("关注字样不正确");
+            print.printErr("关注字样不正确");
             return false;
         }
         if (!checkDidNotConcern(true, liveName, false)) return false;
@@ -113,13 +112,13 @@ public class Attention extends StartCase {
         if (checkAttentionText("已关注")) {
             if(!clickAttention())return false;
             if (!checkAttentionText("＋关注")) {
-                print.print("关注字样不正确");
+                print.printErr("关注字样不正确");
                 return false;
             }
         }
         if(!clickAttention())return false;
         if (!checkAttentionText("已关注")) {
-            print.print("关注字样不正确");
+            print.printErr("关注字样不正确");
             return false;
         }
         if (checkDidNotConcern(true, liveName, true)) return false;
@@ -138,24 +137,24 @@ public class Attention extends StartCase {
             if (checkAttentionText("＋关注")) {
                 if(!clickAttention())return false;
                 if (!checkAttentionText("已关注")) {
-                    print.print("已关注字样不正确");
+                    print.printErr("已关注字样不正确");
                     return false;
                 }
             } else if (checkAttentionText("已关注")) {
                 if(!clickAttention())return false;
                 if (!checkAttentionText("＋关注")) {
-                    print.print("＋关注字样不正确");
+                    print.printErr("＋关注字样不正确");
                     return false;
                 }
             } else {
-                print.print("关注字样不正确");
+                print.printErr("关注字样不正确");
                 return false;
             }
             if (i == (index - 1)) {
                 if (checkAttentionText("已关注")) {
                     if(!clickAttention())return false;
                     if (!checkAttentionText("＋关注")) {
-                        print.print("＋关注字样不正确");
+                        print.printErr("＋关注字样不正确");
                         return false;
                     }
                 }
@@ -184,12 +183,12 @@ public class Attention extends StartCase {
         if (liveAttention) {
             if (!WhetherToFocusOn) {
                 if (!"关注".equals(devices.getText(By.id("com.chineseall.youzi:id/wgt_anchor_attention_view")))) {
-                    print.print("直播页关注字样不正确");
+                    print.printErr("直播页关注字样不正确");
                     return false;
                 }
             } else {
                 if ("关注".equals(devices.getText(By.id("com.chineseall.youzi:id/wgt_anchor_attention_view")))) {
-                    print.print("已关注主播，直播页关注字样未隐藏");
+                    print.printErr("已关注主播，直播页关注字样未隐藏");
                     return false;
                 }
 
@@ -200,7 +199,7 @@ public class Attention extends StartCase {
             devices.sleep(3000);
             if (WhetherToFocusOn) {
                 if (!ZhiBoUtils.checkAttentionDisplayedHomePage(this.devices, this.print, attentionName)) {
-                    print.print("关注首页没有找到已关注的主播:" + attentionName);
+                    print.printErr("关注首页没有找到已关注的主播:" + attentionName);
                     return false;
                 }
                 //点击已关注的直播
@@ -214,12 +213,12 @@ public class Attention extends StartCase {
                 devices.backspace();
                 devices.sleep(2000);
                 if (!ZhiBoUtils.checkAttentionDisplayedHomePage(this.devices, this.print, attentionName)) {
-                    print.print("关注首页没有找到已关注的主播:" + attentionName);
+                    print.printErr("关注首页没有找到已关注的主播:" + attentionName);
                     return false;
                 }
             } else {
                 if (ZhiBoUtils.checkAttentionDisplayedHomePage(this.devices, this.print, attentionName)) {
-                    print.print("关注首页找到已经取消关注的主播:" + attentionName);
+                    print.printErr("关注首页找到已经取消关注的主播:" + attentionName);
                     return false;
                 }
             }
@@ -241,7 +240,7 @@ public class Attention extends StartCase {
         System.out.println("检查关注页");
         if (liveName == null) throw new IllegalArgumentException("liveName为空");
         if (!liveName.equals(devices.getText(By.id("com.chineseall.youzi:id/tv_user_name")))) {
-            print.print("关注页中的直播房间名称不正确");
+            print.printErr("关注页中的直播房间名称不正确");
             return false;
         }
         System.out.println("检查年龄和星座");
@@ -250,13 +249,13 @@ public class Attention extends StartCase {
         //星座
         String tv_user_constellation = devices.getText(By.id("com.chineseall.youzi:id/tv_user_constellation"));
         if (tv_user_age == null || tv_user_constellation == null) {
-            print.print("年龄或星座为null");
+            print.printErr("年龄或星座为null");
             return false;
         }
         if (!tv_user_age.matches("^(年龄: )\\d+(岁)$") ||
                 !tv_user_constellation.matches("^(星座:).+(座)$")
                 ) {
-            print.print("年龄或星座检查");
+            print.printErr("年龄或星座检查");
             return false;
         }
         System.out.println("检查视频数和粉丝数");
@@ -265,20 +264,20 @@ public class Attention extends StartCase {
         //粉丝数
         setTv_contribute_num();
         if (tv_follows < 1 || tv_contribute_num < 1) {
-            print.print("视频数和粉丝数不正确");
+            print.printErr("视频数和粉丝数不正确");
             return false;
         }
         if (!"视频数".equals(devices.getText(By.id("com.chineseall.youzi:id/tv_follows"))) ||
                 !"粉丝数".equals(devices.getText(By.id("com.chineseall.youzi:id/tv_contributes")))
                 ) {
-            print.print("视频数或粉丝数文本不正确");
+            print.printErr("视频数或粉丝数文本不正确");
             return false;
         }
         System.out.println("检查ta说");
         //她说
         String tv_signature = devices.getText(By.id("com.chineseall.youzi:id/tv_signature"));
         if (tv_signature == null || tv_signature.length() < 1) {
-            print.print("检查ta说");
+            print.printErr("检查ta说");
             return false;
         }
         System.out.println("检查type");
@@ -286,13 +285,13 @@ public class Attention extends StartCase {
                 !"个人主页".equals(devices.getText(By.id("com.chineseall.youzi:id/tv_main_page"))) ||
                 !"举报".equals(devices.getText(By.id("com.chineseall.youzi:id/wgt_anchor_panel_report_view")))
                 ) {
-            print.print("检查type");
+            print.printErr("检查type");
             return false;
         }
         System.out.println("检查关注字样");
         if (!"＋关注".equals(devices.getText(By.id("com.chineseall.youzi:id/tv_add_to_fav"))) &&
                 !"已关注".equals(devices.getText(By.id("com.chineseall.youzi:id/tv_add_to_fav")))) {
-            print.print("检查关注字样");
+            print.printErr("检查关注字样");
         }
         return true;
     }
@@ -310,30 +309,30 @@ public class Attention extends StartCase {
             devices.clickfindElement(By.id("com.chineseall.youzi:id/tv_add_to_fav"));
             devices.sleep(3000);
             if (!checkAttentionText("＋关注")) {
-                print.print("关注字样不正确");
+                print.printErr("关注字样不正确");
                 return false;
             }
             int num = this.tv_contribute_num;
             setTv_contribute_num();
             if ((num - 1) != this.tv_contribute_num) {
-                print.print("取消关注后粉丝数没有-1,num:" + num + " tv_contribute_num:" + this.tv_contribute_num);
+                print.printErr("取消关注后粉丝数没有-1,num:" + num + " tv_contribute_num:" + this.tv_contribute_num);
                 return false;
             }
         } else if (checkAttentionText("＋关注")) {
             devices.clickfindElement(By.id("com.chineseall.youzi:id/tv_add_to_fav"));
             devices.sleep(3000);
             if (!checkAttentionText("已关注")) {
-                print.print("关注字样不正确");
+                print.printErr("关注字样不正确");
                 return false;
             }
             int num = this.tv_contribute_num;
             setTv_contribute_num();
             if ((num + 1) != this.tv_contribute_num) {
-                print.print("关注后粉丝数没有+1,num:" + num + " tv_contribute_num:" + this.tv_contribute_num);
+                print.printErr("关注后粉丝数没有+1,num:" + num + " tv_contribute_num:" + this.tv_contribute_num);
                 return false;
             }
         } else {
-            print.print("关注字样不正确");
+            print.printErr("关注字样不正确");
             return false;
         }
 

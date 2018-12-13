@@ -1,8 +1,6 @@
 package CXBCase;
 
 import AppTest.AppXmlUtil;
-import AppTest.Devices;
-import AppTest.Logs;
 import org.openqa.selenium.By;
 
 import java.util.Random;
@@ -15,7 +13,7 @@ import java.util.Random;
  * 3.检查页面右上角跳转到精品页按钮:精品按钮页检查是否出现男频和侧边栏是否关闭
  * 4.随机检查房子按钮和返回按钮
  */
-public class Sidebar extends StartCase {
+public class Sidebar extends CaseFrame {
     //书架左上角侧边栏按钮
     public static final String BOOK_SHELF_SIDEBAR = ("侧边栏按钮");
     //侧边栏中的用户名
@@ -43,18 +41,18 @@ public class Sidebar extends StartCase {
          *   验证侧边栏是否展示
          */
         if (!examineMenu()) {
-            print.print("验证侧边栏是否展示");
+            print.printErr("验证侧边栏是否展示");
             return false;
         }
         /**
          * 验证赚积分页
          */
         if (!verificationEarnPoints(ToEarnPoints, 1)) return false;
-//        if (!verificationEarnPoints(integralShopping, 2)) return false;
-        if (!verificationEarnPoints(integralRecord, 3)) return false;
-        if (!verificationEarnPoints(MyMonthly, 4)) return false;
-        if (!verificationEarnPoints(GivenRecord, 5)) return false;
-        if (!verificationEarnPoints(dailyRecommendation, 6)) return false;
+//        if (!verificationEarnPoints(integralShopping, 3)) return false;
+        if (!verificationEarnPoints(integralRecord, 4)) return false;
+        if (!verificationEarnPoints(MyMonthly, 5)) return false;
+        if (!verificationEarnPoints(GivenRecord, 6)) return false;
+        if (!verificationEarnPoints(dailyRecommendation, 7)) return false;
         if (!verificationEarnPoints(AboutUs, 9)) return false;
         /**
          * 检查日夜间模式
@@ -93,10 +91,13 @@ public class Sidebar extends StartCase {
     private boolean verificationEarnPoints(String name, int index) {
         //点击name
         if (!devices.isElementExsitAndroid("new UiSelector().text(\"" + name + "\")")) {
-            print.print("侧边栏" + name + "按钮不存在");
+            print.printErr("侧边栏" + name + "按钮不存在");
             return false;
         }
-        devices.clickScreen(AppXmlUtil.getXMLElement("//android.widget.ListView//android.widget.RelativeLayout//android.widget.TextView(text="+name+";)"
+        devices.clickScreen(AppXmlUtil.getXMLElement(
+                "//android.widget.ListView" +
+                        "//android.widget.RelativeLayout" +
+                        "//android.widget.TextView(text="+name+";)"
                 ,devices.getPageXml(),"bounds"));
         devices.sleep(2000);
         if (integralRecord.equals(name)) {
@@ -111,34 +112,34 @@ public class Sidebar extends StartCase {
             devices.sleep(1500);
             if (!chickShow(name)) return false;
             if (i != 0) {
-                print.print("点击积分记录中的tab按钮");
+                print.printErr("点击积分记录中的tab按钮");
                 return false;
             }
         } else if (GivenRecord.equals(name)) {
             int i = 0;
             if (!devices.isElementExsitAndroid(By.className("android.webkit.WebView"))) i++;
             if (i != 0) {
-                print.print("点击获赠记录中的tab按钮");
+                print.printErr("点击获赠记录中的tab按钮");
                 return false;
             }
         } else if (dailyRecommendation.equals(name)) {
             if (!devices.isElementExsitAndroid(By.className("android.webkit.WebView"))) {
-                print.print("检查" + name + "中的WebView");
+                print.printErr("检查" + name + "中的WebView");
                 return false;
             }
             if (!chickShow(name)) return false;
         } else if (MyMonthly.equals(name)) {
             if ("您还未开通包月哦".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/monthly_header_title_view")))) {
                 if (!"立即开通，享受免广告阅读".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/monthly_header_pay_view")))) {
-                    print.print("检查" + name + "中的包月记录:立即开通，享受免广告阅读按钮");
+                    print.printErr("检查" + name + "中的包月记录:立即开通，享受免广告阅读按钮");
                     return false;
                 }
             } else {
-                print.print("检查" + name + "中的包月记录:立即开通，享受免广告阅读按钮");
+                print.printErr("检查" + name + "中的包月记录:立即开通，享受免广告阅读按钮");
                 return false;
             }
             if (!devices.isElementExsitAndroid(By.xpath("//android.widget.TextView[contains(@text,\"包月记录\")]"))) {
-                print.print("检查" + name + "中的包月记录");
+                print.printErr("检查" + name + "中的包月记录");
                 return false;
             }
             if (!chickShow(name)) return false;
@@ -150,7 +151,7 @@ public class Sidebar extends StartCase {
                 if ((!"赚取积分".equals(devices.getText(empty_view_btn))
                         || !"还没有获得任何积分，快去赚取吧".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/empty_view_tip")))
                         || !"0\n今日已获得积分".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/integral_count_view"))))) {
-                    print.print(name + "中的赚取积分提示信息不正确");
+                    print.printErr(name + "中的赚取积分提示信息不正确");
                     return false;
                 }
             }
@@ -185,12 +186,12 @@ public class Sidebar extends StartCase {
         if (!devices.isElementExsitAndroid(
                 By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
                 || !devices.isElementExsitAndroid(By.className("android.widget.ImageButton"))) {
-            print.print(name + "页面是否展示");
+            print.printErr(name + "页面是否展示");
             return false;
         }
         if (!integralRecord.equals(name)) {
             if ((devices.isElementExsitAndroid(empty_view_btn))) {
-                print.print(name + "页面是否展示");
+                print.printErr(name + "页面是否展示");
                 return false;
             }
         }
@@ -201,7 +202,7 @@ public class Sidebar extends StartCase {
         if (AppXmlUtil.getXMLElement(
                 "(text=网页无法打开;)",
                 devices.getPageXml(), "text").contains("网页无法打开")) {
-            print.print("检查页面失败");
+            print.printErr("检查页面失败");
             return false;
         }
         return true;
@@ -214,13 +215,13 @@ public class Sidebar extends StartCase {
      */
     private boolean dayTimeNight() {
         if (!"夜间模式".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/txt_eye_mode")))) {
-            print.print("检查夜间模式按钮是否存在");
+            print.printErr("检查夜间模式按钮是否存在");
             return false;
         }
         //点击白夜间按钮
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/txt_eye_mode"));
         if (!"日间模式".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/txt_eye_mode")))) {
-            print.print("检查日间模式按钮是否存在");
+            print.printErr("检查日间模式按钮是否存在");
             ;
             return false;
         }
@@ -241,7 +242,7 @@ public class Sidebar extends StartCase {
             devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/navi_name_view"));
             devices.sleep(1000);
             if("登录".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/navi_name_view")))){
-                print.print("检查登录后");
+                print.printErr("检查登录后");
                 return false;
             }
         }
@@ -249,7 +250,7 @@ public class Sidebar extends StartCase {
         if (!devices.isElementExsitAndroid(
                 By.xpath("//android.widget.TextView[normalize-space(@text)='" + name + "']"))
                 || devices.isElementExsitAndroid(empty_view_btn)) {
-            print.print(name + "页面是否展示");
+            print.printErr(name + "页面是否展示");
             return false;
         }
         if (!checkBoutiqueButton(name)) return false;
@@ -267,7 +268,7 @@ public class Sidebar extends StartCase {
 //        devices.backspace();
 //        devices.sleep(500);
 //        if(!CXBConfig.USER.equals(devices.getText(SIDEBAR_USER_NAME))){
-//            print.print("检查登录后用户名");
+//            printErr.printErr("检查登录后用户名");
 //            return false;
 //        }
 
@@ -284,14 +285,14 @@ public class Sidebar extends StartCase {
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"));
         devices.sleep(2000);
         if (examineMenu()) {
-            print.print("侧边栏没有关闭");
+            print.printErr("侧边栏没有关闭");
             return false;
         }
         if (!"男频".equals(AppXmlUtil.getXMLElement(
                 "//android.support.v7.widget.RecyclerView//" +
                         "android.widget.LinearLayout(index=2;)//android.widget.LinearLayout(index=0;)//" +
                         "android.widget.TextView(text=男频;)", devices.getPageXml(), "text"))) {
-            print.print("检查跳转到精品页后没有找到男频");
+            print.printErr("检查跳转到精品页后没有找到男频");
             return false;
         }
         return true;
@@ -305,7 +306,7 @@ public class Sidebar extends StartCase {
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"));
         devices.sleep(2000);
         if (examineMenu()) {
-            print.print("点击" + name + ":精品按钮后侧边栏没有关闭");
+            print.printErr("点击" + name + ":精品按钮后侧边栏没有关闭");
             return false;
         }
         devices.sleep(5000);
@@ -313,14 +314,14 @@ public class Sidebar extends StartCase {
                 "//android.view.ViewGroup//android.support.v7.widget.RecyclerView//" +
                         "android.widget.LinearLayout//android.widget.LinearLayout//" +
                         "android.widget.TextView(text=男频;)", devices.getPageXml(), "text"))) {
-            print.print("检查跳转到精品页后没有找到男频");
+            print.printErr("检查跳转到精品页后没有找到男频");
             return false;
         }
         devices.backspace();
         //点击书架左上角侧边栏按钮
         devices.clickScreen(CXBConfig.chickXY(devices.getWidth(), devices.getHeight(), Sidebar.BOOK_SHELF_SIDEBAR));
         if (!examineMenu()) {
-            print.print("点击" + name + ":精品按钮后再次返回到侧边栏没有展开");
+            print.printErr("点击" + name + ":精品按钮后再次返回到侧边栏没有展开");
             return false;
         }
         return true;
@@ -333,7 +334,7 @@ public class Sidebar extends StartCase {
         String navi_integral_view = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/navi_integral_view"));
         //com.mianfeia.book:id/navi_integral_view连续登录id
         if (navi_integral_view == null || !navi_integral_view.contains("连续登录")) {
-            print.print("检查" + name + "中的连续登录失败");
+            print.printErr("检查" + name + "中的连续登录失败");
             return false;
         }
         //点击连续登录

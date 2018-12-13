@@ -17,7 +17,9 @@ import java.util.regex.Pattern;
 
 import AppiumMethod.Config;
 import AppiumMethod.Tooltip;
+import CXBCase.CXBConfig;
 import ZLYUtils.AdbUtils;
+import ZLYUtils.JavaUtils;
 import io.appium.java_client.TouchAction;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
@@ -48,8 +50,10 @@ public class Devices {
     private DevicesInfo info;
     public static String caseNameStatic;
     private int iphoneVersion;
+    private By androidErr;   //三星有时会弹出已连接的设备无法访问，直接点击确定按钮
 
     private Devices(String caseName) {
+        this.androidErr = By.id("android:id/button1");
         GetRunAppName.RunApp();
         this.caseName = caseName;
         newScreenShots();
@@ -75,7 +79,7 @@ public class Devices {
         cap.setCapability("unicodeKeyboard", "True"); // 支持中文输入
         cap.setCapability("resetKeyboard", "True"); // 支持中文输入，必须两条都配置
         cap.setCapability("noSign", "True"); // 不重新签名apk
-        cap.setCapability("newCommandTimeout", "6000"); // 没有新命令，appium秒退出
+        cap.setCapability("newCommandTimeout", "600000"); // 没有新命令，appium秒退出
         if (iphoneVersion > 6) cap.setCapability("automationName", "uiautomator2");
         start_App(cap);
     }
@@ -144,7 +148,7 @@ public class Devices {
     }
 
     public static Devices getDevices(String caseName) {
-        caseName += Logs.dateName;
+        caseName += AppiumRuningLogs.dateName;
         if (di == null) {
             di = new Devices(caseName);
         }
@@ -170,7 +174,7 @@ public class Devices {
             }
             bl = true;
         }
-        Logs.saveLog(caseName, "clickfindElement:" + by.toString() + "=" + bl);
+        AppiumRuningLogs.saveLog(caseName, "clickfindElement:" + by.toString() + "=" + bl);
         return bl;
     }
 
@@ -185,7 +189,7 @@ public class Devices {
             }
             bl = true;
         }
-        Logs.saveLog(caseName, "clickfindElement:" + using + "=" + bl);
+        AppiumRuningLogs.saveLog(caseName, "clickfindElement:" + using + "=" + bl);
         return bl;
     }
 
@@ -200,7 +204,7 @@ public class Devices {
             driver.findElement(by).sendKeys(content);
             bl = true;
         }
-        Logs.saveLog(caseName, "inputCharacter:" + by.toString() + "=" + bl + "," + content);
+        AppiumRuningLogs.saveLog(caseName, "inputCharacter:" + by.toString() + "=" + bl + "," + content);
         return bl;
     }
 
@@ -210,7 +214,7 @@ public class Devices {
             driver.findElementByAndroidUIAutomator(using).sendKeys(content);
             bl = true;
         }
-        Logs.saveLog(caseName, "inputCharacter:" + using + "=" + bl + "," + content);
+        AppiumRuningLogs.saveLog(caseName, "inputCharacter:" + using + "=" + bl + "," + content);
         return bl;
     }
 
@@ -222,8 +226,23 @@ public class Devices {
         if (isElementExsitAndroid(by)) {
             text = driver.findElement(by).getText();
         }
-        Logs.saveLog(caseName, "getText:" + by.toString() + "=" + text);
+        AppiumRuningLogs.saveLog(caseName, "getText:" + by.toString() + "=" + text);
         System.out.println("getText:" + by.toString() + "=" + text);
+        return text;
+    }
+
+    public static String newUiSelector(String key, String value) {
+        return "new UiSelector()." + key + "(" + "\"" + value + "\")";
+    }
+
+    public String getText(String key, String value) {
+        String using = newUiSelector(key, value);
+        String text = null;
+        if (isElementExsitAndroid(using)) {
+            text = driver.findElementByAndroidUIAutomator(using).getText();
+        }
+        AppiumRuningLogs.saveLog(caseName, "getText:" + using + "=" + text);
+        System.out.println("getText:" + using + "=" + text);
         return text;
     }
 
@@ -232,7 +251,7 @@ public class Devices {
         if (isElementExsitAndroid(using)) {
             text = driver.findElementByAndroidUIAutomator(using).getText();
         }
-        Logs.saveLog(caseName, "getText:" + using + "=" + text);
+        AppiumRuningLogs.saveLog(caseName, "getText:" + using + "=" + text);
         System.out.println("getText:" + using + "=" + text);
         return text;
     }
@@ -248,7 +267,7 @@ public class Devices {
         if (isElementExsitAndroid(using)) {
             text = driver.findElementByAndroidUIAutomator(using).getAttribute("name");
         }
-        Logs.saveLog(caseName, "getText:" + using + "=" + text);
+        AppiumRuningLogs.saveLog(caseName, "getText:" + using + "=" + text);
         System.out.println("getAttribute:" + using + "=" + text);
         return text;
     }
@@ -258,7 +277,7 @@ public class Devices {
         if (isElementExsitAndroid(by)) {
             text = driver.findElement(by).getAttribute("name");
         }
-        Logs.saveLog(caseName, "getText:" + by.toString() + "=" + text);
+        AppiumRuningLogs.saveLog(caseName, "getText:" + by.toString() + "=" + text);
         System.out.println("getAttribute:" + by.toString() + "=" + text);
         return text;
     }
@@ -272,7 +291,7 @@ public class Devices {
     public void clickScreen(int x, int y) {
         TouchAction action = new TouchAction(driver);
         action.tap(x, y).perform();
-        Logs.saveLog(caseName, "clickScreen:x=" + x + ",y=" + y);
+        AppiumRuningLogs.saveLog(caseName, "clickScreen:x=" + x + ",y=" + y);
         sleep(500);
     }
 
@@ -282,7 +301,7 @@ public class Devices {
         }
         TouchAction action = new TouchAction(driver);
         action.tap(xy[0], xy[1]).perform();
-        Logs.saveLog(caseName, "clickScreen:x=" + xy[0] + ",y=" + xy[1]);
+        AppiumRuningLogs.saveLog(caseName, "clickScreen:x=" + xy[0] + ",y=" + xy[1]);
         sleep(500);
     }
 
@@ -294,7 +313,7 @@ public class Devices {
         String[] arr = xy.split(",");
         TouchAction action = new TouchAction(driver);
         action.tap(Integer.parseInt(arr[0]), Integer.parseInt(arr[1])).perform();
-        Logs.saveLog(caseName, "clickScreen:x=" + arr[0] + ",y=" + arr[1]);
+        AppiumRuningLogs.saveLog(caseName, "clickScreen:x=" + arr[0] + ",y=" + arr[1]);
         sleep(500);
     }
 
@@ -305,14 +324,10 @@ public class Devices {
      */
     public void snapshot(String fileName) {
         if (!fileName.endsWith(".png")) {
-            if (fileName.indexOf(".") == -1) {
-                fileName = fileName + ".png";
-            } else {
-                fileName = fileName.substring(0, fileName.indexOf("."));
-            }
+            fileName = fileName + ".png";
         }
-        so.setFileName(fileName);
-        so.screenshot(driver.getScreenshotAs(OutputType.FILE));
+        this.so.setFileName(fileName);
+        this.so.screenshot(driver.getScreenshotAs(OutputType.FILE));
     }
 
     /**
@@ -322,6 +337,13 @@ public class Devices {
      * @return
      */
     public boolean isElementExsitAndroid(By elemnt) {
+        //三星有时会弹出已连接的设备无法访问，直接点击确定按钮
+        try {
+            if (elemnt != this.androidErr &&
+                    this.devicesBrand.contains(CXBConfig.modelSM)) clickfindElement(this.androidErr);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         boolean flag = false;
         try {
             WebElement element = driver.findElement(elemnt);
@@ -331,12 +353,31 @@ public class Devices {
         } catch (org.openqa.selenium.WebDriverException e) {
             flag = false;
         }
-        RunTest.addList(elemnt.toString() + ":" + flag, 1);
-        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
+        if (elemnt == this.androidErr &&
+                this.devicesBrand.contains(CXBConfig.modelSM)) {
+            if (flag) {
+                System.out.println("发现三星弹出错误");
+                RunTest.addList(elemnt.toString() + ":" + flag, 1);
+                AppiumRuningLogs.saveLog(caseName, elemnt.toString() + ":" + flag);
+            }
+        } else {
+            RunTest.addList(elemnt.toString() + ":" + flag, 1);
+            AppiumRuningLogs.saveLog(caseName, elemnt.toString() + ":" + flag);
+        }
         return flag;
     }
 
+    public boolean isElementExsitAndroid(String key, String value) {
+        return isElementExsitAndroid(newUiSelector(key, value));
+    }
+
     public boolean isElementExsitAndroid(String elemnt) {
+        //三星有时会弹出已连接的设备无法访问，直接点击确定按钮
+        try {
+            if (!this.androidErr.toString().equals(elemnt)) clickfindElement(this.androidErr);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         boolean flag = false;
         try {
             WebElement element = driver.findElementByAndroidUIAutomator(elemnt);
@@ -348,8 +389,18 @@ public class Devices {
         } catch (org.openqa.selenium.WebDriverException e) {
             flag = false;
         }
-        RunTest.addList(elemnt.toString() + ":" + flag, 1);
-        Logs.saveLog(caseName, elemnt.toString() + ":" + flag);
+
+        if (this.androidErr.toString().equals(elemnt) &&
+                this.devicesBrand.contains(CXBConfig.modelSM)) {
+            if (flag) {
+                System.out.println("发现三星弹出错误");
+                RunTest.addList(elemnt.toString() + ":" + flag, 1);
+                AppiumRuningLogs.saveLog(caseName, elemnt.toString() + ":" + flag);
+            }
+        } else {
+            RunTest.addList(elemnt.toString() + ":" + flag, 1);
+            AppiumRuningLogs.saveLog(caseName, elemnt.toString() + ":" + flag);
+        }
         return flag;
     }
 
@@ -364,44 +415,52 @@ public class Devices {
             b = false;
         }
         RunTest.addList("adbInput:" + b, 1);
-        Logs.saveLog(caseName, "adbInput" + ":" + b);
+        AppiumRuningLogs.saveLog(caseName, "adbInput" + ":" + b);
         return b;
     }
 
     //获取坐标
     public int[] getXY(By by) {
         int[] xy = {0, 0};
-        String str = null;
-        if (isElementExsitAndroid(by)) {
-            str = driver.findElement(by).getLocation().toString();
-            if (str != null) {
-                str = str.replace("(", "");
-                str = str.replace(")", "");
-                str = str.replace(" ", "");
-                xy[0] = Integer.parseInt(str.substring(0, str.indexOf(",")));
-                xy[1] = Integer.parseInt(str.substring(str.indexOf(",") + 1, str.length()));
+        try {
+            String str = null;
+            if (isElementExsitAndroid(by)) {
+                str = driver.findElement(by).getLocation().toString();
+                if (str != null) {
+                    str = str.replace("(", "");
+                    str = str.replace(")", "");
+                    str = str.replace(" ", "");
+                    xy[0] = Integer.parseInt(str.substring(0, str.indexOf(",")));
+                    xy[1] = Integer.parseInt(str.substring(str.indexOf(",") + 1, str.length()));
+                }
             }
+            RunTest.addList("getXY:" + by.toString() + "=" + str);
+            AppiumRuningLogs.saveLog(caseName, "getXY:" + by.toString() + "=" + str);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        RunTest.addList("getXY:" + by.toString() + "=" + str);
-        Logs.saveLog(caseName, "getXY:" + by.toString() + "=" + str);
         return xy;
     }
 
     public int[] getXY(String using) {
         int[] xy = {0, 0};
-        String str = null;
-        if (isElementExsitAndroid(using)) {
-            str = driver.findElementByAndroidUIAutomator(using).getLocation().toString();
-            if (str != null) {
-                str = str.replace("(", "");
-                str = str.replace(")", "");
-                str = str.replace(" ", "");
-                xy[0] = Integer.parseInt(str.substring(0, str.indexOf(",")));
-                xy[1] = Integer.parseInt(str.substring(str.indexOf(",") + 1, str.length()));
+        try {
+            String str = null;
+            if (isElementExsitAndroid(using)) {
+                str = driver.findElementByAndroidUIAutomator(using).getLocation().toString();
+                if (str != null) {
+                    str = str.replace("(", "");
+                    str = str.replace(")", "");
+                    str = str.replace(" ", "");
+                    xy[0] = Integer.parseInt(str.substring(0, str.indexOf(",")));
+                    xy[1] = Integer.parseInt(str.substring(str.indexOf(",") + 1, str.length()));
+                }
             }
+            RunTest.addList("getXY:" + using + "=" + str);
+            AppiumRuningLogs.saveLog(caseName, "getXY:" + using + "=" + str);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        RunTest.addList("getXY:" + using + "=" + str);
-        Logs.saveLog(caseName, "getXY:" + using + "=" + str);
         return xy;
     }
 
@@ -412,8 +471,13 @@ public class Devices {
      */
     public String getPageXml() {
         String s = driver.getPageSource();
-        RunTest.addList("getPageXml:" + s);
-        Logs.saveLog(caseName, "getPageXml:" + s);
+        s = JavaUtils.replaceLineBreak(s, "");
+        Pattern CRLF = Pattern.compile(">(\\s)+<");
+        Matcher m = CRLF.matcher(s);
+        if (m.find()) {
+            s = m.replaceAll("><");
+        }
+        AppiumRuningLogs.saveLog(caseName, "getPageXml:" + s);
         return s;
     }
 
@@ -423,18 +487,18 @@ public class Devices {
      * @return
      */
     public void backspace() {
-        if (iphoneVersion > 6) {
-            AdbUtil.adb("shell input keyevent 4");
-        } else {
-            driver.sendKeyEvent(4);
-        }
+//        if (iphoneVersion > 6) {
+//            AdbUtil.adb("shell input keyevent 4");
+//        } else {
+        driver.pressKeyCode(4);
+//        }
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        Logs.saveLog(caseName, "backspace");
+        AppiumRuningLogs.saveLog(caseName, "backspace");
     }
 
     /**
@@ -446,13 +510,13 @@ public class Devices {
 
         if ("+".equals(volume)) {
             if (this.iphoneVersion < 7) {
-                driver.sendKeyEvent(24);
+                driver.pressKeyCode(24);
             } else {
                 AdbUtil.adb("shell input keyevent 24");
             }
         } else {
             if (this.iphoneVersion < 7) {
-                driver.sendKeyEvent(25);
+                driver.pressKeyCode(25);
             } else {
                 AdbUtil.adb("shell input keyevent 25");
             }
@@ -463,45 +527,60 @@ public class Devices {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        Logs.saveLog(caseName, "clickVolume:" + volume);
+        AppiumRuningLogs.saveLog(caseName, "clickVolume:" + volume);
     }
 
     /**
      * 向左滑动
      */
     public void swipeToLeft(int time) {
-        int width = driver.manage().window().getSize().width;
+        try {
+            int width = driver.manage().window().getSize().width;
 //        RunTest.addList("width：" + width);
-        int height = driver.manage().window().getSize().height;
+            int height = driver.manage().window().getSize().height;
 //        RunTest.addList("height:" + height);
-        driver.swipe(width * 3 / 4, height / 2, width / 4, height / 2,
-                time);
-        Logs.saveLog(caseName, "swipeToLeft:" + time + " time");
+            driver.swipe(width * 3 / 4, height / 2, width / 4, height / 2,
+                    time);
+            AppiumRuningLogs.saveLog(caseName, "swipeToLeft:" + time + " time");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 向上滑动
      */
     public void swipeToUp(int time) {
-        driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, time);
-        Logs.saveLog(caseName, "swipeToUp:" + time + " time");
+        try {
+            driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, time);
+            AppiumRuningLogs.saveLog(caseName, "swipeToUp:" + time + " time");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 滑动--->
      */
     public void swipeToRight(int time) {
-        driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, time);
-        Logs.saveLog(caseName, "swipeToRight:" + time + " time");
+        try {
+            driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, time);
+            AppiumRuningLogs.saveLog(caseName, "swipeToRight:" + time + " time");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
      * 向下滑动
      */
     public void swipeToDown(int time) {
-
-        driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, time);
-        Logs.saveLog(caseName, "swipeToDown:" + time + " time");
+        try {
+            driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, time);
+            AppiumRuningLogs.saveLog(caseName, "swipeToDown:" + time + " time");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -510,21 +589,29 @@ public class Devices {
      * @param time
      */
     public void customSlip(int startX, int startY, int endX, int endY, int time) {
-        driver.swipe(startX, startY, endX, endY, time);
-        Logs.saveLog(caseName, "customSlip:startX:" + startX + " ;startY:" + startY
-                + " ;endX:" + endX + " ;endY:" + endY + " ;time:" + time
-        );
+        try {
+            driver.swipe(startX, startY, endX, endY, time);
+            AppiumRuningLogs.saveLog(caseName, "customSlip:startX:" + startX + " ;startY:" + startY
+                    + " ;endX:" + endX + " ;endY:" + endY + " ;time:" + time
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void customSlip(int[] xy) {
-        if (xy.length != 5) return;
-        System.out.println("customSlip:startX:" + xy[0] + " ;startY:" + xy[1]
-                + " ;endX:" + xy[2] + " ;endY:" + xy[3] + " ;time:" + xy[4]
-        );
-        driver.swipe(xy[0], xy[1], xy[2], xy[3], xy[4]);
-        Logs.saveLog(caseName, "customSlip:startX:" + xy[0] + " ;startY:" + xy[1]
-                + " ;endX:" + xy[2] + " ;endY:" + xy[3] + " ;time:" + xy[4]
-        );
+        try {
+            if (xy.length != 5) return;
+            System.out.println("customSlip:startX:" + xy[0] + " ;startY:" + xy[1]
+                    + " ;endX:" + xy[2] + " ;endY:" + xy[3] + " ;time:" + xy[4]
+            );
+            driver.swipe(xy[0], xy[1], xy[2], xy[3], xy[4]);
+            AppiumRuningLogs.saveLog(caseName, "customSlip:startX:" + xy[0] + " ;startY:" + xy[1]
+                    + " ;endX:" + xy[2] + " ;endY:" + xy[3] + " ;time:" + xy[4]
+            );
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -538,7 +625,7 @@ public class Devices {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        Logs.saveLog(caseName, "sleep:" + ms + " ms");
+        AppiumRuningLogs.saveLog(caseName, "sleep:" + ms + " ms");
     }
 
     /**
@@ -719,9 +806,9 @@ public class Devices {
     public String getIphoneDate() {
         for (String s : AdbUtils.operationAdb(" shell date")) {
             if (s.matches(".+\\d{2}:\\d{2}:\\d{2}.+")) {
-                s = s.replace("CST","");
+                s = s.replace("CST", "");
                 SimpleDateFormat sfEnd = new SimpleDateFormat("yyyy-MM-dd");
-                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy",Locale.ENGLISH);
+                SimpleDateFormat sfStart = new SimpleDateFormat("EEE MMM dd HH:mm:ss yyyy", Locale.ENGLISH);
                 try {
                     return sfEnd.format(sfStart.parse(s));
                 } catch (ParseException e) {
@@ -729,6 +816,6 @@ public class Devices {
                 }
             }
         }
-        return  new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        return new SimpleDateFormat("yyyy-MM-dd").format(new Date());
     }
 }

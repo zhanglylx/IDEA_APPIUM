@@ -3,17 +3,13 @@ package CXBCase;
 import AppTest.AppXmlUtil;
 import org.openqa.selenium.By;
 
-import javax.naming.ldap.PagedResultsControl;
-import javax.swing.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Random;
 
 /**
  * 检查阅读页中的日夜间切换、评论、书库页检查，目录页添加书签
  */
 //未完成的开发:日夜间切换、评论
-public class Read2 extends StartCase {
+public class Read2 extends CaseFrame {
     String bookName;
     String author;
     String firstChaptertitle;
@@ -47,7 +43,7 @@ public class Read2 extends StartCase {
     }
 
     private boolean DirectoryPageBookmarks() {
-        RunCase.initialize(devices);
+        CXBRunCase.initialize(devices);
         //点击书库按钮
         devices.clickfindElement(ElementAttributes.STACK_ROOM);
         if (!new BookLibrary(this.caseName).checkBookLibrary()) return false;
@@ -81,7 +77,7 @@ public class Read2 extends StartCase {
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/chapterlist_chaptertitle"));
         devices.sleep(1000);
         if (new Read(this.caseName).clickReadmore() == 0) {
-            print.print("点击书籍中的:" + chaptertitile + "章节后的检查VIP页");
+            print.printErr("点击书籍中的:" + chaptertitile + "章节后的检查VIP页");
             return false;
         }
         //点击书签
@@ -99,9 +95,9 @@ public class Read2 extends StartCase {
         int i = readAdd_a_bookcase("确定");
         Search search = new Search(this.caseName);
         if (i == 0) return false;
-        RunCase.initialize(devices);
+        CXBRunCase.initialize(devices);
         if (!search.bookcase_is_Book(this.bookName)) {
-            print.print("检查从阅读页添加到书架的书籍:" + this.bookName);
+            print.printErr("检查从阅读页添加到书架的书籍:" + this.bookName);
         }
         //进入到作者详情页检查书签
         if (!search.entranceBookSearchEngineResultsPage(this.bookName, this.author)) return false;
@@ -130,22 +126,22 @@ public class Read2 extends StartCase {
         if (chaptertitile.length() > 6) chaptertitile = chaptertitile.substring(0, 6);
         String mark_chapter_title = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_chapter_title"));
         if (mark_chapter_title == null || !mark_chapter_title.contains(chaptertitile)) {
-            print.print("检查书签:" + chaptertitile);
+            print.printErr("检查书签:" + chaptertitile);
             return false;
         }
         String marksDate = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_date"));
         if (!marksDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}")) {
-            print.print("获取书签日期格式检查:" + marksDate);
+            print.printErr("获取书签日期格式检查:" + marksDate);
             return false;
         }
         marksDate = marksDate.substring(0, marksDate.indexOf(" "));
         if (!addDate.equals(marksDate)) {
-            print.print("检查书签的日期与加入的日期:addDate:" + addDate + " marksDate:" + marksDate);
+            print.printErr("检查书签的日期与加入的日期:addDate:" + addDate + " marksDate:" + marksDate);
             return false;
         }
         String mark_content = devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/mark_content"));
         if (mark_content == null || mark_content.length() < 1) {
-            print.print("获取的书签描述:mark_content：" + mark_content);
+            print.printErr("获取的书签描述:mark_content：" + mark_content);
             return false;
         }
         //点击目录
@@ -156,7 +152,7 @@ public class Read2 extends StartCase {
             devices.customSlip(xy[0], xy[3], xy[0], xy[1], xy[4]);
         }
         if (chaptertitile.equals(AppXmlUtil.getXMLElement("text=" + chaptertitile, devices.getPageXml(), "text"))) {
-            print.print("自动检测书签失败，请手动检测");
+            print.printErr("自动检测书签失败，请手动检测");
             return true;
         }
         //点击目录中第一个章节
@@ -170,7 +166,7 @@ public class Read2 extends StartCase {
         //点击目录
         if (!new Read(this.caseName).style(Read.catalog)) return false;
         if (!devices.isElementExsitAndroid(By.xpath("//android.widget.TextView[contains(@text,\"" + chaptertitile + "\")]"))) {
-            print.print("点击书签后，目录没有跳转到相应的章节");
+            print.printErr("点击书签后，目录没有跳转到相应的章节");
             return false;
         }
         return true;
@@ -193,7 +189,7 @@ public class Read2 extends StartCase {
                 break;
             }
             if (System.currentTimeMillis() > startTime) {
-                print.print("滑动精品页到页面最底层超过10分钟");
+                print.printErr("滑动精品页到页面最底层超过10分钟");
                 return false;
             }
         }
@@ -224,7 +220,7 @@ public class Read2 extends StartCase {
                     || !"取消".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left")))
                     || !"确定".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_right")))
                     ) {
-                print.print("检查阅读页中加入书架");
+                print.printErr("检查阅读页中加入书架失敗");
                 return 0;
             }
             if ("取消".equals(code)) {
@@ -234,6 +230,7 @@ public class Read2 extends StartCase {
             }
             return 1;
         }
+        System.out.println(code+"==");
         return 2;
     }
 

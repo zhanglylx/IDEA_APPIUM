@@ -1,6 +1,5 @@
 package AD;
 
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Random;
 

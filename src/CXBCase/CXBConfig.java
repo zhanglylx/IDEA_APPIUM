@@ -9,7 +9,7 @@ import java.util.Random;
 public class CXBConfig {
     //发现的bug，找回密码服务器随机生成的密码不能作为新密码使用，提示密码错误
     //兼容手机屏幕坐标,阅读页设置
-    public static final String modelSM = "model:SM_C5000";
+    public static final String modelSM = "SM_C5000";
     /**
      * 登录用户名和密码
      */
@@ -19,22 +19,28 @@ public class CXBConfig {
     /**
      * 用于搜索和进入阅读时选择的书籍
      */
-    public static final String BOOK_NAME = "闪婚老公太凶猛";
+    public static final String BOOK_NAME = "总裁老公追上门";
     //书籍第一章节
-    public static final String BOOK_CHAPTER_FIRST = "第1章 再傻也懂了";
+    public static final String BOOK_CHAPTER_FIRST = "第一章想用这样的方式引起我的注意？";
     //书籍简介
-    public static final String BOOK_SYNOPSIS  = "结婚前一天，她亲眼目睹男友和他的准大嫂在办公室上演限制级戏码，心碎之时，一个沉稳的男人出现在她身边。“跟我结婚，这样，他们两个无耻的男女就要每天叫你大嫂？…";
-    public static final String BOOK_SYNOPSISOPEN = "结婚前一天，她亲眼目睹男友和他的准大嫂在办公室上演限制级戏码，心碎之时，一个沉稳的男人出现在她身边。“跟我结婚，这样，他们两个无耻的男女就要每天叫你大嫂？怎样？”就这样，领了证。可是，谁能想到，原本坐在轮椅上的老公不仅不无能，还动不动就把她吃干抹净……";
+    public static final String BOOK_SYNOPSIS  = "六年前,她毫不犹豫的带球跑,六年后,孩子的爸找上门。" +
+            "“要娶我们的妈妈,必须过我们这一关。”" +
+            "两个可爱到爆的孩子挡在她的面前。" +
+            "作为苏熙的儿子,苏梓宸苏梓轩誓死捍卫" +
+            "自家妈妈找到幸福的权利。而作为两个儿子的妈," +
+            "苏熙只能叹气,儿子智商太高太聪明,终身幸福都要遭人管," +
+            "不失为这世上最甜蜜的折磨!";
+    public static final String BOOK_SYNOPSISOPEN = BOOK_SYNOPSIS;
     //书籍作者
-    public static final String BOOK_AUTHOR = "温煦依依";
+    public static final String BOOK_AUTHOR = "司舞舞";
     //请配置目录页最后一页中的章节,不要配置最后一个章节，尽量配置最后最后一页中的中间部分章节
-    public static final String BOOK_CHAPTER_END = "老公太凶猛1418";
+    public static final String BOOK_CHAPTER_END = "第四百九十八章  步步为营";
     //点击上一章次数,与BOOK_CHAPTER_END_LAST关联,因上一章和下一章按钮存在重页问题，顾将参数配置余量
-    public static int LAST_CHAPTER_NUM = 4 + 3;
+    public static int LAST_CHAPTER_NUM = 20;
     //BOOK_CHAPTER_END的上LAST_CHAPTER_NUM 关联
-    public static final String BOOK_CHAPTER_END_LAST = "老公太凶猛1414";
+    public static final String BOOK_CHAPTER_END_LAST = "第四百八十五章  爱情的小粉红";
     //BOOK_CHAPTER_END的下一章一章
-    public static final String BOOK_CHAPTER_END_NEXT = "老公太凶猛1419";
+    public static final String BOOK_CHAPTER_END_NEXT = "第四百九十九章  真相比什么都重要";
     //目录限制滑动总数
     public static final int BOOK_CATALOGUE_RESTRICT_SLIDE_SUM = 2000;
     //目录滑动限制次数开始检查BOOK_CHAPTER_END

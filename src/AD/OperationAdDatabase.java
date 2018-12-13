@@ -1,7 +1,7 @@
 package AD;
 
 import DataBase.ConnectDataBase;
-import com.mysql.jdbc.exceptions.jdbc4.CommunicationsException;
+import com.mysql.cj.jdbc.exceptions.CommunicationsException;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

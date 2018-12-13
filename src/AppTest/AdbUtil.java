@@ -27,7 +27,7 @@ public class AdbUtil {
         } catch (IOException e) {
             e.printStackTrace();
         }
-       Logs.saveLog("AdbUtil", "operationAdb:" + Arrays.toString(str));
+       AppiumRuningLogs.saveLog("AdbUtil", "operationAdb:" + Arrays.toString(str));
         RunTest.addList(  Config.ADB_PUTH + " " + code+"  operationAdb:" + Arrays.toString(str));
         return str;
     }

@@ -1,6 +1,4 @@
 package ZLYUtils;
-import org.junit.Test;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -22,7 +20,7 @@ public class AdbUtils {
         killNetStatAdb = -1;
     }
 
-    private static String[] runAdb(String code) {
+    public static String[] runAdb(String code) {
         String[] str = new String[0];
         try {
             String dev = " ";
@@ -39,11 +37,6 @@ public class AdbUtils {
             e.printStackTrace();
         }
         return str;
-    }
-
-    @Test
-    public void test() {
-        killNetStatAdb();
     }
 
     /**

@@ -11,13 +11,12 @@ package CXBCase;
  */
 
 import AppTest.AppXmlUtil;
-import AppTest.Logs;
 import org.openqa.selenium.By;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class Search extends StartCase {
+public class Search extends CaseFrame {
     //加入书架按钮
     public static final By search_result_to_add_btn = By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_to_add_btn");
     //搜索文本框
@@ -51,7 +50,7 @@ public class Search extends StartCase {
         if (!searchBook(name)) return false;
         if(!checkSearchResult(name,author))return false;
         devices.clickfindElement(search_result_to_add_btn);
-        RunCase.initialize(devices);
+        CXBRunCase.initialize(devices);
         return bookcase_is_Book(name);
     }
 
@@ -72,7 +71,7 @@ public class Search extends StartCase {
         //检查搜索文本框中应存在搜索候选词
         String str = devices.getText(Search.EditText);
         if (str == null || str.length() < 1) {
-            print.print("检查搜索文本框中应存在搜索候选词");
+            print.printErr("检查搜索文本框中应存在搜索候选词");
             return false;
         }
         //输入搜索词
@@ -97,33 +96,33 @@ public class Search extends StartCase {
         if (!searchBookName.equals(devices.getText(Search.EditText))
                 || !searchBookName.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_title_view")))
                 ) {
-            print.print("检查搜索结果页中的:" + searchBookName);
+            print.printErr("检查搜索结果页中的:" + searchBookName);
             return false;
         }
         if (bookRackExistsBookName.get(searchBookName) == false) {
             //com.mianfeia.book:id/search_result_to_add_btn加入书架按钮
             if (!devices.isElementExsitAndroid(Search.search_result_to_add_btn) ||
                     !"加入书架".equals(devices.getText(search_result_to_add_btn))) {
-                print.print("检查在线阅读和加入书架按钮");
+                print.printErr("检查在线阅读和加入书架按钮");
                 return false;
             }
             if (!"在线阅读".equals(devices.getText(Search.search_result_to_read_btn))) {
-                print.print("检查在线阅读按钮");
+                print.printErr("检查在线阅读按钮");
                 return false;
             }
         } else {
             if (devices.isElementExsitAndroid(Search.search_result_to_add_btn) ||
                     "加入书架".equals(devices.getText(Search.search_result_to_add_btn))) {
-                print.print("检查在线阅读不存在加入书架");
+                print.printErr("检查在线阅读不存在加入书架");
                 return false;
             }
             if (!"在线阅读".equals(devices.getText(Search.search_result_to_read_btn))) {
-                print.print("检查在线阅读按钮");
+                print.printErr("检查在线阅读按钮");
                 return false;
             }
         }
         if (!author.equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_author_view")))) {
-            print.print("检查搜素结果中的作者");
+            print.printErr("检查搜素结果中的作者");
             return false;
         }
         System.out.println("检查搜索页结果页:" + searchBookName + "：成功");
@@ -149,7 +148,7 @@ public class Search extends StartCase {
             devices.clickfindElement(By.className("android.widget.ImageButton"));
             devices.sleep(1000);
             if (bookcase_is_Book(searchBookName)) {
-                print.print("检查取消加入书架后，书架不存在书籍");
+                print.printErr("检查取消加入书架后，书架不存在书籍");
                 return false;
             }
             //点击精品
@@ -168,9 +167,9 @@ public class Search extends StartCase {
             System.out.println("点击确定按钮");
             if(new Read2(this.caseName).readAdd_a_bookcase("确定")!=1)return false;
             if (!new TheWorkDetails(this.caseName).checkTheWorkDetails(searchBookName, author, false)) return false;
-            RunCase.initialize(devices);
+            CXBRunCase.initialize(devices);
             if (!bookcase_is_Book(searchBookName)) {
-                print.print("检查取消加入书架后，书架不存在书籍:"+searchBookName);
+                print.printErr("检查取消加入书架后，书架不存在书籍:"+searchBookName);
                 return false;
             }
             if (!deleteBook(searchBookName)) return false;
@@ -200,11 +199,11 @@ public class Search extends StartCase {
             //com.mianfeia.book:id/search_result_to_add_btn加入书架按钮
             if (!devices.isElementExsitAndroid(Search.search_result_to_add_btn) ||
                     !"加入书架".equals(devices.getText(Search.search_result_to_add_btn))) {
-                print.print("检查在线阅读和加入书架按钮");
+                print.printErr("检查在线阅读和加入书架按钮");
                 return false;
             }
             if (!"在线阅读".equals(devices.getText(Search.search_result_to_read_btn))) {
-                print.print("检查在线阅读按钮");
+                print.printErr("检查在线阅读按钮");
                 return false;
             }
             //点击在线阅读按钮
@@ -235,11 +234,11 @@ public class Search extends StartCase {
             bookRackExistsBookName.put(searchBookName, true);
             devices.sleep(2000);
             if (devices.isElementExsitAndroid(Search.search_result_to_add_btn)) {
-                print.print("点击加入书架后按钮应隐藏");
+                print.printErr("点击加入书架后按钮应隐藏");
                 return false;
             }
             if (!"在线阅读".equals(devices.getText(Search.search_result_to_read_btn))) {
-                print.print("检查在线阅读按钮");
+                print.printErr("检查在线阅读按钮");
                 return false;
             }
             //检查点击书籍后进入到作者详情页
@@ -263,7 +262,7 @@ public class Search extends StartCase {
             devices.sleep(2000);
             devices.backspace();
             if (!bookcase_is_Book(searchBookName)) {
-                print.print("检查搜索加入书架后，书架中的书籍:" + searchBookName);
+                print.printErr("检查搜索加入书架后，书架中的书籍:" + searchBookName);
                 return false;
             }
             //点击赚钱按钮
@@ -278,7 +277,7 @@ public class Search extends StartCase {
             if (!searchResult(searchBookName, author)) return false;
         } else {
             if (devices.isElementExsitAndroid(Search.search_result_to_add_btn)) {
-                print.print("已加入书架的书籍检查搜索结果页不存在加入书架按钮:" + searchBookName);
+                print.printErr("已加入书架的书籍检查搜索结果页不存在加入书架按钮:" + searchBookName);
                 return false;
             }
         }
@@ -317,7 +316,7 @@ public class Search extends StartCase {
                     //com.mianfeia.book:id/title_right_view右侧全选按钮id
                     !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view"))
                     ) {
-                print.print("检查书架书籍删除时的按钮");
+                print.printErr("检查书架书籍删除时的按钮");
                 return false;
             }
             //点击删除按钮
@@ -329,7 +328,7 @@ public class Search extends StartCase {
                     !"取消".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_cancel"))) ||
                     !"确定".equals(devices.getText(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_sure")))
                     ) {
-                print.print("检查删除书籍提示框");
+                print.printErr("检查删除书籍提示框");
                 return false;
             }
             //点击删除源文件
@@ -340,18 +339,18 @@ public class Search extends StartCase {
             devices.sleep(2000);
             xy = devices.getXY("new UiSelector().text(\"" + bookName + "\")");
             if ((xy[0] != 0 || xy[1] != 0)) {
-                print.print("书籍" + bookName + "删除");
+                print.printErr("书籍" + bookName + "删除");
                 return false;
             }
             if (bookcase_is_Book(bookName)) {
-                print.print("书籍" + bookName + "删除");
+                print.printErr("书籍" + bookName + "删除");
                 return false;
             }
             //com.mianfeia.book:id/ygz_common_bottom_sure删除提示框确定按钮
             if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/ygz_common_bottom_sure")) ||
                     //com.mianfeia.book:id/tab_move_tv删除框中的移动按钮
                     devices.isElementExsitAndroid(By.className(AppiumMethod.Config.APP_PACKAGE+":id/tab_move_tv"))) {
-                print.print("删除书籍后，删除编辑框没有关闭");
+                print.printErr("删除书籍后，删除编辑框没有关闭");
                 return false;
             }
         }
@@ -373,12 +372,12 @@ public class Search extends StartCase {
         if (searchBookName.length() > 4) {
 
             if (historyStr.length() < 4 || !searchBookName.substring(0, 4).equals(historyStr.substring(0, 4))) {
-                print.print("检查搜索历史:" + searchBookName);
+                print.printErr("检查搜索历史:" + searchBookName);
                 return false;
             }
         } else {
             if (!searchBookName.equals(historyStr)) {
-                print.print("检查搜索历史:" + searchBookName);
+                print.printErr("检查搜索历史:" + searchBookName);
                 return false;
             }
         }
@@ -409,7 +408,7 @@ public class Search extends StartCase {
                 !devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/search_result_type_view"))
 
                 ) {
-            print.print("检查搜索页面显示是否正确");
+            print.printErr("检查搜索页面显示是否正确");
             return false;
         }
         System.out.println("检查搜索页成功");
@@ -419,7 +418,7 @@ public class Search extends StartCase {
     public boolean search() {
         System.out.println("执行搜索");
         //点击书架中的搜索按钮
-        RunCase.initialize(devices);
+        CXBRunCase.initialize(devices);
         devices.clickfindElement(By.id(AppiumMethod.Config.APP_PACKAGE+":id/title_right_view_2"));
         devices.sleep(3000);
         //检查搜索页面

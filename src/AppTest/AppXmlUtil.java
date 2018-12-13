@@ -141,8 +141,6 @@ public class AppXmlUtil {
             if (i >= listXpath.size()) i = listXpath.size() - 1;
             checkListBooleanListA++;
         }
-
-
         return null;
     }
 

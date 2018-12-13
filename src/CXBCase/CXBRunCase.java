@@ -2,10 +2,10 @@ package CXBCase;
 
 import AppTest.AppXmlUtil;
 import AppTest.Devices;
-import AppTest.Logs;
+import AppTest.AppiumRuningLogs;
 import org.openqa.selenium.By;
 
-public class RunCase {
+public class CXBRunCase {
 
     /**
      * 赚积分未实现
@@ -36,7 +36,7 @@ public class RunCase {
         new Read("阅读页").startCase();
         initialize(devices);
         new Read2("阅读页Read2").startCase();
-        Logs.prrLogs();
+        AppiumRuningLogs.printLogs();
         RecordAd.getRecordAd().printAd();
     }
     /**
@@ -45,9 +45,7 @@ public class RunCase {
     public static void initialize(Devices devices) {
          int i = 0;
         while (true) {
-            if((AppiumMethod.Config.APP_PACKAGE).contains("com.mianfeizs.book")){
-                if(i>10)break;
-            }
+            if(i>20)break;
             if (devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/btn_left"))) {
                 devices.backspace();
                 if(devices.isElementExsitAndroid(By.id(AppiumMethod.Config.APP_PACKAGE+":id/adv_plaque_view"))) RecordAd.getRecordAd().setAd("GG-3",
