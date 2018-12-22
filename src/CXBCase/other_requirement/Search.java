@@ -25,8 +25,8 @@ public class Search extends CaseFrame {
         this.resultMap = new LinkedHashMap<>();
         this.index = 0;
         this.excelFile = new File("mfdzs-online.xlsx");
-        this.bounds = new String[]{"[0,168][1080,721]", "[0,721][1080,1090]"
-                , "[0,1090][1080,1459]", "[0,1459][1080,1828]"};
+        this.bounds = new String[]{"[0,168][1080,790]", "[0,790][1080,1159]"
+                , "[0,1159][1080,1528]", "[0,1528][1080,1897]"};
     }
 
     @Override
